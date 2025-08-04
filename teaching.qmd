@@ -1,0 +1,20 @@
+---
+title: "Teaching"
+format: html
+---
+
+# En la Universidad Autónoma de Madrid
+
+- Matemática Discreta, 2025-2026, Segundo cuatrimestre, grupo 711.
+- Matemática Discreta, 2025-2026, Primero cuatrimestre, grupo 721.
+- Álgebra 2, 2024-2025, Segundo cuatrimestre, grupo 5112.
+- Álgebra 1, 2024-2025, Primero cuatrimestre, grupo 5112.
+    - [Apuntes](resources/cuerpos.pdf) sobre espacios vectoriales y cuerpos.
+- Estructuras Algebraicas, 2024-2025, Primero cuatrimestre, grupo 1301.
+- Geometría de Curvas y Superficies, 2023-2024, Segundo cuatrimestre, grupo 230.
+    - Diapositivas de la [hoja 1](https://drive.google.com/file/d/1mdipUy85XUFQ97EC3HSvaDv2Tb2wpJio/view), [hoja 2](https://drive.google.com/file/d/1CPkRJwxPBbZn47v-ow1Mqq0R45sdGZVw/view), [hoja 3](https://drive.google.com/file/d/14V_1Zdo00FfdnY72IpsM5Yy72Ov8GfMt/view), [hoja 4](https://drive.google.com/file/d/1u7ltNatRTJ9nt47z7tfFWhn0ZWhjIILu/view) ([errata](https://drive.google.com/file/d/1zejXBCr-myfjL4c3u2eaWV9WpN7lwtGo/view)) y [hoja 5](https://drive.google.com/file/d/17qSFMBvjFEJLdkUlIMjvnyrZ8jHzzBgk/view).
+- Álgebra 1, 2023-2024, Primero cuatrimestre, grupos 511 y 516.
+- Cálculo 2, 2022-2023, Segundo cuatrimestre, grupos 211 y 212.
+- Álgebra 1, 2022-2023, Primero cuatrimestre, grupos 5112 y 5162.
+- Cálculo 2, 2021-2022, Segundo cuatrimestre, grupo 212.
+    - Resolución de la hoja de ejercicios en [este enlace](https://drive.google.com/file/d/1aX35HnkT_vdgqXVNORhYvYF32J_5Acys/view?usp=sharing).

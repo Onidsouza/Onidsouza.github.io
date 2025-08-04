@@ -1,0 +1,36 @@
+---
+title: "What can I get you?"
+format: html
+---
+
+# List of publications
+*From newest to oldest*
+
+**Asymptotics of rational representations for algebraic groups** (2024). Joint with Lander Guerrero Sánchez. Submitted. On Arxiv: [https://arxiv.org/abs/2405.17360](https://arxiv.org/abs/2405.17360)
+
+::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
+We study the asymptotic behaviour of the cohomology of subgroups $\Gamma$ of an algebraic group $G$ with coefficients in the various irreducible rational representations of $G$ and raise a conjecture about it. Namely, we expect that the dimensions of these cohomology groups approximate the $\ell^2$-Betti numbers of $\Gamma$ with a controlled error term. We provide positive answers when $G$ is a product of copies of $\mathrm{SL}_2$. As an application, we obtain new proofs of J. Lott's and W. Lück's computation of the $\ell^2$-Betti numbers of hyperbolic 3-manifolds and W. Fu's upper bound on the growth of cusp forms for non totally real fields, which is sharp in the imaginary quadractic case.
+:::
+
+**Sylvester domains and pro-$p$ groups** (2024). Joint with Andrei Jaikin-Zapirain. To appear on Documenta Mathematica. On ArXiv: [https://arxiv.org/abs/2402.14130](https://arxiv.org/abs/2402.14130)
+
+::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
+Let $G$ be a finitely generated torsion-free pro-$p$ group containing an open free-by-$\mathbb{Z}_p$ pro-$p$ subgroup. We show that the completed group algebra $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain. Moreover the inner rank $\mathrm{irk}_{\mathbb{F}_p[\![G]\!]}(A)$ of a matrix $A$ over $\mathbb{F}_p[\![G]\!]$ can be calculated by approximation by ranks corresponding to finite quotients of $G$. As a consequence, we obtain a particular case of the mod $p$ Lück approximation for abstract finitely generated subgroups of free-by-$\mathbb{Z}_p$ pro-$p$ groups.
+:::
+
+**Inertia of retracts of Demushkin groups** (2022). In Journal of Group Theory (Vol. 26, Issue 3). [https://doi.org/10.1515/jgth-2022-0055](https://doi.org/10.1515/jgth-2022-0055). Also on ArXiv: [https://arxiv.org/abs/2111.03060](https://arxiv.org/abs/2111.03060).
+
+::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
+Exploring inequalities regarding the rank and relation gradients of pro-$p$ modules and building upon recent results of Y. Antolín, A. Jaikin-Zapirain and M. Shusterman, we prove that every retract of a Demushkin group is inert in the sense of the Dicks-Ventura Inertia Conjecture.
+::: 
+
+# M.Sc. Thesis
+
+[Defense slides](resources/mscdefense.pdf)
+
+My thesis, presented under the advice of [Theo Zapata](https://mat.unb.br/~zapata/), explored the combinatorial properties of Dëmushkin groups. Its goal was to be a guide through recent results about Dëmushkin groups concerning the finiteness properties of subgroups and virtual retracts. More precisely, pro-$p$ analogues of Howson's theorem, the Hanna Neumann inequality, the presence of the virtual retractions property and the abscence of virtual decompositions as a free pro-$p$ product.
+
+During my master degree, my research was focused on a particular class of topological groups called Dëmushkin groups. A Dëmushkin group is a pro-$p$ group that satisfies Poincaré duality in dimension 2, that is, $G$ is a Dëmushkin group if $\mathrm{H}^1(G,\mathbb{F}_p)$ is finite, $\mathrm{H}^2(G,\mathbb{F}_p)$ has dimension 1 and the cup product $\mathrm{H}^1(G,\mathbb{F}_p) \times \mathrm{H}^1(G,\mathbb{F}_p) \to \mathrm{H}^2(G,\mathbb{F}_p)$ is a non-degenerate bilinear form. Dëmushkin groups appear naturally as Galois groups of maximal $p$-extensions of local fields, as pro-$p$ completions of surface groups and as maximal pro-$p$ quotients of étale fundamental groups of smooth projective curves.
+
+Dëmushkin groups have lots of great properties. They are topologically finitely generated and possess a topological presentation given by a single well known relation. They have strong hereditary, finiteness and virtual decomposition properties similar to those found in free pro-$p$ groups. There is a lot of research about them, and many important developments have been made in the past decades.
+

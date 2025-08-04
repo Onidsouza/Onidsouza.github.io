@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "Henrique Souza"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.html
+      - text: "Research"
+        href: publications.qmd
+      - text: "Talks & Conferences"
+        href: talks.qmd
+      - text: "Teaching"
+        href: teaching.qmd
+      - text: "Miscellanea"
+        href: miscellanea.qmd
+  page-footer:
+    left: "© Henrique Souza - henrique (dot) mendesdasilva (at) uam (dot) es"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: cosmo
+    css: style.css
+    code-fold: true
+    toc: true

@@ -1,0 +1,166 @@
+---
+title: "Miscellanea"
+format: html
+---
+
+# Primitive School on the Mapping Class Group
+
+Another activity of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT), we've organized a minicourse on the mapping class group to prepare ourselves to the (then) upcoming advanced school on the mapping class group at ICMAT. We mainly followed Farb & Margalit's primer. You can see the poster for this reading group [here](/resources/primitiveschoolposter.pdf)
+
+# De Picasso a Gromov
+*Introducción al cubulismo*
+
+Us members of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT) are organizing in 2024 a reading group about $\mathrm{CAT}(0)$ cube complexes, following mainly Henry Wilton's notes. You can see the poster for this reading group [here](/resources/picasogromovposter.pdf).
+
+# Chistyakov Embeddings
+
+I like to code some stuff from time to time. Stuff I find cool.
+
+My previous page had a long discussion about Chistyakov embeddings, but now I'm too lazy to explain them again. Go check out his [awesome paper](https://arxiv.org/abs/math/0202089) by yourself and see the awesome pictures. Some really cool embeddings of $\mathbb{Q}_p$ in $\mathbb{C}$, really crazy stuff.
+
+I made some python code to generate those images, that was the gist of it. You can find it below.
+
+```{.python}
+# -*- coding: utf-8 -*-
+"""Vizualização dos Mergulhos de Chistyakov
+
+Henrique Souza
+07/08/2020
+Programa de Pós-Graduação
+Departamento de Matemática
+Universidade de Brasília
+
+Este módulo implementa a classe InteiroPAdicoFinito para um elemento de Z_p
+contido na imagem canônica de Z, e nos fornece acesso a sua norma, sua 
+valoração e seus dígitos em base p.
+
+Ele implementa a função MergulhoDeChistyakov (e sua função auxiliar 
+CaraterDeChistyakov) para calcular (até um número finito de passos) os valores
+para um InteiroPAdicoFinito da expressão analítica dada no artigo:
+
+Chistyakov, D. V. Fractal geometry for images of continuous embeddings of
+p-adic numbers and solenoids into euclidean spaces. Theoretical Mathematics and
+Physics, Vol. 109, No. 3, 1996.
+
+Por fim, ele utiliza o pacote PyPlot para gerar uma vizualição da imagem por 
+esse mergulho dos numeros naturais menores que ou iguais a uma cota fixa. A
+vizualização distingue a imagem das classes laterais de pZ_p e p^2*Z_p pela cor
+e pela saturação, respectivamente. Também é possível traçar a imagem de um
+segmento inicial do grafo de Cayley de Z pelo mergulho de Chistyakov.
+"""
+
+from fractions import Fraction
+import math
+import cmath
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+import colorsys
+
+
+class InteiroPAdicoFinito:
+	""" Modela o comportamento de inteiro finito dentro de Z_p.
+
+	Seus principais atributos são o primo self.p, o self.inteiro que está sendo
+	modelado, sua self.norma em Q_p e sua self.valoração p-ádica.
+
+	A função coordn(n) retorna o valor do n-ésimo dígito na expressão em base p
+	do inteiro modelado.
+	"""
+
+	def __init__(self,i=0,p=2):
+		self.p = p
+		self.inteiro = i
+		self.norma = Fraction()
+		if (i != 0): #
+			self.norma = Fraction(1)
+			while ((i%p) == 0):
+				self.norma = self.norma * Fraction(1,p)
+				i = i/p
+			self.valoracao = -int(math.log(self.norma,p))
+		else:
+			self.valoracao = cmath.inf
+		pass
+
+	def __int__(self):
+		return self.inteiro
+
+	def __str__(self):
+		return str(self.inteiro)
+
+	def coordn(self,n=0):
+		if (n < 0):
+			return 0
+		if (n == 0):
+			return (self.inteiro % self.p) 
+		expr = self.inteiro
+		for i in range(0,n):
+			expr = (expr - (expr%self.p))/self.p
+		return int(expr % self.p)
+
+def CaraterDeChistyakov(z,m,n):
+	""" Calcula o caráter de Chistyakov para o inteiro p-ádico z com parâmetros
+	m e n.
+	"""
+	arg = 0.0
+	for k in range(0,m+1):
+		arg += float(z.coordn(n-k))/(math.pow(z.p,k))
+	return cmath.exp((2.0*cmath.pi* 1j/z.p)*arg)
+
+def MergulhoDeChistyakov(z, m, s,profundidade=100):
+	""" Calcula o valor do mergulho de Chistyakov para o inteiro p-adico z com
+	parâmetros m e s. O parâmetro profundidade define quão longe nas somas 
+	parciais será calculado para fins de obter um valor numérico para a 
+	expressão analítica do mergulho de Chistyakov.
+	"""
+	c = 1.0/(1.0 - s)
+	if cmath.isfinite(z.valoracao):
+		c = (1.0 - pow(s,z.valoracao))/(1.0 - s)
+	if cmath.isfinite(z.valoracao):
+		for i in range(z.valoracao,z.valoracao+profundidade):
+			c += CaraterDeChistyakov(z,m,i)*pow(s,i)
+	return c
+
+def VizualizarMergulhoDeChistyakov(n,m,s,profundidade=100,p=2,linhas=0,
+		arquivo='mergulho.png',res=(3000,3000),dpi=300,colorido=True):
+	""" Gera uma vizualização do Mergulho de Chistyakov para os inteiros
+	p-ádicos finitos menores que ou iguais a n com parâmetros m , s e 
+	profundidade. Se o parâmetro linhas for não nulo, a imagem conterá o 
+	segmento inicial de tamanho "linhas" do grafo de Cayley de Z.
+	arquivo determina o nome do arquivo, res é a sua resolução em pixels, dpi
+	é a qualidade da imagem final e colorido controla se será usado um código
+	de cores para representar as classes laterais de pZ_p e p^2Z_p ou se a 
+	imagem final será apresentada em preto e branco.
+	"""
+	x = []
+	y = []
+	cores = []
+	barra = tqdm(total=n+1)
+	plt.clf()
+	plt.gcf().set_size_inches((res[0]/dpi,res[1]/dpi))
+	for i in range(0,n+1):
+		iPadico = InteiroPAdicoFinito(i,p)
+		c = MergulhoDeChistyakov(iPadico,m,s,profundidade)
+		x.append(c.real)
+		y.append(c.imag)
+		alfa = (float(i)/(n+1))
+		if (i == 0): alfa = 1.0
+		if (colorido):
+			cor = colorsys.hls_to_rgb(iPadico.coordn()/p,0.5,
+					(p-iPadico.coordn(1))/p) + (alfa,)
+		else:
+			cor = (0,0,0,alfa)
+		cores.append(cor)
+		barra.update(1)
+	barra.close()
+	plt.scatter(x,y,color=cores,marker=".")
+	if (linhas != 0):
+		for i in range(0,linhas+1):
+			plt.annotate(i,(x[i]+0.02,y[i]+0.02),fontweight='bold',
+					fontsize=18)
+		plt.plot(x[0:(linhas+1)],y[0:(linhas + 1)],marker="o",linestyle=':',
+				color='black',alpha=1)
+	plt.axis('off')
+	plt.tight_layout()
+	plt.savefig(arquivo,dpi=300)
+	plt.close('all')
+```

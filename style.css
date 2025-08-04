@@ -1,0 +1,9 @@
+.hair-color {
+    color: blanchedalmond;
+    background-color: black;
+}
+
+.round-image {
+    border-image: round;
+    border-radius: 50%;
+}

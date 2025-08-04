@@ -1,0 +1,28 @@
+---
+title: "Henrique Souza"
+format: html
+---
+
+# Maths (and stuff)
+
+<!--- Content goes here --->
+
+::: {.columns}
+
+::: {.column width="40%"}
+
+![That's a version of me right there.](images/myself.jpg){.round-image}
+
+:::
+
+::: {.column width="50%" style="margin-left: 15px" }
+
+## Hiya!
+
+**Who am I?**
+
+I'm a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is [Andrei Jaikin-Zapirain](https://andreijaikin.wordpress.com/). Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I'm also interested in low dimensional topology and number theory. My hair is currently [this color]{.hair-color}. You can find my email at the footer of the page.
+
+:::
+
+:::

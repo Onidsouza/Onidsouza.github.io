@@ -1,0 +1,82 @@
+---
+title: "Talks & Conferences"
+format: html
+---
+
+# List of talks
+
+- **Groups at infinity and $\mathcal{Z}$-structures**. May 2025, University of Cambridge, Junior Geometry Seminar. [Seminar archive](https://talks.cam.ac.uk/talk/index/229486)
+
+- **Cohomology of subgroups of $\mathrm{SL}_2$**. May 2025, University of Oxford, Mathematical Institute. [Seminar archive](https://www.maths.ox.ac.uk/node/70644)
+
+- **Curves and the Alexander Method**. March 2025, ICMAT, Primitive School on the Mapping Class Group. [School poster](https://www.icmat.es/eventos_web/schools/schools_20250225041503.pdf). [Talk notes](/resources/escuela%20mcg_annotated.pdf).
+
+- **Cohomology of subgroups of $\mathrm{SL}_2$**. October 2024, University of Cambridge. [Seminar archive](http://talks.cam.ac.uk/show/archive/61178)
+
+- **Cohomology of subgroups of $\mathrm{SL}_2$**. August 2024, Universidade Federal de Minas Gerais.
+
+- **Sectional Curvature, Compact Cores and Local Quasiconvexity**. May 2024, Study group at the ICMAT. [Talk notes](https://drive.google.com/file/d/1R5jV8_9eg-PVLkL4anIcw_oy2lA97fLY/view)
+
+- **Rational representations and Lück approximation**. December 2023, Universidad Autónoma de Madrid. [Seminar homepage](https://sites.google.com/view/groupsinmadridseminar/)
+
+- **Rational representations and Lück approximation**. September 2023, Universidade de Brasília. 
+
+- **Completed group algebras of free-by-$\mathbb{Z}_p$ pro-$p$ groups**. March 2023, Workshop on Combinatorial Group Theory of Profinite Groups and Applications. [Conference page](https://mat.unb.br/profinitegroupspz60)
+
+- **The Atiyah conjecture and localization**. November 2022, Universidad del País Vasco/Euskal Herriko Unibertsitatea. [Seminar homepage](https://sites.google.com/site/bilbaoalgebraseminar/)
+
+- **The Atiyah conjecture**. October 2022, Universidad Autónoma de Madrid. [Seminar homepage](https://dominik.francoeur.xyz/seminar.html)
+
+- **Serre's theorem (short lectures)**. March 2022, Study group at the Universidad Autónoma de Madrid. [Lecture notes](https://drive.google.com/file/d/1vwnUofomKD1p_5fDPsKp9-BeEd9phR7U/view?usp=sharing)
+
+- **Epic $R$-rings and Sylvester rank functions (study seminar)**. December 2021, Ian Agol Laboratory: Study Seminar on Sylvester rank functions and $\ell^2$-Betti numbers. [Seminar homepage](https://www.icmat.es/es/actividades/cursos/cursos-landing/?ID=1468). [Talk notes](https://drive.google.com/file/d/1eZ2w2pjUT5r_pScSVhLI9QdoNKXpfOsd/view?usp=sharing)
+
+- **Dëmushkin groups and $L^2$-invariants (short talk)**. January 2021, International young seminar on bounded cohomology and simplicial volume. [Seminar homepage](https://homepages.uni-regensburg.de/~mom33723/IYSBC_SV.html). [Talk slides](https://homepages.uni-regensburg.de/~mom33723/slides_Souza.pdf)
+
+- **Demushkin groups (algebra seminar)**. October 2020, Universidade de Brasília. [Video recording](https://www.youtube.com/watch?v=LHuYFSDvTSY). [Talk slides](https://drive.google.com/file/d/1HdJUTf6ubNfa9WFKGRYtslxd0G_iq98u/view?usp=sharing)
+
+# Upcoming events
+
+- **Groups in Madrid 2025**. September 2025, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
+
+# Where you've found me
+
+- **Advanced School on Mapping Class Groups, Surface Subgroups, Bundles, and Group Extensions**. May 2025, ICMAT. [Event page](https://www.icmat.es/schools/2025/MSBG/index.php)
+
+- **Young Geometric Group Theory XIII**. April 2025, University of Copenhagen. [Event page](https://sites.google.com/view/yggt2025)
+
+- **Groups, Topology and Applications in Gran Bilbao VI**. April 2025, Universidad del País Vasco/Euskal Herriko Unibersitatea. [Event page](https://sites.google.com/view/gta-gran-bilbao-vi)
+
+- **Groups in Madrid 2024**. October 2024, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/home)
+
+- **Topics in Group Theory**. September 2024, Università degli Studi di Padova. [Event page](https://events.math.unipd.it/tgt/)
+
+- **XXVII Brazilian Algebra Meeting**. July 2024, Universidade de São Paulo. [Event page](https://algebra2024.ime.usp.br/)
+
+- **Décimas Jornadas de Teoría de Números**. June 2024, La Corrala. [Event page](https://matematicas.uam.es/~jtn2024/)
+
+- **Young Geometric Group Theory XII**. April 2024, University of Bristol. [Event page](https://sites.google.com/view/yggt2024)
+
+- **Groups, Topology and Applications in Gran Bilbao V**. April 2024, Universidad del País Vasco/Euskal Herriko Unibersitatea. [Event page](https://sites.google.com/view/gta-gran-bilbao-v/menu)
+
+- **Groups in Madrid 2023**. October 2023, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/gim-2023)
+
+- **Group actions and low-dimensional topology**. July 2023, El Barco de Ávila. [Event page](https://www.icmat.es/RT/2023/GGTLDGT/week4.php)
+
+- **34º Colóquio Brasileiro de Matemática**. July 2023, IMPA. [Event page](https://impa.br/eventos-do-impa/2023-2/34o-coloquio-brasileiro-de-matematica-cbm/)
+
+- **Workshop on Orderings and Groups**. June 2023, ICMAT. [Event page](https://www.icmat.es/RT/2023/GGTLDGT/week2.php)
+
+- **Workshop on Profinite Rigidity**. June 2023, ICMAT. [Event page](https://www.icmat.es/RT/2023/GGTLDGT/week3.php)
+
+- **Workshop on Combinatorial Theory of Profinite Groups and Applications.** March 2023, Universidade de Brasília. [Event page](https://mat.unb.br/profinitegroupspz60/)
+
+- **Groups in Madrid 2022**. October 2022, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/gim-2022?authuser=0)
+
+- **Norddeutsches Gruppentheorie-Kolloquium 2022**. October 2022, Heinrich-Heine-Universität. [Event page](https://www.math.uni-duesseldorf.de/~internet/NDGK2022/)
+
+- **Summer School: Graphs, Groups and Stochastic Processes**. June 2022, Erdős Center. [Event page](https://erdoscenter.renyi.hu/events/summer-school-graphs-groups-stochastic-processes)
+
+- **Groups, Topology and Applications in Gran Bilbao III**. March 2022, Universidad del País Vasco/Euskal Herriko Unibersitatea. [Event page](https://sites.google.com/view/gta-gran-bilbao-iii)
+
+- **Groups in Madrid 2021**. November 2021, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/gim-2021)
