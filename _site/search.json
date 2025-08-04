@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Henrique Souza",
-    "section": "",
-    "text": "That’s a version of me right there.\n\n\n\n\n\nWho am I?\nI’m a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is Andrei Jaikin-Zapirain. Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I’m also interested in low dimensional topology and number theory. My hair is currently this color. You can find my email at the footer of the page."
-  },
-  {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "What can I get you?",
@@ -21,6 +14,20 @@
     "text": "List of talks\n\nGroups at infinity and \\(\\mathcal{Z}\\)-structures. May 2025, University of Cambridge, Junior Geometry Seminar. Seminar archive\nCohomology of subgroups of \\(\\mathrm{SL}_2\\). May 2025, University of Oxford, Mathematical Institute. Seminar archive\nCurves and the Alexander Method. March 2025, ICMAT, Primitive School on the Mapping Class Group. School poster. Talk notes.\nCohomology of subgroups of \\(\\mathrm{SL}_2\\). October 2024, University of Cambridge. Seminar archive\nCohomology of subgroups of \\(\\mathrm{SL}_2\\). August 2024, Universidade Federal de Minas Gerais.\nSectional Curvature, Compact Cores and Local Quasiconvexity. May 2024, Study group at the ICMAT. Talk notes\nRational representations and Lück approximation. December 2023, Universidad Autónoma de Madrid. Seminar homepage\nRational representations and Lück approximation. September 2023, Universidade de Brasília.\nCompleted group algebras of free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) groups. March 2023, Workshop on Combinatorial Group Theory of Profinite Groups and Applications. Conference page\nThe Atiyah conjecture and localization. November 2022, Universidad del País Vasco/Euskal Herriko Unibertsitatea. Seminar homepage\nThe Atiyah conjecture. October 2022, Universidad Autónoma de Madrid. Seminar homepage\nSerre’s theorem (short lectures). March 2022, Study group at the Universidad Autónoma de Madrid. Lecture notes\nEpic \\(R\\)-rings and Sylvester rank functions (study seminar). December 2021, Ian Agol Laboratory: Study Seminar on Sylvester rank functions and \\(\\ell^2\\)-Betti numbers. Seminar homepage. Talk notes\nDëmushkin groups and \\(L^2\\)-invariants (short talk). January 2021, International young seminar on bounded cohomology and simplicial volume. Seminar homepage. Talk slides\nDemushkin groups (algebra seminar). October 2020, Universidade de Brasília. Video recording. Talk slides\n\n\n\nUpcoming events\n\nGroups in Madrid 2025. September 2025, ICMAT. Event page\n\n\n\nWhere you’ve found me\n\nAdvanced School on Mapping Class Groups, Surface Subgroups, Bundles, and Group Extensions. May 2025, ICMAT. Event page\nYoung Geometric Group Theory XIII. April 2025, University of Copenhagen. Event page\nGroups, Topology and Applications in Gran Bilbao VI. April 2025, Universidad del País Vasco/Euskal Herriko Unibersitatea. Event page\nGroups in Madrid 2024. October 2024, ICMAT. Event page\nTopics in Group Theory. September 2024, Università degli Studi di Padova. Event page\nXXVII Brazilian Algebra Meeting. July 2024, Universidade de São Paulo. Event page\nDécimas Jornadas de Teoría de Números. June 2024, La Corrala. Event page\nYoung Geometric Group Theory XII. April 2024, University of Bristol. Event page\nGroups, Topology and Applications in Gran Bilbao V. April 2024, Universidad del País Vasco/Euskal Herriko Unibersitatea. Event page\nGroups in Madrid 2023. October 2023, ICMAT. Event page\nGroup actions and low-dimensional topology. July 2023, El Barco de Ávila. Event page\n34º Colóquio Brasileiro de Matemática. July 2023, IMPA. Event page\nWorkshop on Orderings and Groups. June 2023, ICMAT. Event page\nWorkshop on Profinite Rigidity. June 2023, ICMAT. Event page\nWorkshop on Combinatorial Theory of Profinite Groups and Applications. March 2023, Universidade de Brasília. Event page\nGroups in Madrid 2022. October 2022, ICMAT. Event page\nNorddeutsches Gruppentheorie-Kolloquium 2022. October 2022, Heinrich-Heine-Universität. Event page\nSummer School: Graphs, Groups and Stochastic Processes. June 2022, Erdős Center. Event page\nGroups, Topology and Applications in Gran Bilbao III. March 2022, Universidad del País Vasco/Euskal Herriko Unibersitatea. Event page\nGroups in Madrid 2021. November 2021, ICMAT. Event page"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Henrique Souza",
+    "section": "",
+    "text": "That’s a version of me right there.\n\n\n\n\n\nWho am I?\nI’m a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is Andrei Jaikin-Zapirain. Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I’m also interested in low dimensional topology and number theory. My hair is currently this color. You can find my email at the footer of the page."
+  },
+  {
+    "objectID": "index.html#hiya",
+    "href": "index.html#hiya",
+    "title": "Henrique Souza",
+    "section": "",
+    "text": "Who am I?\nI’m a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is Andrei Jaikin-Zapirain. Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I’m also interested in low dimensional topology and number theory. My hair is currently this color. You can find my email at the footer of the page."
+  },
+  {
     "objectID": "miscellanea.html",
     "href": "miscellanea.html",
     "title": "Miscellanea",
@@ -33,12 +40,5 @@
     "title": "Teaching",
     "section": "",
     "text": "En la Universidad Autónoma de Madrid\n\nMatemática Discreta, 2025-2026, Segundo cuatrimestre, grupo 711.\nMatemática Discreta, 2025-2026, Primero cuatrimestre, grupo 721.\nÁlgebra 2, 2024-2025, Segundo cuatrimestre, grupo 5112.\nÁlgebra 1, 2024-2025, Primero cuatrimestre, grupo 5112.\n\nApuntes sobre espacios vectoriales y cuerpos.\n\nEstructuras Algebraicas, 2024-2025, Primero cuatrimestre, grupo 1301.\nGeometría de Curvas y Superficies, 2023-2024, Segundo cuatrimestre, grupo 230.\n\nDiapositivas de la hoja 1, hoja 2, hoja 3, hoja 4 (errata) y hoja 5.\n\nÁlgebra 1, 2023-2024, Primero cuatrimestre, grupos 511 y 516.\nCálculo 2, 2022-2023, Segundo cuatrimestre, grupos 211 y 212.\nÁlgebra 1, 2022-2023, Primero cuatrimestre, grupos 5112 y 5162.\nCálculo 2, 2021-2022, Segundo cuatrimestre, grupo 212.\n\nResolución de la hoja de ejercicios en este enlace."
-  },
-  {
-    "objectID": "index.html#hiya",
-    "href": "index.html#hiya",
-    "title": "Henrique Souza",
-    "section": "",
-    "text": "Who am I?\nI’m a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is Andrei Jaikin-Zapirain. Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I’m also interested in low dimensional topology and number theory. My hair is currently this color. You can find my email at the footer of the page."
   }
 ]

@@ -1,6 +1,0 @@
----
-title: "Publications and Pre-prints"
-format: html
----
-
-# List of publications

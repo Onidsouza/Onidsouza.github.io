@@ -1,6 +1,0 @@
----
-title: "Talks (and where to find me)"
-format: html
----
-
-# List of talks and events
