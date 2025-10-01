@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,14 +32,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-134d51a407c4ed36f8e2b9e0289e311f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +83,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -108,6 +109,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Henrique Souza</span>
     </a>
@@ -185,9 +188,10 @@ window.Quarto = {
 <section id="list-of-talks" class="level1">
 <h1>List of talks</h1>
 <ul>
+<li><p><strong>Profinite rigidity beyond finite generation</strong>. August 2025, Universidade de Brasília.</p></li>
 <li><p><strong>Groups at infinity and <span class="math inline">\(\mathcal{Z}\)</span>-structures</strong>. May 2025, University of Cambridge, Junior Geometry Seminar. <a href="https://talks.cam.ac.uk/talk/index/229486">Seminar archive</a></p></li>
 <li><p><strong>Cohomology of subgroups of <span class="math inline">\(\mathrm{SL}_2\)</span></strong>. May 2025, University of Oxford, Mathematical Institute. <a href="https://www.maths.ox.ac.uk/node/70644">Seminar archive</a></p></li>
-<li><p><strong>Curves and the Alexander Method</strong>. March 2025, ICMAT, Primitive School on the Mapping Class Group. <a href="https://www.icmat.es/eventos_web/schools/schools_20250225041503.pdf">School poster</a>. <a href="./resources/escuela mcg_annotated.pdf">Talk notes</a>.</p></li>
+<li><p><strong>Curves and the Alexander Method</strong>. March 2025, ICMAT, Primitive School on the Mapping Class Group. <a href="https://www.icmat.es/eventos_web/schools/schools_20250225041503.pdf">School poster</a>. <a href=".\resources/escuela mcg_annotated.pdf">Talk notes</a>.</p></li>
 <li><p><strong>Cohomology of subgroups of <span class="math inline">\(\mathrm{SL}_2\)</span></strong>. October 2024, University of Cambridge. <a href="http://talks.cam.ac.uk/show/archive/61178">Seminar archive</a></p></li>
 <li><p><strong>Cohomology of subgroups of <span class="math inline">\(\mathrm{SL}_2\)</span></strong>. August 2024, Universidade Federal de Minas Gerais.</p></li>
 <li><p><strong>Sectional Curvature, Compact Cores and Local Quasiconvexity</strong>. May 2024, Study group at the ICMAT. <a href="https://drive.google.com/file/d/1R5jV8_9eg-PVLkL4anIcw_oy2lA97fLY/view">Talk notes</a></p></li>
@@ -204,13 +208,12 @@ window.Quarto = {
 </section>
 <section id="upcoming-events" class="level1">
 <h1>Upcoming events</h1>
-<ul>
-<li><strong>Groups in Madrid 2025</strong>. September 2025, ICMAT. <a href="https://sites.google.com/view/groupsinmadrid/">Event page</a></li>
-</ul>
+<p>None that I know yet!</p>
 </section>
 <section id="where-youve-found-me" class="level1">
 <h1>Where you’ve found me</h1>
 <ul>
+<li><p><strong>Groups in Madrid 2025</strong>. September 2025, ICMAT. <a href="https://sites.google.com/view/groupsinmadrid/">Event page</a></p></li>
 <li><p><strong>Advanced School on Mapping Class Groups, Surface Subgroups, Bundles, and Group Extensions</strong>. May 2025, ICMAT. <a href="https://www.icmat.es/schools/2025/MSBG/index.php">Event page</a></p></li>
 <li><p><strong>Young Geometric Group Theory XIII</strong>. April 2025, University of Copenhagen. <a href="https://sites.google.com/view/yggt2025">Event page</a></p></li>
 <li><p><strong>Groups, Topology and Applications in Gran Bilbao VI</strong>. April 2025, Universidad del País Vasco/Euskal Herriko Unibersitatea. <a href="https://sites.google.com/view/gta-gran-bilbao-vi">Event page</a></p></li>
@@ -288,13 +291,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -309,7 +313,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/Onidsouza\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
