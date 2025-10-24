@@ -5,6 +5,8 @@ format: html
 
 # List of talks
 
+- **Profinite rigidity beyond finite generation**. August 2025, Universidade de Brasília.
+
 - **Groups at infinity and $\mathcal{Z}$-structures**. May 2025, University of Cambridge, Junior Geometry Seminar. [Seminar archive](https://talks.cam.ac.uk/talk/index/229486)
 
 - **Cohomology of subgroups of $\mathrm{SL}_2$**. May 2025, University of Oxford, Mathematical Institute. [Seminar archive](https://www.maths.ox.ac.uk/node/70644)
@@ -37,9 +39,11 @@ format: html
 
 # Upcoming events
 
-- **Groups in Madrid 2025**. September 2025, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
+None that I know yet!
 
 # Where you've found me
+
+- **Groups in Madrid 2025**. September 2025, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
 
 - **Advanced School on Mapping Class Groups, Surface Subgroups, Bundles, and Group Extensions**. May 2025, ICMAT. [Event page](https://www.icmat.es/schools/2025/MSBG/index.php)
 

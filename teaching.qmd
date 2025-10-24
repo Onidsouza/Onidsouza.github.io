@@ -7,6 +7,7 @@ format: html
 
 - Matemática Discreta, 2025-2026, Segundo cuatrimestre, grupo 711.
 - Matemática Discreta, 2025-2026, Primero cuatrimestre, grupo 721.
+    - [Apuntes](resources/Resonancia_en_recurrencias.pdf) sobre recurrencias.
 - Álgebra 2, 2024-2025, Segundo cuatrimestre, grupo 5112.
 - Álgebra 1, 2024-2025, Primero cuatrimestre, grupo 5112.
     - [Apuntes](resources/cuerpos.pdf) sobre espacios vectoriales y cuerpos.

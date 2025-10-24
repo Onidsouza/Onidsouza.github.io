@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-134d51a407c4ed36f8e2b9e0289e311f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,7 +118,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -143,6 +144,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Henrique Souza</span>
     </a>
@@ -219,19 +222,19 @@ window.Quarto = {
 
 <section id="primitive-school-on-the-mapping-class-group" class="level1">
 <h1>Primitive School on the Mapping Class Group</h1>
-<p>Another activity of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT), we’ve organized a minicourse on the mapping class group to prepare ourselves to the (then) upcoming advanced school on the mapping class group at ICMAT. We mainly followed Farb &amp; Margalit’s primer. You can see the poster for this reading group <a href="./resources/primitiveschoolposter.pdf">here</a></p>
+<p>Another activity of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT), we’ve organized a minicourse on the mapping class group to prepare ourselves to the (then) upcoming advanced school on the mapping class group at ICMAT. We mainly followed Farb &amp; Margalit’s primer. You can see the poster for this reading group <a href=".\resources/primitiveschoolposter.pdf">here</a></p>
 </section>
 <section id="de-picasso-a-gromov" class="level1">
 <h1>De Picasso a Gromov</h1>
 <p><em>Introducción al cubulismo</em></p>
-<p>Us members of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT) are organizing in 2024 a reading group about <span class="math inline">\(\mathrm{CAT}(0)\)</span> cube complexes, following mainly Henry Wilton’s notes. You can see the poster for this reading group <a href="./resources/picasogromovposter.pdf">here</a>.</p>
+<p>Us members of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT) are organizing in 2024 a reading group about <span class="math inline">\(\mathrm{CAT}(0)\)</span> cube complexes, following mainly Henry Wilton’s notes. You can see the poster for this reading group <a href=".\resources/picasogromovposter.pdf">here</a>.</p>
 </section>
 <section id="chistyakov-embeddings" class="level1">
 <h1>Chistyakov Embeddings</h1>
 <p>I like to code some stuff from time to time. Stuff I find cool.</p>
 <p>My previous page had a long discussion about Chistyakov embeddings, but now I’m too lazy to explain them again. Go check out his <a href="https://arxiv.org/abs/math/0202089">awesome paper</a> by yourself and see the awesome pictures. Some really cool embeddings of <span class="math inline">\(\mathbb{Q}_p\)</span> in <span class="math inline">\(\mathbb{C}\)</span>, really crazy stuff.</p>
 <p>I made some python code to generate those images, that was the gist of it. You can find it below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -*- coding: utf-8 -*-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -*- coding: utf-8 -*-</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">"""Vizualização dos Mergulhos de Chistyakov</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">Henrique Souza</span></span>
@@ -372,7 +375,7 @@ window.Quarto = {
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    plt.axis(<span class="st">'off'</span>)</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    plt.savefig(arquivo,dpi<span class="op">=</span><span class="dv">300</span>)</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    plt.close(<span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    plt.close(<span class="st">'all'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -429,13 +432,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -450,7 +454,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/Onidsouza\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
