@@ -5,6 +5,8 @@ format: html
 
 # List of talks
 
+- **Profinite detection of free factors**. March 2026, Università degli Studi di Padova, Mathematics in Conversation. [Seminar archive](https://sites.google.com/view/mathematicsinconversation/past-seminars/20252026-seminars). [Talk notes](/resources/profinite_detection_free_factors.pdf).
+
 - **Profinite rigidity beyond finite generation**. August 2025, Universidade de Brasília.
 
 - **Groups at infinity and $\mathcal{Z}$-structures**. May 2025, University of Cambridge, Junior Geometry Seminar. [Seminar archive](https://talks.cam.ac.uk/talk/index/229486)
@@ -39,7 +41,7 @@ format: html
 
 # Upcoming events
 
-None that I know yet!
+- **Groups, Topology and Applications in Gran Bilbao VII**. April 2026, Universidad del País Vasco/Euskal Herriko Unibersitatea. [Event page](https://sites.google.com/view/gtagranbilbaovii/menu)
 
 # Where you've found me
 
