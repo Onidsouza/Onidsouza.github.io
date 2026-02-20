@@ -17,6 +17,8 @@ format:
     transition: none
     center: false
     chalkboard: true
+    pdf-separate-fragments: true
+    html-math-method: katex
 ---
 
 # What is this about?
