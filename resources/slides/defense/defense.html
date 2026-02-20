@@ -34,6 +34,8 @@
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -147,117 +149,209 @@ Henrique Souza
 <h1>What is this about?</h1>
 <p>How to measure the size of matrices over completed group algebras?</p>
 <ul>
-<li>Canonical rank functions</li>
-<li>Approximations of rank functions</li>
+<li class="fragment">Canonical rank functions</li>
+<li class="fragment">Approximations of rank functions</li>
 </ul>
-<aside class="notes">
-<p>This is how I put notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="what-i-will-prove-today" class="slide level2">
 <h2>What I will prove today</h2>
-<ul>
-<li><strong>Commensurability invariance</strong> of inner rank being a rank function (for <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span>)</li>
-<li>Examples of <strong>profinite Sylvester domains</strong>: <span class="math inline">\(\mathbb{F}_p[\![F \rtimes \mathbb{Z}_p]\!]\)</span></li>
-<li><strong>Approximation</strong>: rank functions coming from rational reps. of <span class="math inline">\(\mathsf{SL}_2(\mathbb{C})\)</span> converge to the von Neumann rank.</li>
-</ul>
+<ol type="1">
+<li class="fragment"><strong>Commensurability invariance</strong> of inner rank being a rank function (for <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span>)</li>
+<li class="fragment">Examples of <strong>profinite Sylvester domains</strong>: <span class="math inline">\(\mathbb{F}_p[\![F \rtimes \mathbb{Z}_p]\!]\)</span></li>
+<li class="fragment"><strong>Approximation</strong>: rank functions coming from rational reps. of <span class="math inline">\(\mathsf{SL}_2(\mathbb{C})\)</span> converge to the von Neumann rank.</li>
+</ol>
 </section>
 <section id="roadmap" class="slide level2">
 <h2>Roadmap</h2>
-<ul>
-<li>Rank functions &amp; inner rank</li>
-<li>Profinite rings &amp; Sylvester domains</li>
-<li>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> pro-<span class="math inline">\(p\)</span> groups</li>
-<li>Semisimple Lie groups</li>
-</ul>
+<ol type="1">
+<li class="fragment">Rank functions &amp; inner rank</li>
+<li class="fragment">Profinite rings &amp; Sylvester domains</li>
+<li class="fragment">Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> pro-<span class="math inline">\(p\)</span> groups</li>
+<li class="fragment">Semisimple Lie groups</li>
+</ol>
 </section></section>
 <section>
 <section id="rank-functions" class="title-slide slide level1 center">
 <h1>Rank functions</h1>
+<div class="fragment" title="Over a field or division ring">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Over a field or division ring</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\mathrm{rk}(A) = \dim(\operatorname{im}(A))\)</span></p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li>Over a field: <span class="math inline">\(\mathrm{rk}(A) = \dim(\operatorname{im}(A)) = \#\text{pivots}\)</span></li>
-<li>Row/column operations don’t change the rank.</li>
+<li class="fragment">Row/column operations don’t change the rank.</li>
+<li class="fragment">Matrices have unique row/column echelon forms.</li>
 </ul>
 </section>
-<section id="inner-rank-definition" class="slide level2">
-<h2>Inner rank: definition</h2>
+<section id="inner-rank" class="slide level2">
+<h2>Inner rank</h2>
+<div class="fragment" title="Definition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\mathrm{irk}(A)\)</span> = smallest <span class="math inline">\(k\)</span> for which <span class="math display">\[A_{n\times m} = B_{n\times k} C_{k\times m}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" title="Properties">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Properties</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><span class="math inline">\(\mathrm{irk}(A)\)</span> = smallest <span class="math inline">\(k\)</span> for which <span class="math display">\[A_{n\times m} = B_{n\times k} C_{k\times m}\]</span></li>
-<li>Equals rank over fields</li>
-<li>Defined over any ring</li>
+<li class="fragment">Equals rank over fields</li>
+<li class="fragment">Defined over any ring</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="inner-rank-annoyances" class="slide level2">
 <h2>Inner rank: annoyances</h2>
-<ul>
-<li>Over <span class="math inline">\(\mathbb{Q}[x,y,z]\)</span>, matrices of maximal rank can have kernel: <span class="math display">\[\begin{pmatrix}0 &amp; z &amp; -y\\ -z &amp; 0 &amp; x\\ y &amp; -x &amp; 0\end{pmatrix}\begin{pmatrix} x \\ y \\ z\end{pmatrix} = 0\]</span></li>
-<li>If <span class="math inline">\(R \leq S\)</span> and <span class="math inline">\(A \in \operatorname{Mat}(R)\)</span>, <span class="math inline">\(\mathrm{irk}_R(A)\)</span> can be different from <span class="math inline">\(\mathrm{irk}_S(A)\)</span></li>
-</ul>
+<div class="peek fragment" title="Depends on the ring">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Depends on the ring</strong></p>
+</div>
+<div class="callout-content">
+<p>Over <span class="math inline">\(\mathbb{Q}[x^2,x^3]\)</span> the matrix <span class="math display">\[\begin{pmatrix} x^2 &amp; x^3 \\ x^3 &amp; x^4\end{pmatrix} = \begin{pmatrix}x^2 \\ x^3\end{pmatrix}\begin{pmatrix}1 &amp; x\end{pmatrix}\]</span> has inner rank <span class="math inline">\(2\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment" title="Maximal rank doesn't imply invertible">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Maximal rank doesn’t imply invertible</strong></p>
+</div>
+<div class="callout-content">
+<p>Over <span class="math inline">\(\mathbb{Q}[x,y,z]\)</span>: <span class="math display">\[\begin{pmatrix}0 &amp; z &amp; -y\\ -z &amp; 0 &amp; x\\ y &amp; -x &amp; 0\end{pmatrix}\begin{pmatrix} x \\ y \\ z\end{pmatrix} = 0\]</span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="sylvester-rank-functions-definition" class="slide level2">
-<h2>Sylvester rank functions: definition</h2>
+<section id="sylvester-rank-functions" class="slide level2">
+<h2>Sylvester rank functions</h2>
+<div class="fragment" title="Definition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\mathrm{rk}\colon \operatorname{Mat}(R) \to \mathbb{R}_{\geq 0}\)</span> is a Sylvester rank function if:</p>
 <ul>
-<li><span class="math inline">\(R\)</span> associative ring with <span class="math inline">\(1\)</span></li>
-<li><span class="math inline">\(\mathrm{rk}\colon \operatorname{Mat}(R) \to \mathbb{R}_{\geq 0}\)</span> is a Sylvester rank function if:
-<ul>
-<li><span class="math inline">\(\mathrm{rk}(0) = 0\)</span>, <span class="math inline">\(\mathrm{rk}(1) = 1\)</span></li>
-<li><span class="math inline">\(\mathrm{rk}(AB) \leq \min\{\mathrm{rk}(A)\,, \mathrm{rk}(B)\}\)</span></li>
-<li><span class="math inline">\(\mathrm{rk}\begin{pmatrix}A &amp; 0\\0 &amp; B\end{pmatrix} = \mathrm{rk}(A) + \mathrm{rk}(B)\)</span></li>
-<li><span class="math inline">\(\mathrm{rk}\begin{pmatrix} A &amp; C\\ 0 &amp; B\end{pmatrix} \geq \mathrm{rk}(A) + \mathrm{rk}(B)\)</span></li>
-</ul></li>
+<li class="fragment"><span class="math inline">\(\mathrm{rk}(0) = 0\)</span>, <span class="math inline">\(\mathrm{rk}(1) = 1\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathrm{rk}(AB) \leq \min\{\mathrm{rk}(A)\,, \mathrm{rk}(B)\}\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathrm{rk}\begin{pmatrix}A &amp; 0\\0 &amp; B\end{pmatrix} = \mathrm{rk}(A) + \mathrm{rk}(B)\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathrm{rk}\begin{pmatrix} A &amp; C\\ 0 &amp; B\end{pmatrix} \geq \mathrm{rk}(A) + \mathrm{rk}(B)\)</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="sylvester-rank-functions-examples" class="slide level2">
 <h2>Sylvester rank functions: examples</h2>
 <ul>
-<li><span class="math inline">\(\mathbb{P}(R)\)</span> = Sylvester rank functions on <span class="math inline">\(R\)</span></li>
-<li><span class="math inline">\(\mathbb{P}(R)\)</span> can be empty</li>
-<li>Over a field/division ring <span class="math inline">\(\mathbb{F}\)</span>, we have <span class="math inline">\(\mathbb{P}(\mathbb{F}) = \{\mathrm{rk}_{\mathbb{F}}\}\)</span></li>
-<li>For <span class="math inline">\(\varphi\colon R \to S\)</span> and <span class="math inline">\(\mathrm{rk} \in \mathbb{P}(S)\)</span>, <span class="math inline">\(\varphi^\#\mathrm{rk} \in \mathbb{P}(R)\)</span>: <span class="math display">\[\varphi^\#\mathrm{rk}(A) = \mathrm{rk}(\varphi(A))\,.\]</span></li>
-<li>Over <span class="math inline">\(\mathbb{Z}\)</span>: <span class="math inline">\(\mathrm{rk}_{\mathbb{Q}}\)</span>, <span class="math inline">\(\mathrm{rk}_{\mathbb{F}_p}\)</span>, convex combinations, …</li>
-<li><span class="math inline">\(\mathrm{irk}_R \not\in \mathbb{P}(R)\)</span> in general!</li>
+<li class="fragment"><span class="math inline">\(\mathbb{P}(R)\)</span> = Sylvester rank functions on <span class="math inline">\(R\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathbb{P}(R)\)</span> can be empty</li>
+<li class="fragment">Over a field/division ring <span class="math inline">\(\mathbb{F}\)</span>, we have <span class="math inline">\(\mathbb{P}(\mathbb{F}) = \{\mathrm{rk}_{\mathbb{F}}\}\)</span></li>
+<li class="fragment">For <span class="math inline">\(\varphi\colon R \to S\)</span> and <span class="math inline">\(\mathrm{rk} \in \mathbb{P}(S)\)</span>, <span class="math inline">\(\varphi^\#\mathrm{rk} \in \mathbb{P}(R)\)</span>: <span class="math display">\[\varphi^\#\mathrm{rk}(A) = \mathrm{rk}(\varphi(A))\,.\]</span></li>
+<li class="fragment">Over <span class="math inline">\(\mathbb{Z}\)</span>: <span class="math inline">\(\mathrm{rk}_{\mathbb{Q}}\)</span>, <span class="math inline">\(\mathrm{rk}_{\mathbb{F}_p}\)</span>, convex combinations, …</li>
+<li class="fragment"><span class="math inline">\(\mathrm{irk}_R \not\in \mathbb{P}(R)\)</span> in general!</li>
 </ul>
 </section>
 <section id="sylvester-rank-functions-operator-rings" class="slide level2">
 <h2>Sylvester rank functions: operator rings</h2>
 <ul>
-<li>Over a field/division ring <span class="math inline">\(\mathbb{F}\)</span>: <span class="math display">\[\mathbb{P}(\operatorname{Mat}_n(\mathbb{F})) = \left\{\frac{\mathrm{rk}_{\mathbb{F}}}{n}\right\}\,.\]</span></li>
-<li>Group representations <span class="math inline">\(\rightarrow\)</span> rank functions
-<ul>
-<li><span class="math inline">\(\varphi\colon G \to \mathsf{GL}_n(\mathbb{F})\)</span> induces <span class="math inline">\(\varphi\colon \mathbb{F}[G] \to \operatorname{Mat}_n(\mathbb{F})\)</span> <span class="math display">\[\mathrm{rk}_\varphi = \varphi^\#\frac{\mathrm{rk}_{\mathbb{F}}}{n}\]</span></li>
-</ul></li>
-<li>von Neumann dimension <span class="math inline">\(\mathrm{rk}_\Gamma \in \mathbb{P}(\mathbb{C}[\Gamma])\)</span> for <span class="math inline">\(\Gamma\)</span> a f.g. group for <span class="math inline">\(\Gamma \curvearrowright \ell^2(\Gamma)\)</span></li>
+<li class="fragment">Over a field/division ring <span class="math inline">\(\mathbb{F}\)</span>: <span class="math display">\[\mathbb{P}(\operatorname{Mat}_n(\mathbb{F})) = \left\{\frac{\mathrm{rk}_{\mathbb{F}}}{n}\right\}\,.\]</span></li>
+<li class="fragment">Group rep. <span class="math inline">\(\varphi\colon G \to \mathsf{GL}_n(\mathbb{F})\)</span> induces <span class="math inline">\(\varphi\colon \mathbb{F}[G] \to \operatorname{Mat}_n(\mathbb{F})\)</span> <span class="math display">\[\mathrm{rk}_\varphi = \varphi^\#\frac{\mathrm{rk}_{\mathbb{F}}}{n}\]</span></li>
+<li class="fragment">Von Neumann dimension <span class="math inline">\(\mathrm{rk}_\Gamma \in \mathbb{P}(\mathbb{C}[\Gamma])\)</span> for <span class="math inline">\(\Gamma\)</span> a f.g. group coming from the unitary rep. <span class="math inline">\(\Gamma \curvearrowright \ell^2(\Gamma)\)</span></li>
 </ul>
 </section>
 <section id="sylvester-rank-functions-dimension" class="slide level2">
 <h2>Sylvester rank functions: dimension</h2>
+<div class="fragment" title="Definition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>For <span class="math inline">\(A \in \operatorname{Mat}_{n\times m}(R)\)</span> and <span class="math inline">\(\mathrm{rk} \in \mathbb{P}(R)\)</span>, let <span class="math inline">\(M_A = R^n / AR^m\)</span>. Define <span class="math display">\[\dim M_A = n - \mathrm{rk}(A)\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li>For <span class="math inline">\(A \in \operatorname{Mat}_{n\times m}(R)\)</span> and <span class="math inline">\(\mathrm{rk} \in \mathbb{P}(R)\)</span>, let <span class="math inline">\(M_A = R^n / AR^m\)</span>. Define <span class="math display">\[\dim M_A = n - \mathrm{rk}(A)\]</span></li>
-<li>If <span class="math inline">\(M_A \simeq M_B\)</span>, <span class="math inline">\(\dim M_A = \dim M_B\)</span></li>
-<li><span class="math inline">\(\mathbb{P}(R)\)</span> in bijection with dimension functions on f.p. right <span class="math inline">\(R\)</span>-modules</li>
+<li class="fragment">Is an invariant of f.p. right <span class="math inline">\(R\)</span>-modules.</li>
+<li class="fragment"><span class="math inline">\(\mathbb{P}(R)\)</span> is in bijection with normalized dimension functions on f.p. right <span class="math inline">\(R\)</span>-modules that are subadditive on short exact sequences and additive on direct sums.</li>
 </ul>
 </section>
 <section id="sylvester-rank-functions-integrality" class="slide level2">
 <h2>Sylvester rank functions: integrality</h2>
-<p><strong>Theorem.</strong> <em>(Malcolmson, 1980)</em> If <span class="math inline">\(\mathrm{rk} \in \mathbb{P}(R)\)</span> is integer valued, <span class="math display">\[\mathrm{rk} = \varphi^\#\mathrm{rk}_{\mathcal{D}}\]</span> for some unique division ring <span class="math inline">\(\mathcal{D}\)</span> and some ring epimorphism <span class="math inline">\(\varphi\colon R \to \mathcal{D}\)</span>.</p>
+<div class="fragment" title="Theorem. *(Malcolmson, 1980)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(Malcolmson, 1980)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(\mathrm{rk} \in \mathbb{P}(R)\)</span> is integer valued, <span class="math display">\[\mathrm{rk} = \varphi^\#\mathrm{rk}_{\mathcal{D}}\]</span> for some unique division ring <span class="math inline">\(\mathcal{D}\)</span> and some ring epimorphism <span class="math inline">\(\varphi\colon R \to \mathcal{D}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="broad-questions" class="slide level2">
 <h2>Broad questions</h2>
-<ul>
-<li>When <span class="math inline">\(\mathrm{irk}_R \in \mathbb{P}(R)\)</span>?</li>
-<li>Canonical/universal/largest element of <span class="math inline">\(\mathbb{P}(R)\)</span>?</li>
-<li>Approximations inside <span class="math inline">\(\mathbb{P}(R)\)</span>: <span class="math display">\[\lim_{i \to \infty} \mathrm{rk}_i = \mathrm{rk}\]</span></li>
-</ul>
+<ol type="1">
+<li class="fragment">When <span class="math inline">\(\mathrm{irk}_R \in \mathbb{P}(R)\)</span>?</li>
+<li class="fragment">Canonical/universal/largest element of <span class="math inline">\(\mathbb{P}(R)\)</span>?</li>
+<li class="fragment">Approximations inside <span class="math inline">\(\mathbb{P}(R)\)</span>: <span class="math display">\[\lim_{i \to \infty} \mathrm{rk}_i = \mathrm{rk}\]</span></li>
+</ol>
 </section></section>
 <section>
 <section id="profinite-rings-sylvester-domains" class="title-slide slide level1 center">
@@ -266,66 +360,225 @@ Henrique Souza
 </section>
 <section id="sylvester-domains-i" class="slide level2">
 <h2>Sylvester domains I</h2>
+<div class="fragment" title="Definition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(R\)</span> is a <strong>Sylvester domain</strong> if <span class="math inline">\(\mathrm{irk}_R \in \mathbb{P}(R)\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" title="Properties">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Properties</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><span class="math inline">\(R\)</span> is a <strong>Sylvester domain</strong> if <span class="math inline">\(\mathrm{irk}_R \in \mathbb{P}(R)\)</span></li>
+<li class="fragment">Exists a division ring <span class="math inline">\(\mathcal{D}\)</span> and <span class="math inline">\(\varphi\colon R \to \mathcal{D}\)</span> such that <span class="math display">\[\mathrm{irk}_R = \varphi^\#\mathrm{rk}_{\mathcal{D}}\]</span></li>
+<li class="fragment">Sylvester domains are domains of weak global dimension at most <span class="math inline">\(2\)</span> <em>(Dicks-Sontag, 1978)</em></li>
 </ul>
-<p><strong>Consequence.</strong> If <span class="math inline">\(R\)</span> is a Sylvester domain, <span class="math inline">\(\exists \mathcal{D}\)</span> division ring and <span class="math inline">\(\varphi\colon R \to \mathcal{D}\)</span> such that <span class="math display">\[\mathrm{irk}_R = \varphi^\#\mathrm{rk}_{\mathcal{D}}\]</span></p>
-<ul>
-<li><span class="math inline">\(\mathrm{irk}_R\)</span> is the largest element of <span class="math inline">\(\mathbb{P}(R)\)</span></li>
-<li>Examples: <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span>, fields/division rings, PIDs, <span class="math inline">\(\mathbb{F}[x,y]\)</span>, <span class="math inline">\(\mathbb{F}\langle x,y\rangle\)</span></li>
-<li>Sylvester domains are domains of weak global dimension <span class="math inline">\(\leq 2\)</span>
-<ul>
-<li><span class="math inline">\(\mathbb{Q}[x,y,z]\)</span> is not a Sylvester domain</li>
-</ul></li>
-</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="sylvester-domains-ii" class="slide level2">
 <h2>Sylvester domains II</h2>
-<p><strong>Theorem.</strong> <em>(Dicks &amp; Sontag, 1978)</em> Let <span class="math inline">\(R\)</span> be a coherent commutative ring of weak global dimension <span class="math inline">\(\leq 2\)</span>. Then <span class="math inline">\(R\)</span> is a Sylvester domain iff projective <span class="math inline">\(R\)</span>-modules are free.</p>
-<p><strong>Theorem.</strong> <em>(Cohn, 1971)</em> If <span class="math inline">\(\mathbb{F}\)</span> is a field and <span class="math inline">\(F\)</span> is an (abstract) free group, <span class="math inline">\(\mathbb{F}[F]\)</span> is a Sylvester domain.</p>
-<p><strong>Theorem.</strong> <em>(Jaikin, 2021)</em> Let <span class="math inline">\(\varphi\colon R \to \mathcal{D}\)</span> be a map to a division ring. Then <span class="math inline">\(\varphi^\#\mathrm{rk}_{\mathcal{D}} = \mathrm{irk}_R\)</span> iff <span class="math inline">\(\mathrm{Tor}_1^R(\mathcal{D},\mathcal{D}) = 0\)</span> and for any f.g. <span class="math inline">\(R\)</span>-submodule <span class="math inline">\(M \leq \mathcal{D}\)</span> and short exact sequence <span class="math display">\[0 \to I \to R^n \to M \to 0\]</span> we have <span class="math inline">\(I = \varinjlim R^k\)</span> for <span class="math inline">\(k = n-\dim M\)</span>.</p>
+<div class="peek fragment" title="Examples">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Examples</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Fields and division rings.</li>
+<li class="fragment"><span class="math inline">\(\mathbb{Z}\)</span>, PIDs</li>
+<li class="fragment"><span class="math inline">\(\mathbb{F}[x,y]\)</span> <em>(Cohn, 1971)</em></li>
+<li class="fragment">Free algebras: <span class="math inline">\(\mathbb{F}\langle x,y\rangle\)</span> <em>(Cohn, 1971)</em></li>
+<li class="fragment"><span class="math inline">\(\mathbb{F}[F]\)</span> for <span class="math inline">\(F\)</span> a free group <em>(Cohn, 1971)</em></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment" title="Non-examples">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Non-examples</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Any ring with zero divisors, <span class="math inline">\(\mathbb{Z}/4\mathbb{Z}\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\mathbb{F}[x,y,z]\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sylvester-domains-iii" class="slide level2">
+<h2>Sylvester domains III</h2>
+<div class="fragment" title="Theorem. *(Jaikin, 2021)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(Jaikin, 2021)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(\varphi\colon R \to \mathcal{D}\)</span> be a map to a division ring. Then <span class="math inline">\(\varphi^\#\mathrm{rk}_{\mathcal{D}} = \mathrm{irk}_R\)</span> iff <span class="math inline">\(\mathrm{Tor}_1^R(\mathcal{D},\mathcal{D}) = 0\)</span> and for any f.g. <span class="math inline">\(R\)</span>-submodule <span class="math inline">\(M \leq \mathcal{D}\)</span> and short exact sequence <span class="math display">\[0 \to I \to R^n \to M \to 0\]</span> we have <span class="math inline">\(I = \varinjlim R^k\)</span> for <span class="math inline">\(k = n-\dim M\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="profinite-rings" class="slide level2">
 <h2>Profinite rings</h2>
+<div class="fragment" title="Definition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p>A <strong>profinite ring</strong> is a compact Hausdorff ring. Equivalently, a profinite ring is an inverse limit of finite discrete rings.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" title="Properties">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Properties</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><span class="math inline">\(R\)</span> is <strong>profinite</strong> if <span class="math inline">\(R = \varprojlim R_i\)</span> with <span class="math inline">\(R_i\)</span> finite rings</li>
-<li>Examples: <span class="math inline">\(\mathbb{Z}_p\)</span>, <span class="math inline">\(R[\![t]\!]\)</span>, <span class="math inline">\(\mathbb{F}_p[\![G]\!] = \varprojlim \mathbb{F}_p[G_i]\)</span> for <span class="math inline">\(G\)</span> a profinite group</li>
-<li>A topological ring <span class="math inline">\(R\)</span> is profinite iff it is compact and Hausdorff.</li>
-<li><span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a domain <span class="math inline">\(\implies\)</span> <span class="math inline">\(G\)</span> is a torsion-free pro-<span class="math inline">\(p\)</span> group</li>
+<li class="fragment">Examples: <span class="math inline">\(\mathbb{Z}_p\)</span>, <span class="math inline">\(R[\![t]\!]\)</span>, <span class="math inline">\(\mathbb{F}_p[\![G]\!] = \varprojlim \mathbb{F}_p[G_i]\)</span> for <span class="math inline">\(G\)</span> a profinite group</li>
+<li class="fragment">No zero divisors implies its a local pro-<span class="math inline">\(p\)</span> ring.</li>
 </ul>
-<p><strong>Theorem.</strong> <em>(S.-Jaikin, 2024)</em> Let <span class="math inline">\(G\)</span> be a f.g. pro-<span class="math inline">\(p\)</span> group. If <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain, then <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is coherent, <span class="math inline">\(G\)</span> is f.p. and <span class="math inline">\(\operatorname{cd}(G) \leq 2\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="profinite-sylvester-domains-examples" class="slide level2">
 <h2>Profinite Sylvester domains: examples</h2>
-<p><strong>Fact.</strong> Noetherian commutative local profinite rings of <span class="math inline">\(\operatorname{gl.dim} \leq 2\)</span> are Sylvester domains. (<span class="math inline">\(\mathbb{F}_p[\![\mathbb{Z}_p^2]\!]\)</span>)</p>
-<p><strong>Theorem</strong> <em>(Cohn, 1971)</em> Projective-free weakly-hereditary rings are Sylvester domains.</p>
-<p><strong>Corollary.</strong> If <span class="math inline">\(G\)</span> is a free pro-<span class="math inline">\(p\)</span> group, <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain.</p>
+<div class="fragment" title="Theorem. *(Cohn, 1971)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(Cohn, 1971)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Projective-free weakly-hereditary rings are Sylvester domains.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" title="Corollary.">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Corollary.</strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(G\)</span> is a free pro-<span class="math inline">\(p\)</span> group, <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="further-candidates" class="slide level2">
+<h2>Further candidates</h2>
+<div class="fragment" title="Theorem. *(S.-Jaikin, 2024)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(S.-Jaikin, 2024)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(G\)</span> be a f.g. profinite group. If <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain, then <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is coherent, <span class="math inline">\(G\)</span> is f.p. pro-<span class="math inline">\(p\)</span> and <span class="math inline">\(\operatorname{cd}(G) \leq 2\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li><span class="math inline">\(\mathbb{Z}_p[\![F]\!]\)</span> for <span class="math inline">\(F\)</span> free pro-<span class="math inline">\(p\)</span>?</li>
-<li><span class="math inline">\(R\)</span> coherent but non-Noetherian profinite commutative local rings with <span class="math inline">\(\operatorname{gl.dim}(R) \leq 2\)</span>?</li>
-<li><span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> for <span class="math inline">\(G\)</span> a f.p. pro-<span class="math inline">\(p\)</span> group with <span class="math inline">\(\operatorname{cd}(G) \leq 2\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\mathbb{Z}_p[\![F]\!]\)</span> for <span class="math inline">\(F\)</span> free pro-<span class="math inline">\(p\)</span>?</li>
+<li class="fragment"><span class="math inline">\(R\)</span> coherent but non-Noetherian profinite commutative local rings with <span class="math inline">\(\operatorname{gl.dim}(R) \leq 2\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> for <span class="math inline">\(G\)</span> a f.p. pro-<span class="math inline">\(p\)</span> group with <span class="math inline">\(\operatorname{cd}(G) \leq 2\)</span>?</li>
 </ul>
 </section>
 <section id="commensurability" class="slide level2">
 <h2>Commensurability</h2>
-<p><strong>Theorem.</strong> <em>(S.-Jaikin, 2024)</em> Let <span class="math inline">\(G\)</span> be a torsion-free f.g. pro-<span class="math inline">\(p\)</span> group. Then <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain iff <span class="math inline">\(\mathbb{F}_p[\![U]\!]\)</span> is a Sylvester domain for some (any) open subgroup <span class="math inline">\(U \leq G\)</span>.</p>
+<div class="fragment" title="Theorem. *(S.-Jaikin, 2024)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(S.-Jaikin, 2024)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(G\)</span> be a torsion-free f.g. pro-<span class="math inline">\(p\)</span> group. Then <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain iff <span class="math inline">\(\mathbb{F}_p[\![U]\!]\)</span> is a Sylvester domain for some (any) open subgroup <span class="math inline">\(U \leq G\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li>False for abstract groups: <span class="math inline">\(\mathbb{C}[\mathbb{Z} \rtimes \mathbb{Z}]\)</span> is not a Sylvester domain, but <span class="math inline">\(\mathbb{C}[\mathbb{Z}^2]\)</span> is.</li>
-<li>Neither implication is immediately clear.
+<li class="fragment">False for abstract groups.</li>
+<li class="fragment">Neither implication is immediately clear.
 <ul>
-<li><span class="math inline">\(\implies\)</span> How <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![G]\!]}\)</span> behaves as a <span class="math inline">\(\mathbb{F}_p[\![U]\!]\)</span>-module?</li>
-<li><span class="math inline">\(\impliedby\)</span> How to build <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![G]\!]}\)</span> from <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![U]\!]}\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\implies\)</span> How <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![G]\!]}\)</span> behaves as a <span class="math inline">\(\mathbb{F}_p[\![U]\!]\)</span>-module?</li>
+<li class="fragment"><span class="math inline">\(\impliedby\)</span> How to build <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![G]\!]}\)</span> from <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![U]\!]}\)</span>?</li>
 </ul></li>
-<li>Suffices to prove for <span class="math inline">\(|G\colon U| = p\)</span>.</li>
 </ul>
 </section>
 <section id="strategy" class="slide level2">
 <h2>Strategy</h2>
 <ul>
-<li><span class="math inline">\(\implies\)</span> We must show <span class="math display">\[\mathrm{Tor}_1^{\mathbb{F}_p[\![G]\!]}(\mathcal{D}_{\mathbb{F}_p[\![G]\!]} \otimes_{\mathbb{F}_p[\![U]\!]} \mathbb{F}_p[\![G]\!],\mathcal{D}_{\mathbb{F}_p[\![G]\!]}) = 0\]</span></li>
-<li><span class="math inline">\(\impliedby\)</span> A cadidate for <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![G]\!]}\)</span> is <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![U]\!]} * G/U\)</span>.</li>
-<li>Given <span class="math inline">\(M \leq_{f.g.} \mathcal{D}_{\mathbb{F}_p[\![U]\!]} * G/U\)</span> and <span class="math display">\[0 \to I \to \mathbb{F}_p[\![G]\!]^n \to M \to 0\]</span> we want <span class="math inline">\(I = \mathbb{F}_p[\![G]\!]^k\)</span> for <span class="math inline">\(k = n-\dim M\)</span>.</li>
-<li><span class="math inline">\(I\)</span> is free iff <span class="math inline">\(\mathrm{Tor}_1^{\mathbb{F}_p[\![G]\!]}(I,\mathbb{F}_p) = \mathrm{Tor}_2^{\mathbb{F}_p[\![G]\!]}(M,\mathbb{F}_p)=0\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\implies\)</span> We must show <span class="math display">\[\mathrm{Tor}_1^{\mathbb{F}_p[\![G]\!]}(\mathcal{D}_{\mathbb{F}_p[\![G]\!]} \otimes_{\mathbb{F}_p[\![U]\!]} \mathbb{F}_p[\![G]\!],\mathcal{D}_{\mathbb{F}_p[\![G]\!]}) = 0\]</span></li>
+<li class="fragment"><span class="math inline">\(\impliedby\)</span> A cadidate for <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![G]\!]}\)</span> is <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p[\![U]\!]} * G/U\)</span>.</li>
+<li class="fragment">Given <span class="math inline">\(M \leq_{f.g.} \mathcal{D}_{\mathbb{F}_p[\![U]\!]} * G/U\)</span> and <span class="math display">\[0 \to I \to \mathbb{F}_p[\![G]\!]^n \to M \to 0\]</span> we want <span class="math inline">\(I = \mathbb{F}_p[\![G]\!]^k\)</span> for <span class="math inline">\(k = n-\dim M\)</span>.</li>
+<li class="fragment"><span class="math inline">\(I\)</span> is free iff <span class="math inline">\(\mathrm{Tor}_1^{\mathbb{F}_p[\![G]\!]}(I,\mathbb{F}_p) = \mathrm{Tor}_2^{\mathbb{F}_p[\![G]\!]}(M,\mathbb{F}_p)=0\)</span>.</li>
 </ul>
 </section></section>
 <section>
@@ -333,78 +586,159 @@ Henrique Souza
 <h1>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> pro-<span class="math inline">\(p\)</span> groups</h1>
 
 </section>
-<section id="free-by-mathbbz_p-definition" class="slide level2">
-<h2>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>: definition</h2>
+<section id="free-by-mathbbz_p-i" class="slide level2">
+<h2>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> I</h2>
+<div class="fragment" title="Definition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(G\)</span> is <strong>free-by-<span class="math inline">\(\mathbb{Z}_p\)</span></strong> if <span class="math inline">\(G = F \rtimes \mathbb{Z}_p\)</span> for <span class="math inline">\(F\)</span> a free pro-<span class="math inline">\(p\)</span> group</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" title="Examples">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Examples</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><span class="math inline">\(G\)</span> is <strong>free-by-<span class="math inline">\(\mathbb{Z}_p\)</span></strong> if <span class="math inline">\(G = F \rtimes \mathbb{Z}_p\)</span> for <span class="math inline">\(F\)</span> a free pro-<span class="math inline">\(p\)</span> group</li>
-<li><span class="math inline">\(G\)</span> is f.g. <span class="math inline">\(\implies\)</span> <span class="math inline">\(G\)</span> is f.p., any subgroup is again free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>.</li>
-<li><span class="math inline">\(\mathrm{cd}(G) \leq 2\)</span> and <span class="math inline">\(G\)</span> is coherent.</li>
-<li><span class="math inline">\(G\)</span> is f.g. free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> iff <span class="math inline">\(G\)</span> admits a flag presentation: <span class="math display">\[G = \langle x_1,\ldots,x_n,t \mid  \underbrace{[t,[\cdots,[t,x_i]]]}_{k_i} = w_i, i=1,\ldots,n\rangle\]</span> for some <span class="math inline">\(k_i \geq 1\)</span>,<span class="math inline">\(w_i \in F^p[F,F]\)</span>.</li>
-<li><span class="math inline">\(G\)</span> is virtually <strong>mild</strong> (<span class="math inline">\(k_i = 1\)</span> <span class="math inline">\(\implies\)</span> mild flag presentation).</li>
+<li class="fragment"><span class="math inline">\(\widehat{\pi_1(\Sigma)}_p\)</span> for <span class="math inline">\(\Sigma\)</span> a closed orientable surface.</li>
+<li class="fragment">Poincaré duality groups of dimension 2.</li>
+<li class="fragment"><span class="math inline">\(\langle x,y,w,z \mid [x,y]^p = [w,z]^p\rangle\)</span> is virtually free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="free-by-mathbbz_p-examples" class="slide level2">
-<h2>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>: examples</h2>
+<section id="free-by-mathbbz_p-ii" class="slide level2">
+<h2>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> II</h2>
+<div class="fragment" title="Properties">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Properties</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><span class="math inline">\(\widehat{\pi_1(\Sigma)}_p\)</span> for <span class="math inline">\(\Sigma\)</span> a closed orientable surface.</li>
-<li><span class="math inline">\(\widehat{\pi_1(\Sigma)}_2\)</span> for <span class="math inline">\(\Sigma\)</span> a closed non-orientable surface with <span class="math inline">\(\chi(\Sigma) \leq 0\)</span>.</li>
-<li>Poincaré duality groups of dimension 2 (Dëmushkin groups).</li>
-<li>The group <span class="math display">\[\langle x,y,w,z \mid [x,y]^p = [w,z]^p\rangle\]</span> is virtually free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> but not free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>.</li>
-<li><em>Caveat</em>. There are plenty of big pro-<span class="math inline">\(p\)</span> groups with <span class="math inline">\(\operatorname{cd} \leq 2\)</span> that are not free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>, such as mild FAb groups.</li>
+<li class="fragment"><span class="math inline">\(G\)</span> is f.g. <span class="math inline">\(\implies\)</span> <span class="math inline">\(G\)</span> is f.p., any subgroup is again free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\mathrm{cd}(G) \leq 2\)</span> and <span class="math inline">\(G\)</span> is coherent.</li>
+<li class="fragment"><span class="math inline">\(G\)</span> is f.g. free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> iff <span class="math inline">\(G\)</span> admits a flag presentation: <span class="math display">\[G = \langle x_1,\ldots,x_n,t \mid  \mathrm{ad}(t)^{k_i}(x_i) = w_i, i=1,\ldots,n\rangle\]</span> for some <span class="math inline">\(k_i \geq 1\)</span>,<span class="math inline">\(w_i \in F^p[F,F]\)</span>.</li>
+<li class="fragment"><span class="math inline">\(G\)</span> is virtually <strong>mild</strong> (<span class="math inline">\(k_i = 1\)</span> <span class="math inline">\(\implies\)</span> mild flag presentation).</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="free-by-mathbbz_p-group-algebra" class="slide level2">
-<h2>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span>: group algebra</h2>
+<section id="free-by-mathbbz_p-iii" class="slide level2">
+<h2>Free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> III</h2>
 <ul>
-<li><span class="math inline">\(\mathbb{F}_p[\![G]\!] = \mathbb{F}_p[\![F]\!][\![t-1;\sigma,\delta]\!]\)</span></li>
-<li>Filtered complete ring under the <span class="math inline">\(I\)</span>-adic filtration, where <span class="math inline">\(I = \ker(\mathbb{F}_p[\![G]\!] \to \mathbb{F}_p)\)</span>.</li>
+<li class="fragment"><span class="math inline">\(R = \mathbb{F}_p[\![G]\!] = \mathbb{F}_p[\![F]\!][\![t-1;\sigma,\delta]\!]\)</span></li>
+<li class="fragment">Filtered complete ring under the <span class="math inline">\(J(R)\)</span>-adic filtration.</li>
 </ul>
-<p><strong>Proposition.</strong> Assume <span class="math inline">\(G\)</span> has a mild flag presentation. Under the <span class="math inline">\(I\)</span>-adic filtration, <span class="math display">\[\mathrm{Gr}\mathbb{F}_p[\![G]\!] = \mathbb{F}_p\langle y_1,\ldots,y_n,\ldots\rangle [\overline{t-1};\operatorname{id},\overline{\delta}]\]</span> where <span class="math inline">\(\mathbb{F}_p\langle y_1,\ldots,y_n,\ldots\rangle\)</span> is the free associative algebra.</p>
+<div class="fragment" title="Proposition.">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Proposition.</strong></p>
+</div>
+<div class="callout-content">
+<p>Assume <span class="math inline">\(G\)</span> has a mild flag presentation. Under the <span class="math inline">\(J(R)\)</span>-adic filtration, <span class="math display">\[\mathrm{Gr}(R) = \mathbb{F}_p\langle y_1,\ldots,y_n,\ldots\rangle [\overline{t-1};\operatorname{id},\overline{\delta}]\]</span> where <span class="math inline">\(\mathbb{F}_p\langle y_1,\ldots,y_n,\ldots\rangle\)</span> is the free associative algebra.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="the-main-theorem" class="slide level2">
 <h2>The main theorem</h2>
-<p><strong>Theorem.</strong> <em>(S.-Jaikin, 2024)</em> Let <span class="math inline">\(G\)</span> be a torsion-free finitely generated virtually free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> pro-<span class="math inline">\(p\)</span> group. Then <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain.</p>
-<p>Strategy:</p>
+<div class="fragment" title="Theorem. *(S.-Jaikin, 2024)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(S.-Jaikin, 2024)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(G\)</span> be a torsion-free finitely generated virtually free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> pro-<span class="math inline">\(p\)</span> group. Then <span class="math inline">\(\mathbb{F}_p[\![G]\!]\)</span> is a Sylvester domain.</p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li>Reduce to <span class="math inline">\(G\)</span> with a mild flag presentation.</li>
-<li>Explicitly build an embedding <span class="math inline">\(\mathbb{F}_p[\![G]\!] \hookrightarrow \mathcal{Q}\)</span> into a division ring.</li>
-<li>Apply Jaikin’s criterion to show <span class="math inline">\(\mathrm{irk}_{\mathbb{F}_p[\![G]\!]} = \varphi^\#\mathrm{rk}_{\mathcal{Q}}\)</span>.</li>
+<li class="fragment">Reduce to <span class="math inline">\(G\)</span> with a mild flag presentation.</li>
+<li class="fragment">Explicitly build an embedding <span class="math inline">\(\mathbb{F}_p[\![G]\!] \hookrightarrow \mathcal{Q}\)</span> into a division ring.</li>
+<li class="fragment">Apply Jaikin’s criterion to show <span class="math inline">\(\mathrm{irk}_{\mathbb{F}_p[\![G]\!]} = \varphi^\#\mathrm{rk}_{\mathcal{Q}}\)</span>.</li>
 </ul>
 </section>
 <section id="building-the-division-ring" class="slide level2">
 <h2>Building the division ring</h2>
-<p><span class="math inline">\(G\)</span> is a mild flag pro-<span class="math inline">\(p\)</span> group, <span class="math inline">\(G\simeq F \rtimes \mathbb{Z}_p\)</span>, <span class="math inline">\(F = F(X)\)</span>, <span class="math inline">\(R = \mathbb{F}_p[\![G]\!] = \mathbb{F}_p[\![F]\!][\![t-1;\sigma,\delta]\!]\)</span>.</p>
+<p><em><span class="math inline">\(G\)</span> is a mild flag pro-<span class="math inline">\(p\)</span> group, <span class="math inline">\(G\simeq F \rtimes \mathbb{Z}_p\)</span>, <span class="math inline">\(F = F(X)\)</span>, <span class="math inline">\(R = \mathbb{F}_p[\![G]\!] = \mathbb{F}_p[\![F]\!][\![t-1;\sigma,\delta]\!]\)</span>.</em></p>
 <ul>
-<li>Embed <span class="math inline">\(\mathbb{F}_p[\![F]\!]\)</span> inside <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!]\)</span></li>
-<li>Extend <span class="math inline">\(\sigma\)</span> and <span class="math inline">\(\delta\)</span> to <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!]\)</span> and build <span class="math display">\[\mathbb{D} = \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!][\![t-1;\sigma,\delta]\!]\]</span></li>
-<li><span class="math inline">\(\mathbb{D}\)</span> is a Noetherian domain, so embeds in a flat division ring <span class="math inline">\(\mathcal{Q}\)</span>.</li>
+<li class="fragment">Embed <span class="math inline">\(\mathbb{F}_p[\![F]\!]\)</span> inside <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!]\)</span></li>
+<li class="fragment">Extend <span class="math inline">\(\sigma\)</span> and <span class="math inline">\(\delta\)</span> to <span class="math inline">\(\mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!]\)</span> and build <span class="math display">\[\mathbb{D} = \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!][\![t-1;\sigma,\delta]\!]\]</span></li>
+<li class="fragment"><span class="math inline">\(\mathbb{D}\)</span> is a Noetherian domain, so embeds in a flat division ring <span class="math inline">\(\mathcal{Q}\)</span>.</li>
 </ul>
 </section>
 <section id="the-homological-criterion" class="slide level2">
 <h2>The homological criterion</h2>
-<p><span class="math inline">\(G\)</span> is a mild flag pro-<span class="math inline">\(p\)</span> group, <span class="math inline">\(R = \mathbb{F}_p[\![G]\!]\)</span>, <span class="math inline">\(\mathbb{D}= \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!][\![t-1;\sigma,\delta]\!]\)</span>.</p>
+<p><em><span class="math inline">\(G\)</span> is a mild flag pro-<span class="math inline">\(p\)</span> group, <span class="math inline">\(R = \mathbb{F}_p[\![G]\!]\)</span>, <span class="math inline">\(\mathbb{D}= \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!][\![t-1;\sigma,\delta]\!]\)</span>.</em></p>
 <ul>
-<li>Suffices to prove <span class="math inline">\(\mathrm{Tor}_1^R(\mathbb{D},\mathbb{D}) = 0\)</span> and consider submodules <span class="math inline">\(M \leq_{f.g.} \mathbb{D}\)</span></li>
-<li><span class="math inline">\(\operatorname{Gr}(R \to \mathbb{D})\)</span> is a map <span class="math display">\[\mathbb{F}_p\langle X\rangle[\overline{t-1};\operatorname{id},\overline{\delta}] \to \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[y][\overline{t-1};\operatorname{id},\overline{\delta}]\]</span></li>
-<li>We can prove Jaikin’s conditions on the graded level</li>
-<li>Lift infomation about <span class="math inline">\(\mathrm{Tor}_i^R\)</span> from <span class="math inline">\(\mathrm{Tor}_i^{\operatorname{Gr}(R)}\)</span></li>
+<li class="fragment">Suffices to prove <span class="math inline">\(\mathrm{Tor}_1^R(\mathbb{D},\mathbb{D}) = 0\)</span> and consider submodules <span class="math inline">\(M \leq_{f.g.} \mathbb{D}\)</span></li>
+<li class="fragment"><span class="math inline">\(\operatorname{Gr}(R \to \mathbb{D})\)</span> is a map <span class="math display">\[\mathbb{F}_p\langle X\rangle[\overline{t-1};\operatorname{id},\overline{\delta}] \to \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[y][\overline{t-1};\operatorname{id},\overline{\delta}]\]</span></li>
+<li class="fragment">We can prove Jaikin’s conditions on the graded level</li>
+<li class="fragment">Lift infomation about <span class="math inline">\(\mathrm{Tor}_i^R\)</span> from <span class="math inline">\(\mathrm{Tor}_i^{\operatorname{Gr}(R)}\)</span></li>
 </ul>
 </section>
 <section id="bonus-approximation-i" class="slide level2">
 <h2>Bonus: approximation I</h2>
 <ul>
-<li>If <span class="math inline">\(G\)</span> is a finite group, the regular representation <span class="math inline">\(G \to \mathsf{GL}_{|G|}(\mathbb{F}_p)\)</span> yields <span class="math display">\[\mathrm{rk}_G = \frac{\mathrm{rk}_{\mathbb{F}_p}}{|G|} \in \mathbb{P}(\mathbb{F}_p[G])\]</span></li>
-<li>If <span class="math inline">\(G = \varprojlim G_i\)</span> is pro-<span class="math inline">\(p\)</span> with each <span class="math inline">\(G_i\)</span> finite, we have <span class="math display">\[\mathrm{rk}_G = \lim_{i \to \infty} \mathrm{rk}_{G_i} \in \mathbb{P}(\mathbb{F}_p[\![G]\!])\]</span></li>
-<li>Does not depend on the choice of <span class="math inline">\(G_i\)</span>’s.</li>
+<li class="fragment">If <span class="math inline">\(G\)</span> is a finite group, the regular representation <span class="math inline">\(G \to \mathsf{GL}_{|G|}(\mathbb{F}_p)\)</span> yields <span class="math display">\[\mathrm{rk}_G = \frac{\mathrm{rk}_{\mathbb{F}_p}}{|G|} \in \mathbb{P}(\mathbb{F}_p[G])\]</span></li>
+<li class="fragment">If <span class="math inline">\(G = \varprojlim G_i\)</span> is pro-<span class="math inline">\(p\)</span> with each <span class="math inline">\(G_i\)</span> finite, we have <span class="math display">\[\mathrm{rk}_G = \lim_{i \to \infty} \mathrm{rk}_{G_i} \in \mathbb{P}(\mathbb{F}_p[\![G]\!])\]</span></li>
+<li class="fragment">Does not depend on the choice of <span class="math inline">\(G_i\)</span>’s.</li>
 </ul>
 </section>
 <section id="bonus-approximation-ii" class="slide level2">
 <h2>Bonus: approximation II</h2>
-<p><strong>Theorem.</strong> (S.-Jaikin, 2024) Let <span class="math inline">\(G\)</span> be a torsion-free f.g. virtually free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> pro-<span class="math inline">\(p\)</span> group. Then <span class="math inline">\(\mathrm{irk}_{\mathbb{F}_p[\![G]\!]} = \mathrm{rk}_G\)</span>.</p>
+<div class="fragment" title="Theorem. *(S.-Jaikin, 2024)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(S.-Jaikin, 2024)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(G\)</span> be a torsion-free f.g. virtually free-by-<span class="math inline">\(\mathbb{Z}_p\)</span> pro-<span class="math inline">\(p\)</span> group. Then <span class="math inline">\(\mathrm{irk}_{\mathbb{F}_p[\![G]\!]} = \mathrm{rk}_G\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li><p><em>Key fact</em>: The division ring <span class="math inline">\(\mathcal{Q}\)</span> admits a non-archimedean valuation such that <span class="math inline">\(\mathbb{F}_p[\![G]\!] \to \mathcal{Q}\)</span> is continuous.</p></li>
-<li><p>General result: If <span class="math inline">\(G\)</span> is a pro-<span class="math inline">\(p\)</span> group and <span class="math inline">\(\mathcal{D}\)</span> is a division ring with a non-archimedean valuation such that <span class="math inline">\(\mathbb{F}_p[\![G]\!] \to \mathcal{D}\)</span> is continuous, then <span class="math inline">\(\varphi^\#\mathrm{rk}_{\mathcal{D}} \leq \mathrm{rk}_G\)</span>.</p></li>
-<li><p>However, <span class="math inline">\(\mathrm{irk}\)</span> is an upper bound for <strong>any</strong> rank function, so <span class="math inline">\(\mathrm{rk}_G \leq \mathrm{irk}_{\mathbb{F}_p[\![G]\!]}\)</span>.</p></li>
+<li class="fragment"><p>The division ring <span class="math inline">\(\mathcal{Q}\)</span> admits a non-archimedean valuation such that <span class="math inline">\(\mathbb{F}_p[\![G]\!] \to \mathcal{Q}\)</span> is continuous.</p></li>
+<li class="fragment"><p>If <span class="math inline">\(G\)</span> is a pro-<span class="math inline">\(p\)</span> group and <span class="math inline">\(\mathcal{D}\)</span> is a valuation division ring such that <span class="math inline">\(\mathbb{F}_p[\![G]\!] \to \mathcal{D}\)</span> is continuous, then <span class="math inline">\(\varphi^\#\mathrm{rk}_{\mathcal{D}} \leq \mathrm{rk}_G\)</span>.</p></li>
+<li class="fragment"><p>However, <span class="math inline">\(\mathrm{irk}\)</span> is an upper bound for <strong>any</strong> rank function, so <span class="math inline">\(\mathrm{rk}_G \leq \mathrm{irk}_{\mathbb{F}_p[\![G]\!]}\)</span>.</p></li>
 </ul>
 </section></section>
 <section>
@@ -414,88 +748,245 @@ Henrique Souza
 </section>
 <section id="classification" class="slide level2">
 <h2>Classification</h2>
+<div class="fragment">
 <p>A complex semisimple Lie group <span class="math inline">\(G\)</span> is a quotient of the form <span class="math display">\[G = \frac{G_1 \times \cdots \times G_n}{Z}\]</span> where <span class="math inline">\(Z\)</span> is a finite central subgroup and each <span class="math inline">\(G_i\)</span> is a simple simply connected complex Lie group, i.e.&nbsp;one of the following:</p>
 <ul>
-<li><span class="math inline">\(\mathsf{SL}_n(\mathbb{C})\)</span> for <span class="math inline">\(n \geq 2\)</span></li>
-<li><span class="math inline">\(\mathsf{Spin}_{k}(\mathbb{C})\)</span> for <span class="math inline">\(k \geq 5\)</span></li>
-<li><span class="math inline">\(\mathsf{Sp}_{2n}(\mathbb{C})\)</span> for <span class="math inline">\(n \geq 1\)</span></li>
-<li>One of the five exceptional groups <span class="math inline">\(\mathsf{G}_2(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{F}_4(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{E}_6(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{E}_7(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{E}_8(\mathbb{C})\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\mathsf{SL}_n(\mathbb{C})\)</span> for <span class="math inline">\(n \geq 2\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathsf{Spin}_{k}(\mathbb{C})\)</span> for <span class="math inline">\(k \geq 5\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathsf{Sp}_{2n}(\mathbb{C})\)</span> for <span class="math inline">\(n \geq 1\)</span></li>
+<li class="fragment">One of the five exceptional groups <span class="math inline">\(\mathsf{G}_2(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{F}_4(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{E}_6(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{E}_7(\mathbb{C})\)</span>, <span class="math inline">\(\mathsf{E}_8(\mathbb{C})\)</span>.</li>
 </ul>
+</div>
 </section>
 <section id="representations" class="slide level2">
 <h2>Representations</h2>
 <ul>
-<li>Irreducible rational representations of <span class="math inline">\(G\)</span> are classified by their highest weight <span class="math inline">\(\lambda \in \mathfrak{h}^*\)</span>, where <span class="math inline">\(\mathfrak{h}\)</span> is a Cartan subalgebra of <span class="math inline">\(\operatorname{Lie}(G)\)</span>.</li>
-<li>For <span class="math inline">\(G = \mathsf{SL}_n(\mathbb{C})\)</span>, <span class="math inline">\(\lambda\)</span> is an <span class="math inline">\((n-1)\)</span>-tuple of integers <span class="math inline">\(\lambda_1\,,\ldots\,,\lambda_{n-1}\)</span>. <span class="math display">\[V_{(k,0,\ldots,0)} = \{f \in \mathbb{C}[x_1,\ldots,x_n] \mid f\text{ homogeneous of degree }k\}\]</span> <span class="math display">\[(fA)(x_1,\ldots,x_n) = f\left(A\begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}\right)\,.\]</span></li>
+<li class="fragment">Irreducible rational representations of <span class="math inline">\(G\)</span> are classified by their highest weight <span class="math inline">\(\lambda \in \mathfrak{h}^*\)</span>, where <span class="math inline">\(\mathfrak{h}\)</span> is a Cartan subalgebra of <span class="math inline">\(\operatorname{Lie}(G)\)</span>.</li>
+<li class="fragment">For <span class="math inline">\(G = \mathsf{SL}_n(\mathbb{C})\)</span>, <span class="math inline">\(\lambda\)</span> is an <span class="math inline">\((n-1)\)</span>-tuple of integers <span class="math inline">\(\lambda_1\,,\ldots\,,\lambda_{n-1}\)</span>. <span class="math display">\[V_{(k,0,\ldots,0)} = \{f \in \mathbb{C}[x_1,\ldots,x_n] \mid f\text{ homogeneous of degree }k\}\]</span> <span class="math display">\[(fA)(x_1,\ldots,x_n) = f\left(A\begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}\right)\,.\]</span></li>
 </ul>
 </section>
 <section id="main-question" class="slide level2">
 <h2>Main question</h2>
+<div class="peek fragment" title="Question.">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Question.</strong></p>
+</div>
+<div class="callout-content">
 <p>Let <span class="math inline">\(G\)</span> be a semisimple complex Lie group and <span class="math inline">\(\Gamma\)</span> a f.g. subgroup of <span class="math inline">\(G\)</span>. How does the cohomology groups <span class="math display">\[H^i(\Gamma, V_\lambda)\]</span> behave as <span class="math inline">\(\lambda\)</span> varies over the weights of <span class="math inline">\(G\)</span>?</p>
-<p><strong>Motivations.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment" title="Motivation">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Motivation</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li>If <span class="math inline">\(\Gamma\)</span> is a lattice, the geometry of the locally symmetric space <span class="math inline">\(\Gamma\backslash G/K\)</span> is encoded in the cohomology groups <span class="math inline">\(H^i(\Gamma, V_\lambda)\)</span>.</li>
-<li>If <span class="math inline">\(\Gamma\)</span> is an arithmetic group, the cohomology groups <span class="math inline">\(H^i(\Gamma, V_\lambda)\)</span> are related to automorphic forms.</li>
+<li class="fragment">If <span class="math inline">\(\Gamma\)</span> is a lattice, the geometry of the locally symmetric space <span class="math inline">\(\Gamma\backslash G/K\)</span> is encoded in the cohomology groups <span class="math inline">\(H^i(\Gamma, V_\lambda)\)</span>.</li>
+<li class="fragment">If <span class="math inline">\(\Gamma\)</span> is an arithmetic group, the cohomology groups <span class="math inline">\(H^i(\Gamma, V_\lambda)\)</span> are related to automorphic forms.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="cohomology-and-rank-functions" class="slide level2">
 <h2>Cohomology and rank functions</h2>
 <p>Let <span class="math inline">\(\Gamma\)</span> be a group of type <span class="math inline">\(FP_\infty(\mathbb{C})\)</span>.</p>
-<p><strong>Proposition.</strong> For any <span class="math inline">\(i \geq 0\)</span>, there exists matrices <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> over <span class="math inline">\(\mathbb{C}[\Gamma]\)</span> and a constant <span class="math inline">\(C\)</span> such that for any complex representation <span class="math inline">\(\varphi\colon \Gamma \to \mathsf{GL}(V)\)</span> with associated rank function <span class="math inline">\(\mathrm{rk}_\varphi\)</span>, <span class="math display">\[\dim_{\mathbb{C}} H^i(\Gamma, V) = \dim_{\mathbb{C}}(V)\cdot(C+\mathrm{rk}_\varphi(A) - \mathrm{rk}_\varphi(B))\,.\]</span></p>
-<p><strong>New question.</strong> How does <span class="math inline">\(\mathrm{rk}_\varphi\)</span> for <span class="math inline">\(\varphi\colon \Gamma \to \mathsf{GL}(V_\lambda)\)</span> behave as <span class="math inline">\(\lambda\)</span> varies over the weights of <span class="math inline">\(G\)</span>?</p>
+<div class="fragment" title="Proposition.">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Proposition.</strong></p>
+</div>
+<div class="callout-content">
+<p>For any <span class="math inline">\(i \geq 0\)</span>, there exists matrices <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> over <span class="math inline">\(\mathbb{C}[\Gamma]\)</span> and a constant <span class="math inline">\(C\)</span> such that for any complex representation <span class="math inline">\(\varphi\colon \Gamma \to \mathsf{GL}(V)\)</span> with associated rank function <span class="math inline">\(\mathrm{rk}_\varphi\)</span>, <span class="math display">\[\dim_{\mathbb{C}} H^i(\Gamma, V) = \dim_{\mathbb{C}}(V)\cdot(C+\mathrm{rk}_\varphi(A) - \mathrm{rk}_\varphi(B))\,.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>How does <span class="math inline">\(\mathrm{rk}_\varphi\)</span> for <span class="math inline">\(\varphi\colon \Gamma \to \mathsf{GL}(V_\lambda)\)</span> behave as <span class="math inline">\(\lambda\)</span> varies over the weights of <span class="math inline">\(G\)</span>?</p>
+</div>
 </section>
 <section id="approximation-for-mathsfsl_2mathbbc" class="slide level2">
 <h2>Approximation for <span class="math inline">\(\mathsf{SL}_2(\mathbb{C})\)</span></h2>
-<p>Let <span class="math inline">\(G = \prod_{i=1}^k \mathsf{SL}_2(\mathbb{C})/Z\)</span> for some finite central subgroup <span class="math inline">\(Z\)</span>, and <span class="math inline">\(\Gamma \leq G\)</span> a f.g. subgroup that intersects <span class="math inline">\(Z(G)\)</span> trivially.</p>
-<p><strong>Theorem.</strong> (S.-Guerrero, 2025) If <span class="math inline">\(\lambda = (\lambda_1,\ldots,\lambda_k)\)</span> is a weight of <span class="math inline">\(G\)</span> and <span class="math inline">\(\varphi_\lambda\colon \Gamma \to \mathsf{GL}(V_\lambda)\)</span> is the associated representation, then <span class="math display">\[\lim_{\min_i \lambda_i \to \infty} \mathrm{rk}_{\varphi_\lambda} = \mathrm{rk}_\Gamma\,.\]</span></p>
-<p><strong>Corollary.</strong> If <span class="math inline">\(\Gamma\)</span> is of type <span class="math inline">\(FP_\infty(\mathbb{C})\)</span>, then <span class="math display">\[\lim_{\min_i \lambda_i \to \infty} \frac{\dim_{\mathbb{C}} H^i(\Gamma, V_\lambda)}{\dim_{\mathbb{C}} V_\lambda} = b_i^{(2)}(\Gamma)\,.\]</span></p>
+<p><em><span class="math inline">\(G = \prod_{i=1}^k \mathsf{SL}_2(\mathbb{C})/Z\)</span>, <span class="math inline">\(\Gamma \leq G\)</span> f.g. torsion-free.</em></p>
+<div class="peek fragment" title="Theorem. *(S.-Guerrero, 2025)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(S.-Guerrero, 2025)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(\lambda = (\lambda_1,\ldots,\lambda_k)\)</span> is a weight of <span class="math inline">\(G\)</span> and <span class="math inline">\(\varphi_\lambda\colon \Gamma \to \mathsf{GL}(V_\lambda)\)</span> is the associated representation, then <span class="math display">\[\lim_{\min_i \lambda_i \to \infty} \mathrm{rk}_{\varphi_\lambda} = \mathrm{rk}_\Gamma\,.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment" title="Corollary.">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Corollary.</strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(\Gamma\)</span> is of type <span class="math inline">\(FP_\infty(\mathbb{C})\)</span>, then <span class="math display">\[\lim_{\min_i \lambda_i \to \infty} \frac{\dim_{\mathbb{C}} H^i(\Gamma, V_\lambda)}{\dim_{\mathbb{C}} V_\lambda} = b_i^{(2)}(\Gamma)\,.\]</span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="outline-of-the-proof." class="slide level2">
 <h2>Outline of the proof.</h2>
 <ul>
-<li>Reduce the statement to the case <span class="math inline">\(G = \prod_{i=1}^k\mathsf{SL}_2(\mathbb{C})\)</span> and <span class="math inline">\(\Gamma\)</span> is Zariski-dense.
+<li class="fragment">Reduce the statement to the case <span class="math inline">\(G = \prod_{i=1}^k\mathsf{SL}_2(\mathbb{C})\)</span> and <span class="math inline">\(\Gamma\)</span> is Zariski-dense.
 <ul>
-<li>Lifting matrices in a way that doesn’t change their rank.</li>
+<li class="fragment">Lifting matrices in a way that doesn’t change their rank.</li>
 </ul></li>
-<li>Reduce further to proving it over a finite index subgroup of <span class="math inline">\(\Gamma\)</span>.
+<li class="fragment">Reduce further to proving it over a finite index subgroup of <span class="math inline">\(\Gamma\)</span>.
 <ul>
-<li>The group von Neumann algebra <span class="math inline">\(\mathcal{N}(\Gamma)\)</span> is a factor, so <span class="math inline">\(|\mathbb{P}(\mathcal{N}(\Gamma))| = 1\)</span>.</li>
-<li>The same holds for the <span class="math inline">\(*\)</span>-regular closure of <span class="math inline">\(\mathbb{C}[\Gamma]\)</span> inside the algebra <span class="math inline">\(\mathcal{U}(\Gamma)\)</span> of affiliated operators.</li>
-<li>It means we just have to prove that if <span class="math inline">\(\mathrm{rk}_{\varphi_\lambda}\)</span> converges over a finite index subgroup, it converges over <span class="math inline">\(\Gamma\)</span>.</li>
+<li class="fragment">The group von Neumann algebra <span class="math inline">\(\mathcal{N}(\Gamma)\)</span> is a factor, so <span class="math inline">\(|\mathbb{P}(\mathcal{N}(\Gamma))| = 1\)</span>.</li>
+<li class="fragment">The same holds for the <span class="math inline">\(*\)</span>-regular closure of <span class="math inline">\(\mathbb{C}[\Gamma]\)</span> inside the algebra <span class="math inline">\(\mathcal{U}(\Gamma)\)</span> of affiliated operators.</li>
+<li class="fragment">It means we just have to prove that if <span class="math inline">\(\mathrm{rk}_{\varphi_\lambda}\)</span> converges over a finite index subgroup, it converges over <span class="math inline">\(\Gamma\)</span>.</li>
 </ul></li>
 </ul>
 </section>
 <section id="from-mathbbc-to-mathbbq_p" class="slide level2">
 <h2>From <span class="math inline">\(\mathbb{C}\)</span> to <span class="math inline">\(\mathbb{Q}_p\)</span></h2>
-<p><strong>Cassels’ embedding.</strong> If <span class="math inline">\(\Gamma\)</span> is a f.g. subgroup of <span class="math inline">\(G\)</span>, there are infinitely many primes <span class="math inline">\(p\)</span> such that <span class="math inline">\(\Gamma\)</span> embeds in <span class="math display">\[G(\mathbb{Z}_p) = \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}_p)\,.\]</span></p>
-<ul>
-<li>Isolating the finite index subgroup: let <span class="math display">\[U_i = \ker(G(\mathbb{Z}_p) \to \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}/p^i\mathbb{Z}))\,.\]</span> Take <span class="math inline">\(\Gamma' = \Gamma \cap U_1\)</span>.</li>
-</ul>
+<div class="peek fragment" title="Theorem. *(Cassels, 1976)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(Cassels, 1976)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(\Gamma\)</span> is a f.g. subgroup of <span class="math inline">\(G\)</span>, there are infinitely many primes <span class="math inline">\(p\)</span> such that <span class="math inline">\(\Gamma\)</span> embeds in <span class="math display">\[G(\mathbb{Z}_p) = \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}_p)\,.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Isolating the finite index subgroup: let <span class="math display">\[U_i = \ker(G(\mathbb{Z}_p) \to \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}/p^i\mathbb{Z}))\,.\]</span> Take <span class="math inline">\(\Gamma' = \Gamma \cap U_1\)</span>.</p>
+</div>
 </section>
 <section id="comparing-ranks" class="slide level2">
 <h2>Comparing ranks</h2>
-<p><strong>Theorem.</strong> <em>(Lück approximation)</em> Let <span class="math inline">\(S\)</span> be a subring of <span class="math inline">\(\mathbb{C}\)</span> that embeds in <span class="math inline">\(\mathbb{Z}_p\)</span>. We have <span class="math display">\[\mathrm{rk}_{\Gamma'} = \lim_{i \to \infty} \mathrm{rk}_{\Gamma/(\Gamma \cap U_i)} = \lim_{i \to \infty} \mathrm{rk}_{U_1/U_i}\]</span> as rank functions on <span class="math inline">\(S[\Gamma']\)</span>.</p>
-<p><strong>Theorem.</strong> <em>(Harris, 1979)</em> Let <span class="math inline">\(p\)</span> be an odd prime. Then, <span class="math inline">\(\mathrm{rk}_{U_1} = \lim_{i \to \infty} \mathrm{rk}_{U_1/U_i}\)</span> is the only rank function on <span class="math inline">\(\mathbb{Z}_p[\![U_1]\!]\)</span> that satisfies <span class="math inline">\(\mathrm{rk}_{U_1}(x) = 1\)</span> for every non-zero <span class="math inline">\(x \in \mathbb{Z}_p[\![U_1]\!]\)</span>.</p>
+<div class="peek fragment" title="Theorem. *Lück approximation ~ (Jaikin, 2019)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>Lück approximation ~ (Jaikin, 2019)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(S\)</span> be a subring of <span class="math inline">\(\mathbb{C}\)</span> that embeds in <span class="math inline">\(\mathbb{Z}_p\)</span>. We have <span class="math display">\[\mathrm{rk}_{\Gamma'} = \lim_{i \to \infty} \mathrm{rk}_{\Gamma/(\Gamma \cap U_i)} = \mathrm{rk}_{U_1}\]</span> as rank functions on <span class="math inline">\(S[\Gamma']\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment" title="Theorem. *(Harris, 1979)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(Harris, 1979)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(p\)</span> be an odd prime. Then, <span class="math inline">\(\mathrm{rk}_{U_1}\)</span> is the only rank function on <span class="math inline">\(\mathbb{Z}_p[\![U_1]\!]\)</span> that satisfies <span class="math inline">\(\mathrm{rk}_{U_1}(x) = 1\)</span> for every non-zero <span class="math inline">\(x\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="ranks-on-iwasawa-algebras-i" class="slide level2">
 <h2>Ranks on Iwasawa algebras I</h2>
 <p>Let <span class="math inline">\(U\)</span> be a compact uniform semisimple <span class="math inline">\(p\)</span>-adic Lie group, and <span class="math inline">\(\mathbb{Z}_p[\![U]\!]\)</span> its Iwasawa algebra.</p>
-<p><strong>Conjecture.</strong> (S.-Guerrero, 2025) If <span class="math inline">\(\lambda = (\lambda_1,\ldots,\lambda_k)\)</span> is a weight of <span class="math inline">\(U\)</span> and <span class="math inline">\(\varphi_\lambda\colon U \to \mathsf{GL}(V_\lambda)\)</span> is the associated <strong><span class="math inline">\(p\)</span>-adic</strong> representation, then <span class="math display">\[\lim_{\min_i \lambda_i \to \infty} \frac{\dim_{\mathbb{Q}_p} xV_\lambda}{\dim_{\mathbb{Q}_p} V_\lambda} = 1\]</span> for any non-zero <span class="math inline">\(x \in \mathbb{Z}_p[\![U]\!]\)</span>.</p>
+<div class="fragment" title="Conjecture. *(S.-Guerrero, 2025)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Conjecture. <em>(S.-Guerrero, 2025)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(\lambda = (\lambda_1,\ldots,\lambda_k)\)</span> is a weight of <span class="math inline">\(U\)</span> and <span class="math inline">\(\varphi_\lambda\colon U \to \mathsf{GL}(V_\lambda)\)</span> is the associated <strong><span class="math inline">\(p\)</span>-adic</strong> representation, then <span class="math display">\[\lim_{\min_i \lambda_i \to \infty} \frac{\dim_{\mathbb{Q}_p} xV_\lambda}{\dim_{\mathbb{Q}_p} V_\lambda} = 1\]</span> for any non-zero <span class="math inline">\(x \in \mathbb{Z}_p[\![U]\!]\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="ranks-on-iwasawa-algebras-ii" class="slide level2">
 <h2>Ranks on Iwasawa algebras II</h2>
-<p><strong>Theorem.</strong> (Fu, 2022) The conjecture holds for <span class="math inline">\(U \leq_o \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}_p)\)</span> and any odd prime <span class="math inline">\(p\)</span>.</p>
+<div class="fragment" title="Theorem. *(Fu, 2022)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(Fu, 2022)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>The conjecture holds for <span class="math inline">\(U \leq_o \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}_p)\)</span> and any odd prime <span class="math inline">\(p\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li>Proof sketch: <span class="math inline">\(\mathbb{Z}_p[\![U]\!]\)</span> embeds in a completion <span class="math inline">\(\widehat{U(\mathfrak{g})}\)</span> of the universal enveloping algebra of <span class="math inline">\(\mathfrak{g} = \operatorname{Lie}(U)\)</span>.</li>
-<li>The action <span class="math inline">\(\widehat{U(\mathfrak{g})} \curvearrowright V_\lambda\)</span> factors through a central quotient <span class="math inline">\(\widehat{U(\mathfrak{g})}/I_\lambda\)</span>.</li>
+<li class="fragment">Proof sketch: <span class="math inline">\(\mathbb{Z}_p[\![U]\!]\)</span> embeds in a completion <span class="math inline">\(\widehat{U(\mathfrak{g})}\)</span> of the universal enveloping algebra of <span class="math inline">\(\mathfrak{g} = \operatorname{Lie}(U)\)</span>.</li>
+<li class="fragment">The action <span class="math inline">\(\widehat{U(\mathfrak{g})} \curvearrowright V_\lambda\)</span> factors through a central quotient <span class="math inline">\(\widehat{U(\mathfrak{g})}/I_\lambda\)</span>.</li>
 </ul>
 </section>
 <section id="ranks-on-iwasawa-algebras-iii" class="slide level2">
 <h2>Ranks on Iwasawa algebras III</h2>
+<div class="fragment" title="Theorem. *(Ardakov-Wadsley, 2014)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem. <em>(Ardakov-Wadsley, 2014)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>For almost all primes <span class="math inline">\(p\)</span>, the composition <span class="math display">\[\mathbb{Z}_p[\![U]\!] \to \widehat{U(\mathfrak{g})} \to \widehat{U(\mathfrak{g})}/I_\lambda\]</span> is injective.</p>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li><em>(Ardakov-Wadsley, 2014)</em> For almost all primes <span class="math inline">\(p\)</span>, the composition <span class="math display">\[\mathbb{Z}_p[\![U]\!] \to \widehat{U(\mathfrak{g})} \to \widehat{U(\mathfrak{g})}/I_\lambda\]</span> is injective.</li>
-<li>Canonical form for elements of <span class="math inline">\(\widehat{U(\mathfrak{g})}/I_\lambda\)</span> and explicit lower bound for <span class="math inline">\(\dim_{\mathbb{Q}_p} xV_\lambda\)</span> in terms of this form.</li>
-<li>The lower bound is asymptotically <span class="math inline">\(\dim_{\mathbb{Q}_p} V_\lambda\)</span> as <span class="math inline">\(\min_i \lambda_i \to \infty\)</span>.</li>
+<li class="fragment">Canonical form for elements of <span class="math inline">\(\widehat{U(\mathfrak{g})}/I_\lambda\)</span> and explicit lower bound for <span class="math inline">\(\dim_{\mathbb{Q}_p} xV_\lambda\)</span> in terms of this form.</li>
+<li class="fragment">Asymptotically <span class="math inline">\(\dim_{\mathbb{Q}_p} V_\lambda\)</span> as <span class="math inline">\(\min_i \lambda_i \to \infty\)</span>.</li>
 </ul>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center">
@@ -517,6 +1008,7 @@ Henrique Souza
   <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -538,7 +1030,8 @@ Henrique Souza
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -709,7 +1202,7 @@ Henrique Souza
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
