@@ -1,0 +1,310 @@
+---
+title: "Ranks over pro-$p$ groups"
+author: "Henrique Souza"
+format:
+  revealjs:
+    theme: simple
+    css: styles.css
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    slide-number: true
+    show-slide-number: all
+    incremental: false
+    navigation-mode: linear
+    transition: none
+    center: false
+---
+
+# What is this about?
+
+How to measure the size of matrices over completed group algebras?
+
+- Canonical rank functions
+- Approximations of rank functions
+
+::: {.notes}
+This is how I put notes
+:::
+
+## What I will prove today
+
+- **Commensurability invariance** of inner rank being a rank function (for $\mathbb{F}_p[\![G]\!]$)
+- Examples of **profinite Sylvester domains**: $\mathbb{F}_p[\![F \rtimes \mathbb{Z}_p]\!]$
+- **Approximation**: rank functions coming from rational reps. of $\mathsf{SL}_2(\mathbb{C})$ converge to the von Neumann rank.
+
+## Roadmap
+
+- Rank functions & inner rank
+- Profinite rings & Sylvester domains
+- Free-by-$\mathbb{Z}_p$ pro-$p$ groups
+- Semisimple Lie groups
+
+# Rank functions
+
+- Over a field: $\mathrm{rk}(A) = \dim(\operatorname{im}(A)) = \#\text{pivots}$
+- Row/column operations don't change the rank.
+
+## Inner rank: definition
+
+- $\mathrm{irk}(A)$ = smallest $k$ for which $$A_{n\times m} = B_{n\times k} C_{k\times m}$$
+- Equals rank over fields
+- Defined over any ring
+
+## Inner rank: annoyances
+
+- Over $\mathbb{Q}[x,y,z]$, matrices of maximal rank can have kernel: $$\begin{pmatrix}0 & z & -y\\ -z & 0 & x\\ y & -x & 0\end{pmatrix}\begin{pmatrix} x \\ y \\ z\end{pmatrix} = 0$$
+- If $R \leq S$ and $A \in \operatorname{Mat}(R)$, $\mathrm{irk}_R(A)$ can be different from $\mathrm{irk}_S(A)$
+
+## Sylvester rank functions: definition
+
+- $R$ associative ring with $1$
+- $\mathrm{rk}\colon \operatorname{Mat}(R) \to \mathbb{R}_{\geq 0}$ is a Sylvester rank function if:
+    - $\mathrm{rk}(0) = 0$, $\mathrm{rk}(1) = 1$
+    - $\mathrm{rk}(AB) \leq \min\{\mathrm{rk}(A)\,, \mathrm{rk}(B)\}$
+    - $\mathrm{rk}\begin{pmatrix}A & 0\\0 & B\end{pmatrix} = \mathrm{rk}(A) + \mathrm{rk}(B)$
+    - $\mathrm{rk}\begin{pmatrix} A & C\\ 0 & B\end{pmatrix} \geq \mathrm{rk}(A) + \mathrm{rk}(B)$
+
+## Sylvester rank functions: examples
+
+- $\mathbb{P}(R)$ = Sylvester rank functions on $R$
+- $\mathbb{P}(R)$ can be empty
+- Over a field/division ring $\mathbb{F}$, we have $\mathbb{P}(\mathbb{F}) = \{\mathrm{rk}_{\mathbb{F}}\}$
+- For $\varphi\colon R \to S$ and $\mathrm{rk} \in \mathbb{P}(S)$, $\varphi^\#\mathrm{rk} \in \mathbb{P}(R)$: $$\varphi^\#\mathrm{rk}(A) = \mathrm{rk}(\varphi(A))\,.$$
+- Over $\mathbb{Z}$: $\mathrm{rk}_{\mathbb{Q}}$, $\mathrm{rk}_{\mathbb{F}_p}$, convex combinations, ...
+- $\mathrm{irk}_R \not\in \mathbb{P}(R)$ in general!
+
+## Sylvester rank functions: operator rings
+
+- Over a field/division ring $\mathbb{F}$: $$\mathbb{P}(\operatorname{Mat}_n(\mathbb{F})) = \left\{\frac{\mathrm{rk}_{\mathbb{F}}}{n}\right\}\,.$$
+- Group representations $\rightarrow$ rank functions
+    - $\varphi\colon G \to \mathsf{GL}_n(\mathbb{F})$ induces $\varphi\colon \mathbb{F}[G] \to \operatorname{Mat}_n(\mathbb{F})$ $$\mathrm{rk}_\varphi = \varphi^\#\frac{\mathrm{rk}_{\mathbb{F}}}{n}$$
+- von Neumann dimension $\mathrm{rk}_\Gamma \in \mathbb{P}(\mathbb{C}[\Gamma])$ for $\Gamma$ a f.g. group for $\Gamma \curvearrowright \ell^2(\Gamma)$
+
+## Sylvester rank functions: dimension
+
+- For $A \in \operatorname{Mat}_{n\times m}(R)$ and $\mathrm{rk} \in \mathbb{P}(R)$, let $M_A = R^n / AR^m$. Define $$\dim M_A = n - \mathrm{rk}(A)$$
+- If $M_A \simeq M_B$, $\dim M_A = \dim M_B$
+- $\mathbb{P}(R)$ in bijection with dimension functions on f.p. right $R$-modules
+
+## Sylvester rank functions: integrality
+
+**Theorem.** _(Malcolmson, 1980)_ If $\mathrm{rk} \in \mathbb{P}(R)$ is integer valued, $$\mathrm{rk} = \varphi^\#\mathrm{rk}_{\mathcal{D}}$$ for some unique division ring $\mathcal{D}$ and some ring epimorphism $\varphi\colon R \to \mathcal{D}$.
+
+## Broad questions
+
+- When $\mathrm{irk}_R \in \mathbb{P}(R)$?
+- Canonical/universal/largest element of $\mathbb{P}(R)$?
+- Approximations inside $\mathbb{P}(R)$: $$\lim_{i \to \infty} \mathrm{rk}_i = \mathrm{rk}$$
+
+# Profinite rings &<br> Sylvester domains
+
+## Sylvester domains I
+
+- $R$ is a **Sylvester domain** if $\mathrm{irk}_R \in \mathbb{P}(R)$
+
+**Consequence.** If $R$ is a Sylvester domain, $\exists \mathcal{D}$ division ring and $\varphi\colon R \to \mathcal{D}$ such that $$\mathrm{irk}_R = \varphi^\#\mathrm{rk}_{\mathcal{D}}$$
+
+- $\mathrm{irk}_R$ is the largest element of $\mathbb{P}(R)$
+- Examples: $\mathbb{Z}$, $\mathbb{Q}$, fields/division rings, PIDs, $\mathbb{F}[x,y]$, $\mathbb{F}\langle x,y\rangle$
+- Sylvester domains are domains of weak global dimension $\leq 2$
+    - $\mathbb{Q}[x,y,z]$ is not a Sylvester domain
+
+## Sylvester domains II
+
+**Theorem.** _(Dicks & Sontag, 1978)_ Let $R$ be a coherent commutative ring of weak global dimension $\leq 2$. Then $R$ is a Sylvester domain iff projective $R$-modules are free.
+
+**Theorem.** _(Cohn, 1971)_ If $\mathbb{F}$ is a field and $F$ is an (abstract) free group, $\mathbb{F}[F]$ is a Sylvester domain.
+
+**Theorem.** _(Jaikin, 2021)_ Let $\varphi\colon R \to \mathcal{D}$ be a map to a division ring. Then $\varphi^\#\mathrm{rk}_{\mathcal{D}} = \mathrm{irk}_R$ iff $\mathrm{Tor}_1^R(\mathcal{D},\mathcal{D}) = 0$ and for any f.g. $R$-submodule $M \leq \mathcal{D}$ and short exact sequence $$0 \to I \to R^n \to M \to 0$$ we have $I = \varinjlim R^k$ for $k = n-\dim M$.
+
+## Profinite rings
+
+- $R$ is **profinite** if $R = \varprojlim R_i$ with $R_i$ finite rings
+- Examples: $\mathbb{Z}_p$, $R[\![t]\!]$, $\mathbb{F}_p[\![G]\!] = \varprojlim \mathbb{F}_p[G_i]$ for $G$ a profinite group
+- A topological ring $R$ is profinite iff it is compact and Hausdorff.
+- $\mathbb{F}_p[\![G]\!]$ is a domain $\implies$ $G$ is a torsion-free pro-$p$ group
+
+**Theorem.** _(S.-Jaikin, 2024)_ Let $G$ be a f.g. pro-$p$ group. If $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain, then $\mathbb{F}_p[\![G]\!]$ is coherent, $G$ is f.p. and $\operatorname{cd}(G) \leq 2$.
+
+## Profinite Sylvester domains: examples
+
+**Fact.** Noetherian commutative local profinite rings of $\operatorname{gl.dim} \leq 2$ are Sylvester domains. ($\mathbb{F}_p[\![\mathbb{Z}_p^2]\!]$)
+
+**Theorem** _(Cohn, 1971)_ Projective-free weakly-hereditary rings are Sylvester domains.
+
+**Corollary.** If $G$ is a free pro-$p$ group, $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain.
+
+- $\mathbb{Z}_p[\![F]\!]$ for $F$ free pro-$p$?
+- $R$ coherent but non-Noetherian profinite commutative local rings with $\operatorname{gl.dim}(R) \leq 2$?
+- $\mathbb{F}_p[\![G]\!]$ for $G$ a f.p. pro-$p$ group with $\operatorname{cd}(G) \leq 2$?
+
+## Commensurability
+
+**Theorem.** _(S.-Jaikin, 2024)_ Let $G$ be a torsion-free f.g. pro-$p$ group. Then $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain iff $\mathbb{F}_p[\![U]\!]$ is a Sylvester domain for some (any) open subgroup $U \leq G$.
+
+- False for abstract groups: $\mathbb{C}[\mathbb{Z} \rtimes \mathbb{Z}]$ is not a Sylvester domain, but $\mathbb{C}[\mathbb{Z}^2]$ is.
+- Neither implication is immediately clear.
+    - $\implies$ How $\mathcal{D}_{\mathbb{F}_p[\![G]\!]}$ behaves as a $\mathbb{F}_p[\![U]\!]$-module?
+    - $\impliedby$ How to build $\mathcal{D}_{\mathbb{F}_p[\![G]\!]}$ from $\mathcal{D}_{\mathbb{F}_p[\![U]\!]}$?
+- Suffices to prove for $|G\colon U| = p$.
+
+## Strategy
+
+- $\implies$ We must show $$\mathrm{Tor}_1^{\mathbb{F}_p[\![G]\!]}(\mathcal{D}_{\mathbb{F}_p[\![G]\!]} \otimes_{\mathbb{F}_p[\![U]\!]} \mathbb{F}_p[\![G]\!],\mathcal{D}_{\mathbb{F}_p[\![G]\!]}) = 0$$
+- $\impliedby$ A cadidate for $\mathcal{D}_{\mathbb{F}_p[\![G]\!]}$ is $\mathcal{D}_{\mathbb{F}_p[\![U]\!]} * G/U$.
+- Given $M \leq_{f.g.} \mathcal{D}_{\mathbb{F}_p[\![U]\!]} * G/U$ and $$0 \to I \to \mathbb{F}_p[\![G]\!]^n \to M \to 0$$ we want $I = \mathbb{F}_p[\![G]\!]^k$ for $k = n-\dim M$.
+- $I$ is free iff $\mathrm{Tor}_1^{\mathbb{F}_p[\![G]\!]}(I,\mathbb{F}_p) = \mathrm{Tor}_2^{\mathbb{F}_p[\![G]\!]}(M,\mathbb{F}_p)=0$.
+
+# Free-by-$\mathbb{Z}_p$ pro-$p$ groups
+
+## Free-by-$\mathbb{Z}_p$: definition
+
+- $G$ is **free-by-$\mathbb{Z}_p$** if $G = F \rtimes \mathbb{Z}_p$ for $F$ a free pro-$p$ group
+- $G$ is f.g. $\implies$ $G$ is f.p., any subgroup is again free-by-$\mathbb{Z}_p$.
+- $\mathrm{cd}(G) \leq 2$ and $G$ is coherent.
+- $G$ is f.g. free-by-$\mathbb{Z}_p$ iff $G$ admits a flag presentation: $$G = \langle x_1,\ldots,x_n,t \mid  \underbrace{[t,[\cdots,[t,x_i]]]}_{k_i} = w_i, i=1,\ldots,n\rangle$$ for some $k_i \geq 1$,$w_i \in F^p[F,F]$.
+- $G$ is virtually **mild** ($k_i = 1$ $\implies$ mild flag presentation).
+
+## Free-by-$\mathbb{Z}_p$: examples
+
+- $\widehat{\pi_1(\Sigma)}_p$ for $\Sigma$ a closed orientable surface.
+- $\widehat{\pi_1(\Sigma)}_2$ for $\Sigma$ a closed non-orientable surface with $\chi(\Sigma) \leq 0$.
+- Poincaré duality groups of dimension 2 (Dëmushkin groups).
+- The group $$\langle x,y,w,z \mid [x,y]^p = [w,z]^p\rangle$$ is virtually free-by-$\mathbb{Z}_p$ but not free-by-$\mathbb{Z}_p$.
+- _Caveat_. There are plenty of big pro-$p$ groups with $\operatorname{cd} \leq 2$ that are not free-by-$\mathbb{Z}_p$, such as mild FAb groups.
+
+## Free-by-$\mathbb{Z}_p$: group algebra
+
+- $\mathbb{F}_p[\![G]\!] = \mathbb{F}_p[\![F]\!][\![t-1;\sigma,\delta]\!]$
+- Filtered complete ring under the $I$-adic filtration, where $I = \ker(\mathbb{F}_p[\![G]\!] \to \mathbb{F}_p)$.
+
+**Proposition.** Assume $G$ has a mild flag presentation. Under the $I$-adic filtration, $$\mathrm{Gr}\mathbb{F}_p[\![G]\!] = \mathbb{F}_p\langle y_1,\ldots,y_n,\ldots\rangle [\overline{t-1};\operatorname{id},\overline{\delta}]$$ where $\mathbb{F}_p\langle y_1,\ldots,y_n,\ldots\rangle$ is the free associative algebra.
+
+## The main theorem
+
+**Theorem.** _(S.-Jaikin, 2024)_ Let $G$ be a torsion-free finitely generated virtually free-by-$\mathbb{Z}_p$ pro-$p$ group. Then $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain.
+
+Strategy:
+
+- Reduce to $G$ with a mild flag presentation.
+- Explicitly build an embedding $\mathbb{F}_p[\![G]\!] \hookrightarrow \mathcal{Q}$ into a division ring.
+- Apply Jaikin's criterion to show $\mathrm{irk}_{\mathbb{F}_p[\![G]\!]} = \varphi^\#\mathrm{rk}_{\mathcal{Q}}$.
+
+## Building the division ring
+
+$G$ is a mild flag pro-$p$ group, $G\simeq F \rtimes \mathbb{Z}_p$, $F = F(X)$, $R = \mathbb{F}_p[\![G]\!] = \mathbb{F}_p[\![F]\!][\![t-1;\sigma,\delta]\!]$.
+
+- Embed $\mathbb{F}_p[\![F]\!]$ inside $\mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!]$
+- Extend $\sigma$ and $\delta$ to $\mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!]$ and build $$\mathbb{D} = \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!][\![t-1;\sigma,\delta]\!]$$
+- $\mathbb{D}$ is a Noetherian domain, so embeds in a flat division ring $\mathcal{Q}$.
+
+## The homological criterion
+
+$G$ is a mild flag pro-$p$ group, $R = \mathbb{F}_p[\![G]\!]$, $\mathbb{D}= \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[\![y]\!][\![t-1;\sigma,\delta]\!]$.
+
+- Suffices to prove $\mathrm{Tor}_1^R(\mathbb{D},\mathbb{D}) = 0$ and consider submodules $M \leq_{f.g.} \mathbb{D}$
+- $\operatorname{Gr}(R \to \mathbb{D})$ is a map $$\mathbb{F}_p\langle X\rangle[\overline{t-1};\operatorname{id},\overline{\delta}] \to \mathcal{D}_{\mathbb{F}_p\langle X\rangle}[y][\overline{t-1};\operatorname{id},\overline{\delta}]$$
+- We can prove Jaikin's conditions on the graded level
+- Lift infomation about $\mathrm{Tor}_i^R$ from $\mathrm{Tor}_i^{\operatorname{Gr}(R)}$
+
+## Bonus: approximation I
+
+- If $G$ is a finite group, the regular representation $G \to \mathsf{GL}_{|G|}(\mathbb{F}_p)$ yields $$\mathrm{rk}_G = \frac{\mathrm{rk}_{\mathbb{F}_p}}{|G|} \in \mathbb{P}(\mathbb{F}_p[G])$$
+- If $G = \varprojlim G_i$ is pro-$p$ with each $G_i$ finite, we have $$\mathrm{rk}_G = \lim_{i \to \infty} \mathrm{rk}_{G_i} \in \mathbb{P}(\mathbb{F}_p[\![G]\!])$$
+- Does not depend on the choice of $G_i$'s.
+
+## Bonus: approximation II
+
+**Theorem.** (S.-Jaikin, 2024) Let $G$ be a torsion-free f.g. virtually free-by-$\mathbb{Z}_p$ pro-$p$ group. Then $\mathrm{irk}_{\mathbb{F}_p[\![G]\!]} = \mathrm{rk}_G$.
+
+- _Key fact_: The division ring $\mathcal{Q}$ admits a non-archimedean valuation such that $\mathbb{F}_p[\![G]\!] \to \mathcal{Q}$ is continuous.
+
+- General result: If $G$ is a pro-$p$ group and $\mathcal{D}$ is a division ring with a non-archimedean valuation such that $\mathbb{F}_p[\![G]\!] \to \mathcal{D}$ is continuous, then $\varphi^\#\mathrm{rk}_{\mathcal{D}} \leq \mathrm{rk}_G$.
+
+- However, $\mathrm{irk}$ is an upper bound for **any** rank function, so $\mathrm{rk}_G \leq \mathrm{irk}_{\mathbb{F}_p[\![G]\!]}$.
+
+# Semisimple groups
+
+## Classification
+
+A complex semisimple Lie group $G$ is a quotient of the form $$G = \frac{G_1 \times \cdots \times G_n}{Z}$$ where $Z$ is a finite central subgroup and each $G_i$ is a simple simply connected complex Lie group, i.e. one of the following:
+
+- $\mathsf{SL}_n(\mathbb{C})$ for $n \geq 2$
+- $\mathsf{Spin}_{k}(\mathbb{C})$ for $k \geq 5$
+- $\mathsf{Sp}_{2n}(\mathbb{C})$ for $n \geq 1$
+- One of the five exceptional groups $\mathsf{G}_2(\mathbb{C})$, $\mathsf{F}_4(\mathbb{C})$, $\mathsf{E}_6(\mathbb{C})$, $\mathsf{E}_7(\mathbb{C})$, $\mathsf{E}_8(\mathbb{C})$.
+
+## Representations
+
+- Irreducible rational representations of $G$ are classified by their highest weight $\lambda \in \mathfrak{h}^*$, where $\mathfrak{h}$ is a Cartan subalgebra of $\operatorname{Lie}(G)$.
+- For $G = \mathsf{SL}_n(\mathbb{C})$, $\lambda$ is an $(n-1)$-tuple of integers $\lambda_1\,,\ldots\,,\lambda_{n-1}$. $$V_{(k,0,\ldots,0)} = \{f \in \mathbb{C}[x_1,\ldots,x_n] \mid f\text{ homogeneous of degree }k\}$$ $$(fA)(x_1,\ldots,x_n) = f\left(A\begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}\right)\,.$$
+
+## Main question
+
+Let $G$ be a semisimple complex Lie group and $\Gamma$ a f.g. subgroup of $G$. How does the cohomology groups $$H^i(\Gamma, V_\lambda)$$ behave as $\lambda$ varies over the weights of $G$?
+
+**Motivations.**
+
+- If $\Gamma$ is a lattice, the geometry of the locally symmetric space $\Gamma\backslash G/K$ is encoded in the cohomology groups $H^i(\Gamma, V_\lambda)$.
+- If $\Gamma$ is an arithmetic group, the cohomology groups $H^i(\Gamma, V_\lambda)$ are related to automorphic forms.
+
+## Cohomology and rank functions
+
+Let $\Gamma$ be a group of type $FP_\infty(\mathbb{C})$.
+
+**Proposition.** For any $i \geq 0$, there exists matrices $A$ and $B$ over $\mathbb{C}[\Gamma]$ and a constant $C$ such that for any complex representation $\varphi\colon \Gamma \to \mathsf{GL}(V)$ with associated rank function $\mathrm{rk}_\varphi$, $$\dim_{\mathbb{C}} H^i(\Gamma, V) = \dim_{\mathbb{C}}(V)\cdot(C+\mathrm{rk}_\varphi(A) - \mathrm{rk}_\varphi(B))\,.$$
+
+**New question.** How does $\mathrm{rk}_\varphi$ for $\varphi\colon \Gamma \to \mathsf{GL}(V_\lambda)$ behave as $\lambda$ varies over the weights of $G$?
+
+## Approximation for $\mathsf{SL}_2(\mathbb{C})$
+
+Let $G = \prod_{i=1}^k \mathsf{SL}_2(\mathbb{C})/Z$ for some finite central subgroup $Z$, and $\Gamma \leq G$ a f.g. subgroup that intersects $Z(G)$ trivially.
+
+**Theorem.** (S.-Guerrero, 2025) If $\lambda = (\lambda_1,\ldots,\lambda_k)$ is a weight of $G$ and $\varphi_\lambda\colon \Gamma \to \mathsf{GL}(V_\lambda)$ is the associated representation, then $$\lim_{\min_i \lambda_i \to \infty} \mathrm{rk}_{\varphi_\lambda} = \mathrm{rk}_\Gamma\,.$$
+
+**Corollary.** If $\Gamma$ is of type $FP_\infty(\mathbb{C})$, then $$\lim_{\min_i \lambda_i \to \infty} \frac{\dim_{\mathbb{C}} H^i(\Gamma, V_\lambda)}{\dim_{\mathbb{C}} V_\lambda} = b_i^{(2)}(\Gamma)\,.$$
+
+## Outline of the proof.
+
+- Reduce the statement to the case $G = \prod_{i=1}^k\mathsf{SL}_2(\mathbb{C})$ and $\Gamma$ is Zariski-dense.
+    - Lifting matrices in a way that doesn't change their rank.
+- Reduce further to proving it over a finite index subgroup of $\Gamma$.
+    - The group von Neumann algebra $\mathcal{N}(\Gamma)$ is a factor, so $|\mathbb{P}(\mathcal{N}(\Gamma))| = 1$.
+    - The same holds for the $*$-regular closure of $\mathbb{C}[\Gamma]$ inside the algebra $\mathcal{U}(\Gamma)$ of affiliated operators.
+    - It means we just have to prove that if $\mathrm{rk}_{\varphi_\lambda}$ converges over a finite index subgroup, it converges over $\Gamma$. 
+
+## From $\mathbb{C}$ to $\mathbb{Q}_p$
+
+**Cassels' embedding.** If $\Gamma$ is a f.g. subgroup of $G$, there are infinitely many primes $p$ such that $\Gamma$ embeds in $$G(\mathbb{Z}_p) = \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}_p)\,.$$
+
+- Isolating the finite index subgroup: let $$U_i = \ker(G(\mathbb{Z}_p) \to \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}/p^i\mathbb{Z}))\,.$$ Take $\Gamma' = \Gamma \cap U_1$.
+
+## Comparing ranks
+
+**Theorem.** _(Lück approximation)_ Let $S$ be a subring of $\mathbb{C}$ that embeds in $\mathbb{Z}_p$. We have $$\mathrm{rk}_{\Gamma'} = \lim_{i \to \infty} \mathrm{rk}_{\Gamma/(\Gamma \cap U_i)} = \lim_{i \to \infty} \mathrm{rk}_{U_1/U_i}$$ as rank functions on $S[\Gamma']$.
+
+**Theorem.** _(Harris, 1979)_ Let $p$ be an odd prime. Then, $\mathrm{rk}_{U_1} = \lim_{i \to \infty} \mathrm{rk}_{U_1/U_i}$ is the only rank function on $\mathbb{Z}_p[\![U_1]\!]$ that satisfies $\mathrm{rk}_{U_1}(x) = 1$ for every non-zero $x \in \mathbb{Z}_p[\![U_1]\!]$.
+
+## Ranks on Iwasawa algebras I
+
+Let $U$ be a compact uniform semisimple $p$-adic Lie group, and $\mathbb{Z}_p[\![U]\!]$ its Iwasawa algebra.
+
+**Conjecture.** (S.-Guerrero, 2025) If $\lambda = (\lambda_1,\ldots,\lambda_k)$ is a weight of $U$ and $\varphi_\lambda\colon U \to \mathsf{GL}(V_\lambda)$ is the associated **$p$-adic** representation, then $$\lim_{\min_i \lambda_i \to \infty} \frac{\dim_{\mathbb{Q}_p} xV_\lambda}{\dim_{\mathbb{Q}_p} V_\lambda} = 1$$ for any non-zero $x \in \mathbb{Z}_p[\![U]\!]$.
+
+## Ranks on Iwasawa algebras II
+
+**Theorem.** (Fu, 2022) The conjecture holds for $U \leq_o \prod_{i=1}^k \mathsf{SL}_2(\mathbb{Z}_p)$ and any odd prime $p$.
+
+ - Proof sketch: $\mathbb{Z}_p[\![U]\!]$ embeds in a completion $\widehat{U(\mathfrak{g})}$ of the universal enveloping algebra of $\mathfrak{g} = \operatorname{Lie}(U)$.
+ - The action $\widehat{U(\mathfrak{g})} \curvearrowright V_\lambda$ factors through a central quotient $\widehat{U(\mathfrak{g})}/I_\lambda$.
+
+## Ranks on Iwasawa algebras III
+
+ - _(Ardakov-Wadsley, 2014)_ For almost all primes $p$, the composition $$\mathbb{Z}_p[\![U]\!] \to \widehat{U(\mathfrak{g})} \to \widehat{U(\mathfrak{g})}/I_\lambda$$ is injective.
+ - Canonical form for elements of $\widehat{U(\mathfrak{g})}/I_\lambda$ and explicit lower bound for $\dim_{\mathbb{Q}_p} xV_\lambda$ in terms of this form.
+ - The lower bound is asymptotically $\dim_{\mathbb{Q}_p} V_\lambda$ as $\min_i \lambda_i \to \infty$.
+
+# Thank you!

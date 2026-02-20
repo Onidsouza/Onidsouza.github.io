@@ -13,5 +13,8 @@
   },
   "publications.qmd": {
     "publications.html": "b5290df6"
+  },
+  "resources/slides/defense/defense.qmd": {
+    "defense.html": "7108212f"
   }
 }

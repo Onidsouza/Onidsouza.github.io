@@ -1,0 +1,52 @@
+/* ---- TUNABLE KNOBS ---- */
+:root{
+  --deck-font-size: 34px;
+  --deck-line-height: 1.32;     /* main text spacing */
+  --deck-heading-lh: 1.12;      /* headings a bit tighter */
+  --list-item-gap: 0.55em;      /* vertical spacing between bullets */
+  --list-top-gap: 0.55em;       /* space between title and list */
+}
+
+/* ---- FONTS ---- */
+:root{
+  --r-main-font: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --r-heading-font: var(--r-main-font);
+  --r-code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.reveal{
+  font-size: var(--deck-font-size);
+  line-height: var(--deck-line-height);
+  font-kerning: normal;
+}
+
+/* Headings: clean, not shouty */
+.reveal h1, .reveal h2, .reveal h3{
+  line-height: var(--deck-heading-lh);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+}
+
+/* Paragraph rhythm */
+.reveal p{
+  margin: 0.45em 0;
+}
+
+/* Lists: better vertical distribution */
+.reveal ul, .reveal ol{
+  margin-top: var(--list-top-gap);
+}
+
+.reveal li{
+  margin: var(--list-item-gap) 0;
+}
+
+/* Nested lists should be tighter */
+.reveal li > ul, .reveal li > ol{
+  margin-top: 0.25em;
+}
+
+.reveal li li{
+  margin: 0.25em 0;
+}
