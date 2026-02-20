@@ -50,3 +50,178 @@
 .reveal li li{
   margin: 0.25em 0;
 }
+
+/* Beamer-style: upcoming fragments are faint instead of hidden */
+.reveal .slides section .fragment {
+  opacity: 0.22 !important;        /* tweak */
+  visibility: visible !important;  /* override Reveal's hidden */
+}
+
+/* Revealed fragments are fully opaque */
+.reveal .slides section .fragment.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* --- Callouts: minimal + muted category color --- */
+.reveal .callout{
+  border-radius: 12px;
+  padding: 0.70em 0.95em;
+  margin: 0.80em 0;
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.015);
+}
+
+.reveal .callout .callout-title{
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35em;
+}
+
+.reveal .callout p:last-child,
+.reveal .callout ul:last-child,
+.reveal .callout ol:last-child{
+  margin-bottom: 0;
+}
+
+/* Definition (note): cool gray-blue */
+.reveal .callout.callout-note{
+  border-left: 6px solid rgba(60, 100, 160, 0.55);
+  background: rgba(60, 100, 160, 0.06);
+}
+
+/* Property (tip): green-teal */
+.reveal .callout.callout-tip{
+  border-left: 6px solid rgba(40, 140, 100, 0.55);
+  background: rgba(40, 140, 100, 0.06);
+}
+
+/* Theorem (important): deeper blue */
+.reveal .callout.callout-important{
+  border-left: 6px solid rgba(25, 70, 140, 0.75);
+  background: rgba(25, 70, 140, 0.07);
+}
+
+/* Warning: muted amber */
+.reveal .callout.callout-warning{
+  border-left: 6px solid rgba(180, 110, 0, 0.70);
+  background: rgba(180, 110, 0, 0.08);
+}
+
+/* Make italics slightly “lighter” */
+.reveal em,
+.reveal i {
+  opacity: 0.65;
+}
+
+/* Default callout size (slightly smaller) */
+.reveal .slides section .callout {
+  font-size: 0.94em !important;
+}
+
+/* --- Make callout internals inherit font-size (Quarto sets them smaller) --- */
+.reveal .callout .callout-body,
+.reveal .callout .callout-content,
+.reveal .callout .callout-title,
+.reveal .callout p,
+.reveal .callout li {
+  font-size: inherit !important;
+}
+
+/* --- PEEK CALLOUTS: stay open while any inner fragment is current --- */
+
+/* Base: collapsed */
+.reveal .slides section .peek.fragment .callout .callout-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-0.20em);
+  transition:
+    max-height 260ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+  will-change: max-height, opacity, transform;
+}
+
+/* Title spacing when collapsed */
+.reveal .slides section .peek.fragment .callout .callout-title {
+  margin-bottom: 0 !important;
+  transition: margin-bottom 180ms ease;
+}
+
+/* Expanded when:
+   (a) the wrapper itself is current, OR
+   (b) the wrapper *has* a descendant that is current (e.g. an incremental <li>) */
+.reveal .slides section .peek.fragment.current-fragment .callout .callout-content,
+.reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-content {
+  max-height: 40em;     /* bump if you have very tall callouts */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal .slides section .peek.fragment.current-fragment .callout .callout-title,
+.reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-title {
+  margin-bottom: 0.35em !important;
+}
+
+/* Fallback if :has() is unavailable: keep expanded once visible (prevents the annoying collapse) */
+@supports not selector(.peek:has(.current-fragment)) {
+  .reveal .slides section .peek.fragment.visible .callout .callout-content {
+    max-height: 40em;
+    opacity: 1;
+    transform: none;
+  }
+  .reveal .slides section .peek.fragment.visible .callout .callout-title {
+    margin-bottom: 0.35em !important;
+  }
+}
+
+
+/* =========================
+   PRINT / PDF EXPORT FIXES
+   ========================= */
+
+/* 1) In PDF/print, show all fragments normally */
+@media print {
+  .reveal .fragment { opacity: 1 !important; visibility: visible !important; }
+}
+.reveal.print-pdf .fragment,
+body.print-pdf .reveal .fragment {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 2) In PDF/print, peeks should ALWAYS be expanded */
+@media print {
+  .reveal .slides section .peek.fragment .callout .callout-content{
+    max-height: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+  .reveal .slides section .peek.fragment .callout .callout-title{
+    margin-bottom: 0.35em !important;
+  }
+}
+
+/* Reveal’s print-pdf mode (this is the crucial part) */
+.reveal.print-pdf .slides section .peek.fragment .callout .callout-content,
+body.print-pdf .reveal .slides section .peek.fragment .callout .callout-content{
+  max-height: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+.reveal.print-pdf .slides section .peek.fragment .callout .callout-title,
+body.print-pdf .reveal .slides section .peek.fragment .callout .callout-title{
+  margin-bottom: 0.35em !important;
+}
+
+/* In overview mode, show all fragments fully (ignore "faint future") */
+.reveal.overview .slides section .fragment {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important; /* in case you animate fragments */
+}
