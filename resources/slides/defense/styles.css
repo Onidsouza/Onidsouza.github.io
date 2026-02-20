@@ -177,46 +177,34 @@
   }
 }
 
-
-/* =========================
-   PRINT / PDF EXPORT FIXES
-   ========================= */
-
-/* 1) In PDF/print, show all fragments normally */
+/* ---------------------------
+   PRINT-PDF: respect peeks (do NOT auto-expand)
+   --------------------------- */
 @media print {
-  .reveal .fragment { opacity: 1 !important; visibility: visible !important; }
-}
-.reveal.print-pdf .fragment,
-body.print-pdf .reveal .fragment {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
+  /* collapse by default (same as screen) */
+  body.print-pdf .reveal .slides section .peek.fragment .callout .callout-content {
+    overflow: hidden !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    transform: translateY(-0.20em) !important;
+  }
 
-/* 2) In PDF/print, peeks should ALWAYS be expanded */
-@media print {
-  .reveal .slides section .peek.fragment .callout .callout-content{
-    max-height: none !important;
+  body.print-pdf .reveal .slides section .peek.fragment .callout .callout-title {
+    margin-bottom: 0 !important;
+  }
+
+  /* expand only when current OR when it contains the current fragment */
+  body.print-pdf .reveal .slides section .peek.fragment.current-fragment .callout .callout-content,
+  body.print-pdf .reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-content {
+    max-height: 40em !important;
     opacity: 1 !important;
     transform: none !important;
-    overflow: visible !important;
   }
-  .reveal .slides section .peek.fragment .callout .callout-title{
+
+  body.print-pdf .reveal .slides section .peek.fragment.current-fragment .callout .callout-title,
+  body.print-pdf .reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-title {
     margin-bottom: 0.35em !important;
   }
-}
-
-/* Reveal’s print-pdf mode (this is the crucial part) */
-.reveal.print-pdf .slides section .peek.fragment .callout .callout-content,
-body.print-pdf .reveal .slides section .peek.fragment .callout .callout-content{
-  max-height: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-  overflow: visible !important;
-}
-
-.reveal.print-pdf .slides section .peek.fragment .callout .callout-title,
-body.print-pdf .reveal .slides section .peek.fragment .callout .callout-title{
-  margin-bottom: 0.35em !important;
 }
 
 /* In overview mode, show all fragments fully (ignore "faint future") */
