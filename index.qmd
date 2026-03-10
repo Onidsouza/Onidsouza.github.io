@@ -21,7 +21,7 @@ format: html
 
 **Who am I?**
 
-I'm a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is [Andrei Jaikin-Zapirain](https://andreijaikin.wordpress.com/). Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I'm also interested in low dimensional topology and number theory. My hair is currently [this color]{.hair-color}. You can find my email at the footer of the page. You can click [here](https://orcid.org/0000-0002-0465-471X) for my ORCID page.
+I'm a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is [Andrei Jaikin-Zapirain](https://andreijaikin.wordpress.com/). Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I'm also interested in low dimensional topology and number theory. My hair is currently [this color]{.hair-color}. You can find my email at the footer of the page. You can click [here](https://orcid.org/0000-0002-0465-471X) for my ORCID page, and you can click [here](https://lattes.cnpq.br/7866584390212016) for my Lattes CV.
 
 :::
 

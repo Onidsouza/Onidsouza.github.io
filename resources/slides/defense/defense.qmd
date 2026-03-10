@@ -17,7 +17,7 @@ format:
     transition: none
     center: false
     chalkboard: true
-    pdf-separate-fragments: true
+    pdf-separate-fragments: false
     html-math-method: katex
 ---
 

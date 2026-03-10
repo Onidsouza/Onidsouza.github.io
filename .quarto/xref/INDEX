@@ -16,5 +16,8 @@
   },
   "resources/slides/defense/defense.qmd": {
     "defense.html": "7108212f"
+  },
+  "resources/slides/defense/defense_new.qmd": {
+    "defense_new.html": "f816e805"
   }
 }
