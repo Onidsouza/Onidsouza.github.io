@@ -57,11 +57,7 @@ Advisor: Andrei Jaikin-Zapirain
 ## What is this thesis about?
 
 ::: {.notes}
-Target time: XX:XX - XX:XX
-
-If I reach after XX:XX, skip ....
-
-If I reach before XX:XX, slow down and ...
+Target time: 00:00 - 02:00
 :::
 
 - How to measure the size of matrices over completed group algebras
@@ -71,6 +67,10 @@ If I reach before XX:XX, slow down and ...
 - Applications to cohomology of subgroups of Lie groups
 
 ## Two threads {.compact}
+
+::: {.notes}
+Target time: 02:00 - 04:00
+:::
 
 ::: {.columns}
 
@@ -90,6 +90,10 @@ If I reach before XX:XX, slow down and ...
 
 ## Rank over a field
 
+::: {.notes}
+Target time: 04:00 - 06:00
+:::
+
 ::: {.callout-note title="Over a field or division ring"}
  $\mathrm{rk}(A) = \dim(\mathrm{im}(A))$
 :::
@@ -102,6 +106,12 @@ If I reach before XX:XX, slow down and ...
     - "dimension" for the image is not available
 
 ## Inner rank {.compact}
+
+::: {.notes}
+Target time: 06:00 - 08:00
+
+If I reach before 05:00, talk on Pathologies
+:::
 
 ::: {.callout-note title="Definition: inner rank in a ring $R$"}
 $\mathrm{irk}_R(A)$ is the smallest $k$ such that $A_{m\times n} = B_{m \times k} \cdot C_{k \times n}$ over $R$.
@@ -121,6 +131,12 @@ Over $\mathbb{Q}[x,y,z]$: $$\begin{pmatrix}0 & z & -y\\ -z & 0 & x\\ y & -x & 0\
 :::
 
 ## Sylvester rank functions {.compact}
+
+::: {.notes}
+Target time: 08:00 - 10:00
+
+If I reach before 07:00, talk examples
+:::
 
 ::: {.callout-note title="Definition: Sylvester rank functions"}
 Is a function $\mathrm{rk}\colon \mathrm{Mat}(R) \to \mathbb{R}_{\geq 0}$ that satisfies the expected formal properties: $\mathrm{rk}(0) = 0$, $\mathrm{rk}(1) = 1$, $\mathrm{rk}(AB) \leq \min\{\mathrm{rk}(A),\mathrm{rk}(B)\}$, $\mathrm{rk}\begin{pmatrix}A & 0 \\ 0 & B\end{pmatrix} = \mathrm{rk}(A) + \mathrm{rk}(B)$ and $\mathrm{rk}\begin{pmatrix} A & C\\ 0 & B\end{pmatrix} \geq \mathrm{rk}(A) + \mathrm{rk}(B)$.
@@ -146,11 +162,21 @@ Is a function $\mathrm{rk}\colon \mathrm{Mat}(R) \to \mathbb{R}_{\geq 0}$ that s
 
 ## The main questions
 
+::: {.notes}
+Target time: 10:00 - 12:00
+:::
+
 1. When is $\mathrm{irk}_R$ itself a Sylvester rank function?
 2. Is there a canonical / maximal / universal rank?
 3. Can natural rank functions be approximated by simpler ones?
 
 ## Sylvester domains {.compact}
+
+::: {.notes}
+Target time: 12:00 - 14:00
+
+If I reach before 12:00, talk about rigidity
+:::
 
 ::: {.callout-note title="Definition: Sylvester domains"}
 Is a ring $R$ such that $\operatorname{irk}_R$ satisfies the Sylvester rank function axioms.
@@ -187,6 +213,10 @@ Any integer valued rank function $\mathrm{rk} \in \mathbb{P}(R)$ is the pullback
 
 ## Profinite rings {.compact}
 
+::: {.notes}
+Target time: 14:00 - 16:00
+:::
+
 ::: {.callout-note title="Definition"}
 A profinite ring is a compact Hausdorff ring. Equivalently, it is an inverse limit of finite discrete rings.
 :::
@@ -197,6 +227,12 @@ A profinite ring is a compact Hausdorff ring. Equivalently, it is an inverse lim
     - $\mathbb{F}_p[\![G]\!]$ for $G$ profinite
 
 ## Profinite Sylvester domains {.compact}
+
+::: {.notes}
+Target time: 16:00 - 18:00
+
+If I reach before 16:00, talk about Jaikin's criterion
+:::
 
 - There are positive examples:
     - completed group $\mathbb{F}_p$-algebras of free pro-$p$ groups
@@ -221,6 +257,12 @@ Then, $R$ is a Sylvester domain and $\varphi^\# \mathrm{rk}_{\mathcal{D}} = \mat
 
 ## Commensurability {.compact}
 
+::: {.notes}
+Target time: 18:00 - 20:00
+
+If I reach before 18:00, explain why this is non-trivial
+:::
+
 ::: {.callout-important title="Theorem. *(Jaikin-S., 2025)*"}
  If $G$ is a torsion-free finitely generated pro-$p$ group, then $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain if and only if $\mathbb{F}_p[\![U]\!]$ is a Sylvester domain for some/any open subgroup $U$ of $G$.
 :::
@@ -237,6 +279,12 @@ Then, $R$ is a Sylvester domain and $\varphi^\# \mathrm{rk}_{\mathcal{D}} = \mat
     - Given $M \leq_{f.g.} \mathcal{D}_{\mathbb{F}_p[\![U]\!]} * G/U$ and $$0 \to I \to \mathbb{F}_p[\![G]\!]^n \to M \to 0\,,$$ $I$ is free iff $\mathrm{Tor}_1^{\mathbb{F}_p[\![G]\!]}(I,\mathbb{F}_p) = \mathrm{Tor}_2^{\mathbb{F}_p[\![G]\!]}(M,\mathbb{F}_p)=0$.
 
 ## Free-by-$\mathbb{Z}_p$ groups {.compact data-menu-title="Free-by-ℤₚ groups"}
+
+::: {.notes}
+Target time: 20:00 - 22:00
+
+If I reach before 20:00, talk mild presentations
+:::
 
 - $G = F \rtimes \mathbb{Z}_p$ with $F$ a free pro-$p$ group.
 
@@ -266,6 +314,10 @@ $G$ is f.g. free-by-$\mathbb{Z}_p$ iff $G$ admits a flag presentation: $$G = \la
 
 ## Main theorem on the profinite side {.compact}
 
+::: {.notes}
+Target time: 22:00 - 24:00
+:::
+
 ::: {.callout-important title="Theorem. *(Jaikin-S., 2025)*"}
 If $G$ is a torsion-free finitely generated virtually free-by-$\mathbb{Z}_p$ pro-$p$ group, then $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain.
 :::
@@ -274,6 +326,12 @@ If $G$ is a torsion-free finitely generated virtually free-by-$\mathbb{Z}_p$ pro
 - Explicit construction of a division ring embedding realizing the inner rank
 
 ## Proof idea {.compact .tight-math}
+
+::: {.notes}
+Target time: 24:00 - 26:00
+
+If I reach before 24:00, talk about the graded picture
+:::
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -304,6 +362,12 @@ Assume $G$ has a mild flag presentation. Under the radical filtration, $$\mathrm
 
 ## Approximation on the profinite side {.compact .tight-math}
 
+::: {.notes}
+Target time: 26:00 - 28:00
+
+If I reach before 26:00, talk about topology and localization
+:::
+
 ::: {.callout-important title="Theorem. *(Jaikin-S., 2025)*"}
 If $G = \varprojlim G_i$ is a torsion-free finitely generated virtually free-by-$\mathbb{Z}_p$ pro-$p$ group, then $$\mathrm{irk}_{\mathbb{F}_p[\![G]\!]} = \lim \mathrm{rk}_{G_i} = \mathrm{rk}_G\,.$$
 :::
@@ -327,10 +391,20 @@ Let $R$ be a profinite Sylvester domain with associated epic universal division 
 
 ## Semisimple groups
 
+::: {.notes}
+Target time: 28:00 - 30:00
+:::
+
 - So far: canonical rank functions on completed group algebras and how they interplay
 - Now: approximation of the von Neumann rank function on complex group algebras by ranks induced from rational representations
 
 ## The asymptotic cohomology problem {.compact .tight-math}
+
+::: {.notes}
+Target time: 30:00 - 32:00
+
+If I reach before 30:00, discuss weights
+:::
 
 ::: {.callout-important title="Cohomology growth"}
 Let $G$ be a complex semisimple Lie group, $\Gamma \leq G$ be a finitely generated subgroup and $V_\lambda$ be the irreducible rational representation of $G$ with highest weight $\lambda$. How does the cohomology groups $\mathrm{H}^i(\Gamma,V_\lambda)$ grow as $\lambda \to \infty$?
@@ -349,6 +423,12 @@ Let $G$ be a semisimple complex Lie group. The irreducible rational representati
 
 ## Cohomology and rank functions {.dense .tight-math}
 
+::: {.notes}
+Target time: 32:00 - 34:00
+
+If I reach before 32:00, explain the matrices
+:::
+
 ::: {.callout-important title="Proposition."} 
 For $\Gamma$ of type $FP_\infty(\mathbb{C})$ there are fixed matrices $A$ and $B$ over $\mathbb{C}$ and an integer constant $C$ such that for any complex representation $\varphi\colon \Gamma \to \mathsf{GL}(V)$, $$\dim_{\mathbb{C}} \mathrm{H}^i(\Gamma, V) = \dim_{\mathbb{C}}(V)(C - \mathrm{rk}_{\varphi}(A) - \mathrm{rk}_{\varphi}(B))\,.$$
 :::
@@ -365,12 +445,20 @@ $$\cdots \to \mathbb{C}[\Gamma]^{n_{i+1}} \overset{\cdot B}{\to} \mathbb{C}[\Gam
 
 ## Approximation for products of $\mathsf{SL}_2(\mathbb{C})$ {.compact .tight-math data-menu-title="Approximation for products of SL₂(ℂ)"}
 
+::: {.notes}
+Target time: 34:00 - 36:00
+:::
+
 ::: {.callout-important title="Theorem. *(Guerrero-S., submitted)*"} 
 Let $G$ be a quotient of $\prod_{i=1}^k \mathsf{SL}_2(\mathbb{C})$ by a central subgroup and $\Gamma \leq G$ be a finitely generated torsion-free subgroup. Then, for the rational representations $V_\lambda$, $$\mathrm{rk}_{\varphi_\lambda} \to \mathrm{rk}_\Gamma \text{ as }\min_i \lambda_i \to \infty\,.$$
 :::
 
 
 ## Consequence for $\ell^2$-cohomology {.compact .tight-math data-menu-title="Consequence for ℓ²-cohomology"}
+
+::: {.notes}
+Target time: 36:00 - 38:00
+:::
 
 ::: {.callout-important title="Corollary."}
 Let $G$ be a quotient of $\prod_{i=1}^k \mathsf{SL}_2(\mathbb{C})$ by a central subgroup and $\Gamma \leq G$ be a torsion-free subgroup of type $FP_\infty(\mathbb{C})$. Then: $$\frac{\dim_{\mathbb{C}} \mathrm{H}^i(\Gamma,V_\lambda)}{\dim_{\mathbb{C}} V_\lambda} \to \beta_i^{(2)}(\Gamma)$$ as $\min_j \lambda_j \to \infty$.
@@ -379,6 +467,12 @@ Let $G$ be a quotient of $\prod_{i=1}^k \mathsf{SL}_2(\mathbb{C})$ by a central 
 - If $\beta_i^{(2)}(\Gamma) = 0$, it gives explicit bounds on $\dim_{\mathbb{C}} \mathrm{H}^i(\Gamma, V_\lambda)$ as a function of $\lambda$.
 
 ## Proof Strategy {.compact}
+
+::: {.notes}
+Target time: 38:00 - 42:00
+
+If I start before 38, I can explain one of the three steps more carefully. Reduction to finite index is our main original contribution.
+:::
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -426,6 +520,10 @@ For odd primes $p$, the Iwasawa algebra $\mathbb{Z}_p[\![U_1]\!]$ is a Noetheria
 
 ## A $p$-adic reformulation {.compact .tight-math data-menu-title="A p-adic reformulation"}
 
+::: {.notes}
+Target time: 42:00 - 44:00
+:::
+
 ::: {.callout-note title="Conjecture. *(Guerrero-S., submitted)*"}
 Let $U$ be a compact uniform split semisimple and simply-connected $p$-adic Lie group, $V_\lambda$ be an irreducible $p$-adic Lie representation of $U$ and $\mathbb{Z}_p[\![U]\!]$ be its Iwasawa algebra. For any non-zero $x \in \mathbb{Z}_p[\![U]\!]$ we have $$\frac{\dim_{\mathbb{Q}_p} xV_\lambda}{ \dim_{\mathbb{Q}_p} V_\lambda} = 1$$ as $\min_i \lambda_i \to \infty$.
 :::
@@ -434,6 +532,12 @@ Let $U$ be a compact uniform split semisimple and simply-connected $p$-adic Lie 
 - Imples the corresponding complex approximation for any complex Lie group with the same root system.
 
 ## Rank one vs higher rank
+
+::: {.notes}
+Target time: 44:00 - 46:00
+
+If I reach before 44:00, I can talk completion of universal enveloping algebras
+:::
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -461,6 +565,10 @@ For almost all primes $p$, the composition $$\mathbb{Z}_p[\![U]\!] \to \widehat{
 - Canonical form for elements of $\widehat{U(\mathfrak{g})}/I_\lambda$ and explicit lower bound for $\dim_{\mathbb{Q}_p} xV_\lambda$ in terms of this form.
 
 ## Further directions
+
+::: {.notes}
+Target time: 46:00 - 48:00
+:::
 
 1. Classify profinite Sylvester domains more systematically
     - Behaviour under free constructions
