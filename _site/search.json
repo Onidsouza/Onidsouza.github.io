@@ -7,186 +7,186 @@
     "text": "En la Universidad Autónoma de Madrid\n\nMatemática Discreta, 2025-2026, Primero cuatrimestre, grupo 721.\n\nApuntes sobre recurrencias.\n\nÁlgebra 2, 2024-2025, Segundo cuatrimestre, grupo 5112.\nÁlgebra 1, 2024-2025, Primero cuatrimestre, grupo 5112.\n\nApuntes sobre espacios vectoriales y cuerpos.\n\nEstructuras Algebraicas, 2024-2025, Primero cuatrimestre, grupo 1301.\nGeometría de Curvas y Superficies, 2023-2024, Segundo cuatrimestre, grupo 230.\n\nDiapositivas de la hoja 1, hoja 2, hoja 3, hoja 4 (errata) y hoja 5.\n\nÁlgebra 1, 2023-2024, Primero cuatrimestre, grupos 511 y 516.\nCálculo 2, 2022-2023, Segundo cuatrimestre, grupos 211 y 212.\nÁlgebra 1, 2022-2023, Primero cuatrimestre, grupos 5112 y 5162.\nCálculo 2, 2021-2022, Segundo cuatrimestre, grupo 212.\n\nResolución de la hoja de ejercicios en este enlace."
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#ranks-over-pro-p-groups",
-    "href": "resources/slides/defense/defense_new.html#ranks-over-pro-p-groups",
+    "objectID": "resources/slides/defense/defense.html#ranks-over-pro-p-groups",
+    "href": "resources/slides/defense/defense.html#ranks-over-pro-p-groups",
     "title": "Henrique Souza",
     "section": "Ranks over pro-p groups",
     "text": "Ranks over pro-p groups\n\nHenrique Souza\n\n\nUniversidad Autónoma de Madrid\nAdvisor: Andrei Jaikin-Zapirain"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#what-is-this-thesis-about",
-    "href": "resources/slides/defense/defense_new.html#what-is-this-thesis-about",
+    "objectID": "resources/slides/defense/defense.html#what-is-this-thesis-about",
+    "href": "resources/slides/defense/defense.html#what-is-this-thesis-about",
     "title": "Henrique Souza",
     "section": "What is this thesis about?",
     "text": "What is this thesis about?\n\nTarget time: XX:XX - XX:XX\nIf I reach after XX:XX, skip ….\nIf I reach before XX:XX, slow down and …\n\n\nHow to measure the size of matrices over completed group algebras\nTwo themes:\n\nCanonical rank functions\nApproximations of rank functions\n\nApplications to cohomology of subgroups of Lie groups"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#two-threads",
-    "href": "resources/slides/defense/defense_new.html#two-threads",
+    "objectID": "resources/slides/defense/defense.html#two-threads",
+    "href": "resources/slides/defense/defense.html#two-threads",
     "title": "Henrique Souza",
     "section": "Two threads",
     "text": "Two threads\n\n\n\nProfinite groups\n\ninner rank, Sylvester domains, completed group algebras\n\n\n\n\nSemisimple groups\n\nrational representations, von Neumann rank, Iwasawa algebras\n\n\n\n\nRoadmap: Rank functions \\to profinite Sylvester domains \\to approximations from representations"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#rank-over-a-field",
-    "href": "resources/slides/defense/defense_new.html#rank-over-a-field",
+    "objectID": "resources/slides/defense/defense.html#rank-over-a-field",
+    "href": "resources/slides/defense/defense.html#rank-over-a-field",
     "title": "Henrique Souza",
     "section": "Rank over a field",
     "text": "Rank over a field\n\n\n\n\n\n\n\nOver a field or division ring\n\n\n\\mathrm{rk}(A) = \\dim(\\mathrm{im}(A))\n\n\n\n\n\nOver division rings:\n\ninvariant under row and column operations\nbehaves well in exact sequences\n\nOver a general ring:\n\nno Gaussian elimination\n“dimension” for the image is not available"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#inner-rank",
-    "href": "resources/slides/defense/defense_new.html#inner-rank",
+    "objectID": "resources/slides/defense/defense.html#inner-rank",
+    "href": "resources/slides/defense/defense.html#inner-rank",
     "title": "Henrique Souza",
     "section": "Inner rank",
     "text": "Inner rank\n\n\n\n\n\n\n\nDefinition: inner rank in a ring R\n\n\n\\mathrm{irk}_R(A) is the smallest k such that A_{m\\times n} = B_{m \\times k} \\cdot C_{k \\times n} over R.\n\n\n\n\n\nAgrees with usual rank over fields and division rings\nDefined over any ring\nMay fail to satisfy the expected formal properties"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#sylvester-rank-functions",
-    "href": "resources/slides/defense/defense_new.html#sylvester-rank-functions",
+    "objectID": "resources/slides/defense/defense.html#sylvester-rank-functions",
+    "href": "resources/slides/defense/defense.html#sylvester-rank-functions",
     "title": "Henrique Souza",
     "section": "Sylvester rank functions",
     "text": "Sylvester rank functions\n\n\n\n\n\n\n\nDefinition: Sylvester rank functions\n\n\nIs a function \\mathrm{rk}\\colon \\mathrm{Mat}(R) \\to \\mathbb{R}_{\\geq 0} that satisfies the expected formal properties: \\mathrm{rk}(0) = 0, \\mathrm{rk}(1) = 1, \\mathrm{rk}(AB) \\leq \\min\\{\\mathrm{rk}(A),\\mathrm{rk}(B)\\}, \\mathrm{rk}\\begin{pmatrix}A & 0 \\\\ 0 & B\\end{pmatrix} = \\mathrm{rk}(A) + \\mathrm{rk}(B) and \\mathrm{rk}\\begin{pmatrix} A & C\\\\ 0 & B\\end{pmatrix} \\geq \\mathrm{rk}(A) + \\mathrm{rk}(B).\n\n\n\n\n\nThe set \\mathbb{P}(R) of Sylvester rank functions is usually immense\nIn general, \\mathrm{irk}_R \\not\\in \\mathbb{P}(R)"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#the-main-questions",
-    "href": "resources/slides/defense/defense_new.html#the-main-questions",
+    "objectID": "resources/slides/defense/defense.html#the-main-questions",
+    "href": "resources/slides/defense/defense.html#the-main-questions",
     "title": "Henrique Souza",
     "section": "The main questions",
     "text": "The main questions\n\nWhen is \\mathrm{irk}_R itself a Sylvester rank function?\nIs there a canonical / maximal / universal rank?\nCan natural rank functions be approximated by simpler ones?"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#sylvester-domains",
-    "href": "resources/slides/defense/defense_new.html#sylvester-domains",
+    "objectID": "resources/slides/defense/defense.html#sylvester-domains",
+    "href": "resources/slides/defense/defense.html#sylvester-domains",
     "title": "Henrique Souza",
     "section": "Sylvester domains",
     "text": "Sylvester domains\n\n\n\n\n\n\n\nDefinition: Sylvester domains\n\n\nIs a ring R such that \\operatorname{irk}_R satisfies the Sylvester rank function axioms.\n\n\n\n\n\n\n\nExamples:\n\nfields and division rings\nfree algebras\ngroup algebras of free groups\n\n\n\n\nNon-examples:\n\nRings with zero divisors\nHigh-dimensional commutative domains (\\mathbb{C}[x,y,z])\n\\mathbb{C}[\\pi_1(\\text{Klein bottle})]"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#profinite-rings",
-    "href": "resources/slides/defense/defense_new.html#profinite-rings",
+    "objectID": "resources/slides/defense/defense.html#profinite-rings",
+    "href": "resources/slides/defense/defense.html#profinite-rings",
     "title": "Henrique Souza",
     "section": "Profinite rings",
     "text": "Profinite rings\n\n\n\n\n\n\n\nDefinition\n\n\nA profinite ring is a compact Hausdorff ring. Equivalently, it is an inverse limit of finite discrete rings.\n\n\n\n\n\nKey examples:\n\n\\mathbb{Z}_p\nR[\\![t]\\!] when R is profinite\n\\mathbb{F}_p[\\![G]\\!] for G profinite"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#profinite-sylvester-domains",
-    "href": "resources/slides/defense/defense_new.html#profinite-sylvester-domains",
+    "objectID": "resources/slides/defense/defense.html#profinite-sylvester-domains",
+    "href": "resources/slides/defense/defense.html#profinite-sylvester-domains",
     "title": "Henrique Souza",
     "section": "Profinite Sylvester domains",
     "text": "Profinite Sylvester domains\n\nThere are positive examples:\n\ncompleted group \\mathbb{F}_p-algebras of free pro-p groups\n\nThere are strong constraints:\n\n\\mathbb{F}_p[\\![G]\\!] is a domain \\implies G is pro-p\nProfinite Sylvester domains are coherent\n\\mathbb{F}_p[\\![G]\\!] is a Sylvester domain \\implies \\operatorname{cd}(G) \\leq 2\n\nSuggests a genuine classification problem"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#commensurability",
-    "href": "resources/slides/defense/defense_new.html#commensurability",
+    "objectID": "resources/slides/defense/defense.html#commensurability",
+    "href": "resources/slides/defense/defense.html#commensurability",
     "title": "Henrique Souza",
     "section": "Commensurability",
     "text": "Commensurability\n\n\n\n\n\n\n\nTheorem. (Jaikin-S., 2025)\n\n\nIf G is a torsion-free finitely generated pro-p group, then \\mathbb{F}_p[\\![G]\\!] is a Sylvester domain if and only if \\mathbb{F}_p[\\![U]\\!] is a Sylvester domain for some/any open subgroup U of G.\n\n\n\n\n\nNeither direction is obvious\nThis is special to the profinite setting"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#free-by-mathbbz_p-groups",
-    "href": "resources/slides/defense/defense_new.html#free-by-mathbbz_p-groups",
+    "objectID": "resources/slides/defense/defense.html#free-by-mathbbz_p-groups",
+    "href": "resources/slides/defense/defense.html#free-by-mathbbz_p-groups",
     "title": "Henrique Souza",
     "section": "Free-by-\\mathbb{Z}_p groups",
     "text": "Free-by-\\mathbb{Z}_p groups\n\nG = F \\rtimes \\mathbb{Z}_p with F a free pro-p group.\n\n\n\n\nExamples:\n\npro-p completions of orientable surface groups\nPD^2 groups\n(virtual) pro-p completion of f.g. free-by-cyclic groups\n\n\n\n\nAdmits “canonical” presentations\nRigid filtered structure: virtually mild in the sense of Labute"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#main-theorem-on-the-profinite-side",
-    "href": "resources/slides/defense/defense_new.html#main-theorem-on-the-profinite-side",
+    "objectID": "resources/slides/defense/defense.html#main-theorem-on-the-profinite-side",
+    "href": "resources/slides/defense/defense.html#main-theorem-on-the-profinite-side",
     "title": "Henrique Souza",
     "section": "Main theorem on the profinite side",
     "text": "Main theorem on the profinite side\n\n\n\n\n\n\n\nTheorem. (Jaikin-S., 2025)\n\n\nIf G is a torsion-free finitely generated virtually free-by-\\mathbb{Z}_p pro-p group, then \\mathbb{F}_p[\\![G]\\!] is a Sylvester domain.\n\n\n\n\n\nNew large family of profinite Sylvester domains\nExplicit construction of a division ring embedding realizing the inner rank"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#proof-idea",
-    "href": "resources/slides/defense/defense_new.html#proof-idea",
+    "objectID": "resources/slides/defense/defense.html#proof-idea",
+    "href": "resources/slides/defense/defense.html#proof-idea",
     "title": "Henrique Souza",
     "section": "Proof idea",
     "text": "Proof idea\n\n\n\nWrite the group algebra as a skew power series ring\nCompute the associated graded algebra with respect to the radical filtration\nConstruct an embedding into a suitable filtered division ring\nApply Jaikin’s criterion to identify the induced rank with the inner rank\n\n\n\n\\mathbb{F}_p[\\![G]\\!] \\simeq \\mathbb{F}_p[\\![F]\\!][\\![t-1;\\sigma,\\delta]\\!]\nFor R \\to \\mathcal{D}, we must check:\n\n\\mathrm{Tor}_1^R(\\mathcal{D},\\mathcal{D}) = 0\nFinitely generated R-submodules of \\mathcal{D} have projective dimension \\leq 1"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#approximation-on-the-profinite-side",
-    "href": "resources/slides/defense/defense_new.html#approximation-on-the-profinite-side",
+    "objectID": "resources/slides/defense/defense.html#approximation-on-the-profinite-side",
+    "href": "resources/slides/defense/defense.html#approximation-on-the-profinite-side",
     "title": "Henrique Souza",
     "section": "Approximation on the profinite side",
     "text": "Approximation on the profinite side\n\n\n\n\n\n\n\nTheorem. (Jaikin-S., 2025)\n\n\nIf G = \\varprojlim G_i is a torsion-free finitely generated virtually free-by-\\mathbb{Z}_p pro-p group, then \\mathrm{irk}_{\\mathbb{F}_p[\\![G]\\!]} = \\lim \\mathrm{rk}_{G_i} = \\mathrm{rk}_G\\,.\n\n\n\n\n\nThe ranks \\mathrm{rk}_{G_i} come from the regular representations G \\to \\mathsf{GL}(\\mathbb{F}_p[G_i]).\n\\mathrm{rk}_G is a canonical rank on \\mathbb{F}_p[\\![G]\\!] that does not depend on the decomposition G = \\varprojlim G_i."
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#semisimple-groups",
-    "href": "resources/slides/defense/defense_new.html#semisimple-groups",
+    "objectID": "resources/slides/defense/defense.html#semisimple-groups",
+    "href": "resources/slides/defense/defense.html#semisimple-groups",
     "title": "Henrique Souza",
     "section": "Semisimple groups",
     "text": "Semisimple groups\n\nSo far: canonical rank functions on completed group algebras and how they interplay\nNow: approximation of the von Neumann rank function on complex group algebras by ranks induced from rational representations"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#the-asymptotic-cohomology-problem",
-    "href": "resources/slides/defense/defense_new.html#the-asymptotic-cohomology-problem",
+    "objectID": "resources/slides/defense/defense.html#the-asymptotic-cohomology-problem",
+    "href": "resources/slides/defense/defense.html#the-asymptotic-cohomology-problem",
     "title": "Henrique Souza",
     "section": "The asymptotic cohomology problem",
     "text": "The asymptotic cohomology problem\n\n\n\n\n\n\n\nCohomology growth\n\n\nLet G be a complex semisimple Lie group, \\Gamma \\leq G be a finitely generated subgroup and V_\\lambda be the irreducible rational representation of G with highest weight \\lambda. How does the cohomology groups \\mathrm{H}^i(\\Gamma,V_\\lambda) grow as \\lambda \\to \\infty?\n\n\n\n\n\nGeometry of locally symmetric spaces\nArithmetic interpretation for lattices as automorphic forms"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#cohomology-and-rank-functions",
-    "href": "resources/slides/defense/defense_new.html#cohomology-and-rank-functions",
+    "objectID": "resources/slides/defense/defense.html#cohomology-and-rank-functions",
+    "href": "resources/slides/defense/defense.html#cohomology-and-rank-functions",
     "title": "Henrique Souza",
     "section": "Cohomology and rank functions",
     "text": "Cohomology and rank functions\n\n\n\n\n\n\n\nProposition.\n\n\nFor \\Gamma of type FP_\\infty(\\mathbb{C}) there are fixed matrices A and B over \\mathbb{C} and an integer constant C such that for any complex representation \\varphi\\colon \\Gamma \\to \\mathsf{GL}(V), \\dim_{\\mathbb{C}} \\mathrm{H}^i(\\Gamma, V) = \\dim_{\\mathbb{C}}(V)(C - \\mathrm{rk}_{\\varphi}(A) - \\mathrm{rk}_{\\varphi}(B))\\,.\n\n\n\n\n\nCohomology growth becomes a rank approximation problem."
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#approximation-for-products-of-mathsfsl_2mathbbc",
-    "href": "resources/slides/defense/defense_new.html#approximation-for-products-of-mathsfsl_2mathbbc",
+    "objectID": "resources/slides/defense/defense.html#approximation-for-products-of-mathsfsl_2mathbbc",
+    "href": "resources/slides/defense/defense.html#approximation-for-products-of-mathsfsl_2mathbbc",
     "title": "Henrique Souza",
     "section": "Approximation for products of \\mathsf{SL}_2(\\mathbb{C})",
     "text": "Approximation for products of \\mathsf{SL}_2(\\mathbb{C})\n\n\n\n\n\n\n\nTheorem. (Guerrero-S., submitted)\n\n\nLet G be a quotient of \\prod_{i=1}^k \\mathsf{SL}_2(\\mathbb{C}) by a central subgroup and \\Gamma \\leq G be a finitely generated torsion-free subgroup. Then, for the rational representations V_\\lambda, \\mathrm{rk}_{\\varphi_\\lambda} \\to \\mathrm{rk}_\\Gamma \\text{ as }\\min_i \\lambda_i \\to \\infty\\,."
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#consequence-for-ell2-cohomology",
-    "href": "resources/slides/defense/defense_new.html#consequence-for-ell2-cohomology",
+    "objectID": "resources/slides/defense/defense.html#consequence-for-ell2-cohomology",
+    "href": "resources/slides/defense/defense.html#consequence-for-ell2-cohomology",
     "title": "Henrique Souza",
     "section": "Consequence for \\ell^2-cohomology",
     "text": "Consequence for \\ell^2-cohomology\n\n\n\n\n\n\n\nCorollary.\n\n\nLet G be a quotient of \\prod_{i=1}^k \\mathsf{SL}_2(\\mathbb{C}) by a central subgroup and \\Gamma \\leq G be a torsion-free subgroup of type FP_\\infty(\\mathbb{C}). Then: \\frac{\\dim_{\\mathbb{C}} \\mathrm{H}^i(\\Gamma,V_\\lambda)}{\\dim_{\\mathbb{C}} V_\\lambda} \\to \\beta_i^{(2)}(\\Gamma) as \\min_j \\lambda_j \\to \\infty.\n\n\n\n\n\nIf \\beta_i^{(2)}(\\Gamma) = 0, it gives explicit bounds on \\dim_{\\mathbb{C}} \\mathrm{H}^i(\\Gamma, V_\\lambda) as a function of \\lambda."
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#proof-strategy",
-    "href": "resources/slides/defense/defense_new.html#proof-strategy",
+    "objectID": "resources/slides/defense/defense.html#proof-strategy",
+    "href": "resources/slides/defense/defense.html#proof-strategy",
     "title": "Henrique Souza",
     "section": "Proof Strategy",
     "text": "Proof Strategy\n\n\n\nOn the complex group algebra:\n\nProve a “commensurability invariance” property for convergence of ranks\nReduce to proving it for some finite index subgroup of any f.g. Zariski-dense \\Gamma\nEmbed finitely generated subrings of \\mathbb{C}[\\Gamma] into Iwasawa algebras \\mathbb{Z}_p[\\![U]\\!]\n\n\n\n\nOn the Iwasawa algebras \\mathbb{Z}_p[\\![U]\\!]\n\nRelate the von Neumann rank of \\Gamma with the Ore rank of \\mathbb{Z}_p[\\![U]\\!]\nThe Ore rank is the only rank function satisfying \\mathrm{rk}(x) = 1 for any non-zero x \\in \\mathbb{Z}_p[\\![U]\\!]"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#a-p-adic-reformulation",
-    "href": "resources/slides/defense/defense_new.html#a-p-adic-reformulation",
+    "objectID": "resources/slides/defense/defense.html#a-p-adic-reformulation",
+    "href": "resources/slides/defense/defense.html#a-p-adic-reformulation",
     "title": "Henrique Souza",
     "section": "A p-adic reformulation",
     "text": "A p-adic reformulation\n\n\n\n\n\n\n\nConjecture. (Guerrero-S., submitted)\n\n\nLet U be a compact uniform split semisimple and simply-connected p-adic Lie group, V_\\lambda be an irreducible p-adic Lie representation of U and \\mathbb{Z}_p[\\![U]\\!] be its Iwasawa algebra. For any non-zero x \\in \\mathbb{Z}_p[\\![U]\\!] we have \\frac{\\dim_{\\mathbb{Q}_p} xV_\\lambda}{ \\dim_{\\mathbb{Q}_p} V_\\lambda} = 1 as \\min_i \\lambda_i \\to \\infty.\n\n\n\n\n\nThe p-adic analogue of the approximation theorem\nImples the corresponding complex approximation for any complex Lie group with the same root system."
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#rank-one-vs-higher-rank",
-    "href": "resources/slides/defense/defense_new.html#rank-one-vs-higher-rank",
+    "objectID": "resources/slides/defense/defense.html#rank-one-vs-higher-rank",
+    "href": "resources/slides/defense/defense.html#rank-one-vs-higher-rank",
     "title": "Henrique Souza",
     "section": "Rank one vs higher rank",
     "text": "Rank one vs higher rank\n\n\n\nRank one factors: \\prod_{i=1}^k \\mathsf{SL}_2\n\nW. Fu (2022) proves the conjectural picture in this case\nThe proof uses K. Ardakov’s and S. Wadsley’s embedding of \\mathbb{Z}_p[\\![U]\\!] into central quotients of completed universal enveloping algebras, valid for any root system\n\n\n\n\nHigher rank factors:\n\nRemains open and is part of ongoing work\nValidity of this conjecture would imply other conjectural results for lattices, such as upper bounds on the growth of the space of automorphic forms"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#further-directions",
-    "href": "resources/slides/defense/defense_new.html#further-directions",
+    "objectID": "resources/slides/defense/defense.html#further-directions",
+    "href": "resources/slides/defense/defense.html#further-directions",
     "title": "Henrique Souza",
     "section": "Further directions",
     "text": "Further directions\n\nClassify profinite Sylvester domains more systematically\n\nBehaviour under free constructions\nCoherent non-examples of Sylvester domains among completed group algebras of dimension 2\n\nExtend semisimple results beyond rank one factors\n\nNew proofs for \\mathsf{SL}_2\nStructure of completed universal enveloping algebras"
   },
   {
-    "objectID": "resources/slides/defense/defense_new.html#thank-you",
-    "href": "resources/slides/defense/defense_new.html#thank-you",
+    "objectID": "resources/slides/defense/defense.html#thank-you",
+    "href": "resources/slides/defense/defense.html#thank-you",
     "title": "Henrique Souza",
     "section": "Thank you!",
     "text": "Thank you!"
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "What can I get you?",
+    "objectID": "miscellanea.html",
+    "href": "miscellanea.html",
+    "title": "Miscellanea",
     "section": "",
-    "text": "List of publications\nFrom newest to oldest\nAsymptotics of rational representations for algebraic groups (2024). Joint with Lander Guerrero Sánchez. Submitted. On Arxiv: https://arxiv.org/abs/2405.17360\n\n\n\n\n\n\nNoteAbstract\n\n\n\n\n\nWe study the asymptotic behaviour of the cohomology of subgroups \\(\\Gamma\\) of an algebraic group \\(G\\) with coefficients in the various irreducible rational representations of \\(G\\) and raise a conjecture about it. Namely, we expect that the dimensions of these cohomology groups approximate the \\(\\ell^2\\)-Betti numbers of \\(\\Gamma\\) with a controlled error term. We provide positive answers when \\(G\\) is a product of copies of \\(\\mathrm{SL}_2\\). As an application, we obtain new proofs of J. Lott’s and W. Lück’s computation of the \\(\\ell^2\\)-Betti numbers of hyperbolic 3-manifolds and W. Fu’s upper bound on the growth of cusp forms for non totally real fields, which is sharp in the imaginary quadractic case.\n\n\n\nSylvester domains and pro-\\(p\\) groups (2024). Joint with Andrei Jaikin-Zapirain. In Documenta Mathematica (Vol. 31, Issue 2). https://doi.org/10.4171/dm/1034. Also on ArXiv: https://arxiv.org/abs/2402.14130\n\n\n\n\n\n\nNoteAbstract\n\n\n\n\n\nLet \\(G\\) be a finitely generated torsion-free pro-\\(p\\) group containing an open free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) subgroup. We show that the completed group algebra \\(\\mathbb{F}_p[\\![G]\\!]\\) is a Sylvester domain. Moreover the inner rank \\(\\mathrm{irk}_{\\mathbb{F}_p[\\![G]\\!]}(A)\\) of a matrix \\(A\\) over \\(\\mathbb{F}_p[\\![G]\\!]\\) can be calculated by approximation by ranks corresponding to finite quotients of \\(G\\). As a consequence, we obtain a particular case of the mod \\(p\\) Lück approximation for abstract finitely generated subgroups of free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) groups.\n\n\n\nInertia of retracts of Demushkin groups (2022). In Journal of Group Theory (Vol. 26, Issue 3). https://doi.org/10.1515/jgth-2022-0055. Also on ArXiv: https://arxiv.org/abs/2111.03060.\n\n\n\n\n\n\nNoteAbstract\n\n\n\n\n\nExploring inequalities regarding the rank and relation gradients of pro-\\(p\\) modules and building upon recent results of Y. Antolín, A. Jaikin-Zapirain and M. Shusterman, we prove that every retract of a Demushkin group is inert in the sense of the Dicks-Ventura Inertia Conjecture.\n\n\n\n\n\nM.Sc. Thesis\nDefense slides\nMy thesis, presented under the advice of Theo Zapata, explored the combinatorial properties of Dëmushkin groups. Its goal was to be a guide through recent results about Dëmushkin groups concerning the finiteness properties of subgroups and virtual retracts. More precisely, pro-\\(p\\) analogues of Howson’s theorem, the Hanna Neumann inequality, the presence of the virtual retractions property and the abscence of virtual decompositions as a free pro-\\(p\\) product.\nDuring my master degree, my research was focused on a particular class of topological groups called Dëmushkin groups. A Dëmushkin group is a pro-\\(p\\) group that satisfies Poincaré duality in dimension 2, that is, \\(G\\) is a Dëmushkin group if \\(\\mathrm{H}^1(G,\\mathbb{F}_p)\\) is finite, \\(\\mathrm{H}^2(G,\\mathbb{F}_p)\\) has dimension 1 and the cup product \\(\\mathrm{H}^1(G,\\mathbb{F}_p) \\times \\mathrm{H}^1(G,\\mathbb{F}_p) \\to \\mathrm{H}^2(G,\\mathbb{F}_p)\\) is a non-degenerate bilinear form. Dëmushkin groups appear naturally as Galois groups of maximal \\(p\\)-extensions of local fields, as pro-\\(p\\) completions of surface groups and as maximal pro-\\(p\\) quotients of étale fundamental groups of smooth projective curves.\nDëmushkin groups have lots of great properties. They are topologically finitely generated and possess a topological presentation given by a single well known relation. They have strong hereditary, finiteness and virtual decomposition properties similar to those found in free pro-\\(p\\) groups. There is a lot of research about them, and many important developments have been made in the past decades."
+    "text": "Primitive School on the Mapping Class Group\nAnother activity of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT), we’ve organized a minicourse on the mapping class group to prepare ourselves to the (then) upcoming advanced school on the mapping class group at ICMAT. We mainly followed Farb & Margalit’s primer. You can see the poster for this reading group here\n\n\nDe Picasso a Gromov\nIntroducción al cubulismo\nUs members of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT) are organizing in 2024 a reading group about \\(\\mathrm{CAT}(0)\\) cube complexes, following mainly Henry Wilton’s notes. You can see the poster for this reading group here.\n\n\nChistyakov Embeddings\nI like to code some stuff from time to time. Stuff I find cool.\nMy previous page had a long discussion about Chistyakov embeddings, but now I’m too lazy to explain them again. Go check out his awesome paper by yourself and see the awesome pictures. Some really cool embeddings of \\(\\mathbb{Q}_p\\) in \\(\\mathbb{C}\\), really crazy stuff.\nI made some python code to generate those images, that was the gist of it. You can find it below.\n# -*- coding: utf-8 -*-\n\"\"\"Vizualização dos Mergulhos de Chistyakov\n\nHenrique Souza\n07/08/2020\nPrograma de Pós-Graduação\nDepartamento de Matemática\nUniversidade de Brasília\n\nEste módulo implementa a classe InteiroPAdicoFinito para um elemento de Z_p\ncontido na imagem canônica de Z, e nos fornece acesso a sua norma, sua \nvaloração e seus dígitos em base p.\n\nEle implementa a função MergulhoDeChistyakov (e sua função auxiliar \nCaraterDeChistyakov) para calcular (até um número finito de passos) os valores\npara um InteiroPAdicoFinito da expressão analítica dada no artigo:\n\nChistyakov, D. V. Fractal geometry for images of continuous embeddings of\np-adic numbers and solenoids into euclidean spaces. Theoretical Mathematics and\nPhysics, Vol. 109, No. 3, 1996.\n\nPor fim, ele utiliza o pacote PyPlot para gerar uma vizualição da imagem por \nesse mergulho dos numeros naturais menores que ou iguais a uma cota fixa. A\nvizualização distingue a imagem das classes laterais de pZ_p e p^2*Z_p pela cor\ne pela saturação, respectivamente. Também é possível traçar a imagem de um\nsegmento inicial do grafo de Cayley de Z pelo mergulho de Chistyakov.\n\"\"\"\n\nfrom fractions import Fraction\nimport math\nimport cmath\nimport matplotlib.pyplot as plt\nfrom tqdm import tqdm\nimport colorsys\n\n\nclass InteiroPAdicoFinito:\n    \"\"\" Modela o comportamento de inteiro finito dentro de Z_p.\n\n    Seus principais atributos são o primo self.p, o self.inteiro que está sendo\n    modelado, sua self.norma em Q_p e sua self.valoração p-ádica.\n\n    A função coordn(n) retorna o valor do n-ésimo dígito na expressão em base p\n    do inteiro modelado.\n    \"\"\"\n\n    def __init__(self,i=0,p=2):\n        self.p = p\n        self.inteiro = i\n        self.norma = Fraction()\n        if (i != 0): #\n            self.norma = Fraction(1)\n            while ((i%p) == 0):\n                self.norma = self.norma * Fraction(1,p)\n                i = i/p\n            self.valoracao = -int(math.log(self.norma,p))\n        else:\n            self.valoracao = cmath.inf\n        pass\n\n    def __int__(self):\n        return self.inteiro\n\n    def __str__(self):\n        return str(self.inteiro)\n\n    def coordn(self,n=0):\n        if (n &lt; 0):\n            return 0\n        if (n == 0):\n            return (self.inteiro % self.p) \n        expr = self.inteiro\n        for i in range(0,n):\n            expr = (expr - (expr%self.p))/self.p\n        return int(expr % self.p)\n\ndef CaraterDeChistyakov(z,m,n):\n    \"\"\" Calcula o caráter de Chistyakov para o inteiro p-ádico z com parâmetros\n    m e n.\n    \"\"\"\n    arg = 0.0\n    for k in range(0,m+1):\n        arg += float(z.coordn(n-k))/(math.pow(z.p,k))\n    return cmath.exp((2.0*cmath.pi* 1j/z.p)*arg)\n\ndef MergulhoDeChistyakov(z, m, s,profundidade=100):\n    \"\"\" Calcula o valor do mergulho de Chistyakov para o inteiro p-adico z com\n    parâmetros m e s. O parâmetro profundidade define quão longe nas somas \n    parciais será calculado para fins de obter um valor numérico para a \n    expressão analítica do mergulho de Chistyakov.\n    \"\"\"\n    c = 1.0/(1.0 - s)\n    if cmath.isfinite(z.valoracao):\n        c = (1.0 - pow(s,z.valoracao))/(1.0 - s)\n    if cmath.isfinite(z.valoracao):\n        for i in range(z.valoracao,z.valoracao+profundidade):\n            c += CaraterDeChistyakov(z,m,i)*pow(s,i)\n    return c\n\ndef VizualizarMergulhoDeChistyakov(n,m,s,profundidade=100,p=2,linhas=0,\n        arquivo='mergulho.png',res=(3000,3000),dpi=300,colorido=True):\n    \"\"\" Gera uma vizualização do Mergulho de Chistyakov para os inteiros\n    p-ádicos finitos menores que ou iguais a n com parâmetros m , s e \n    profundidade. Se o parâmetro linhas for não nulo, a imagem conterá o \n    segmento inicial de tamanho \"linhas\" do grafo de Cayley de Z.\n    arquivo determina o nome do arquivo, res é a sua resolução em pixels, dpi\n    é a qualidade da imagem final e colorido controla se será usado um código\n    de cores para representar as classes laterais de pZ_p e p^2Z_p ou se a \n    imagem final será apresentada em preto e branco.\n    \"\"\"\n    x = []\n    y = []\n    cores = []\n    barra = tqdm(total=n+1)\n    plt.clf()\n    plt.gcf().set_size_inches((res[0]/dpi,res[1]/dpi))\n    for i in range(0,n+1):\n        iPadico = InteiroPAdicoFinito(i,p)\n        c = MergulhoDeChistyakov(iPadico,m,s,profundidade)\n        x.append(c.real)\n        y.append(c.imag)\n        alfa = (float(i)/(n+1))\n        if (i == 0): alfa = 1.0\n        if (colorido):\n            cor = colorsys.hls_to_rgb(iPadico.coordn()/p,0.5,\n                    (p-iPadico.coordn(1))/p) + (alfa,)\n        else:\n            cor = (0,0,0,alfa)\n        cores.append(cor)\n        barra.update(1)\n    barra.close()\n    plt.scatter(x,y,color=cores,marker=\".\")\n    if (linhas != 0):\n        for i in range(0,linhas+1):\n            plt.annotate(i,(x[i]+0.02,y[i]+0.02),fontweight='bold',\n                    fontsize=18)\n        plt.plot(x[0:(linhas+1)],y[0:(linhas + 1)],marker=\"o\",linestyle=':',\n                color='black',alpha=1)\n    plt.axis('off')\n    plt.tight_layout()\n    plt.savefig(arquivo,dpi=300)\n    plt.close('all')"
   },
   {
     "objectID": "index.html",
@@ -203,270 +203,11 @@
     "text": "Who am I?\nI’m a math PhD student and teaching assistant at the Universidad Autónoma de Madrid. My advisor is Andrei Jaikin-Zapirain. Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I’m also interested in low dimensional topology and number theory. My hair is currently this color. You can find my email at the footer of the page. You can click here for my ORCID page, and you can click here for my Lattes CV."
   },
   {
-    "objectID": "miscellanea.html",
-    "href": "miscellanea.html",
-    "title": "Miscellanea",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "What can I get you?",
     "section": "",
-    "text": "Primitive School on the Mapping Class Group\nAnother activity of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT), we’ve organized a minicourse on the mapping class group to prepare ourselves to the (then) upcoming advanced school on the mapping class group at ICMAT. We mainly followed Farb & Margalit’s primer. You can see the poster for this reading group here\n\n\nDe Picasso a Gromov\nIntroducción al cubulismo\nUs members of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT) are organizing in 2024 a reading group about \\(\\mathrm{CAT}(0)\\) cube complexes, following mainly Henry Wilton’s notes. You can see the poster for this reading group here.\n\n\nChistyakov Embeddings\nI like to code some stuff from time to time. Stuff I find cool.\nMy previous page had a long discussion about Chistyakov embeddings, but now I’m too lazy to explain them again. Go check out his awesome paper by yourself and see the awesome pictures. Some really cool embeddings of \\(\\mathbb{Q}_p\\) in \\(\\mathbb{C}\\), really crazy stuff.\nI made some python code to generate those images, that was the gist of it. You can find it below.\n# -*- coding: utf-8 -*-\n\"\"\"Vizualização dos Mergulhos de Chistyakov\n\nHenrique Souza\n07/08/2020\nPrograma de Pós-Graduação\nDepartamento de Matemática\nUniversidade de Brasília\n\nEste módulo implementa a classe InteiroPAdicoFinito para um elemento de Z_p\ncontido na imagem canônica de Z, e nos fornece acesso a sua norma, sua \nvaloração e seus dígitos em base p.\n\nEle implementa a função MergulhoDeChistyakov (e sua função auxiliar \nCaraterDeChistyakov) para calcular (até um número finito de passos) os valores\npara um InteiroPAdicoFinito da expressão analítica dada no artigo:\n\nChistyakov, D. V. Fractal geometry for images of continuous embeddings of\np-adic numbers and solenoids into euclidean spaces. Theoretical Mathematics and\nPhysics, Vol. 109, No. 3, 1996.\n\nPor fim, ele utiliza o pacote PyPlot para gerar uma vizualição da imagem por \nesse mergulho dos numeros naturais menores que ou iguais a uma cota fixa. A\nvizualização distingue a imagem das classes laterais de pZ_p e p^2*Z_p pela cor\ne pela saturação, respectivamente. Também é possível traçar a imagem de um\nsegmento inicial do grafo de Cayley de Z pelo mergulho de Chistyakov.\n\"\"\"\n\nfrom fractions import Fraction\nimport math\nimport cmath\nimport matplotlib.pyplot as plt\nfrom tqdm import tqdm\nimport colorsys\n\n\nclass InteiroPAdicoFinito:\n    \"\"\" Modela o comportamento de inteiro finito dentro de Z_p.\n\n    Seus principais atributos são o primo self.p, o self.inteiro que está sendo\n    modelado, sua self.norma em Q_p e sua self.valoração p-ádica.\n\n    A função coordn(n) retorna o valor do n-ésimo dígito na expressão em base p\n    do inteiro modelado.\n    \"\"\"\n\n    def __init__(self,i=0,p=2):\n        self.p = p\n        self.inteiro = i\n        self.norma = Fraction()\n        if (i != 0): #\n            self.norma = Fraction(1)\n            while ((i%p) == 0):\n                self.norma = self.norma * Fraction(1,p)\n                i = i/p\n            self.valoracao = -int(math.log(self.norma,p))\n        else:\n            self.valoracao = cmath.inf\n        pass\n\n    def __int__(self):\n        return self.inteiro\n\n    def __str__(self):\n        return str(self.inteiro)\n\n    def coordn(self,n=0):\n        if (n &lt; 0):\n            return 0\n        if (n == 0):\n            return (self.inteiro % self.p) \n        expr = self.inteiro\n        for i in range(0,n):\n            expr = (expr - (expr%self.p))/self.p\n        return int(expr % self.p)\n\ndef CaraterDeChistyakov(z,m,n):\n    \"\"\" Calcula o caráter de Chistyakov para o inteiro p-ádico z com parâmetros\n    m e n.\n    \"\"\"\n    arg = 0.0\n    for k in range(0,m+1):\n        arg += float(z.coordn(n-k))/(math.pow(z.p,k))\n    return cmath.exp((2.0*cmath.pi* 1j/z.p)*arg)\n\ndef MergulhoDeChistyakov(z, m, s,profundidade=100):\n    \"\"\" Calcula o valor do mergulho de Chistyakov para o inteiro p-adico z com\n    parâmetros m e s. O parâmetro profundidade define quão longe nas somas \n    parciais será calculado para fins de obter um valor numérico para a \n    expressão analítica do mergulho de Chistyakov.\n    \"\"\"\n    c = 1.0/(1.0 - s)\n    if cmath.isfinite(z.valoracao):\n        c = (1.0 - pow(s,z.valoracao))/(1.0 - s)\n    if cmath.isfinite(z.valoracao):\n        for i in range(z.valoracao,z.valoracao+profundidade):\n            c += CaraterDeChistyakov(z,m,i)*pow(s,i)\n    return c\n\ndef VizualizarMergulhoDeChistyakov(n,m,s,profundidade=100,p=2,linhas=0,\n        arquivo='mergulho.png',res=(3000,3000),dpi=300,colorido=True):\n    \"\"\" Gera uma vizualização do Mergulho de Chistyakov para os inteiros\n    p-ádicos finitos menores que ou iguais a n com parâmetros m , s e \n    profundidade. Se o parâmetro linhas for não nulo, a imagem conterá o \n    segmento inicial de tamanho \"linhas\" do grafo de Cayley de Z.\n    arquivo determina o nome do arquivo, res é a sua resolução em pixels, dpi\n    é a qualidade da imagem final e colorido controla se será usado um código\n    de cores para representar as classes laterais de pZ_p e p^2Z_p ou se a \n    imagem final será apresentada em preto e branco.\n    \"\"\"\n    x = []\n    y = []\n    cores = []\n    barra = tqdm(total=n+1)\n    plt.clf()\n    plt.gcf().set_size_inches((res[0]/dpi,res[1]/dpi))\n    for i in range(0,n+1):\n        iPadico = InteiroPAdicoFinito(i,p)\n        c = MergulhoDeChistyakov(iPadico,m,s,profundidade)\n        x.append(c.real)\n        y.append(c.imag)\n        alfa = (float(i)/(n+1))\n        if (i == 0): alfa = 1.0\n        if (colorido):\n            cor = colorsys.hls_to_rgb(iPadico.coordn()/p,0.5,\n                    (p-iPadico.coordn(1))/p) + (alfa,)\n        else:\n            cor = (0,0,0,alfa)\n        cores.append(cor)\n        barra.update(1)\n    barra.close()\n    plt.scatter(x,y,color=cores,marker=\".\")\n    if (linhas != 0):\n        for i in range(0,linhas+1):\n            plt.annotate(i,(x[i]+0.02,y[i]+0.02),fontweight='bold',\n                    fontsize=18)\n        plt.plot(x[0:(linhas+1)],y[0:(linhas + 1)],marker=\"o\",linestyle=':',\n                color='black',alpha=1)\n    plt.axis('off')\n    plt.tight_layout()\n    plt.savefig(arquivo,dpi=300)\n    plt.close('all')"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#what-i-will-prove-today",
-    "href": "resources/slides/defense/defense.html#what-i-will-prove-today",
-    "title": "Ranks over pro-p groups",
-    "section": "What I will prove today",
-    "text": "What I will prove today\n\nCommensurability invariance of inner rank being a rank function (for \\mathbb{F}_p[\\![G]\\!])\nExamples of profinite Sylvester domains: \\mathbb{F}_p[\\![F \\rtimes \\mathbb{Z}_p]\\!]\nApproximation: rank functions coming from rational reps. of \\mathsf{SL}_2(\\mathbb{C}) converge to the von Neumann rank."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#roadmap",
-    "href": "resources/slides/defense/defense.html#roadmap",
-    "title": "Ranks over pro-p groups",
-    "section": "Roadmap",
-    "text": "Roadmap\n\nRank functions & inner rank\nProfinite rings & Sylvester domains\nFree-by-\\mathbb{Z}_p pro-p groups\nSemisimple Lie groups"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#inner-rank",
-    "href": "resources/slides/defense/defense.html#inner-rank",
-    "title": "Ranks over pro-p groups",
-    "section": "Inner rank",
-    "text": "Inner rank\n\n\n\n\n\n\n\nDefinition\n\n\n\\mathrm{irk}(A) = smallest k for which A_{n\\times m} = B_{n\\times k} C_{k\\times m}\n\n\n\n\n\n\n\n\n\n\n\nProperties\n\n\n\nEquals rank over fields\nDefined over any ring"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#inner-rank-annoyances",
-    "href": "resources/slides/defense/defense.html#inner-rank-annoyances",
-    "title": "Ranks over pro-p groups",
-    "section": "Inner rank: annoyances",
-    "text": "Inner rank: annoyances\n\n\n\n\n\n\n\nDepends on the ring\n\n\nOver \\mathbb{Q}[x^2,x^3] the matrix \\begin{pmatrix} x^2 & x^3 \\\\ x^3 & x^4\\end{pmatrix} = \\begin{pmatrix}x^2 \\\\ x^3\\end{pmatrix}\\begin{pmatrix}1 & x\\end{pmatrix} has inner rank 2\n\n\n\n\n\n\n\n\n\n\n\nMaximal rank doesn’t imply invertible\n\n\nOver \\mathbb{Q}[x,y,z]: \\begin{pmatrix}0 & z & -y\\\\ -z & 0 & x\\\\ y & -x & 0\\end{pmatrix}\\begin{pmatrix} x \\\\ y \\\\ z\\end{pmatrix} = 0"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-rank-functions",
-    "href": "resources/slides/defense/defense.html#sylvester-rank-functions",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester rank functions",
-    "text": "Sylvester rank functions\n\n\n\n\n\n\n\nDefinition\n\n\n\\mathrm{rk}\\colon \\operatorname{Mat}(R) \\to \\mathbb{R}_{\\geq 0} is a Sylvester rank function if:\n\n\\mathrm{rk}(0) = 0, \\mathrm{rk}(1) = 1\n\\mathrm{rk}(AB) \\leq \\min\\{\\mathrm{rk}(A)\\,, \\mathrm{rk}(B)\\}\n\\mathrm{rk}\\begin{pmatrix}A & 0\\\\0 & B\\end{pmatrix} = \\mathrm{rk}(A) + \\mathrm{rk}(B)\n\\mathrm{rk}\\begin{pmatrix} A & C\\\\ 0 & B\\end{pmatrix} \\geq \\mathrm{rk}(A) + \\mathrm{rk}(B)"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-rank-functions-examples",
-    "href": "resources/slides/defense/defense.html#sylvester-rank-functions-examples",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester rank functions: examples",
-    "text": "Sylvester rank functions: examples\n\n\\mathbb{P}(R) = Sylvester rank functions on R\n\\mathbb{P}(R) can be empty\nOver a field/division ring \\mathbb{F}, we have \\mathbb{P}(\\mathbb{F}) = \\{\\mathrm{rk}_{\\mathbb{F}}\\}\nFor \\varphi\\colon R \\to S and \\mathrm{rk} \\in \\mathbb{P}(S), \\varphi^\\#\\mathrm{rk} \\in \\mathbb{P}(R): \\varphi^\\#\\mathrm{rk}(A) = \\mathrm{rk}(\\varphi(A))\\,.\nOver \\mathbb{Z}: \\mathrm{rk}_{\\mathbb{Q}}, \\mathrm{rk}_{\\mathbb{F}_p}, convex combinations, …\n\\mathrm{irk}_R \\not\\in \\mathbb{P}(R) in general!"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-rank-functions-operator-rings",
-    "href": "resources/slides/defense/defense.html#sylvester-rank-functions-operator-rings",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester rank functions: operator rings",
-    "text": "Sylvester rank functions: operator rings\n\nOver a field/division ring \\mathbb{F}: \\mathbb{P}(\\operatorname{Mat}_n(\\mathbb{F})) = \\left\\{\\frac{\\mathrm{rk}_{\\mathbb{F}}}{n}\\right\\}\\,.\nGroup rep. \\varphi\\colon G \\to \\mathsf{GL}_n(\\mathbb{F}) induces \\varphi\\colon \\mathbb{F}[G] \\to \\operatorname{Mat}_n(\\mathbb{F}) \\mathrm{rk}_\\varphi = \\varphi^\\#\\frac{\\mathrm{rk}_{\\mathbb{F}}}{n}\nVon Neumann dimension \\mathrm{rk}_\\Gamma \\in \\mathbb{P}(\\mathbb{C}[\\Gamma]) for \\Gamma a f.g. group coming from the unitary rep. \\Gamma \\curvearrowright \\ell^2(\\Gamma)"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-rank-functions-dimension",
-    "href": "resources/slides/defense/defense.html#sylvester-rank-functions-dimension",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester rank functions: dimension",
-    "text": "Sylvester rank functions: dimension\n\n\n\n\n\n\n\nDefinition\n\n\nFor A \\in \\operatorname{Mat}_{n\\times m}(R) and \\mathrm{rk} \\in \\mathbb{P}(R), let M_A = R^n / AR^m. Define \\dim M_A = n - \\mathrm{rk}(A)\n\n\n\n\n\nIs an invariant of f.p. right R-modules.\n\\mathbb{P}(R) is in bijection with normalized dimension functions on f.p. right R-modules that are subadditive on short exact sequences and additive on direct sums."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-rank-functions-integrality",
-    "href": "resources/slides/defense/defense.html#sylvester-rank-functions-integrality",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester rank functions: integrality",
-    "text": "Sylvester rank functions: integrality\n\n\n\n\n\n\n\nTheorem. (Malcolmson, 1980)\n\n\nIf \\mathrm{rk} \\in \\mathbb{P}(R) is integer valued, \\mathrm{rk} = \\varphi^\\#\\mathrm{rk}_{\\mathcal{D}} for some unique division ring \\mathcal{D} and some ring epimorphism \\varphi\\colon R \\to \\mathcal{D}."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#broad-questions",
-    "href": "resources/slides/defense/defense.html#broad-questions",
-    "title": "Ranks over pro-p groups",
-    "section": "Broad questions",
-    "text": "Broad questions\n\nWhen \\mathrm{irk}_R \\in \\mathbb{P}(R)?\nCanonical/universal/largest element of \\mathbb{P}(R)?\nApproximations inside \\mathbb{P}(R): \\lim_{i \\to \\infty} \\mathrm{rk}_i = \\mathrm{rk}"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-domains-i",
-    "href": "resources/slides/defense/defense.html#sylvester-domains-i",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester domains I",
-    "text": "Sylvester domains I\n\n\n\n\n\n\n\nDefinition\n\n\nR is a Sylvester domain if \\mathrm{irk}_R \\in \\mathbb{P}(R)\n\n\n\n\n\n\n\n\n\n\n\nProperties\n\n\n\nExists a division ring \\mathcal{D} and \\varphi\\colon R \\to \\mathcal{D} such that \\mathrm{irk}_R = \\varphi^\\#\\mathrm{rk}_{\\mathcal{D}}\nSylvester domains are domains of weak global dimension at most 2 (Dicks-Sontag, 1978)"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-domains-ii",
-    "href": "resources/slides/defense/defense.html#sylvester-domains-ii",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester domains II",
-    "text": "Sylvester domains II\n\n\n\n\n\n\n\nExamples\n\n\n\nFields and division rings.\n\\mathbb{Z}, PIDs\n\\mathbb{F}[x,y] (Cohn, 1971)\nFree algebras: \\mathbb{F}\\langle x,y\\rangle (Cohn, 1971)\n\\mathbb{F}[F] for F a free group (Cohn, 1971)\n\n\n\n\n\n\n\n\n\n\n\n\nNon-examples\n\n\n\nAny ring with zero divisors, \\mathbb{Z}/4\\mathbb{Z}.\n\\mathbb{F}[x,y,z]."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#sylvester-domains-iii",
-    "href": "resources/slides/defense/defense.html#sylvester-domains-iii",
-    "title": "Ranks over pro-p groups",
-    "section": "Sylvester domains III",
-    "text": "Sylvester domains III\n\n\n\n\n\n\n\nTheorem. (Jaikin, 2021)\n\n\nLet \\varphi\\colon R \\to \\mathcal{D} be a map to a division ring. Then \\varphi^\\#\\mathrm{rk}_{\\mathcal{D}} = \\mathrm{irk}_R iff \\mathrm{Tor}_1^R(\\mathcal{D},\\mathcal{D}) = 0 and for any f.g. R-submodule M \\leq \\mathcal{D} and short exact sequence 0 \\to I \\to R^n \\to M \\to 0 we have I = \\varinjlim R^k for k = n-\\dim M."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#profinite-rings",
-    "href": "resources/slides/defense/defense.html#profinite-rings",
-    "title": "Ranks over pro-p groups",
-    "section": "Profinite rings",
-    "text": "Profinite rings\n\n\n\n\n\n\n\nDefinition\n\n\nA profinite ring is a compact Hausdorff ring. Equivalently, a profinite ring is an inverse limit of finite discrete rings.\n\n\n\n\n\n\n\n\n\n\n\nProperties\n\n\n\nExamples: \\mathbb{Z}_p, R[\\![t]\\!], \\mathbb{F}_p[\\![G]\\!] = \\varprojlim \\mathbb{F}_p[G_i] for G a profinite group\nNo zero divisors implies its a local pro-p ring."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#profinite-sylvester-domains-examples",
-    "href": "resources/slides/defense/defense.html#profinite-sylvester-domains-examples",
-    "title": "Ranks over pro-p groups",
-    "section": "Profinite Sylvester domains: examples",
-    "text": "Profinite Sylvester domains: examples\n\n\n\n\n\n\n\nTheorem. (Cohn, 1971)\n\n\nProjective-free weakly-hereditary rings are Sylvester domains.\n\n\n\n\n\n\n\n\n\n\n\nCorollary.\n\n\nIf G is a free pro-p group, \\mathbb{F}_p[\\![G]\\!] is a Sylvester domain."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#further-candidates",
-    "href": "resources/slides/defense/defense.html#further-candidates",
-    "title": "Ranks over pro-p groups",
-    "section": "Further candidates",
-    "text": "Further candidates\n\n\n\n\n\n\n\nTheorem. (S.-Jaikin, 2024)\n\n\nLet G be a f.g. profinite group. If \\mathbb{F}_p[\\![G]\\!] is a Sylvester domain, then \\mathbb{F}_p[\\![G]\\!] is coherent, G is f.p. pro-p and \\operatorname{cd}(G) \\leq 2.\n\n\n\n\n\n\\mathbb{Z}_p[\\![F]\\!] for F free pro-p?\nR coherent but non-Noetherian profinite commutative local rings with \\operatorname{gl.dim}(R) \\leq 2?\n\\mathbb{F}_p[\\![G]\\!] for G a f.p. pro-p group with \\operatorname{cd}(G) \\leq 2?"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#commensurability",
-    "href": "resources/slides/defense/defense.html#commensurability",
-    "title": "Ranks over pro-p groups",
-    "section": "Commensurability",
-    "text": "Commensurability\n\n\n\n\n\n\n\nTheorem. (S.-Jaikin, 2024)\n\n\nLet G be a torsion-free f.g. pro-p group. Then \\mathbb{F}_p[\\![G]\\!] is a Sylvester domain iff \\mathbb{F}_p[\\![U]\\!] is a Sylvester domain for some (any) open subgroup U \\leq G.\n\n\n\n\n\nFalse for abstract groups.\nNeither implication is immediately clear.\n\n\\implies How \\mathcal{D}_{\\mathbb{F}_p[\\![G]\\!]} behaves as a \\mathbb{F}_p[\\![U]\\!]-module?\n\\impliedby How to build \\mathcal{D}_{\\mathbb{F}_p[\\![G]\\!]} from \\mathcal{D}_{\\mathbb{F}_p[\\![U]\\!]}?"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#strategy",
-    "href": "resources/slides/defense/defense.html#strategy",
-    "title": "Ranks over pro-p groups",
-    "section": "Strategy",
-    "text": "Strategy\n\n\\implies We must show \\mathrm{Tor}_1^{\\mathbb{F}_p[\\![G]\\!]}(\\mathcal{D}_{\\mathbb{F}_p[\\![G]\\!]} \\otimes_{\\mathbb{F}_p[\\![U]\\!]} \\mathbb{F}_p[\\![G]\\!],\\mathcal{D}_{\\mathbb{F}_p[\\![G]\\!]}) = 0\n\\impliedby A cadidate for \\mathcal{D}_{\\mathbb{F}_p[\\![G]\\!]} is \\mathcal{D}_{\\mathbb{F}_p[\\![U]\\!]} * G/U.\nGiven M \\leq_{f.g.} \\mathcal{D}_{\\mathbb{F}_p[\\![U]\\!]} * G/U and 0 \\to I \\to \\mathbb{F}_p[\\![G]\\!]^n \\to M \\to 0 we want I = \\mathbb{F}_p[\\![G]\\!]^k for k = n-\\dim M.\nI is free iff \\mathrm{Tor}_1^{\\mathbb{F}_p[\\![G]\\!]}(I,\\mathbb{F}_p) = \\mathrm{Tor}_2^{\\mathbb{F}_p[\\![G]\\!]}(M,\\mathbb{F}_p)=0."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#free-by-mathbbz_p-i",
-    "href": "resources/slides/defense/defense.html#free-by-mathbbz_p-i",
-    "title": "Ranks over pro-p groups",
-    "section": "Free-by-\\mathbb{Z}_p I",
-    "text": "Free-by-\\mathbb{Z}_p I\n\n\n\n\n\n\n\nDefinition\n\n\nG is free-by-\\mathbb{Z}_p if G = F \\rtimes \\mathbb{Z}_p for F a free pro-p group\n\n\n\n\n\n\n\n\n\n\n\nExamples\n\n\n\n\\widehat{\\pi_1(\\Sigma)}_p for \\Sigma a closed orientable surface.\nPoincaré duality groups of dimension 2.\n\\langle x,y,w,z \\mid [x,y]^p = [w,z]^p\\rangle is virtually free-by-\\mathbb{Z}_p."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#free-by-mathbbz_p-ii",
-    "href": "resources/slides/defense/defense.html#free-by-mathbbz_p-ii",
-    "title": "Ranks over pro-p groups",
-    "section": "Free-by-\\mathbb{Z}_p II",
-    "text": "Free-by-\\mathbb{Z}_p II\n\n\n\n\n\n\n\nProperties\n\n\n\nG is f.g. \\implies G is f.p., any subgroup is again free-by-\\mathbb{Z}_p.\n\\mathrm{cd}(G) \\leq 2 and G is coherent.\nG is f.g. free-by-\\mathbb{Z}_p iff G admits a flag presentation: G = \\langle x_1,\\ldots,x_n,t \\mid  \\mathrm{ad}(t)^{k_i}(x_i) = w_i, i=1,\\ldots,n\\rangle for some k_i \\geq 1,w_i \\in F^p[F,F].\nG is virtually mild (k_i = 1 \\implies mild flag presentation)."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#free-by-mathbbz_p-iii",
-    "href": "resources/slides/defense/defense.html#free-by-mathbbz_p-iii",
-    "title": "Ranks over pro-p groups",
-    "section": "Free-by-\\mathbb{Z}_p III",
-    "text": "Free-by-\\mathbb{Z}_p III\n\nR = \\mathbb{F}_p[\\![G]\\!] = \\mathbb{F}_p[\\![F]\\!][\\![t-1;\\sigma,\\delta]\\!]\nFiltered complete ring under the J(R)-adic filtration.\n\n\n\n\n\n\n\n\nProposition.\n\n\nAssume G has a mild flag presentation. Under the J(R)-adic filtration, \\mathrm{Gr}(R) = \\mathbb{F}_p\\langle y_1,\\ldots,y_n,\\ldots\\rangle [\\overline{t-1};\\operatorname{id},\\overline{\\delta}] where \\mathbb{F}_p\\langle y_1,\\ldots,y_n,\\ldots\\rangle is the free associative algebra."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#the-main-theorem",
-    "href": "resources/slides/defense/defense.html#the-main-theorem",
-    "title": "Ranks over pro-p groups",
-    "section": "The main theorem",
-    "text": "The main theorem\n\n\n\n\n\n\n\nTheorem. (S.-Jaikin, 2024)\n\n\nLet G be a torsion-free finitely generated virtually free-by-\\mathbb{Z}_p pro-p group. Then \\mathbb{F}_p[\\![G]\\!] is a Sylvester domain.\n\n\n\n\n\nReduce to G with a mild flag presentation.\nExplicitly build an embedding \\mathbb{F}_p[\\![G]\\!] \\hookrightarrow \\mathcal{Q} into a division ring.\nApply Jaikin’s criterion to show \\mathrm{irk}_{\\mathbb{F}_p[\\![G]\\!]} = \\varphi^\\#\\mathrm{rk}_{\\mathcal{Q}}."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#building-the-division-ring",
-    "href": "resources/slides/defense/defense.html#building-the-division-ring",
-    "title": "Ranks over pro-p groups",
-    "section": "Building the division ring",
-    "text": "Building the division ring\nG is a mild flag pro-p group, G\\simeq F \\rtimes \\mathbb{Z}_p, F = F(X), R = \\mathbb{F}_p[\\![G]\\!] = \\mathbb{F}_p[\\![F]\\!][\\![t-1;\\sigma,\\delta]\\!].\n\nEmbed \\mathbb{F}_p[\\![F]\\!] inside \\mathcal{D}_{\\mathbb{F}_p\\langle X\\rangle}[\\![y]\\!]\nExtend \\sigma and \\delta to \\mathcal{D}_{\\mathbb{F}_p\\langle X\\rangle}[\\![y]\\!] and build \\mathbb{D} = \\mathcal{D}_{\\mathbb{F}_p\\langle X\\rangle}[\\![y]\\!][\\![t-1;\\sigma,\\delta]\\!]\n\\mathbb{D} is a Noetherian domain, so embeds in a flat division ring \\mathcal{Q}."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#the-homological-criterion",
-    "href": "resources/slides/defense/defense.html#the-homological-criterion",
-    "title": "Ranks over pro-p groups",
-    "section": "The homological criterion",
-    "text": "The homological criterion\nG is a mild flag pro-p group, R = \\mathbb{F}_p[\\![G]\\!], \\mathbb{D}= \\mathcal{D}_{\\mathbb{F}_p\\langle X\\rangle}[\\![y]\\!][\\![t-1;\\sigma,\\delta]\\!].\n\nSuffices to prove \\mathrm{Tor}_1^R(\\mathbb{D},\\mathbb{D}) = 0 and consider submodules M \\leq_{f.g.} \\mathbb{D}\n\\operatorname{Gr}(R \\to \\mathbb{D}) is a map \\mathbb{F}_p\\langle X\\rangle[\\overline{t-1};\\operatorname{id},\\overline{\\delta}] \\to \\mathcal{D}_{\\mathbb{F}_p\\langle X\\rangle}[y][\\overline{t-1};\\operatorname{id},\\overline{\\delta}]\nWe can prove Jaikin’s conditions on the graded level\nLift infomation about \\mathrm{Tor}_i^R from \\mathrm{Tor}_i^{\\operatorname{Gr}(R)}"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#bonus-approximation-i",
-    "href": "resources/slides/defense/defense.html#bonus-approximation-i",
-    "title": "Ranks over pro-p groups",
-    "section": "Bonus: approximation I",
-    "text": "Bonus: approximation I\n\nIf G is a finite group, the regular representation G \\to \\mathsf{GL}_{|G|}(\\mathbb{F}_p) yields \\mathrm{rk}_G = \\frac{\\mathrm{rk}_{\\mathbb{F}_p}}{|G|} \\in \\mathbb{P}(\\mathbb{F}_p[G])\nIf G = \\varprojlim G_i is pro-p with each G_i finite, we have \\mathrm{rk}_G = \\lim_{i \\to \\infty} \\mathrm{rk}_{G_i} \\in \\mathbb{P}(\\mathbb{F}_p[\\![G]\\!])\nDoes not depend on the choice of G_i’s."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#bonus-approximation-ii",
-    "href": "resources/slides/defense/defense.html#bonus-approximation-ii",
-    "title": "Ranks over pro-p groups",
-    "section": "Bonus: approximation II",
-    "text": "Bonus: approximation II\n\n\n\n\n\n\n\nTheorem. (S.-Jaikin, 2024)\n\n\nLet G be a torsion-free f.g. virtually free-by-\\mathbb{Z}_p pro-p group. Then \\mathrm{irk}_{\\mathbb{F}_p[\\![G]\\!]} = \\mathrm{rk}_G.\n\n\n\n\n\nThe division ring \\mathcal{Q} admits a non-archimedean valuation such that \\mathbb{F}_p[\\![G]\\!] \\to \\mathcal{Q} is continuous.\nIf G is a pro-p group and \\mathcal{D} is a valuation division ring such that \\mathbb{F}_p[\\![G]\\!] \\to \\mathcal{D} is continuous, then \\varphi^\\#\\mathrm{rk}_{\\mathcal{D}} \\leq \\mathrm{rk}_G.\nHowever, \\mathrm{irk} is an upper bound for any rank function, so \\mathrm{rk}_G \\leq \\mathrm{irk}_{\\mathbb{F}_p[\\![G]\\!]}."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#classification",
-    "href": "resources/slides/defense/defense.html#classification",
-    "title": "Ranks over pro-p groups",
-    "section": "Classification",
-    "text": "Classification\n\nA complex semisimple Lie group G is a quotient of the form G = \\frac{G_1 \\times \\cdots \\times G_n}{Z} where Z is a finite central subgroup and each G_i is a simple simply connected complex Lie group, i.e. one of the following:\n\n\\mathsf{SL}_n(\\mathbb{C}) for n \\geq 2\n\\mathsf{Spin}_{k}(\\mathbb{C}) for k \\geq 5\n\\mathsf{Sp}_{2n}(\\mathbb{C}) for n \\geq 1\nOne of the five exceptional groups \\mathsf{G}_2(\\mathbb{C}), \\mathsf{F}_4(\\mathbb{C}), \\mathsf{E}_6(\\mathbb{C}), \\mathsf{E}_7(\\mathbb{C}), \\mathsf{E}_8(\\mathbb{C})."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#representations",
-    "href": "resources/slides/defense/defense.html#representations",
-    "title": "Ranks over pro-p groups",
-    "section": "Representations",
-    "text": "Representations\n\nIrreducible rational representations of G are classified by their highest weight \\lambda \\in \\mathfrak{h}^*, where \\mathfrak{h} is a Cartan subalgebra of \\operatorname{Lie}(G).\nFor G = \\mathsf{SL}_n(\\mathbb{C}), \\lambda is an (n-1)-tuple of integers \\lambda_1\\,,\\ldots\\,,\\lambda_{n-1}. V_{(k,0,\\ldots,0)} = \\{f \\in \\mathbb{C}[x_1,\\ldots,x_n] \\mid f\\text{ homogeneous of degree }k\\} (fA)(x_1,\\ldots,x_n) = f\\left(A\\begin{pmatrix}x_1 \\\\ \\vdots \\\\ x_n\\end{pmatrix}\\right)\\,."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#main-question",
-    "href": "resources/slides/defense/defense.html#main-question",
-    "title": "Ranks over pro-p groups",
-    "section": "Main question",
-    "text": "Main question\n\n\n\n\n\n\n\nQuestion.\n\n\nLet G be a semisimple complex Lie group and \\Gamma a f.g. subgroup of G. How does the cohomology groups H^i(\\Gamma, V_\\lambda) behave as \\lambda varies over the weights of G?\n\n\n\n\n\n\n\n\n\n\n\nMotivation\n\n\n\nIf \\Gamma is a lattice, the geometry of the locally symmetric space \\Gamma\\backslash G/K is encoded in the cohomology groups H^i(\\Gamma, V_\\lambda).\nIf \\Gamma is an arithmetic group, the cohomology groups H^i(\\Gamma, V_\\lambda) are related to automorphic forms."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#cohomology-and-rank-functions",
-    "href": "resources/slides/defense/defense.html#cohomology-and-rank-functions",
-    "title": "Ranks over pro-p groups",
-    "section": "Cohomology and rank functions",
-    "text": "Cohomology and rank functions\nLet \\Gamma be a group of type FP_\\infty(\\mathbb{C}).\n\n\n\n\n\n\n\nProposition.\n\n\nFor any i \\geq 0, there exists matrices A and B over \\mathbb{C}[\\Gamma] and a constant C such that for any complex representation \\varphi\\colon \\Gamma \\to \\mathsf{GL}(V) with associated rank function \\mathrm{rk}_\\varphi, \\dim_{\\mathbb{C}} H^i(\\Gamma, V) = \\dim_{\\mathbb{C}}(V)\\cdot(C+\\mathrm{rk}_\\varphi(A) - \\mathrm{rk}_\\varphi(B))\\,.\n\n\n\n\n\nHow does \\mathrm{rk}_\\varphi for \\varphi\\colon \\Gamma \\to \\mathsf{GL}(V_\\lambda) behave as \\lambda varies over the weights of G?"
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#approximation-for-mathsfsl_2mathbbc",
-    "href": "resources/slides/defense/defense.html#approximation-for-mathsfsl_2mathbbc",
-    "title": "Ranks over pro-p groups",
-    "section": "Approximation for \\mathsf{SL}_2(\\mathbb{C})",
-    "text": "Approximation for \\mathsf{SL}_2(\\mathbb{C})\nG = \\prod_{i=1}^k \\mathsf{SL}_2(\\mathbb{C})/Z, \\Gamma \\leq G f.g. torsion-free.\n\n\n\n\n\n\n\nTheorem. (S.-Guerrero, 2025)\n\n\nIf \\lambda = (\\lambda_1,\\ldots,\\lambda_k) is a weight of G and \\varphi_\\lambda\\colon \\Gamma \\to \\mathsf{GL}(V_\\lambda) is the associated representation, then \\lim_{\\min_i \\lambda_i \\to \\infty} \\mathrm{rk}_{\\varphi_\\lambda} = \\mathrm{rk}_\\Gamma\\,.\n\n\n\n\n\n\n\n\n\n\n\nCorollary.\n\n\nIf \\Gamma is of type FP_\\infty(\\mathbb{C}), then \\lim_{\\min_i \\lambda_i \\to \\infty} \\frac{\\dim_{\\mathbb{C}} H^i(\\Gamma, V_\\lambda)}{\\dim_{\\mathbb{C}} V_\\lambda} = b_i^{(2)}(\\Gamma)\\,."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#outline-of-the-proof.",
-    "href": "resources/slides/defense/defense.html#outline-of-the-proof.",
-    "title": "Ranks over pro-p groups",
-    "section": "Outline of the proof.",
-    "text": "Outline of the proof.\n\nReduce the statement to the case G = \\prod_{i=1}^k\\mathsf{SL}_2(\\mathbb{C}) and \\Gamma is Zariski-dense.\n\nLifting matrices in a way that doesn’t change their rank.\n\nReduce further to proving it over a finite index subgroup of \\Gamma.\n\nThe group von Neumann algebra \\mathcal{N}(\\Gamma) is a factor, so |\\mathbb{P}(\\mathcal{N}(\\Gamma))| = 1.\nThe same holds for the *-regular closure of \\mathbb{C}[\\Gamma] inside the algebra \\mathcal{U}(\\Gamma) of affiliated operators.\nIt means we just have to prove that if \\mathrm{rk}_{\\varphi_\\lambda} converges over a finite index subgroup, it converges over \\Gamma."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#from-mathbbc-to-mathbbq_p",
-    "href": "resources/slides/defense/defense.html#from-mathbbc-to-mathbbq_p",
-    "title": "Ranks over pro-p groups",
-    "section": "From \\mathbb{C} to \\mathbb{Q}_p",
-    "text": "From \\mathbb{C} to \\mathbb{Q}_p\n\n\n\n\n\n\n\nTheorem. (Cassels, 1976)\n\n\nIf \\Gamma is a f.g. subgroup of G, there are infinitely many primes p such that \\Gamma embeds in G(\\mathbb{Z}_p) = \\prod_{i=1}^k \\mathsf{SL}_2(\\mathbb{Z}_p)\\,.\n\n\n\n\n\nIsolating the finite index subgroup: let U_i = \\ker(G(\\mathbb{Z}_p) \\to \\prod_{i=1}^k \\mathsf{SL}_2(\\mathbb{Z}/p^i\\mathbb{Z}))\\,. Take \\Gamma' = \\Gamma \\cap U_1."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#comparing-ranks",
-    "href": "resources/slides/defense/defense.html#comparing-ranks",
-    "title": "Ranks over pro-p groups",
-    "section": "Comparing ranks",
-    "text": "Comparing ranks\n\n\n\n\n\n\n\nTheorem. Lück approximation ~ (Jaikin, 2019)\n\n\nLet S be a subring of \\mathbb{C} that embeds in \\mathbb{Z}_p. We have \\mathrm{rk}_{\\Gamma'} = \\lim_{i \\to \\infty} \\mathrm{rk}_{\\Gamma/(\\Gamma \\cap U_i)} = \\mathrm{rk}_{U_1} as rank functions on S[\\Gamma'].\n\n\n\n\n\n\n\n\n\n\n\nTheorem. (Harris, 1979)\n\n\nLet p be an odd prime. Then, \\mathrm{rk}_{U_1} is the only rank function on \\mathbb{Z}_p[\\![U_1]\\!] that satisfies \\mathrm{rk}_{U_1}(x) = 1 for every non-zero x."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#ranks-on-iwasawa-algebras-i",
-    "href": "resources/slides/defense/defense.html#ranks-on-iwasawa-algebras-i",
-    "title": "Ranks over pro-p groups",
-    "section": "Ranks on Iwasawa algebras I",
-    "text": "Ranks on Iwasawa algebras I\nLet U be a compact uniform semisimple p-adic Lie group, and \\mathbb{Z}_p[\\![U]\\!] its Iwasawa algebra.\n\n\n\n\n\n\n\nConjecture. (S.-Guerrero, 2025)\n\n\nIf \\lambda = (\\lambda_1,\\ldots,\\lambda_k) is a weight of U and \\varphi_\\lambda\\colon U \\to \\mathsf{GL}(V_\\lambda) is the associated p-adic representation, then \\lim_{\\min_i \\lambda_i \\to \\infty} \\frac{\\dim_{\\mathbb{Q}_p} xV_\\lambda}{\\dim_{\\mathbb{Q}_p} V_\\lambda} = 1 for any non-zero x \\in \\mathbb{Z}_p[\\![U]\\!]."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#ranks-on-iwasawa-algebras-ii",
-    "href": "resources/slides/defense/defense.html#ranks-on-iwasawa-algebras-ii",
-    "title": "Ranks over pro-p groups",
-    "section": "Ranks on Iwasawa algebras II",
-    "text": "Ranks on Iwasawa algebras II\n\n\n\n\n\n\n\nTheorem. (Fu, 2022)\n\n\nThe conjecture holds for U \\leq_o \\prod_{i=1}^k \\mathsf{SL}_2(\\mathbb{Z}_p) and any odd prime p.\n\n\n\n\n\nProof sketch: \\mathbb{Z}_p[\\![U]\\!] embeds in a completion \\widehat{U(\\mathfrak{g})} of the universal enveloping algebra of \\mathfrak{g} = \\operatorname{Lie}(U).\nThe action \\widehat{U(\\mathfrak{g})} \\curvearrowright V_\\lambda factors through a central quotient \\widehat{U(\\mathfrak{g})}/I_\\lambda."
-  },
-  {
-    "objectID": "resources/slides/defense/defense.html#ranks-on-iwasawa-algebras-iii",
-    "href": "resources/slides/defense/defense.html#ranks-on-iwasawa-algebras-iii",
-    "title": "Ranks over pro-p groups",
-    "section": "Ranks on Iwasawa algebras III",
-    "text": "Ranks on Iwasawa algebras III\n\n\n\n\n\n\n\nTheorem. (Ardakov-Wadsley, 2014)\n\n\nFor almost all primes p, the composition \\mathbb{Z}_p[\\![U]\\!] \\to \\widehat{U(\\mathfrak{g})} \\to \\widehat{U(\\mathfrak{g})}/I_\\lambda is injective.\n\n\n\n\n\nCanonical form for elements of \\widehat{U(\\mathfrak{g})}/I_\\lambda and explicit lower bound for \\dim_{\\mathbb{Q}_p} xV_\\lambda in terms of this form.\nAsymptotically \\dim_{\\mathbb{Q}_p} V_\\lambda as \\min_i \\lambda_i \\to \\infty."
+    "text": "List of publications\nFrom newest to oldest\nAsymptotics of rational representations for algebraic groups (2024). Joint with Lander Guerrero Sánchez. Submitted. On Arxiv: https://arxiv.org/abs/2405.17360\n\n\n\n\n\n\nNoteAbstract\n\n\n\n\n\nWe study the asymptotic behaviour of the cohomology of subgroups \\(\\Gamma\\) of an algebraic group \\(G\\) with coefficients in the various irreducible rational representations of \\(G\\) and raise a conjecture about it. Namely, we expect that the dimensions of these cohomology groups approximate the \\(\\ell^2\\)-Betti numbers of \\(\\Gamma\\) with a controlled error term. We provide positive answers when \\(G\\) is a product of copies of \\(\\mathrm{SL}_2\\). As an application, we obtain new proofs of J. Lott’s and W. Lück’s computation of the \\(\\ell^2\\)-Betti numbers of hyperbolic 3-manifolds and W. Fu’s upper bound on the growth of cusp forms for non totally real fields, which is sharp in the imaginary quadractic case.\n\n\n\nSylvester domains and pro-\\(p\\) groups (2024). Joint with Andrei Jaikin-Zapirain. In Documenta Mathematica (Vol. 31, Issue 2). https://doi.org/10.4171/dm/1034. Also on ArXiv: https://arxiv.org/abs/2402.14130\n\n\n\n\n\n\nNoteAbstract\n\n\n\n\n\nLet \\(G\\) be a finitely generated torsion-free pro-\\(p\\) group containing an open free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) subgroup. We show that the completed group algebra \\(\\mathbb{F}_p[\\![G]\\!]\\) is a Sylvester domain. Moreover the inner rank \\(\\mathrm{irk}_{\\mathbb{F}_p[\\![G]\\!]}(A)\\) of a matrix \\(A\\) over \\(\\mathbb{F}_p[\\![G]\\!]\\) can be calculated by approximation by ranks corresponding to finite quotients of \\(G\\). As a consequence, we obtain a particular case of the mod \\(p\\) Lück approximation for abstract finitely generated subgroups of free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) groups.\n\n\n\nInertia of retracts of Demushkin groups (2022). In Journal of Group Theory (Vol. 26, Issue 3). https://doi.org/10.1515/jgth-2022-0055. Also on ArXiv: https://arxiv.org/abs/2111.03060.\n\n\n\n\n\n\nNoteAbstract\n\n\n\n\n\nExploring inequalities regarding the rank and relation gradients of pro-\\(p\\) modules and building upon recent results of Y. Antolín, A. Jaikin-Zapirain and M. Shusterman, we prove that every retract of a Demushkin group is inert in the sense of the Dicks-Ventura Inertia Conjecture.\n\n\n\n\n\nPhD Thesis\nDefense slides\nMy PhD thesis titled “Ranks over pro-\\(p\\) groups”, to be presented under the advice of Andrei Jaikin, explores the space of rank functions on completed group algebras of pro-\\(p\\) groups. A Sylvester rank function on a ring is an axiomized shadow of how the usual rank of matrices in linear algebra behaves on a field. However, for a general ring \\(R\\), the space \\(\\mathbb{P}(R)\\) of rank functions defined on the set \\(\\operatorname{Mat}(R)\\) of matrices over \\(R\\) can be immense. Nonetheless, there are special classes of rings \\(R\\) that admit “canonical” rank functions, such as the Ore rank function for Ore domains and the normalized rank for completed group \\(\\mathbb{F}_p\\)-algebras of pro-\\(p\\) groups.\nAnother notion that is closely related to rank functions is the inner rank of a matrix \\(A\\), defined as the smallest integer \\(k\\) such that \\(A\\) factors as \\(BC\\) for some \\(n\\times k\\) matrix \\(B\\) and some \\(k\\times m\\) matrix \\(C\\). The inner rank does not satisfy in general the axioms of a Sylvester rank function – the rings for which it does are called Sylvester domains. The first part of the thesis concerns itself with the question of which completed group algebras of finitely generated profinite groups are Syvlester domains. The attempted classification is approached in two directions: first, we prove that the groups in question must be torsion-free coherent pro-\\(p\\) groups of cohomological dimension at most \\(2\\). Afterwards, we expand the class of known examples by proving that group algebras of torsion-free virtually free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) groups over finite fields of characteristic \\(p\\) are Sylvester domains. A remarkable theorem is that this property is a commensurability invariant for torsion-free pro-\\(p\\) groups, which is false for complex group algebras of discrete groups.\nSince the space \\(\\mathbb{P}(R)\\) is a convex subset of a real vector space, we can also talk about approximations of rank functions. Another result of the this thesis is that for torsion-free virtually free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) groups, the inner rank on the completed group algebra can be approximated by the ranks coming from the regular representation of its finite quotients. The second part of the thesis concerns itself with a different kind of approximation phenomena, now on the space \\(\\mathbb{P}(\\mathbb{Z}_p[\\![U]\\!])\\) of rank functions over the completed group \\(\\mathbb{Z}_p\\)-ring of a uniform pro-\\(p\\) group \\(U\\), also called an Iwasawa algebra. Those rings are Ore domains, and therefore come endowed with a canonical rank function from its embedding in its Ore division ring of fractions. A classical theorem of M. Harris proves that this rank can be approximated by the ranks coming the regular representation of its finite quotients with a controlled error term.\nWe consider now a different kind of approximation when \\(U\\) is split semisimple and simply-connected, viewed as an open subgroup of an algebraic group \\(\\mathsf{G}\\) over \\(\\mathbb{Q}_p\\). In this setting, \\(U\\) comes with a plethora of finite-dimensional \\(\\mathbb{Q}_p\\) representations \\(U \\to \\mathsf{GL}(V_\\lambda)\\) coming from the rational representations of \\(\\mathsf{G}\\), where the indexing parameter \\(\\lambda\\) is the highest weight of the representation. The representations \\(V_\\lambda\\) behave very differently from the regular representation of the finite quotients of \\(U\\), but we still conjecture that they can be used to approximate the Ore rank function with a controlled error as the weight \\(\\lambda\\) grows. We explain how this is the case for \\(\\mathsf{G} = \\prod_{i=1}^k \\mathsf{SL}_2\\), following the argument of W. Fu, and what are some of the difficulties in extending this to higher rank.\nThe final part of the thesis gives applications of these results to group algebras of discrete finitely generated groups: it proves Lück approximation in characteristic \\(p\\) for finitely generated abstract subgroups of free-by-\\(\\mathbb{Z}_p\\) pro-\\(p\\) groups, it shows how the conjectural apporximation for Iwasawa algebras yields asymptotic results on the cohomology of finitely generated subgroups of complex semisimple Lie groups, it gives a new proof of J. Lott and W. Lück’s computation of the \\(\\ell^2\\)-Betti numbers of topologically finite hyperbolic \\(3\\)-manifolds and explains how the asymptotic bounds on the cohomology of arithmetic lattices relates to the theory of automorphic forms.\n\n\nM.Sc. Thesis\nDefense slides\nMy M.Sc. thesis, presented under the advice of Theo Zapata, explored the combinatorial properties of Dëmushkin groups. Its goal was to be a guide through recent results about Dëmushkin groups concerning the finiteness properties of subgroups and virtual retracts. More precisely, pro-\\(p\\) analogues of Howson’s theorem, the Hanna Neumann inequality, the presence of the virtual retractions property and the abscence of virtual decompositions as a free pro-\\(p\\) product.\nDuring my master degree, my research was focused on a particular class of topological groups called Dëmushkin groups. A Dëmushkin group is a pro-\\(p\\) group that satisfies Poincaré duality in dimension 2, that is, \\(G\\) is a Dëmushkin group if \\(\\mathrm{H}^1(G,\\mathbb{F}_p)\\) is finite, \\(\\mathrm{H}^2(G,\\mathbb{F}_p)\\) has dimension 1 and the cup product \\(\\mathrm{H}^1(G,\\mathbb{F}_p) \\times \\mathrm{H}^1(G,\\mathbb{F}_p) \\to \\mathrm{H}^2(G,\\mathbb{F}_p)\\) is a non-degenerate bilinear form. Dëmushkin groups appear naturally as Galois groups of maximal \\(p\\)-extensions of local fields, as pro-\\(p\\) completions of surface groups and as maximal pro-\\(p\\) quotients of étale fundamental groups of smooth projective curves.\nDëmushkin groups have lots of great properties. They are topologically finitely generated and possess a topological presentation given by a single well known relation. They have strong hereditary, finiteness and virtual decomposition properties similar to those found in free pro-\\(p\\) groups. There is a lot of research about them, and many important developments have been made in the past decades."
   },
   {
     "objectID": "talks.html",
