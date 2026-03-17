@@ -6,19 +6,32 @@ format: html
 # List of publications
 *From newest to oldest*
 
-**Asymptotics of rational representations for algebraic groups** (2024). Joint with Lander Guerrero Sánchez. Submitted. On Arxiv: [https://arxiv.org/abs/2405.17360](https://arxiv.org/abs/2405.17360)
+
+**5. Revisiting fully residually free Demushkin groups** (2026). Joint with Pavel Zalesski. Submitted.
+
+::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
+We establish new examples and non-examples of pro-$p$ limit groups among the class of Demushkin groups, that is, pro-$p$ Poincaré duality groups of dimension $2$.
+:::
+
+**4. Profinite detection of free products and free factors** (2026). Joint with Andrei Jaikin and Pavel Zalesski. Submitted.
+
+::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
+Let $G$ be the fundamental group of a graph of finitely generated virtually free groups with virtually cyclic edge groups. We show that $G$ is cohomologically good if $G$ is residually finite. If $G$ is LERF, we prove that $G$ splits non-trivially as a free product if and only if its profinite completion $\widehat{G}$ splits non-trivially as a free profinite product. Moreover, we are able to detect one-ended free factors of $G$ from $\widehat{G}$. As an application, we deduce that any profinitely rigid word in a finitely generated free group is universally profinitely rigid.
+:::
+
+**3. Asymptotics of rational representations for algebraic groups** (2024). Joint with Lander Guerrero Sánchez. Submitted. On Arxiv: [https://arxiv.org/abs/2405.17360](https://arxiv.org/abs/2405.17360)
 
 ::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
 We study the asymptotic behaviour of the cohomology of subgroups $\Gamma$ of an algebraic group $G$ with coefficients in the various irreducible rational representations of $G$ and raise a conjecture about it. Namely, we expect that the dimensions of these cohomology groups approximate the $\ell^2$-Betti numbers of $\Gamma$ with a controlled error term. We provide positive answers when $G$ is a product of copies of $\mathrm{SL}_2$. As an application, we obtain new proofs of J. Lott's and W. Lück's computation of the $\ell^2$-Betti numbers of hyperbolic 3-manifolds and W. Fu's upper bound on the growth of cusp forms for non totally real fields, which is sharp in the imaginary quadractic case.
 :::
 
-**Sylvester domains and pro-$p$ groups** (2024). Joint with Andrei Jaikin-Zapirain. In Documenta Mathematica (Vol. 31, Issue 2). [https://doi.org/10.4171/dm/1034](https://doi.org/10.4171/dm/1034). Also on ArXiv: [https://arxiv.org/abs/2402.14130](https://arxiv.org/abs/2402.14130)
+**2. Sylvester domains and pro-$p$ groups** (2024). Joint with Andrei Jaikin-Zapirain. In Documenta Mathematica (Vol. 31, Issue 2). [https://doi.org/10.4171/dm/1034](https://doi.org/10.4171/dm/1034). Also on ArXiv: [https://arxiv.org/abs/2402.14130](https://arxiv.org/abs/2402.14130)
 
 ::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
 Let $G$ be a finitely generated torsion-free pro-$p$ group containing an open free-by-$\mathbb{Z}_p$ pro-$p$ subgroup. We show that the completed group algebra $\mathbb{F}_p[\![G]\!]$ is a Sylvester domain. Moreover the inner rank $\mathrm{irk}_{\mathbb{F}_p[\![G]\!]}(A)$ of a matrix $A$ over $\mathbb{F}_p[\![G]\!]$ can be calculated by approximation by ranks corresponding to finite quotients of $G$. As a consequence, we obtain a particular case of the mod $p$ Lück approximation for abstract finitely generated subgroups of free-by-$\mathbb{Z}_p$ pro-$p$ groups.
 :::
 
-**Inertia of retracts of Demushkin groups** (2022). In Journal of Group Theory (Vol. 26, Issue 3). [https://doi.org/10.1515/jgth-2022-0055](https://doi.org/10.1515/jgth-2022-0055). Also on ArXiv: [https://arxiv.org/abs/2111.03060](https://arxiv.org/abs/2111.03060).
+**1. Inertia of retracts of Demushkin groups** (2022). In Journal of Group Theory (Vol. 26, Issue 3). [https://doi.org/10.1515/jgth-2022-0055](https://doi.org/10.1515/jgth-2022-0055). Also on ArXiv: [https://arxiv.org/abs/2111.03060](https://arxiv.org/abs/2111.03060).
 
 ::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
 Exploring inequalities regarding the rank and relation gradients of pro-$p$ modules and building upon recent results of Y. Antolín, A. Jaikin-Zapirain and M. Shusterman, we prove that every retract of a Demushkin group is inert in the sense of the Dicks-Ventura Inertia Conjecture.
