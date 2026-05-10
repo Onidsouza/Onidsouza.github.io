@@ -1,0 +1,309 @@
+/* ---- TUNABLE KNOBS ---- */
+:root{
+  --deck-font-size: 32px;
+  --deck-line-height: 1.26;     /* main text spacing */
+  --deck-heading-lh: 1.08;      /* headings a bit tighter */
+  --list-item-gap: 0.38em;      /* vertical spacing between bullets */
+  --list-top-gap: 0.32em;       /* space between title and list */
+}
+
+/* ---- FONTS ---- */
+:root{
+  --r-main-font: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --r-heading-font: var(--r-main-font);
+  --r-code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.reveal{
+  font-size: var(--deck-font-size);
+  line-height: var(--deck-line-height);
+  font-kerning: normal;
+}
+
+/* Headings: clean, not shouty */
+.reveal h1, .reveal h2, .reveal h3{
+  line-height: var(--deck-heading-lh);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin-bottom: 0.42em;
+}
+
+/* Paragraph rhythm */
+.reveal p{
+  margin: 0.28em 0;
+}
+
+/* Lists: better vertical distribution */
+.reveal ul, .reveal ol{
+  margin-top: var(--list-top-gap);
+}
+
+.reveal li{
+  margin: var(--list-item-gap) 0;
+}
+
+/* Nested lists should be tighter */
+.reveal li > ul, .reveal li > ol{
+  margin-top: 0.25em;
+}
+
+.reveal li li{
+  margin: 0.25em 0;
+}
+
+/* Beamer-style: upcoming fragments are faint instead of hidden */
+.reveal .slides section .fragment {
+  opacity: 0.22 !important;        /* tweak */
+  visibility: visible !important;  /* override Reveal's hidden */
+}
+
+/* Revealed fragments are fully opaque */
+.reveal .slides section .fragment.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* --- Callouts: minimal + muted category color --- */
+.reveal .callout{
+  border-radius: 10px;
+  padding: 0.52em 0.72em;
+  margin: 0.50em 0;
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.015);
+}
+
+.reveal .callout .callout-title{
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35em;
+}
+
+.reveal .callout p:last-child,
+.reveal .callout ul:last-child,
+.reveal .callout ol:last-child{
+  margin-bottom: 0;
+}
+
+/* Definition (note): cool gray-blue */
+.reveal .callout.callout-note{
+  border-left: 6px solid rgba(60, 100, 160, 0.55);
+  background: rgba(60, 100, 160, 0.06);
+}
+
+/* Property (tip): green-teal */
+.reveal .callout.callout-tip{
+  border-left: 6px solid rgba(40, 140, 100, 0.55);
+  background: rgba(40, 140, 100, 0.06);
+}
+
+/* Theorem (important): deeper blue */
+.reveal .callout.callout-important{
+  border-left: 6px solid rgba(25, 70, 140, 0.75);
+  background: rgba(25, 70, 140, 0.07);
+}
+
+/* Warning: muted amber */
+.reveal .callout.callout-warning{
+  border-left: 6px solid rgba(180, 110, 0, 0.70);
+  background: rgba(180, 110, 0, 0.08);
+}
+
+/* Make italics slightly “lighter” */
+.reveal em,
+.reveal i {
+  opacity: 0.65;
+}
+
+/* Default callout size (slightly smaller) */
+.reveal .slides section .callout {
+  font-size: 0.92em !important;
+}
+
+/* --- Make callout internals inherit font-size (Quarto sets them smaller) --- */
+.reveal .callout .callout-body,
+.reveal .callout .callout-content,
+.reveal .callout .callout-title,
+.reveal .callout p,
+.reveal .callout li {
+  font-size: inherit !important;
+}
+
+/* --- PEEK CALLOUTS: stay open while any inner fragment is current --- */
+
+/* Base: collapsed */
+.reveal .slides section .peek.fragment .callout .callout-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-0.20em);
+  transition:
+    max-height 260ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+  will-change: max-height, opacity, transform;
+}
+
+/* Title spacing when collapsed */
+.reveal .slides section .peek.fragment .callout .callout-title {
+  margin-bottom: 0 !important;
+  transition: margin-bottom 180ms ease;
+}
+
+/* Expanded when:
+   (a) the wrapper itself is current, OR
+   (b) the wrapper *has* a descendant that is current (e.g. an incremental <li>) */
+.reveal .slides section .peek.fragment.current-fragment .callout .callout-content,
+.reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-content {
+  max-height: 40em;     /* bump if you have very tall callouts */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal .slides section .peek.fragment.current-fragment .callout .callout-title,
+.reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-title {
+  margin-bottom: 0.35em !important;
+}
+
+/* Fallback if :has() is unavailable: keep expanded once visible (prevents the annoying collapse) */
+@supports not selector(.peek:has(.current-fragment)) {
+  .reveal .slides section .peek.fragment.visible .callout .callout-content {
+    max-height: 40em;
+    opacity: 1;
+    transform: none;
+  }
+  .reveal .slides section .peek.fragment.visible .callout .callout-title {
+    margin-bottom: 0.35em !important;
+  }
+}
+
+/* ---------------------------
+   PRINT-PDF: respect peeks (do NOT auto-expand)
+   --------------------------- */
+@media print {
+  /* collapse by default (same as screen) */
+  body.print-pdf .reveal .slides section .peek.fragment .callout .callout-content {
+    overflow: hidden !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    transform: translateY(-0.20em) !important;
+  }
+
+  body.print-pdf .reveal .slides section .peek.fragment .callout .callout-title {
+    margin-bottom: 0 !important;
+  }
+
+  /* expand only when current OR when it contains the current fragment */
+  body.print-pdf .reveal .slides section .peek.fragment.current-fragment .callout .callout-content,
+  body.print-pdf .reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-content {
+    max-height: 40em !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body.print-pdf .reveal .slides section .peek.fragment.current-fragment .callout .callout-title,
+  body.print-pdf .reveal .slides section .peek.fragment:has(.current-fragment) .callout .callout-title {
+    margin-bottom: 0.35em !important;
+  }
+}
+
+/* In overview mode, show all fragments fully (ignore "faint future") */
+.reveal.overview .slides section .fragment {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important; /* in case you animate fragments */
+}
+
+.reveal .columns{
+  gap: 1rem;
+}
+
+.reveal .compact {
+  font-size: 0.92em;
+}
+
+.reveal .dense {
+  font-size: 0.86em;
+}
+
+.reveal .tight-math .katex-display {
+  margin: 0.22em 0;
+}
+
+.reveal .two-col-eq .columns > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Top-level bullets */
+.reveal ul {
+  list-style: "✦  " outside;
+  padding-left: 1.15em;
+}
+
+/* Nested bullets */
+.reveal ul ul {
+  list-style: "›  " outside;
+}
+
+/* Manual title slide */
+.reveal .title-manual h2 {
+  font-size: 1.55em;
+  line-height: 1.08;
+  margin-bottom: 1.15em;
+}
+
+.reveal .title-manual .author-name {
+  font-size: 1.02em;
+  font-weight: 500;
+  margin-bottom: 0.85em;
+}
+
+.reveal .title-manual .meta {
+  font-size: 0.82em;
+  opacity: 0.62;
+  line-height: 1.35;
+}
+
+.reveal .title-manual p {
+  margin: 0;
+}
+
+:root{
+  --running-head-top: 0.65rem;
+  --running-head-side: 2.1rem;
+  --running-head-size: 0.34em;
+  --running-head-opacity: 0.28;
+  --running-head-letterspace: 0.10em;
+}
+
+/* Persistent running header */
+.reveal::before,
+.reveal::after {
+  position: fixed;
+  top: var(--running-head-top);
+  font-size: var(--running-head-size);
+  letter-spacing: var(--running-head-letterspace);
+  text-transform: uppercase;
+  opacity: var(--running-head-opacity);
+  pointer-events: none;
+  z-index: 30;
+  white-space: nowrap;
+}
+
+.reveal::before {
+  content: "H. SOUZA";
+  left: var(--running-head-side);
+}
+
+.reveal::after {
+  content: "RESEARCH PROFILE";
+  right: var(--running-head-side);
+}
+
+/* Hide on title slide */
+.reveal.on-title-slide::before,
+.reveal.on-title-slide::after {
+  opacity: 0;
+}

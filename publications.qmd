@@ -7,13 +7,13 @@ format: html
 *From newest to oldest*
 
 
-**5. Revisiting fully residually free Demushkin groups** (2026). Joint with Pavel Zalesski. Submitted.
+**5. Revisiting fully residually free Demushkin groups** (2026). Joint with Pavel Zalesski. Submitted. On Arxiv: [https://arxiv.org/abs/2603.16814](https://arxiv.org/abs/2603.16814)
 
 ::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
 We establish new examples and non-examples of pro-$p$ limit groups among the class of Demushkin groups, that is, pro-$p$ Poincaré duality groups of dimension $2$.
 :::
 
-**4. Profinite detection of free products and free factors** (2026). Joint with Andrei Jaikin and Pavel Zalesski. Submitted.
+**4. Profinite detection of free products and free factors** (2026). Joint with Andrei Jaikin and Pavel Zalesski. Submitted. On Arxiv: [https://arxiv.org/abs/2603.16674](https://arxiv.org/abs/2603.16674)
 
 ::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
 Let $G$ be the fundamental group of a graph of finitely generated virtually free groups with virtually cyclic edge groups. We show that $G$ is cohomologically good if $G$ is residually finite. If $G$ is LERF, we prove that $G$ splits non-trivially as a free product if and only if its profinite completion $\widehat{G}$ splits non-trivially as a free profinite product. Moreover, we are able to detect one-ended free factors of $G$ from $\widehat{G}$. As an application, we deduce that any profinitely rigid word in a finitely generated free group is universally profinitely rigid.
