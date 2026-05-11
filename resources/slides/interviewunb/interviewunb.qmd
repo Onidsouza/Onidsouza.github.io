@@ -72,6 +72,7 @@ Main themes:
 ## My contribution to this line
 
 - Structural analysis of virtually free-by-$\mathbb Z_p$ pro-$p$ groups
+- Graded algebra as an Ore extension of a free algebra
 - Topological viewpoint on localization of profinite rings
 - Development of rank functions as a core technical tool
 
