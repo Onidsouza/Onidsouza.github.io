@@ -248,7 +248,7 @@ If I reach before 16:00, talk about Jaikin's criterion
 Let $R$ be a projective-free ring and $\varphi\colon R \to \mathcal{D}$ be a ring homomorphism to a division ring. Assume that:
 
 1. $\mathrm{Tor}_1^R(\mathcal{D},\mathcal{D}) = 0$;
-2. Any finitely generated $R$-submodule of $\mathcal{D}$ has projective dimension $\leq 1$.
+2. The kernel of any module map $R^n \to \mathcal{D}$ is a free $R$-module.
 
 Then, $R$ is a Sylvester domain and $\varphi^\# \mathrm{rk}_{\mathcal{D}} = \mathrm{irk}_R$.
 :::
