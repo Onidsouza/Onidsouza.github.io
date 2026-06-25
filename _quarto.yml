@@ -16,7 +16,7 @@ website:
       - text: "Miscellanea"
         href: miscellanea.qmd
   page-footer:
-    left: "© Henrique Souza - henrique (dot) mendesdasilva (at) uam (dot) es"
+    left: "© Henrique Souza - henrique (dot) souza (at) manchester (dot) ac (dot) uk"
     right: "Built with [Quarto](https://quarto.org)"
 
 format:

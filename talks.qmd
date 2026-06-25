@@ -41,9 +41,11 @@ format: html
 
 # Upcoming events
 
-- **Groups, Topology and Applications in Gran Bilbao VII**. April 2026, Universidad del País Vasco/Euskal Herriko Unibersitatea. [Event page](https://sites.google.com/view/gtagranbilbaovii/menu)
+- **Groups in Madrid 2026**. October 2026, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
 
 # Where you've found me
+
+- **Groups, Topology and Applications in Gran Bilbao VII**. April 2026, Universidad del País Vasco/Euskal Herriko Unibersitatea. [Event page](https://sites.google.com/view/gtagranbilbaovii/menu)
 
 - **Groups in Madrid 2025**. September 2025, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
 
