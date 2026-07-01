@@ -4,7 +4,37 @@ format: html
 ---
 
 # List of talks
+```{r talks-given-map}
+#| echo: false
+#| warning: false
+#| message: false
 
+library(readr)
+library(dplyr)
+library(leaflet)
+
+talks_given <- read_csv("data/talks.csv", show_col_types = FALSE)
+
+talk_city_counts <- talks_given |>
+  count(city, country, lat, lon, name = "n") |>
+  arrange(desc(n))
+
+leaflet(talk_city_counts) |>
+  addTiles() |>
+  addCircleMarkers(
+    lng = ~lon,
+    lat = ~lat,
+    radius = ~4 + 3 * sqrt(n),
+    color = "red",
+    fillColor = "red",
+    stroke = TRUE,
+    fillOpacity = 0.75,
+    popup = ~paste0(
+      "<strong>", city, ", ", country, "</strong><br>",
+      n, " talk", ifelse(n == 1, "", "s")
+    )
+  )
+```
 - **Profinite detection of free factors**. March 2026, Università degli Studi di Padova, Mathematics in Conversation. [Seminar archive](https://sites.google.com/view/mathematicsinconversation/past-seminars/20252026-seminars). [Talk notes](/resources/profinite_detection_free_factors.pdf).
 
 - **Profinite rigidity beyond finite generation**. August 2025, Universidade de Brasília.
@@ -44,6 +74,38 @@ format: html
 - **Groups in Madrid 2026**. October 2026, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
 
 # Where you've found me
+
+```{r talks-attended-map}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(readr)
+library(dplyr)
+library(leaflet)
+
+events <- read_csv("data/events.csv", show_col_types = FALSE)
+
+city_counts <- events |>
+  count(city, country, lat, lon, name = "n") |>
+  arrange(desc(n))
+
+leaflet(city_counts) |>
+  addTiles() |>
+  addCircleMarkers(
+    lng = ~lon,
+    lat = ~lat,
+    radius = ~4 + 3 * sqrt(n),
+    stroke = TRUE,
+    fillOpacity = 0.75,
+    popup = ~paste0(
+      "<strong>", city, ", ", country, "</strong><br>",
+      n, " conference", ifelse(n == 1, "", "s")
+    )
+  )
+```
+
+- **Postgraduate Group Theory Conference 2026**. June 2026, University of Manchester. [Event page](https://sites.google.com/view/pgtc2026/home)
 
 - **Groups, Topology and Applications in Gran Bilbao VII**. April 2026, Universidad del País Vasco/Euskal Herriko Unibersitatea. [Event page](https://sites.google.com/view/gtagranbilbaovii/menu)
 
