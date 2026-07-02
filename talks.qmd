@@ -35,6 +35,9 @@ leaflet(talk_city_counts) |>
     )
   )
 ```
+
+<div style="height: 2rem;"></div>
+
 - **Profinite detection of free factors**. March 2026, Università degli Studi di Padova, Mathematics in Conversation. [Seminar archive](https://sites.google.com/view/mathematicsinconversation/past-seminars/20252026-seminars). [Talk notes](/resources/profinite_detection_free_factors.pdf).
 
 - **Profinite rigidity beyond finite generation**. August 2025, Universidade de Brasília.
@@ -104,6 +107,8 @@ leaflet(city_counts) |>
     )
   )
 ```
+
+<div style="height: 2rem;"></div>
 
 - **Postgraduate Group Theory Conference 2026**. June 2026, University of Manchester. [Event page](https://sites.google.com/view/pgtc2026/home)
 
