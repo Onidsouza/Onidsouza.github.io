@@ -1,0 +1,217 @@
+---
+title: "Manual de supervivencia del doctorando en matemáticas de la UAM"
+description: "Una guía práctica, informal y no oficial para sobrevivir al doctorado en matemáticas en la Universidad Autónoma de Madrid."
+---
+
+> Esta guía es informal y no sustituye la información oficial de la UAM, la Escuela de Doctorado, el Departamento de Matemáticas, extranjería, ni ninguna oficina administrativa.  
+> La idea es explicar, en lenguaje humano, qué suele haber que hacer y en qué orden.
+
+## Cómo usar esta guía
+
+Abre únicamente la sección que te toque ahora mismo. Si acabas de llegar, empieza por “Antes de llegar” y “Primer mes”. Si estás terminando, salta directamente a “Depósito, defensa y papeleo posterior”.
+
+::: {.callout-warning collapse="true"}
+## Antes de fiarte de esta página
+
+Los procedimientos administrativos cambian. Comprueba siempre la versión oficial actualizada, especialmente para:
+
+- admisión y matrícula;
+- contratos predoctorales;
+- visados, NIE/TIE y extranjería;
+- depósito de tesis;
+- plazos de defensa;
+- solicitud del título;
+- apostilla y legalización de documentos.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Mapa rápido del doctorado
+
+Una versión brutalmente simplificada:
+
+1. Conseguir admisión, matrícula y, si procede, contrato o financiación.
+2. Llegar a Madrid y sobrevivir al primer mes.
+3. Entender qué se espera de ti cada año.
+4. Hacer investigación sin perderte en la burocracia.
+5. Preparar depósito, tribunal y defensa.
+6. Después de defender: actas, título, apostilla, certificados y cierre de contrato.
+
+:::
+
+::: {.callout-tip collapse="true"}
+## Para estudiantes de fuera de la UE
+
+Aquí conviene separar tres cosas que a menudo se mezclan:
+
+- tu situación académica en la UAM;
+- tu situación laboral, si tienes contrato;
+- tu situación migratoria en España.
+
+Que una de ellas esté resuelta no significa automáticamente que las otras dos también lo estén.
+:::
+
+::: {.callout-note collapse="true"}
+## Antes de llegar a la UAM
+
+Checklist orientativo:
+
+- admisión al programa de doctorado;
+- documentación académica previa;
+- legalización/apostilla y traducciones, si proceden;
+- matrícula;
+- financiación o contrato;
+- visado, si vienes de fuera de la UE;
+- seguro médico, si aplica;
+- alojamiento temporal;
+- cita para trámites iniciales.
+
+Errores comunes:
+
+- asumir que “estar admitido” significa que ya puedes trabajar;
+- no comprobar si tus documentos necesitan apostilla;
+- llegar sin copias digitales y físicas de documentos importantes;
+- dejar extranjería para el último momento.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Primer mes en Madrid
+
+Cosas que suelen ocurrir al principio:
+
+- activar cuentas institucionales;
+- entender SIGMA y el correo UAM;
+- hablar con tu director/a sobre expectativas reales;
+- localizar secretaría del departamento, Escuela de Doctorado y RRHH, si tienes contrato;
+- empadronamiento, NIE/TIE o trámites de residencia, si aplica;
+- cuenta bancaria, teléfono, transporte;
+- enterarte de seminarios, grupos de lectura y vida departamental.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Primer año
+
+Objetivo principal: no perderte.
+
+Académicamente, deberías intentar:
+
+- entender el área y el problema general;
+- leer lo suficiente para poder hablar con tu director/a sin sentirte completamente a ciegas;
+- asistir a seminarios;
+- preparar el plan de investigación o documentos equivalentes;
+- aprender qué cursos, actividades o informes exige el programa.
+
+Consejo honesto: el primer año rara vez se parece a la imagen romántica del doctorado. Mucho tiempo se va en aprender el idioma matemático de tu área.
+:::
+
+::: {.callout-note collapse="true"}
+## Segundo y tercer año
+
+Objetivo principal: producir matemáticas.
+
+Aquí normalmente empieza la presión real:
+
+- resultados parciales;
+- escritura de notas internas;
+- primeros seminarios o charlas;
+- posibles preprints;
+- viajes y conferencias;
+- docencia, si tienes contrato con carga docente;
+- informes anuales.
+
+Una buena regla: si algo puede convertirse en una nota escrita de 5 páginas, escríbelo. La tesis se construye con material acumulado, no con memoria heroica.
+:::
+
+::: {.callout-note collapse="true"}
+## Último año
+
+Objetivo principal: cerrar.
+
+Cosas a vigilar:
+
+- decidir qué entra y qué no entra en la tesis;
+- hablar pronto con tu director/a sobre tribunal y plazos;
+- revisar normativa de depósito;
+- comprobar requisitos de publicaciones, informes, actividades y coautorías;
+- dejar margen para burocracia;
+- no planear la defensa como si la administración funcionara instantáneamente.
+
+Regla práctica: si necesitas defender en una fecha concreta, empieza a preguntar por los trámites mucho antes de lo que te parece razonable.
+:::
+
+::: {.callout-important collapse="true"}
+## Depósito y defensa
+
+Esta sección debería explicar paso a paso:
+
+1. versión final de la tesis;
+2. autorización del director/a;
+3. propuesta de tribunal;
+4. documentación exigida por la Escuela de Doctorado;
+5. depósito;
+6. periodo de exposición pública, si aplica;
+7. autorización de defensa;
+8. reserva de sala;
+9. anuncio;
+10. defensa;
+11. acta;
+12. mención cum laude, si aplica.
+
+Aquí conviene incluir capturas, enlaces oficiales y nombres de oficinas, pero con cuidado: estas cosas cambian.
+:::
+
+::: {.callout-important collapse="true"}
+## Después de la defensa
+
+No acaba en la defensa. Lo que viene después puede ser igual de importante:
+
+- acta de defensa;
+- certificado provisional;
+- solicitud del título;
+- pago de tasas;
+- certificado académico;
+- mención cum laude, si aplica;
+- apostilla/legalización, si necesitas usar el título fuera de España;
+- cierre o suspensión del contrato, si aplica;
+- cartas para postdocs, visados o concursos.
+
+Consejo: pide documentos con firma electrónica verificable siempre que sea posible.
+:::
+
+::: {.callout-note collapse="true"}
+## Modelos de emails útiles
+
+Aquí puedes incluir plantillas para:
+
+- pedir información a la Escuela de Doctorado;
+- solicitar certificados;
+- escribir a secretaría del departamento;
+- contactar RRHH;
+- pedir cartas al director/a;
+- escribir a miembros del tribunal;
+- avisar de problemas con plazos;
+- solicitar acta o documentación post-defensa.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Glosario administrativo
+
+Algunas palabras que conviene entender:
+
+- matrícula;
+- tutela académica;
+- plan de investigación;
+- documento de actividades;
+- Escuela de Doctorado;
+- SIGMA;
+- sede electrónica;
+- certificado académico;
+- acta de defensa;
+- título oficial;
+- resguardo del título;
+- apostilla de La Haya.
+
+:::

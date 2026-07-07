@@ -22,5 +22,8 @@
   },
   "resources/slides/interviewunb/interviewunb.qmd": {
     "interviewunb.html": "277a5b9f"
+  },
+  "sobrevivencia/index.qmd": {
+    "index.html": "9452acdf"
   }
 }
