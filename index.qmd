@@ -23,6 +23,18 @@ format: html
 
 I'm a Postdoctoral Research Associate at the University of Manchester, working with [Florian Eisele](https://feisele.github.io/)'s team. Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I'm also interested in low dimensional topology and number theory. My hair is currently [this color]{.hair-color}. You can find my email at the footer of the page. You can click [here](https://orcid.org/0000-0002-0465-471X) for my ORCID page, and you can click [here](https://lattes.cnpq.br/7866584390212016) for my Lattes CV.
 
+**On the current state of affairs**
+
+We are living through a unique moment in mathematical history, as LLM-powered tools are producing mathematics at unprecedent speeds. Through the 25-26 term, I've personally engaged with such tools myself to various degrees, including producing proofs of mathematical statements, proof-reading my own work, doing literature reviews, teaching myself some new piece of maths or even as simple as writing an email. As of August 2026, my position on this topic has changed. There are several discussion hubs on this topic appearing throughout the community -- the [Proofs and Prompts](https://proofsandprompts.com/) blog and the [\begin{proof}](https://www.begin-proof.com/) declaration, to mention a couple -- and the arguments floating around provoked a reflection on what my own stance on this topic should be.
+
+I still do not have a clear answer. Three points have seemed to coalesce together:
+
+  - The private companies behind these LLM-powered tools do not have the best interests of us, mathematicians, nor of the society in general, at heart. We should not support them financially, politically or academically.
+  - There is a natural tendency to deskill yourself when engaging with such tools -- a tendency I find myself very prone to falling victim to.
+  - The very structure of the mathematical community (teaching, service and research) is approaching a turning point, and mathematicians should try to be at the forefront guiding how the new structure should be built. While it seems late and unlikely for a global consensus to be reached, individual mathematicians can nonetheless make an impact in their local communities.
+
+As such, I have ceased my use (and subscription) for all such tools, and have instead subscribed to the [\begin{proof}](https://www.begin-proof.com/declaration) declaration (as well as the [Leiden](https://leidendeclaration.ai/) declaration). I invite all my colleagues and students to also take some time and reflect on their role in this pivotal moment, and take an active role in shaping a community they honestly want to be a part of.
+
 :::
 
 :::
