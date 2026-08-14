@@ -74,6 +74,7 @@ leaflet(talk_city_counts) |>
 
 # Upcoming events
 
+- **Characters and Blocks in València**. September 2026, Universitat de València. [Event page](https://sites.google.com/view/charactersandblocksinvalencia/)
 - **Groups in Madrid 2026**. October 2026, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
 
 # Where you've found me
