@@ -7,7 +7,7 @@ format: html
 *From newest to oldest*
 
 
-**5. Revisiting fully residually free Demushkin groups** (2026). Joint with Pavel Zalesski. Submitted. On Arxiv: [https://arxiv.org/abs/2603.16814](https://arxiv.org/abs/2603.16814)
+**5. Revisiting fully residually free Demushkin groups** (2026). Joint with Pavel Zalesski. In Archiv der Mathematik (Online first). [https://doi.org/10.1007/s00013-026-02285-4](https://doi.org/10.1007/s00013-026-02285-4). Also on Arxiv: [https://arxiv.org/abs/2603.16814](https://arxiv.org/abs/2603.16814)
 
 ::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
 We establish new examples and non-examples of pro-$p$ limit groups among the class of Demushkin groups, that is, pro-$p$ Poincaré duality groups of dimension $2$.
