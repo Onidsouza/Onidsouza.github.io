@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -173,6 +202,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="hiya">Hiya!</h2>
 <p><strong>Who am I?</strong></p>
 <p>I’m a Postdoctoral Research Associate at the University of Manchester, working with <a href="https://feisele.github.io/">Florian Eisele</a>’s team. Keywords for my work are: profinite and pro-p groups, completed group algebras, Sylvester rank functions, semisimple Lie group representations. I’m also interested in low dimensional topology and number theory. My hair is currently <span class="hair-color">this color</span>. You can find my email at the footer of the page. You can click <a href="https://orcid.org/0000-0002-0465-471X">here</a> for my ORCID page, and you can click <a href="https://lattes.cnpq.br/7866584390212016">here</a> for my Lattes CV.</p>
+<p><strong>glder</strong></p>
+<p>I’m also the developer and maintainer for <a href="https://github.com/Onidsouza/glder">glder</a>, a Python package to work with the action of <span class="math inline">\(\mathfrak{gl}_n(\mathbb{Q})\)</span> on the <span class="math inline">\(k\)</span>-th symmetric power of its adjoint representation. You can follow the link for detailed installation structions, simply type <code>python -m pip install glder</code> on your terminal to get it from <a href="https://pypi.org/project/glder/">PyPI</a> or see a detailed tutorial in <a href="https://github.com/Onidsouza/glder/blob/main/docs/TUTORIAL.md">this link</a>.</p>
 <p><strong>On the current state of affairs</strong></p>
 <p>We are living through a unique moment in mathematical history, as LLM-powered tools are producing mathematics at unprecedent speeds. Through the 25-26 term, I’ve personally engaged with such tools myself to various degrees, including producing proofs of mathematical statements, proof-reading my own work, doing literature reviews, teaching myself some new piece of maths or even as simple as writing an email. As of August 2026, my position on this topic has changed. There are several discussion hubs on this topic appearing throughout the community – the <a href="https://proofsandprompts.com/">Proofs and Prompts</a> blog and the <a href="https://www.begin-proof.com/">\begin{proof}</a> declaration, to mention a couple – and the arguments floating around provoked a reflection on what my own stance on this topic should be.</p>
 <p>I still do not have a clear answer. Three points have seemed to coalesce together:</p>
