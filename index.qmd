@@ -25,7 +25,7 @@ I'm a Postdoctoral Research Associate at the University of Manchester, working w
 
 **glder**
 
-I'm also the developer and maintainer for [glder](https://github.com/Onidsouza/glder), a Python package to work with the action of $\mathfrak{gl}_n(\mathbb{Q})$ on the $k$-th symmetric power of its adjoint representation. You can follow the link for detailed installation structions, simply type `python -m pip install glder` on your terminal to get it from [PyPI](https://pypi.org/project/glder/) or see a detailed tutorial in [this link](https://github.com/Onidsouza/glder/blob/main/docs/TUTORIAL.md).
+I'm also the developer and maintainer for [glder](https://github.com/Onidsouza/glder), a Python package to work with the action of $\mathfrak{gl}_n(\mathbb{Q})$ on the $k$-th symmetric power of its adjoint representation. You can follow the link for installation instructions, simply type `python -m pip install glder` on your terminal to get it from [PyPI](https://pypi.org/project/glder/) or see a detailed tutorial in [this link](https://github.com/Onidsouza/glder/blob/main/docs/TUTORIAL.md).
 
 **On the current state of affairs**
 
