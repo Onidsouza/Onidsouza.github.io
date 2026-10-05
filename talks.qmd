@@ -38,7 +38,7 @@ leaflet(talk_city_counts) |>
 
 <div style="height: 2rem;"></div>
 
-- **Cohomological asymptotics for linear groups**. October 2026, University of Manchester, Algebra Seminar.
+- **Cohomological asymptotics for linear groups**. October 2026, University of Manchester, Algebra Seminar. [Talk notes](/resources/Talk_Manchester_October_2026.pdf)
 
 - **Profinite detection of free factors**. March 2026, Università degli Studi di Padova, Mathematics in Conversation. [Seminar archive](https://sites.google.com/view/mathematicsinconversation/past-seminars/20252026-seminars). [Talk notes](/resources/profinite_detection_free_factors.pdf).
 
