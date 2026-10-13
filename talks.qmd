@@ -76,7 +76,19 @@ leaflet(talk_city_counts) |>
 
 # Upcoming events
 
-- **Groups in Madrid 2026**. October 2026, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
+```default
+    \ _ /
+    /O O \   _                        z  z
+    \~~~ / // \                     z        z
+     /--\//   ))         z        z
+()==/()== \__./  B z z z   z    z               z
+()=(  ()= )                  z z
+    \____/                                        z z z
+     ||||
+    (/  \)
+
+Looks awfully empty here...
+```
 
 # Where you've found me
 
@@ -111,6 +123,8 @@ leaflet(city_counts) |>
 ```
 
 <div style="height: 2rem;"></div>
+
+- **Groups in Madrid 2026**. October 2026, ICMAT. [Event page](https://sites.google.com/view/groupsinmadrid/)
 
 - **Characters and Blocks in València**. September 2026, Universitat de València. [Event page](https://sites.google.com/view/charactersandblocksinvalencia/)
 

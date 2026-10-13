@@ -3,6 +3,10 @@ title: "Miscellanea"
 format: html
 ---
 
+# А. Тарковский Legacy Seminar
+
+I am the organizer and head of the cientific comitee for the А. Тарковвский Legacy Seminar, a series of presentations with the goal of researching the mathematical legacy of the soviet filmmaker. The first series [will take place soon](https://sites.google.com/view/tarkovskylegacyseminar/home-page), and a proceedings of the event will be made available afterwards.
+
 # Primitive School on the Mapping Class Group
 
 Another activity of the Bridson-Reid laboratory (a part of the Severo Ochoa Laboratories program at ICMAT), we've organized a minicourse on the mapping class group to prepare ourselves to the (then) upcoming advanced school on the mapping class group at ICMAT. We mainly followed Farb & Margalit's primer. You can see the poster for this reading group [here](/resources/primitiveschoolposter.pdf)
