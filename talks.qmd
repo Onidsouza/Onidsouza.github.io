@@ -38,6 +38,8 @@ leaflet(talk_city_counts) |>
 
 <div style="height: 2rem;"></div>
 
+- **How big is your matrix?**. November 2026, Universidad Complutense de Madrid, Seminario de Álgebra, Geometría y Topología. [Seminar archive](https://eventos.ucm.es/117927/section/52779/seminario-de-algebra-geometria-y-topologia.html)
+
 - **Cohomological asymptotics for linear groups**. October 2026, University of Manchester, Algebra Seminar. [Talk notes](/resources/Talk_Manchester_October_2026.pdf)
 
 - **Profinite detection of free factors**. March 2026, Università degli Studi di Padova, Mathematics in Conversation. [Seminar archive](https://sites.google.com/view/mathematicsinconversation/past-seminars/20252026-seminars). [Talk notes](/resources/profinite_detection_free_factors.pdf).

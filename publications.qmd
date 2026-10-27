@@ -6,6 +6,11 @@ format: html
 # List of publications
 *From newest to oldest*
 
+**6. Rank functions, $\mathbb{Z}_p$-extensions and class numbers** (2026). On Arxiv.
+
+::: {.callout-note title="Abstract" collapse="true" appearance="minimal"}
+If $F$ is a number field and $F = F_0 \subset F_1 \subset F_2 \subset \cdots$ is a tower of Galois extensions with $\mathrm{Gal}(F_n/F)$ cyclic of order $p^n$, K. Iwasawa gave a closed formula for the growth of the $p$-part of the class number of $F_n$ whenever $n$ is large enough. We present a new proof of this formula, obtained by reinterpreting its summands in terms of Sylvester matrix rank functions on the Iwasawa algebra $\Lambda$ without resorting to the classification of finitely-generated $\Lambda$-modules up to pseudo-isomorphism.
+:::
 
 **5. Revisiting fully residually free Demushkin groups** (2026). Joint with Pavel Zalesski. In Archiv der Mathematik (Online first). [https://doi.org/10.1007/s00013-026-02285-4](https://doi.org/10.1007/s00013-026-02285-4). Also on Arxiv: [https://arxiv.org/abs/2603.16814](https://arxiv.org/abs/2603.16814)
 
