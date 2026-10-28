@@ -1,0 +1,270 @@
+---
+pagetitle: "How big is your matrix?"
+format:
+  revealjs:
+    theme: simple
+    css: styles_new.css
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+        <script>
+        function updateRunningHeaderState() {
+          const current =
+            document.querySelector('.reveal .slides section.present:not(.stack)') ||
+            document.querySelector('.reveal .slides section.present');
+
+          const reveal = document.querySelector('.reveal');
+          if (!reveal) return;
+
+          const isTitle = current && current.classList.contains('title-manual');
+          reveal.classList.toggle('on-title-slide', !!isTitle);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+          if (window.Reveal) {
+            Reveal.on('ready', updateRunningHeaderState);
+            Reveal.on('slidechanged', updateRunningHeaderState);
+            updateRunningHeaderState();
+          }
+        });
+        </script>
+    slide-number: true
+    slide-level: 3
+    show-slide-number: all
+    incremental: false
+    navigation-mode: vertical
+    transition: none
+    center: false
+    chalkboard: true
+    pdf-separate-fragments: false
+    html-math-method: katex
+---
+
+
+
+### How big is your matrix? {#title .title-manual}
+
+<!--
+WORKING OUTLINE — replace the visible bullets with your slide content.
+
+Core: manual title + 19 content slides, approximately 53 minutes.
+  Opening and rank functions:       12 minutes
+  Laurent polynomials and shifts:   20 minutes
+  General groups and approximation:  7 minutes
+  Arithmetic and Iwasawa theory:    13 minutes
+  Closing:                          1 minute
+
+Two optional slides are placed at their natural insertion points.
+Remove visibility="hidden" from their headings to include them.
+At 50 minutes, compress the space of rank functions and the closing.
+At 60 minutes, include one optional example and allow time for questions.
+
+Keep this file and styles_new.css in the same directory.
+Preview: quarto preview how-big-is-your-matrix.qmd
+Render:  quarto render how-big-is-your-matrix.qmd
+-->
+
+::: {.author-name}
+Iq Souza
+:::
+
+::: {.meta}
+Colloquium · Universidad Complutense de Madrid
+
+[Date]
+:::
+
+<!-- OPENING AND RANK FUNCTIONS — approximately 12 minutes. -->
+
+### What does rank measure? {#ordinary-rank}
+
+- Recall the equivalent descriptions of rank over a field.
+- Work through one small matrix using two of these descriptions.
+- Ask what it means to measure the size of a matrix over a general ring.
+
+### One matrix, different answers {#different-ranks}
+
+- Choose an integer matrix whose rank over $\mathbb{Q}$ differs from its rank modulo $p$.
+- Explain what each rank detects about the same matrix over $\mathbb{Z}$.
+- Motivate allowing several rank functions on a single ring.
+
+### Sylvester matrix rank functions {#sylvester-ranks}
+
+- Define a rank function on rectangular matrices over a unital ring.
+- State normalization and the inequality for products.
+- State block additivity and the block triangular inequality.
+- Relate each axiom to familiar linear algebra.
+
+<!-- Definition and examples: https://arxiv.org/html/2012.15844v1 -->
+
+### Ranks from representations {#representation-ranks}
+
+- Introduce normalized rank on $M_d(k)$ and explain the factor $1/d$.
+- Pull rank back along a ring homomorphism $R\longrightarrow M_d(k)$.
+- Check that an $m\times m$ identity matrix has rank $m$.
+- Reinterpret the examples over $\mathbb{Z}$ in this language.
+
+### A space of rank functions {#rank-space}
+
+- Explain pointwise convergence: evaluate every rank on a fixed matrix.
+- Show how to form convex combinations of rank functions.
+- Mention compactness briefly and motivate looking for limits of ranks.
+
+<!-- LAURENT POLYNOMIALS AND SHIFTS — approximately 20 minutes. -->
+
+### Laurent polynomials acting on a cycle {#finite-shifts}
+
+- Introduce $R=\mathbb{C}[t,t^{-1}]$ and the cyclic shift $S_N$ on $\mathbb{C}^N$.
+- Draw the cycle and explain the representation $t\longmapsto S_N$.
+- Explain how a matrix $A(t)$ becomes a block matrix $A(S_N)$.
+- Define its normalized rank $\rho_N(A)$.
+
+### A kernel you can see {#shift-kernel}
+
+- Identify the kernel of $S_N-I$ as the constant vectors.
+- Compute $\rho_N(t-1)=1-1/N$ and ask what happens as $N$ grows.
+- If useful, compare $S_N^a-I$ by counting the cycles of the permutation.
+
+### The finite Fourier transform {#finite-fourier}
+
+- Diagonalize $S_N$ using the discrete Fourier basis.
+- Identify the eigenvalues with the $N$th roots of unity.
+- Express $\rho_N(A)$ as an average of the ranks of $A(\zeta)$.
+- Explain how the cycle becomes a collection of frequencies.
+
+### Rank over the field of fractions {#generic-rank}
+
+- Introduce the usual rank of $A(t)$ over $\mathbb{C}(t)$.
+- Interpret this as the generic rank of the evaluations $A(z)$.
+- Use a nonzero maximal minor to isolate finitely many exceptional points.
+
+### From a cycle to the infinite shift {#infinite-shift}
+
+- Replace the finite cycle by the integer line.
+- Let $t$ act by the bilateral shift on $\ell^2(\mathbb{Z})$.
+- Explain how a Laurent polynomial matrix gives an operator between Hilbert spaces.
+- Ask what should replace normalized dimension in this setting.
+
+### Fourier transform and von Neumann rank {#von-neumann-rank}
+
+- Identify $\ell^2(\mathbb{Z})$ with $L^2(S^1)$ using the Fourier transform.
+- Turn the shift into multiplication by the coordinate function $z$.
+- Introduce $\mathcal{N}(\mathbb{Z})\cong L^\infty(S^1)$ and its trace.
+- Describe matrix rank as the integral of the pointwise ranks of $A(z)$.
+
+<!--
+The circle is the Fourier dual of Z. The action being transformed is the
+shift on l^2(Z). Use the closure of the image in defining operator rank.
+Do not identify C(t) with a subring of L^infinity(S^1).
+Reference: Anantharaman–Popa, An Introduction to II_1 Factors, Example 1.3.8.
+https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
+-->
+
+### Three constructions, one limit {#three-ranks}
+
+- Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.
+- State the equality of the two infinite constructions and the convergence of $\rho_N$.
+- Give the proof by counting the finitely many exceptional evaluations.
+- Ask how much of this picture survives for more general groups.
+
+<!-- GENERAL GROUPS AND APPROXIMATION — approximately 7 minutes. -->
+
+### Groups and their finite quotients {#group-rings}
+
+- Explain group-ring elements as finite linear combinations of translations.
+- Introduce residual finiteness and a nested separating chain of finite-index normal subgroups.
+- Compare matrices acting on finite quotients with their action on $\ell^2(G)$.
+- Explain the normalization by the size of each finite quotient.
+
+### Lück approximation {#luck-approximation}
+
+- State the matrix-rank approximation theorem with its precise hypotheses.
+- Explain the von Neumann rank appearing in the limit.
+- Recover the cyclic-shift example when $G=\mathbb{Z}$.
+- Explain what finite computations now tell us about an infinite group.
+
+<!--
+Coefficient choice: the classical theorem is over Q[G]. If you state the
+version over C[G], include the appropriate extension and attribution.
+Use a nested finite-index normal chain with trivial intersection.
+Sources:
+https://link.springer.com/article/10.1007/BF01896404
+https://andreijaikin.wordpress.com/2024/05/06/the-luck-approximation/
+-->
+
+### Hyperbolic 3-manifolds and representation ranks {#hyperbolic-optional visibility="hidden"}
+
+- Introduce the fundamental group of a finite-volume hyperbolic 3-manifold.
+- Describe the sequence of representations and its normalized rank functions.
+- Insert the precise rank-approximation statement from the work with Lander.
+- Compare approximation by these representations with approximation by finite quotients.
+
+<!--
+OPTIONAL: approximately 3–4 minutes. State the result in matrix-rank language.
+Source: Guerrero Sánchez–Souza, Asymptotics of rational representations for
+algebraic groups, https://arxiv.org/html/2405.17360v2
+-->
+
+<!-- ARITHMETIC AND IWASAWA THEORY — approximately 13 minutes. -->
+
+### Arithmetic size through rank {#arithmetic-rank}
+
+- Motivate measuring a finite $p$-group by its logarithmic size.
+- Introduce rank from normalized length over $\mathbb{Z}/p^k\mathbb{Z}$.
+- Use multiplication by $p$ as the first example.
+- Explain how a rank defect records the size of a cokernel.
+
+<!--
+Possible model: rho_{p,k}(A) = log_p |im(A mod p^k)| / k.
+For an a-by-b matrix, log_p |coker(A mod p^k)| = k(a-rho_{p,k}(A)).
+The precision k must be large enough to recover all the desired torsion.
+-->
+
+### Two elementary arithmetic growth patterns {#arithmetic-optional visibility="hidden"}
+
+- Return to the cyclic shift with $N=p^n$, for an odd prime $p$.
+- Compare the determinants of $pI_N$ and $S_N-(1+p)I_N$.
+- Identify the valuation growth patterns $p^n$ and $n+1$.
+- Use these as elementary motivation for two terms in Iwasawa's formula.
+
+<!--
+OPTIONAL: approximately 3 minutes. These are toy matrices, not asserted
+presentations of class groups. Keep the precision parameter k separate from n.
+-->
+
+### Class numbers in a tower {#class-numbers}
+
+- Explain the ideal class group and its order, the class number.
+- Introduce a $\mathbb{Z}_p$-extension through its finite layers $K_n$.
+- Focus on the $p$-part of the class number and its exponent $e_n$.
+- Ask how $e_n$ grows with the level of the tower.
+
+### Iwasawa's class-number formula {#iwasawa-formula}
+
+- State the eventual formula $e_n=\mu p^n+\lambda n+\nu$.
+- Explain the meaning of the parameters and the phrase "for all sufficiently large $n$".
+- Distinguish the exponential, linear, and constant contributions.
+- Explain why such a precise growth law is striking.
+
+<!--
+Classical statement: mu, lambda are nonnegative integers; nu is an integer.
+Reference: https://math.ucla.edu/~sharifi/notes/iwasawa-ch03.html
+-->
+
+### Rank functions and class-number growth {#iwasawa-ranks}
+
+- Insert the precise formulation from your paper on Iwasawa's class-number formula.
+- Identify the rings, ranks, and arithmetic quantities involved.
+- Explain the main mechanism, including what detects the lower-order terms.
+- Connect the argument to the finite-approximation picture developed earlier.
+
+<!-- CLOSING — approximately 1 minute. -->
+
+### What can a rank function tell us? {#closing}
+
+- Return to the question: how big is your matrix?
+- Recall the connections between finite linear algebra, analysis, and arithmetic.
+- End with one takeaway or an open question, then invite questions.
