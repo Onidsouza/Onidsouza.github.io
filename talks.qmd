@@ -38,6 +38,10 @@ leaflet(talk_city_counts) |>
 
 <div style="height: 2rem;"></div>
 
+- **Detecting free products from finite quotients**. November 2026, FernUniversität in Hagen, algebra seminar. 
+
+- **Detecting free products from finite quotients**. November 2026, Heinrich-Heine-Universität Düsseldorf, Advanced Seminar on Group Theory. [Seminar page](https://reh.math.uni-duesseldorf.de/~internet/Seminar_Groups/)
+
 - **How big is your matrix?**. November 2026, Universidad Complutense de Madrid, Seminario de Álgebra, Geometría y Topología. [Seminar archive](https://eventos.ucm.es/117927/section/52779/seminario-de-algebra-geometria-y-topologia.html)
 
 - **Cohomological asymptotics for linear groups**. October 2026, University of Manchester, Algebra Seminar. [Talk notes](/resources/Talk_Manchester_October_2026.pdf)
