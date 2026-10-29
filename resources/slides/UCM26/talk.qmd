@@ -34,7 +34,7 @@ format:
     slide-number: true
     slide-level: 3
     show-slide-number: all
-    incremental: false
+    incremental: true
     navigation-mode: vertical
     transition: none
     center: false
@@ -72,42 +72,74 @@ Iq Souza
 :::
 
 ::: {.meta}
-Colloquium · Universidad Complutense de Madrid
+Seminario de Álgebra, Geometría y Topología
 
-[Date]
+Universidad Complutense de Madrid
+
+3 de noviembre, 2026.
 :::
 
 <!-- OPENING AND RANK FUNCTIONS — approximately 12 minutes. -->
 
 ### What does rank measure? {#ordinary-rank}
 
+<!--
 - Recall the equivalent descriptions of rank over a field.
 - Work through one small matrix using two of these descriptions.
-- Ask what it means to measure the size of a matrix over a general ring.
+- Ask what it means to measure the size of a matrix over a general ring. -->
 
-### One matrix, different answers {#different-ranks}
+<!--:::: {.peek .fragment}-->
 
-- Choose an integer matrix whose rank over $\mathbb{Q}$ differs from its rank modulo $p$.
-- Explain what each rank detects about the same matrix over $\mathbb{Z}$.
-- Motivate allowing several rank functions on a single ring.
+::: {.callout-note title="Over a field $\mathbb{F}$"}
+ For $A \in \operatorname{Mat}_{n\times m}(\mathbb{F})$, the following are equal:
+
+ - $\dim_{\mathbb{F}} \operatorname{im}(A)$ ($\operatorname{im}(A) = A\mathbb{F}^m$).
+ - Largest $j$ such that $A \sim \begin{pmatrix}\operatorname{Id}_j & 0 \\ 0 & 0\end{pmatrix}$.
+ - Largest $j$ such that $\det B \neq 0$ for a $j\times j$-submatrix $B$ of $A$.
+ - Smallest $j$ such that $A = BC$ with $B \in \operatorname{Mat}_{n\times j}(\mathbb{F})$ and $C \in \operatorname{Mat}_{j \times m}(\mathbb{F})$.
+:::
+
+<!--::::-->
+
+- What about general rings $R$? What should measure its size?
+
+
+### An example over $\mathbb{Z}$ {#different-ranks}
+
+Consider the matrix $A = \begin{pmatrix}1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9\end{pmatrix}$ over $\mathbb{Z}$.
+
+- Over $\mathbb{Q}$, $A \sim \begin{pmatrix}1 & 0 & 0\\0 & 1 & 0\\0 & 0 &0\end{pmatrix}$ has rank $2$.
+- $A \equiv \begin{pmatrix} 1 & 2 & 0\\ 1 & 2 & 0\\ 1 & 2 & 0\end{pmatrix}$ has rank $1$ over $\mathbb{F}_3$.
+- For all other primes, $A$ has rank $2$ over $\mathbb{F}_p$.
+- $\mathbb{Z}^3/A\mathbb{Z}^3 \simeq \mathbb{Z} \oplus \mathbb{Z}/3\mathbb{Z}$, so rank $1 + \frac{\text{some}}{\text{fraction}}$?
 
 ### Sylvester matrix rank functions {#sylvester-ranks}
 
-- Define a rank function on rectangular matrices over a unital ring.
-- State normalization and the inequality for products.
-- State block additivity and the block triangular inequality.
-- Relate each axiom to familiar linear algebra.
+::: {.callout-note title="Definition    ($R$ associative, unital ring)"}
+A **Sylvester matrix rank function** on $R$ is a map $\operatorname{rk}\colon \operatorname{Mat}(R) \to \mathbb{R}_{\geq 0}$ that associates to each rectangular matrix $A$ over $R$ a non-negative real number $\operatorname{rk}(R)$ satisfying:
+
+- *(SMat1)* $\operatorname{rk}(0) = 0$, $\operatorname{rk}(1) = 1$.
+- *(SMat2)* $\operatorname{rk}(AB) \leq \operatorname{rk}(A)\,,\operatorname{rk}(B)$.
+- *(SMat3)* $\operatorname{rk}\begin{pmatrix}A & 0\\ 0 & B\end{pmatrix} = \operatorname{rk}(A) + \operatorname{rk}(B)$.
+- *(SMat4)* $\operatorname{rk}\begin{pmatrix}A & C\\ 0 & B\end{pmatrix} \geq \operatorname{rk}(A) + \operatorname{rk}(C)$.
+:::
 
 <!-- Definition and examples: https://arxiv.org/html/2012.15844v1 -->
 
-### Ranks from representations {#representation-ranks}
+### Examples {#representation-ranks}
 
+- Over a field $\mathbb{F}$, the usual rank $\operatorname{rk}_{\mathbb{F}}(A)$.
+- Over the ring $\operatorname{Mat}_{n\times n}(\mathbb{F})$, $\operatorname{rk}(A) = \frac{\operatorname{rk}_{\mathbb{F}}(A)}{n}$.
+- The previous examples come from $\mathbb{Z} \to \mathbb{Q}$ and $\mathbb{Z} \to \mathbb{F}_p$.
+- For $A$ over $\mathbb{Z}$, take $$\operatorname{rk}_9(A) = \max_{\substack{B\text{ is a square}\\\text{submatrix of }A}}\left\{\operatorname{size}(B) - \frac{v_3(\det B)}{2}\right\}\,.$$ For $A = \begin{pmatrix}1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9\end{pmatrix}$, it gives $\operatorname{rk}_9(A) = 1.5$.
+
+<!--
 - Introduce normalized rank on $M_d(k)$ and explain the factor $1/d$.
 - Pull rank back along a ring homomorphism $R\longrightarrow M_d(k)$.
 - Check that an $m\times m$ identity matrix has rank $m$.
-- Reinterpret the examples over $\mathbb{Z}$ in this language.
+- Reinterpret the examples over $\mathbb{Z}$ in this language.-->
 
-### A space of rank functions {#rank-space}
+### The space of rank functions {#rank-space}
 
 - Explain pointwise convergence: evaluate every rank on a fixed matrix.
 - Show how to form convex combinations of rank functions.

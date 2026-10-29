@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.18">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <title>Iq Souza – How big is your matrix?</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,13 +19,10 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -201,105 +198,153 @@ Render:  quarto render how-big-is-your-matrix.qmd
 <p>Iq Souza</p>
 </div>
 <div class="meta">
-<p>Colloquium · Universidad Complutense de Madrid</p>
-<p>[Date]</p>
+<p>Seminario de Álgebra, Geometría y Topología</p>
+<p>Universidad Complutense de Madrid</p>
+<p>3 de noviembre, 2026.</p>
 </div>
 <!-- OPENING AND RANK FUNCTIONS — approximately 12 minutes. -->
 </section>
 <section id="ordinary-rank" class="slide level3">
 <h3>What does rank measure?</h3>
+<!--
+- Recall the equivalent descriptions of rank over a field.
+- Work through one small matrix using two of these descriptions.
+- Ask what it means to measure the size of a matrix over a general ring. -->
+<!--:::: {.peek .fragment}-->
+<div title="Over a field $\mathbb{F}$">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Over a field <span class="math inline">\mathbb{F}</span></strong></p>
+</div>
+<div class="callout-content">
+<p>For <span class="math inline">A \in \operatorname{Mat}_{n\times m}(\mathbb{F})</span>, the following are equal:</p>
 <ul>
-<li>Recall the equivalent descriptions of rank over a field.</li>
-<li>Work through one small matrix using two of these descriptions.</li>
-<li>Ask what it means to measure the size of a matrix over a general ring.</li>
+<li class="fragment"><span class="math inline">\dim_{\mathbb{F}} \operatorname{im}(A)</span> (<span class="math inline">\operatorname{im}(A) = A\mathbb{F}^m</span>).</li>
+<li class="fragment">Largest <span class="math inline">j</span> such that <span class="math inline">A \sim \begin{pmatrix}\operatorname{Id}_j &amp; 0 \\ 0 &amp; 0\end{pmatrix}</span>.</li>
+<li class="fragment">Largest <span class="math inline">j</span> such that <span class="math inline">\det B \neq 0</span> for a <span class="math inline">j\times j</span>-submatrix <span class="math inline">B</span> of <span class="math inline">A</span>.</li>
+<li class="fragment">Smallest <span class="math inline">j</span> such that <span class="math inline">A = BC</span> with <span class="math inline">B \in \operatorname{Mat}_{n\times j}(\mathbb{F})</span> and <span class="math inline">C \in \operatorname{Mat}_{j \times m}(\mathbb{F})</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!--::::-->
+<ul>
+<li class="fragment">What about general rings <span class="math inline">R</span>? What should measure its size?</li>
 </ul>
 </section>
 <section id="different-ranks" class="slide level3">
-<h3>One matrix, different answers</h3>
+<h3>An example over <span class="math inline">\mathbb{Z}</span></h3>
+<p>Consider the matrix <span class="math inline">A = \begin{pmatrix}1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 6\\ 7 &amp; 8 &amp; 9\end{pmatrix}</span> over <span class="math inline">\mathbb{Z}</span>.</p>
 <ul>
-<li>Choose an integer matrix whose rank over <span class="math inline">\mathbb{Q}</span> differs from its rank modulo <span class="math inline">p</span>.</li>
-<li>Explain what each rank detects about the same matrix over <span class="math inline">\mathbb{Z}</span>.</li>
-<li>Motivate allowing several rank functions on a single ring.</li>
+<li class="fragment">Over <span class="math inline">\mathbb{Q}</span>, <span class="math inline">A \sim \begin{pmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp;0\end{pmatrix}</span> has rank <span class="math inline">2</span>.</li>
+<li class="fragment"><span class="math inline">A \equiv \begin{pmatrix} 1 &amp; 2 &amp; 0\\ 1 &amp; 2 &amp; 0\\ 1 &amp; 2 &amp; 0\end{pmatrix}</span> has rank <span class="math inline">1</span> over <span class="math inline">\mathbb{F}_3</span>.</li>
+<li class="fragment">For all other primes, <span class="math inline">A</span> has rank <span class="math inline">2</span> over <span class="math inline">\mathbb{F}_p</span>.</li>
+<li class="fragment"><span class="math inline">\mathbb{Z}^3/A\mathbb{Z}^3 \simeq \mathbb{Z} \oplus \mathbb{Z}/3\mathbb{Z}</span>, so rank <span class="math inline">1 + \frac{\text{some}}{\text{fraction}}</span>?</li>
 </ul>
 </section>
 <section id="sylvester-ranks" class="slide level3">
 <h3>Sylvester matrix rank functions</h3>
+<div title="Definition    ($R$ associative, unital ring)">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition (<span class="math inline">R</span> associative, unital ring)</strong></p>
+</div>
+<div class="callout-content">
+<p>A <strong>Sylvester matrix rank function</strong> on <span class="math inline">R</span> is a map <span class="math inline">\operatorname{rk}\colon \operatorname{Mat}(R) \to \mathbb{R}_{\geq 0}</span> that associates to each rectangular matrix <span class="math inline">A</span> over <span class="math inline">R</span> a non-negative real number <span class="math inline">\operatorname{rk}(R)</span> satisfying:</p>
 <ul>
-<li>Define a rank function on rectangular matrices over a unital ring.</li>
-<li>State normalization and the inequality for products.</li>
-<li>State block additivity and the block triangular inequality.</li>
-<li>Relate each axiom to familiar linear algebra.</li>
+<li class="fragment"><em>(SMat1)</em> <span class="math inline">\operatorname{rk}(0) = 0</span>, <span class="math inline">\operatorname{rk}(1) = 1</span>.</li>
+<li class="fragment"><em>(SMat2)</em> <span class="math inline">\operatorname{rk}(AB) \leq \operatorname{rk}(A)\,,\operatorname{rk}(B)</span>.</li>
+<li class="fragment"><em>(SMat3)</em> <span class="math inline">\operatorname{rk}\begin{pmatrix}A &amp; 0\\ 0 &amp; B\end{pmatrix} = \operatorname{rk}(A) + \operatorname{rk}(B)</span>.</li>
+<li class="fragment"><em>(SMat4)</em> <span class="math inline">\operatorname{rk}\begin{pmatrix}A &amp; C\\ 0 &amp; B\end{pmatrix} \geq \operatorname{rk}(A) + \operatorname{rk}(C)</span>.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 <!-- Definition and examples: https://arxiv.org/html/2012.15844v1 -->
 </section>
 <section id="representation-ranks" class="slide level3">
-<h3>Ranks from representations</h3>
+<h3>Examples</h3>
 <ul>
-<li>Introduce normalized rank on <span class="math inline">M_d(k)</span> and explain the factor <span class="math inline">1/d</span>.</li>
-<li>Pull rank back along a ring homomorphism <span class="math inline">R\longrightarrow M_d(k)</span>.</li>
-<li>Check that an <span class="math inline">m\times m</span> identity matrix has rank <span class="math inline">m</span>.</li>
-<li>Reinterpret the examples over <span class="math inline">\mathbb{Z}</span> in this language.</li>
+<li class="fragment">Over a field <span class="math inline">\mathbb{F}</span>, the usual rank <span class="math inline">\operatorname{rk}_{\mathbb{F}}(A)</span>.</li>
+<li class="fragment">Over the ring <span class="math inline">\operatorname{Mat}_{n\times n}(\mathbb{F})</span>, <span class="math inline">\operatorname{rk}(A) = \frac{\operatorname{rk}_{\mathbb{F}}(A)}{n}</span>.</li>
+<li class="fragment">The previous examples come from <span class="math inline">\mathbb{Z} \to \mathbb{Q}</span> and <span class="math inline">\mathbb{Z} \to \mathbb{F}_p</span>.</li>
+<li class="fragment">For <span class="math inline">A</span> over <span class="math inline">\mathbb{Z}</span>, take <span class="math display">\operatorname{rk}_9(A) = \max_{\substack{B\text{ is a square}\\\text{submatrix of }A}}\left\{\operatorname{size}(B) - \frac{v_3(\det B)}{2}\right\}\,.</span> For <span class="math inline">A = \begin{pmatrix}1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 6\\ 7 &amp; 8 &amp; 9\end{pmatrix}</span>, it gives <span class="math inline">\operatorname{rk}_9(A) = 1.5</span>.</li>
 </ul>
+<!--
+- Introduce normalized rank on $M_d(k)$ and explain the factor $1/d$.
+- Pull rank back along a ring homomorphism $R\longrightarrow M_d(k)$.
+- Check that an $m\times m$ identity matrix has rank $m$.
+- Reinterpret the examples over $\mathbb{Z}$ in this language.-->
 </section>
 <section id="rank-space" class="slide level3">
-<h3>A space of rank functions</h3>
+<h3>The space of rank functions</h3>
 <ul>
-<li>Explain pointwise convergence: evaluate every rank on a fixed matrix.</li>
-<li>Show how to form convex combinations of rank functions.</li>
-<li>Mention compactness briefly and motivate looking for limits of ranks.</li>
+<li class="fragment">Explain pointwise convergence: evaluate every rank on a fixed matrix.</li>
+<li class="fragment">Show how to form convex combinations of rank functions.</li>
+<li class="fragment">Mention compactness briefly and motivate looking for limits of ranks.</li>
 </ul>
 <!-- LAURENT POLYNOMIALS AND SHIFTS — approximately 20 minutes. -->
 </section>
 <section id="finite-shifts" class="slide level3">
 <h3>Laurent polynomials acting on a cycle</h3>
 <ul>
-<li>Introduce <span class="math inline">R=\mathbb{C}[t,t^{-1}]</span> and the cyclic shift <span class="math inline">S_N</span> on <span class="math inline">\mathbb{C}^N</span>.</li>
-<li>Draw the cycle and explain the representation <span class="math inline">t\longmapsto S_N</span>.</li>
-<li>Explain how a matrix <span class="math inline">A(t)</span> becomes a block matrix <span class="math inline">A(S_N)</span>.</li>
-<li>Define its normalized rank <span class="math inline">\rho_N(A)</span>.</li>
+<li class="fragment">Introduce <span class="math inline">R=\mathbb{C}[t,t^{-1}]</span> and the cyclic shift <span class="math inline">S_N</span> on <span class="math inline">\mathbb{C}^N</span>.</li>
+<li class="fragment">Draw the cycle and explain the representation <span class="math inline">t\longmapsto S_N</span>.</li>
+<li class="fragment">Explain how a matrix <span class="math inline">A(t)</span> becomes a block matrix <span class="math inline">A(S_N)</span>.</li>
+<li class="fragment">Define its normalized rank <span class="math inline">\rho_N(A)</span>.</li>
 </ul>
 </section>
 <section id="shift-kernel" class="slide level3">
 <h3>A kernel you can see</h3>
 <ul>
-<li>Identify the kernel of <span class="math inline">S_N-I</span> as the constant vectors.</li>
-<li>Compute <span class="math inline">\rho_N(t-1)=1-1/N</span> and ask what happens as <span class="math inline">N</span> grows.</li>
-<li>If useful, compare <span class="math inline">S_N^a-I</span> by counting the cycles of the permutation.</li>
+<li class="fragment">Identify the kernel of <span class="math inline">S_N-I</span> as the constant vectors.</li>
+<li class="fragment">Compute <span class="math inline">\rho_N(t-1)=1-1/N</span> and ask what happens as <span class="math inline">N</span> grows.</li>
+<li class="fragment">If useful, compare <span class="math inline">S_N^a-I</span> by counting the cycles of the permutation.</li>
 </ul>
 </section>
 <section id="finite-fourier" class="slide level3">
 <h3>The finite Fourier transform</h3>
 <ul>
-<li>Diagonalize <span class="math inline">S_N</span> using the discrete Fourier basis.</li>
-<li>Identify the eigenvalues with the <span class="math inline">N</span>th roots of unity.</li>
-<li>Express <span class="math inline">\rho_N(A)</span> as an average of the ranks of <span class="math inline">A(\zeta)</span>.</li>
-<li>Explain how the cycle becomes a collection of frequencies.</li>
+<li class="fragment">Diagonalize <span class="math inline">S_N</span> using the discrete Fourier basis.</li>
+<li class="fragment">Identify the eigenvalues with the <span class="math inline">N</span>th roots of unity.</li>
+<li class="fragment">Express <span class="math inline">\rho_N(A)</span> as an average of the ranks of <span class="math inline">A(\zeta)</span>.</li>
+<li class="fragment">Explain how the cycle becomes a collection of frequencies.</li>
 </ul>
 </section>
 <section id="generic-rank" class="slide level3">
 <h3>Rank over the field of fractions</h3>
 <ul>
-<li>Introduce the usual rank of <span class="math inline">A(t)</span> over <span class="math inline">\mathbb{C}(t)</span>.</li>
-<li>Interpret this as the generic rank of the evaluations <span class="math inline">A(z)</span>.</li>
-<li>Use a nonzero maximal minor to isolate finitely many exceptional points.</li>
+<li class="fragment">Introduce the usual rank of <span class="math inline">A(t)</span> over <span class="math inline">\mathbb{C}(t)</span>.</li>
+<li class="fragment">Interpret this as the generic rank of the evaluations <span class="math inline">A(z)</span>.</li>
+<li class="fragment">Use a nonzero maximal minor to isolate finitely many exceptional points.</li>
 </ul>
 </section>
 <section id="infinite-shift" class="slide level3">
 <h3>From a cycle to the infinite shift</h3>
 <ul>
-<li>Replace the finite cycle by the integer line.</li>
-<li>Let <span class="math inline">t</span> act by the bilateral shift on <span class="math inline">\ell^2(\mathbb{Z})</span>.</li>
-<li>Explain how a Laurent polynomial matrix gives an operator between Hilbert spaces.</li>
-<li>Ask what should replace normalized dimension in this setting.</li>
+<li class="fragment">Replace the finite cycle by the integer line.</li>
+<li class="fragment">Let <span class="math inline">t</span> act by the bilateral shift on <span class="math inline">\ell^2(\mathbb{Z})</span>.</li>
+<li class="fragment">Explain how a Laurent polynomial matrix gives an operator between Hilbert spaces.</li>
+<li class="fragment">Ask what should replace normalized dimension in this setting.</li>
 </ul>
 </section>
 <section id="von-neumann-rank" class="slide level3">
 <h3>Fourier transform and von Neumann rank</h3>
 <ul>
-<li>Identify <span class="math inline">\ell^2(\mathbb{Z})</span> with <span class="math inline">L^2(S^1)</span> using the Fourier transform.</li>
-<li>Turn the shift into multiplication by the coordinate function <span class="math inline">z</span>.</li>
-<li>Introduce <span class="math inline">\mathcal{N}(\mathbb{Z})\cong L^\infty(S^1)</span> and its trace.</li>
-<li>Describe matrix rank as the integral of the pointwise ranks of <span class="math inline">A(z)</span>.</li>
+<li class="fragment">Identify <span class="math inline">\ell^2(\mathbb{Z})</span> with <span class="math inline">L^2(S^1)</span> using the Fourier transform.</li>
+<li class="fragment">Turn the shift into multiplication by the coordinate function <span class="math inline">z</span>.</li>
+<li class="fragment">Introduce <span class="math inline">\mathcal{N}(\mathbb{Z})\cong L^\infty(S^1)</span> and its trace.</li>
+<li class="fragment">Describe matrix rank as the integral of the pointwise ranks of <span class="math inline">A(z)</span>.</li>
 </ul>
 <!--
 The circle is the Fourier dual of Z. The action being transformed is the
@@ -312,29 +357,29 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 <section id="three-ranks" class="slide level3">
 <h3>Three constructions, one limit</h3>
 <ul>
-<li>Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.</li>
-<li>State the equality of the two infinite constructions and the convergence of <span class="math inline">\rho_N</span>.</li>
-<li>Give the proof by counting the finitely many exceptional evaluations.</li>
-<li>Ask how much of this picture survives for more general groups.</li>
+<li class="fragment">Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.</li>
+<li class="fragment">State the equality of the two infinite constructions and the convergence of <span class="math inline">\rho_N</span>.</li>
+<li class="fragment">Give the proof by counting the finitely many exceptional evaluations.</li>
+<li class="fragment">Ask how much of this picture survives for more general groups.</li>
 </ul>
 <!-- GENERAL GROUPS AND APPROXIMATION — approximately 7 minutes. -->
 </section>
 <section id="group-rings" class="slide level3">
 <h3>Groups and their finite quotients</h3>
 <ul>
-<li>Explain group-ring elements as finite linear combinations of translations.</li>
-<li>Introduce residual finiteness and a nested separating chain of finite-index normal subgroups.</li>
-<li>Compare matrices acting on finite quotients with their action on <span class="math inline">\ell^2(G)</span>.</li>
-<li>Explain the normalization by the size of each finite quotient.</li>
+<li class="fragment">Explain group-ring elements as finite linear combinations of translations.</li>
+<li class="fragment">Introduce residual finiteness and a nested separating chain of finite-index normal subgroups.</li>
+<li class="fragment">Compare matrices acting on finite quotients with their action on <span class="math inline">\ell^2(G)</span>.</li>
+<li class="fragment">Explain the normalization by the size of each finite quotient.</li>
 </ul>
 </section>
 <section id="luck-approximation" class="slide level3">
 <h3>Lück approximation</h3>
 <ul>
-<li>State the matrix-rank approximation theorem with its precise hypotheses.</li>
-<li>Explain the von Neumann rank appearing in the limit.</li>
-<li>Recover the cyclic-shift example when <span class="math inline">G=\mathbb{Z}</span>.</li>
-<li>Explain what finite computations now tell us about an infinite group.</li>
+<li class="fragment">State the matrix-rank approximation theorem with its precise hypotheses.</li>
+<li class="fragment">Explain the von Neumann rank appearing in the limit.</li>
+<li class="fragment">Recover the cyclic-shift example when <span class="math inline">G=\mathbb{Z}</span>.</li>
+<li class="fragment">Explain what finite computations now tell us about an infinite group.</li>
 </ul>
 <!--
 Coefficient choice: the classical theorem is over Q[G]. If you state the
@@ -349,10 +394,10 @@ https://andreijaikin.wordpress.com/2024/05/06/the-luck-approximation/
 <section id="arithmetic-rank" class="slide level3">
 <h3>Arithmetic size through rank</h3>
 <ul>
-<li>Motivate measuring a finite <span class="math inline">p</span>-group by its logarithmic size.</li>
-<li>Introduce rank from normalized length over <span class="math inline">\mathbb{Z}/p^k\mathbb{Z}</span>.</li>
-<li>Use multiplication by <span class="math inline">p</span> as the first example.</li>
-<li>Explain how a rank defect records the size of a cokernel.</li>
+<li class="fragment">Motivate measuring a finite <span class="math inline">p</span>-group by its logarithmic size.</li>
+<li class="fragment">Introduce rank from normalized length over <span class="math inline">\mathbb{Z}/p^k\mathbb{Z}</span>.</li>
+<li class="fragment">Use multiplication by <span class="math inline">p</span> as the first example.</li>
+<li class="fragment">Explain how a rank defect records the size of a cokernel.</li>
 </ul>
 <!--
 Possible model: rho_{p,k}(A) = log_p |im(A mod p^k)| / k.
@@ -364,19 +409,19 @@ The precision k must be large enough to recover all the desired torsion.
 <section id="class-numbers" class="slide level3">
 <h3>Class numbers in a tower</h3>
 <ul>
-<li>Explain the ideal class group and its order, the class number.</li>
-<li>Introduce a <span class="math inline">\mathbb{Z}_p</span>-extension through its finite layers <span class="math inline">K_n</span>.</li>
-<li>Focus on the <span class="math inline">p</span>-part of the class number and its exponent <span class="math inline">e_n</span>.</li>
-<li>Ask how <span class="math inline">e_n</span> grows with the level of the tower.</li>
+<li class="fragment">Explain the ideal class group and its order, the class number.</li>
+<li class="fragment">Introduce a <span class="math inline">\mathbb{Z}_p</span>-extension through its finite layers <span class="math inline">K_n</span>.</li>
+<li class="fragment">Focus on the <span class="math inline">p</span>-part of the class number and its exponent <span class="math inline">e_n</span>.</li>
+<li class="fragment">Ask how <span class="math inline">e_n</span> grows with the level of the tower.</li>
 </ul>
 </section>
 <section id="iwasawa-formula" class="slide level3">
 <h3>Iwasawa’s class-number formula</h3>
 <ul>
-<li>State the eventual formula <span class="math inline">e_n=\mu p^n+\lambda n+\nu</span>.</li>
-<li>Explain the meaning of the parameters and the phrase “for all sufficiently large <span class="math inline">n</span>”.</li>
-<li>Distinguish the exponential, linear, and constant contributions.</li>
-<li>Explain why such a precise growth law is striking.</li>
+<li class="fragment">State the eventual formula <span class="math inline">e_n=\mu p^n+\lambda n+\nu</span>.</li>
+<li class="fragment">Explain the meaning of the parameters and the phrase “for all sufficiently large <span class="math inline">n</span>”.</li>
+<li class="fragment">Distinguish the exponential, linear, and constant contributions.</li>
+<li class="fragment">Explain why such a precise growth law is striking.</li>
 </ul>
 <!--
 Classical statement: mu, lambda are nonnegative integers; nu is an integer.
@@ -386,19 +431,19 @@ Reference: https://math.ucla.edu/~sharifi/notes/iwasawa-ch03.html
 <section id="iwasawa-ranks" class="slide level3">
 <h3>Rank functions and class-number growth</h3>
 <ul>
-<li>Insert the precise formulation from your paper on Iwasawa’s class-number formula.</li>
-<li>Identify the rings, ranks, and arithmetic quantities involved.</li>
-<li>Explain the main mechanism, including what detects the lower-order terms.</li>
-<li>Connect the argument to the finite-approximation picture developed earlier.</li>
+<li class="fragment">Insert the precise formulation from your paper on Iwasawa’s class-number formula.</li>
+<li class="fragment">Identify the rings, ranks, and arithmetic quantities involved.</li>
+<li class="fragment">Explain the main mechanism, including what detects the lower-order terms.</li>
+<li class="fragment">Connect the argument to the finite-approximation picture developed earlier.</li>
 </ul>
 <!-- CLOSING — approximately 1 minute. -->
 </section>
 <section id="closing" class="slide level3">
 <h3>What can a rank function tell us?</h3>
 <ul>
-<li>Return to the question: how big is your matrix?</li>
-<li>Recall the connections between finite linear algebra, analysis, and arithmetic.</li>
-<li>End with one takeaway or an open question, then invite questions.</li>
+<li class="fragment">Return to the question: how big is your matrix?</li>
+<li class="fragment">Recall the connections between finite linear algebra, analysis, and arithmetic.</li>
+<li class="fragment">End with one takeaway or an open question, then invite questions.</li>
 </ul>
 
 
