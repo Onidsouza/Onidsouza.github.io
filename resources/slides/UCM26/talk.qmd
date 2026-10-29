@@ -131,7 +131,8 @@ A **Sylvester matrix rank function** on $R$ is a map $\operatorname{rk}\colon \o
 - Over a field $\mathbb{F}$, the usual rank $\operatorname{rk}_{\mathbb{F}}(A)$.
 - Over the ring $\operatorname{Mat}_{n\times n}(\mathbb{F})$, $\operatorname{rk}(A) = \frac{\operatorname{rk}_{\mathbb{F}}(A)}{n}$.
 - The previous examples come from $\mathbb{Z} \to \mathbb{Q}$ and $\mathbb{Z} \to \mathbb{F}_p$.
-- For $A$ over $\mathbb{Z}$, take $$\operatorname{rk}_9(A) = \max_{\substack{B\text{ is a square}\\\text{submatrix of }A}}\left\{\operatorname{size}(B) - \frac{v_3(\det B)}{2}\right\}\,.$$ For $A = \begin{pmatrix}1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9\end{pmatrix}$, it gives $\operatorname{rk}_9(A) = 1.5$.
+- Given $A$ over $\mathbb{Z}$, take $$\operatorname{rk}_9(A) = \max_{\substack{B\text{ is a square}\\\text{submatrix of }A}}\left\{\operatorname{size}(B) - \frac{v_3(\det B)}{2}\right\}\,.$$ 
+- For $A = \begin{pmatrix}1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9\end{pmatrix}$, it gives $\operatorname{rk}_9(A) = 1.5$.
 
 <!--
 - Introduce normalized rank on $M_d(k)$ and explain the factor $1/d$.
@@ -139,53 +140,167 @@ A **Sylvester matrix rank function** on $R$ is a map $\operatorname{rk}\colon \o
 - Check that an $m\times m$ identity matrix has rank $m$.
 - Reinterpret the examples over $\mathbb{Z}$ in this language.-->
 
+### Properties {#rank-properties}
+
+::: {.callout-note title="Follows from *(SMat1)-(SMat4)*:"}
+- If $A \in \operatorname{Mat}_{n\times m}(R)$, then $\operatorname{rk}(A) \leq n\,, m$.
+- If $A \in \operatorname{GL}_n(R)$, then $\operatorname{rk}(A) = n$.
+- If $A \in \operatorname{Mat}_{n\times m}(R)$, $U \in \operatorname{GL}_n(R)$ and $V \in \operatorname{GL}_m(R)$, then $$\operatorname{rk}(UAV) = \operatorname{rk}(A)\,.$$
+- $\operatorname{rk}(\operatorname{Id}_n) = n$.
+- If $B$ is a submatrix of $A$, then $\operatorname{rk}(B) \leq \operatorname{rk}(A)$.
+:::
+
 ### The space of rank functions {#rank-space}
 
+:::: {.peek .fragment}
+::: {.callout-note title="$\mathbb{P}(R)$: the set of **all** Sylvester matrix rank functions on $R$."}
+- Contained in the $\mathbb{R}$-vector space $\mathbb{R}^{\operatorname{Mat}(R)}$
+- Convex: $\operatorname{rk}\,, \operatorname{rk}' \in \mathbb{P}(R) \implies t\operatorname{rk} + (1-t)\operatorname{rk}' \in \mathbb{P}(R)$
+- Compact 🥰
+- Poinwise convergence: $\operatorname{rk}_i \to \operatorname{rk}$ if $\operatorname{rk}_i(A) \to \operatorname{rk}(A)$ for any matrix $A$.
+- Each matrix $A \in \operatorname{Mat}(R)$ gives a pseudo-metric: $$d_A(\operatorname{rk},\operatorname{rk}') = |\operatorname{rk}(A) - \operatorname{rk}'(A)|\,.$$
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-tip title="Examples"}
+- Over a field $\mathbb{F}$, $\mathbb{P}(\mathbb{F}) = \{\operatorname{rk}_{\mathbb{F}}\}$, for $R = \operatorname{Mat}_n(\mathbb{F})$, $\mathbb{P}(R) = \{\frac{\operatorname{rk}_{\mathbb{F}}}{n}\}$.
+- $\mathbb{P}(\mathbb{Z})$ has infinitely many extreme points.
+- If $p_1 < p_2 < p_3 <...$ are the primes, then $\operatorname{rk}_{\mathbb{F}_{p_i}} \to \operatorname{rk}_{\mathbb{Q}}$ on $\mathbb{Z}$.
+- *(A. Jaikin-Zapirain, D. López-Álvarez, 2020)* For $R$ a Dedekind domain (for example, a PID), extreme points of $\mathbb{P}(R)$ are classified by valuations on $R$.
+:::
+:::: 
+
+<!--
 - Explain pointwise convergence: evaluate every rank on a fixed matrix.
 - Show how to form convex combinations of rank functions.
-- Mention compactness briefly and motivate looking for limits of ranks.
+- Mention compactness briefly and motivate looking for limits of ranks.-->
 
 <!-- LAURENT POLYNOMIALS AND SHIFTS — approximately 20 minutes. -->
 
-### Laurent polynomials acting on a cycle {#finite-shifts}
+### Laurent polynomials acting on $\mathbb{C}^N$ {#finite-shifts}
 
+:::: {.peek .fragment}
+::: {.callout-note title="$R = \mathbb{C}[t,t^{-1}]$"}
+- For each $N \geq 1$, map $R \to \operatorname{Mat}_N(\mathbb{C})$ sending $t$ to a cyclic permutation: $$t \mapsto \begin{pmatrix}0 & 0 & 0 & \cdots & 0 & 1\\ 1 & 0 & 0 & \cdots & 0 & 0\\ 0 & 1 & 0 & \cdots & 0 & 0\\ 0 & 0 & 1 & \cdots & 0 & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & \cdots & 1 & 0\end{pmatrix}\,.$$
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-tip title="The action on $\mathbb{C}^N$"}
+- $t(z_1\,,z_2\,,\ldots\,,z_N) = (z_2\,,z_3\,,\ldots\,,z_1)$.
+- Each element of $R$ gives a $\mathbb{C}$-linear map $\mathbb{C}^N \to \mathbb{C}^N$. Each $A(t) \in \operatorname{Mat}_{n\times m}(R)$ gives a block matrix $A_N \in \operatorname{Mat}_{nN\times mN}(\mathbb{C})$.
+- We have a Sylvester rank functon $\operatorname{rk}_N$ on $R$ by taking $$\operatorname{rk}_N(A(t)) = \frac{\operatorname{rk}_{\mathbb{C}} A_N}{N}\,.$$
+:::
+::::
+
+<!--
 - Introduce $R=\mathbb{C}[t,t^{-1}]$ and the cyclic shift $S_N$ on $\mathbb{C}^N$.
 - Draw the cycle and explain the representation $t\longmapsto S_N$.
 - Explain how a matrix $A(t)$ becomes a block matrix $A(S_N)$.
 - Define its normalized rank $\rho_N(A)$.
+-->
 
-### A kernel you can see {#shift-kernel}
+### An example computation {#shift-kernel}
 
+Consider the $1\times 1$ matrix $x = t-1$ in $\mathbb{C}[t,t^{-1}]$.
+
+- $\ker x_N = \{(z_1\,,\ldots\,,z_N) \in \mathbb{C}^n\colon z_1 = z_2 = \cdots = z_N\}$.
+- Since $\ker x_N$ is $1$-dimensional, $\operatorname{rk}_{\mathbb{C}} x_N = N-1$.
+- $\operatorname{rk}_N(x) = \frac{N-1}{N}$. 
+- In particular, $\operatorname{rk}_N(x) \to 1$ as $N \to 1$. Does $\operatorname{rk}_N$ converge? 🤔
+- Another element: fix $d \in \mathbb{Z}$ and let $y = t^d - 1$. Then:
+  - $\dim \ker y = \gcd(d,N)$ *(decompose $(t_N)^d$ into cycles)*.
+  - $\operatorname{rk}_N(y) = \frac{N - \gcd(d,N)}{N} \to 1$ as $N \to \infty$. 🤔🤔
+
+<!--
 - Identify the kernel of $S_N-I$ as the constant vectors.
 - Compute $\rho_N(t-1)=1-1/N$ and ask what happens as $N$ grows.
-- If useful, compare $S_N^a-I$ by counting the cycles of the permutation.
+- If useful, compare $S_N^a-I$ by counting the cycles of the permutation. -->
 
 ### The finite Fourier transform {#finite-fourier}
 
-- Diagonalize $S_N$ using the discrete Fourier basis.
+Identify $\mathbb{C}^N$ with the vector space $\mathcal{P}_N$ all complex sequences $\{a_j\}_{j\geq 0}$ which are $N$-periodic: $a_j = a_{j+N}$ for all $j \geq 0$.
+
+:::: {.peek .fragment}
+::: {.callout-note title="Fourier transform"}
+- The sequences $a_j^{(k)} = e^{\frac{2\pi ikj}{N}}$ for $k \in \{0\,,1\,,\ldots\,,N-1\}$ form a basis of $\mathcal{P}_N$.
+- In this basis, $t_N$ is diagonal, with $N$ eigenvalues $\zeta_N^k = e^{\frac{2\pi ik}{N}}$.
+- $\operatorname{rk}_N(A(t))$ is an average over roots of unity: $$\operatorname{rk}_N(A(t)) = \frac{1}{N}\sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}} A(\zeta_N^k)\,.$$
+:::
+::::
+
+<!--- Diagonalize $S_N$ using the discrete Fourier basis.
 - Identify the eigenvalues with the $N$th roots of unity.
 - Express $\rho_N(A)$ as an average of the ranks of $A(\zeta)$.
-- Explain how the cycle becomes a collection of frequencies.
+- Explain how the cycle becomes a collection of frequencies.-->
 
 ### Rank over the field of fractions {#generic-rank}
 
-- Introduce the usual rank of $A(t)$ over $\mathbb{C}(t)$.
+$R = \mathbb{C}[t,t^{-1}]$ has a field of fractions $\mathbb{C}(t)$, rational functions in $t$. 
+
+- $\operatorname{rk}_{\mathbb{C}(t)}(A(t)) = j$ if $j$ is the size of the largest square submatrix $B(t)$ of $A(t)$ such that $\det B(t) \neq 0$ identically.
+- $\det B(t)$ has only finitely many zeroes in $\mathbb{C}$, say $M$ of them.
+$$\operatorname{rk}_N(A(t)) \geq \operatorname{rk}_N(B(t)) = \frac{1}{N} \sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}} B(\zeta_N^k) \geq \frac{j(N-M)}{N}\,.$$
+- *(Homework)* $\operatorname{rk}_N(A(t)) \leq j$ for all $N$.
+- We have $\operatorname{rk}_N \to \operatorname{rk}_{\mathbb{C}(t)}$ as $N \to \infty$!
+
+<!--- Introduce the usual rank of $A(t)$ over $\mathbb{C}(t)$.
 - Interpret this as the generic rank of the evaluations $A(z)$.
-- Use a nonzero maximal minor to isolate finitely many exceptional points.
+- Use a nonzero maximal minor to isolate finitely many exceptional points.-->
 
-### From a cycle to the infinite shift {#infinite-shift}
+### The infinite shift {#infinite-shift}
 
-- Replace the finite cycle by the integer line.
+:::: {.peek .fragment}
+::: {.callout-tip title="$\ell^2(\mathbb{Z})$ and the shift operator $T$"}
+- Consider now the Hilbert space $$\ell^2(\mathbb{Z}) = \left\{(a_i)_{i \in \mathbb{Z}} \colon a_i \in \mathbb{C}\,, \sum_{i \in \mathbb{Z}} |a_i|^2 < \infty\right\}\,.$$ 
+- Let $\mathcal{B}(\ell^2(\mathbb{Z}))$ be its ring of bounded $\mathbb{C}$-linear operators.
+- Let $T(a_i) = (b_i)_{i \in \mathbb{Z}}$, where $b_i = a_{i+1}$. Then $T \in \mathcal{B}(\ell^2(\mathbb{Z}))$.
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-important title="Hilbert space operators"}
+- We have a map $R \to \mathcal{B}(\ell^2(\mathbb{Z}))$ given by $t \mapsto T$.
+- Any matrix $A(t) \in \operatorname{Mat}_{n\times m}(R)$ gives a bounded map $A(T)\colon \ell^2(\mathbb{Z})^m \to \ell^2(\mathbb{Z})^n$ between Hilbert spaces.
+- The closure $\overline{A(T)\ell^2(\mathbb{Z})^m}$ of its image is a Hilbert subspace of $\ell^2(\mathbb{Z})^n$. Can we assign it a finite "dimension"?
+:::
+::::
+
+
+<!--- Replace the finite cycle by the integer line.
 - Let $t$ act by the bilateral shift on $\ell^2(\mathbb{Z})$.
 - Explain how a Laurent polynomial matrix gives an operator between Hilbert spaces.
-- Ask what should replace normalized dimension in this setting.
+- Ask what should replace normalized dimension in this setting.-->
 
-### Fourier transform and von Neumann rank {#von-neumann-rank}
+### The REAL Fourier transform {#von-neumann-rank}
 
-- Identify $\ell^2(\mathbb{Z})$ with $L^2(S^1)$ using the Fourier transform.
+:::: {.peek .fragment}
+::: {.callout-note title="$L^2$-integrable functions on the circle"}
+- Let $f(z)$ be an $L^2$-integrable function on the unit circle $S^1 \subseteq \mathbb{C}$. The Fourier transform $\mathcal{F}$ gives $$\mathcal{F}(f)(\xi) = \frac{1}{2\pi}\int_0^{2\pi} f(\theta)e^{-i\xi\theta}d\theta = \sum_{j\in \mathbb{Z}} a_j e^{ij\theta}$$ with $(a_j) \in \ell^2(\mathbb{Z})$.
+- If $T$ is the shift in $\ell^2(\mathbb{Z})$, then $$T\mathcal{F}(f)(\xi) = \mathcal{F}(z\cdot f)(\xi)$$ corresponds to multiplication by $z$ in $L^2(S^1)$.
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-tip title="The von Neumann algebra"}
+- $L^\infty(S^1)$ is the ring of bounded functions on $S^1$. It acts on $L^2(S^1)$ as bounded operators.
+- $L^\infty(S^1)$ has a trace: $$\operatorname{tr}(g) = \frac{1}{2\pi}\int_0^{2\pi}g(e^{i\theta})d\theta\,.$$
+- Every $L^\infty(S^1)$-stable closed subspace $V$ of $L^2(S^1)^n$ has a projection $p_V\colon L^2(S^1)^n \to V$ in $L^\infty(S^1)$.
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-important title="von Neumann rank"}
+- The map $t \mapsto z$ gives a ring map $R = \mathbb{C}[t,t^{-1}] \to L^\infty(S^1)$.
+- For $A(t) \in \operatorname{Mat}_{n\times m}(R)$, let $p_A \in L^\infty(S^1)$ be the projection of $L^2(S^1)^m$ onto $\overline{A(z)L^2(S^1)^n}$. Then $\operatorname{rk}_{S^1}(A(t)) = \operatorname{tr}(p_A)$ is a Sylvester rank function on $R$.
+:::
+::::
+
+<!--- Identify $\ell^2(\mathbb{Z})$ with $L^2(S^1)$ using the Fourier transform.
 - Turn the shift into multiplication by the coordinate function $z$.
 - Introduce $\mathcal{N}(\mathbb{Z})\cong L^\infty(S^1)$ and its trace.
-- Describe matrix rank as the integral of the pointwise ranks of $A(z)$.
+- Describe matrix rank as the integral of the pointwise ranks of $A(z)$.-->
 
 <!--
 The circle is the Fourier dual of Z. The action being transformed is the
@@ -195,12 +310,16 @@ Reference: Anantharaman–Popa, An Introduction to II_1 Factors, Example 1.3.8.
 https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 -->
 
+### The REAL Fourier transform, continued {#von-neumann-rank-2}
+
+- For a matrix $A(t) \in \operatorname{Mat}_{n\times m}(R)$ with projection $p_A \in L^\infty(S^1)$, we have:
+
 ### Three constructions, one limit {#three-ranks}
 
-- Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.
+<!--- Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.
 - State the equality of the two infinite constructions and the convergence of $\rho_N$.
 - Give the proof by counting the finitely many exceptional evaluations.
-- Ask how much of this picture survives for more general groups.
+- Ask how much of this picture survives for more general groups.-->
 
 <!-- GENERAL GROUPS AND APPROXIMATION — approximately 7 minutes. -->
 

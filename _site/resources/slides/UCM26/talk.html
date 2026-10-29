@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <title>Iq Souza – How big is your matrix?</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -278,7 +281,8 @@ Render:  quarto render how-big-is-your-matrix.qmd
 <li class="fragment">Over a field <span class="math inline">\mathbb{F}</span>, the usual rank <span class="math inline">\operatorname{rk}_{\mathbb{F}}(A)</span>.</li>
 <li class="fragment">Over the ring <span class="math inline">\operatorname{Mat}_{n\times n}(\mathbb{F})</span>, <span class="math inline">\operatorname{rk}(A) = \frac{\operatorname{rk}_{\mathbb{F}}(A)}{n}</span>.</li>
 <li class="fragment">The previous examples come from <span class="math inline">\mathbb{Z} \to \mathbb{Q}</span> and <span class="math inline">\mathbb{Z} \to \mathbb{F}_p</span>.</li>
-<li class="fragment">For <span class="math inline">A</span> over <span class="math inline">\mathbb{Z}</span>, take <span class="math display">\operatorname{rk}_9(A) = \max_{\substack{B\text{ is a square}\\\text{submatrix of }A}}\left\{\operatorname{size}(B) - \frac{v_3(\det B)}{2}\right\}\,.</span> For <span class="math inline">A = \begin{pmatrix}1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 6\\ 7 &amp; 8 &amp; 9\end{pmatrix}</span>, it gives <span class="math inline">\operatorname{rk}_9(A) = 1.5</span>.</li>
+<li class="fragment">Given <span class="math inline">A</span> over <span class="math inline">\mathbb{Z}</span>, take <span class="math display">\operatorname{rk}_9(A) = \max_{\substack{B\text{ is a square}\\\text{submatrix of }A}}\left\{\operatorname{size}(B) - \frac{v_3(\det B)}{2}\right\}\,.</span></li>
+<li class="fragment">For <span class="math inline">A = \begin{pmatrix}1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 6\\ 7 &amp; 8 &amp; 9\end{pmatrix}</span>, it gives <span class="math inline">\operatorname{rk}_9(A) = 1.5</span>.</li>
 </ul>
 <!--
 - Introduce normalized rank on $M_d(k)$ and explain the factor $1/d$.
@@ -286,66 +290,309 @@ Render:  quarto render how-big-is-your-matrix.qmd
 - Check that an $m\times m$ identity matrix has rank $m$.
 - Reinterpret the examples over $\mathbb{Z}$ in this language.-->
 </section>
+<section id="rank-properties" class="slide level3">
+<h3>Properties</h3>
+<div title="Follows from *(SMat1)-(SMat4)*:">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Follows from <em>(SMat1)-(SMat4)</em>:</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">If <span class="math inline">A \in \operatorname{Mat}_{n\times m}(R)</span>, then <span class="math inline">\operatorname{rk}(A) \leq n\,, m</span>.</li>
+<li class="fragment">If <span class="math inline">A \in \operatorname{GL}_n(R)</span>, then <span class="math inline">\operatorname{rk}(A) = n</span>.</li>
+<li class="fragment">If <span class="math inline">A \in \operatorname{Mat}_{n\times m}(R)</span>, <span class="math inline">U \in \operatorname{GL}_n(R)</span> and <span class="math inline">V \in \operatorname{GL}_m(R)</span>, then <span class="math display">\operatorname{rk}(UAV) = \operatorname{rk}(A)\,.</span></li>
+<li class="fragment"><span class="math inline">\operatorname{rk}(\operatorname{Id}_n) = n</span>.</li>
+<li class="fragment">If <span class="math inline">B</span> is a submatrix of <span class="math inline">A</span>, then <span class="math inline">\operatorname{rk}(B) \leq \operatorname{rk}(A)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="rank-space" class="slide level3">
 <h3>The space of rank functions</h3>
+<div class="peek fragment">
+<div title="$\mathbb{P}(R)$: the set of **all** Sylvester matrix rank functions on $R$.">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><span class="math inline">\mathbb{P}(R)</span>: the set of <strong>all</strong> Sylvester matrix rank functions on <span class="math inline">R</span>.</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Explain pointwise convergence: evaluate every rank on a fixed matrix.</li>
-<li class="fragment">Show how to form convex combinations of rank functions.</li>
-<li class="fragment">Mention compactness briefly and motivate looking for limits of ranks.</li>
+<li class="fragment">Contained in the <span class="math inline">\mathbb{R}</span>-vector space <span class="math inline">\mathbb{R}^{\operatorname{Mat}(R)}</span></li>
+<li class="fragment">Convex: <span class="math inline">\operatorname{rk}\,, \operatorname{rk}' \in \mathbb{P}(R) \implies t\operatorname{rk} + (1-t)\operatorname{rk}' \in \mathbb{P}(R)</span></li>
+<li class="fragment">Compact 🥰</li>
+<li class="fragment">Poinwise convergence: <span class="math inline">\operatorname{rk}_i \to \operatorname{rk}</span> if <span class="math inline">\operatorname{rk}_i(A) \to \operatorname{rk}(A)</span> for any matrix <span class="math inline">A</span>.</li>
+<li class="fragment">Each matrix <span class="math inline">A \in \operatorname{Mat}(R)</span> gives a pseudo-metric: <span class="math display">d_A(\operatorname{rk},\operatorname{rk}') = |\operatorname{rk}(A) - \operatorname{rk}'(A)|\,.</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Examples">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Examples</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Over a field <span class="math inline">\mathbb{F}</span>, <span class="math inline">\mathbb{P}(\mathbb{F}) = \{\operatorname{rk}_{\mathbb{F}}\}</span>, for <span class="math inline">R = \operatorname{Mat}_n(\mathbb{F})</span>, <span class="math inline">\mathbb{P}(R) = \{\frac{\operatorname{rk}_{\mathbb{F}}}{n}\}</span>.</li>
+<li class="fragment"><span class="math inline">\mathbb{P}(\mathbb{Z})</span> has infinitely many extreme points.</li>
+<li class="fragment">If <span class="math inline">p_1 &lt; p_2 &lt; p_3 &lt;...</span> are the primes, then <span class="math inline">\operatorname{rk}_{\mathbb{F}_{p_i}} \to \operatorname{rk}_{\mathbb{Q}}</span> on <span class="math inline">\mathbb{Z}</span>.</li>
+<li class="fragment"><em>(A. Jaikin-Zapirain, D. López-Álvarez, 2020)</em> For <span class="math inline">R</span> a Dedekind domain (for example, a PID), extreme points of <span class="math inline">\mathbb{P}(R)</span> are classified by valuations on <span class="math inline">R</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--
+- Explain pointwise convergence: evaluate every rank on a fixed matrix.
+- Show how to form convex combinations of rank functions.
+- Mention compactness briefly and motivate looking for limits of ranks.-->
 <!-- LAURENT POLYNOMIALS AND SHIFTS — approximately 20 minutes. -->
 </section>
 <section id="finite-shifts" class="slide level3">
-<h3>Laurent polynomials acting on a cycle</h3>
+<h3>Laurent polynomials acting on <span class="math inline">\mathbb{C}^N</span></h3>
+<div class="peek fragment">
+<div title="$R = \mathbb{C}[t,t^{-1}]$">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><span class="math inline">R = \mathbb{C}[t,t^{-1}]</span></strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Introduce <span class="math inline">R=\mathbb{C}[t,t^{-1}]</span> and the cyclic shift <span class="math inline">S_N</span> on <span class="math inline">\mathbb{C}^N</span>.</li>
-<li class="fragment">Draw the cycle and explain the representation <span class="math inline">t\longmapsto S_N</span>.</li>
-<li class="fragment">Explain how a matrix <span class="math inline">A(t)</span> becomes a block matrix <span class="math inline">A(S_N)</span>.</li>
-<li class="fragment">Define its normalized rank <span class="math inline">\rho_N(A)</span>.</li>
+<li class="fragment">For each <span class="math inline">N \geq 1</span>, map <span class="math inline">R \to \operatorname{Mat}_N(\mathbb{C})</span> sending <span class="math inline">t</span> to a cyclic permutation: <span class="math display">t \mapsto \begin{pmatrix}0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1\\ 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 0\end{pmatrix}\,.</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="The action on $\mathbb{C}^N$">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The action on <span class="math inline">\mathbb{C}^N</span></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment"><span class="math inline">t(z_1\,,z_2\,,\ldots\,,z_N) = (z_2\,,z_3\,,\ldots\,,z_1)</span>.</li>
+<li class="fragment">Each element of <span class="math inline">R</span> gives a <span class="math inline">\mathbb{C}</span>-linear map <span class="math inline">\mathbb{C}^N \to \mathbb{C}^N</span>. Each <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> gives a block matrix <span class="math inline">A_N \in \operatorname{Mat}_{nN\times mN}(\mathbb{C})</span>.</li>
+<li class="fragment">We have a Sylvester rank functon <span class="math inline">\operatorname{rk}_N</span> on <span class="math inline">R</span> by taking <span class="math display">\operatorname{rk}_N(A(t)) = \frac{\operatorname{rk}_{\mathbb{C}} A_N}{N}\,.</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--
+- Introduce $R=\mathbb{C}[t,t^{-1}]$ and the cyclic shift $S_N$ on $\mathbb{C}^N$.
+- Draw the cycle and explain the representation $t\longmapsto S_N$.
+- Explain how a matrix $A(t)$ becomes a block matrix $A(S_N)$.
+- Define its normalized rank $\rho_N(A)$.
+-->
 </section>
 <section id="shift-kernel" class="slide level3">
-<h3>A kernel you can see</h3>
+<h3>An example computation</h3>
+<p>Consider the <span class="math inline">1\times 1</span> matrix <span class="math inline">x = t-1</span> in <span class="math inline">\mathbb{C}[t,t^{-1}]</span>.</p>
 <ul>
-<li class="fragment">Identify the kernel of <span class="math inline">S_N-I</span> as the constant vectors.</li>
-<li class="fragment">Compute <span class="math inline">\rho_N(t-1)=1-1/N</span> and ask what happens as <span class="math inline">N</span> grows.</li>
-<li class="fragment">If useful, compare <span class="math inline">S_N^a-I</span> by counting the cycles of the permutation.</li>
+<li class="fragment"><span class="math inline">\ker x_N = \{(z_1\,,\ldots\,,z_N) \in \mathbb{C}^n\colon z_1 = z_2 = \cdots = z_N\}</span>.</li>
+<li class="fragment">Since <span class="math inline">\ker x_N</span> is <span class="math inline">1</span>-dimensional, <span class="math inline">\operatorname{rk}_{\mathbb{C}} x_N = N-1</span>.</li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_N(x) = \frac{N-1}{N}</span>.</li>
+<li class="fragment">In particular, <span class="math inline">\operatorname{rk}_N(x) \to 1</span> as <span class="math inline">N \to 1</span>. Does <span class="math inline">\operatorname{rk}_N</span> converge? 🤔</li>
+<li class="fragment">Another element: fix <span class="math inline">d \in \mathbb{Z}</span> and let <span class="math inline">y = t^d - 1</span>. Then:
+<ul>
+<li class="fragment"><span class="math inline">\dim \ker y = \gcd(d,N)</span> <em>(decompose <span class="math inline">(t_N)^d</span> into cycles)</em>.</li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_N(y) = \frac{N - \gcd(d,N)}{N} \to 1</span> as <span class="math inline">N \to \infty</span>. 🤔🤔</li>
+</ul></li>
 </ul>
+<!--
+- Identify the kernel of $S_N-I$ as the constant vectors.
+- Compute $\rho_N(t-1)=1-1/N$ and ask what happens as $N$ grows.
+- If useful, compare $S_N^a-I$ by counting the cycles of the permutation. -->
 </section>
 <section id="finite-fourier" class="slide level3">
 <h3>The finite Fourier transform</h3>
+<p>Identify <span class="math inline">\mathbb{C}^N</span> with the vector space <span class="math inline">\mathcal{P}_N</span> all complex sequences <span class="math inline">\{a_j\}_{j\geq 0}</span> which are <span class="math inline">N</span>-periodic: <span class="math inline">a_j = a_{j+N}</span> for all <span class="math inline">j \geq 0</span>.</p>
+<div class="peek fragment">
+<div title="Fourier transform">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Fourier transform</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Diagonalize <span class="math inline">S_N</span> using the discrete Fourier basis.</li>
-<li class="fragment">Identify the eigenvalues with the <span class="math inline">N</span>th roots of unity.</li>
-<li class="fragment">Express <span class="math inline">\rho_N(A)</span> as an average of the ranks of <span class="math inline">A(\zeta)</span>.</li>
-<li class="fragment">Explain how the cycle becomes a collection of frequencies.</li>
+<li class="fragment">The sequences <span class="math inline">a_j^{(k)} = e^{\frac{2\pi ikj}{N}}</span> for <span class="math inline">k \in \{0\,,1\,,\ldots\,,N-1\}</span> form a basis of <span class="math inline">\mathcal{P}_N</span>.</li>
+<li class="fragment">In this basis, <span class="math inline">t_N</span> is diagonal, with <span class="math inline">N</span> eigenvalues <span class="math inline">\zeta_N^k = e^{\frac{2\pi ik}{N}}</span>.</li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_N(A(t))</span> is an average over roots of unity: <span class="math display">\operatorname{rk}_N(A(t)) = \frac{1}{N}\sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}} A(\zeta_N^k)\,.</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--- Diagonalize $S_N$ using the discrete Fourier basis.
+- Identify the eigenvalues with the $N$th roots of unity.
+- Express $\rho_N(A)$ as an average of the ranks of $A(\zeta)$.
+- Explain how the cycle becomes a collection of frequencies.-->
 </section>
 <section id="generic-rank" class="slide level3">
 <h3>Rank over the field of fractions</h3>
+<p><span class="math inline">R = \mathbb{C}[t,t^{-1}]</span> has a field of fractions <span class="math inline">\mathbb{C}(t)</span>, rational functions in <span class="math inline">t</span>.</p>
 <ul>
-<li class="fragment">Introduce the usual rank of <span class="math inline">A(t)</span> over <span class="math inline">\mathbb{C}(t)</span>.</li>
-<li class="fragment">Interpret this as the generic rank of the evaluations <span class="math inline">A(z)</span>.</li>
-<li class="fragment">Use a nonzero maximal minor to isolate finitely many exceptional points.</li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_{\mathbb{C}(t)}(A(t)) = j</span> if <span class="math inline">j</span> is the size of the largest square submatrix <span class="math inline">B(t)</span> of <span class="math inline">A(t)</span> such that <span class="math inline">\det B(t) \neq 0</span> identically.</li>
+<li class="fragment"><span class="math inline">\det B(t)</span> has only finitely many zeroes in <span class="math inline">\mathbb{C}</span>, say <span class="math inline">M</span> of them. <span class="math display">\operatorname{rk}_N(A(t)) \geq \operatorname{rk}_N(B(t)) = \frac{1}{N} \sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}} B(\zeta_N^k) \geq \frac{j(N-M)}{N}\,.</span></li>
+<li class="fragment"><em>(Homework)</em> <span class="math inline">\operatorname{rk}_N(A(t)) \leq j</span> for all <span class="math inline">N</span>.</li>
+<li class="fragment">We have <span class="math inline">\operatorname{rk}_N \to \operatorname{rk}_{\mathbb{C}(t)}</span> as <span class="math inline">N \to \infty</span>!</li>
 </ul>
+<!--- Introduce the usual rank of $A(t)$ over $\mathbb{C}(t)$.
+- Interpret this as the generic rank of the evaluations $A(z)$.
+- Use a nonzero maximal minor to isolate finitely many exceptional points.-->
 </section>
 <section id="infinite-shift" class="slide level3">
-<h3>From a cycle to the infinite shift</h3>
+<h3>The infinite shift</h3>
+<div class="peek fragment">
+<div title="$\ell^2(\mathbb{Z})$ and the shift operator $T$">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><span class="math inline">\ell^2(\mathbb{Z})</span> and the shift operator <span class="math inline">T</span></strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Replace the finite cycle by the integer line.</li>
-<li class="fragment">Let <span class="math inline">t</span> act by the bilateral shift on <span class="math inline">\ell^2(\mathbb{Z})</span>.</li>
-<li class="fragment">Explain how a Laurent polynomial matrix gives an operator between Hilbert spaces.</li>
-<li class="fragment">Ask what should replace normalized dimension in this setting.</li>
+<li class="fragment">Consider now the Hilbert space <span class="math display">\ell^2(\mathbb{Z}) = \left\{(a_i)_{i \in \mathbb{Z}} \colon a_i \in \mathbb{C}\,, \sum_{i \in \mathbb{Z}} |a_i|^2 &lt; \infty\right\}\,.</span></li>
+<li class="fragment">Let <span class="math inline">\mathcal{B}(\ell^2(\mathbb{Z}))</span> be its ring of bounded <span class="math inline">\mathbb{C}</span>-linear operators.</li>
+<li class="fragment">Let <span class="math inline">T(a_i) = (b_i)_{i \in \mathbb{Z}}</span>, where <span class="math inline">b_i = a_{i+1}</span>. Then <span class="math inline">T \in \mathcal{B}(\ell^2(\mathbb{Z}))</span>.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Hilbert space operators">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Hilbert space operators</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">We have a map <span class="math inline">R \to \mathcal{B}(\ell^2(\mathbb{Z}))</span> given by <span class="math inline">t \mapsto T</span>.</li>
+<li class="fragment">Any matrix <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> gives a bounded map <span class="math inline">A(T)\colon \ell^2(\mathbb{Z})^m \to \ell^2(\mathbb{Z})^n</span> between Hilbert spaces.</li>
+<li class="fragment">The closure <span class="math inline">\overline{A(T)\ell^2(\mathbb{Z})^m}</span> of its image is a Hilbert subspace of <span class="math inline">\ell^2(\mathbb{Z})^n</span>. Can we assign it a finite “dimension”?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--- Replace the finite cycle by the integer line.
+- Let $t$ act by the bilateral shift on $\ell^2(\mathbb{Z})$.
+- Explain how a Laurent polynomial matrix gives an operator between Hilbert spaces.
+- Ask what should replace normalized dimension in this setting.-->
 </section>
 <section id="von-neumann-rank" class="slide level3">
-<h3>Fourier transform and von Neumann rank</h3>
+<h3>The REAL Fourier transform</h3>
+<div class="peek fragment">
+<div title="$L^2$-integrable functions on the circle">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><span class="math inline">L^2</span>-integrable functions on the circle</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Identify <span class="math inline">\ell^2(\mathbb{Z})</span> with <span class="math inline">L^2(S^1)</span> using the Fourier transform.</li>
-<li class="fragment">Turn the shift into multiplication by the coordinate function <span class="math inline">z</span>.</li>
-<li class="fragment">Introduce <span class="math inline">\mathcal{N}(\mathbb{Z})\cong L^\infty(S^1)</span> and its trace.</li>
-<li class="fragment">Describe matrix rank as the integral of the pointwise ranks of <span class="math inline">A(z)</span>.</li>
+<li class="fragment">Let <span class="math inline">f(z)</span> be an <span class="math inline">L^2</span>-integrable function on the unit circle <span class="math inline">S^1 \subseteq \mathbb{C}</span>. The Fourier transform <span class="math inline">\mathcal{F}</span> gives <span class="math display">\mathcal{F}(f)(\xi) = \frac{1}{2\pi}\int_0^{2\pi} f(\theta)e^{-i\xi\theta}d\theta = \sum_{j\in \mathbb{Z}} a_j e^{ij\theta}</span> with <span class="math inline">(a_j) \in \ell^2(\mathbb{Z})</span>.</li>
+<li class="fragment">If <span class="math inline">T</span> is the shift in <span class="math inline">\ell^2(\mathbb{Z})</span>, then <span class="math display">T\mathcal{F}(f)(\xi) = \mathcal{F}(z\cdot f)(\xi)</span> corresponds to multiplication by <span class="math inline">z</span> in <span class="math inline">L^2(S^1)</span>.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="The von Neumann algebra">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The von Neumann algebra</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment"><span class="math inline">L^\infty(S^1)</span> is the ring of bounded functions on <span class="math inline">S^1</span>. It acts on <span class="math inline">L^2(S^1)</span> as bounded operators.</li>
+<li class="fragment"><span class="math inline">L^\infty(S^1)</span> has a trace: <span class="math display">\operatorname{tr}(g) = \frac{1}{2\pi}\int_0^{2\pi}g(e^{i\theta})d\theta\,.</span></li>
+<li class="fragment">Every <span class="math inline">L^\infty(S^1)</span>-stable closed subspace <span class="math inline">V</span> of <span class="math inline">L^2(S^1)^n</span> has a projection <span class="math inline">p_V\colon L^2(S^1)^n \to V</span> in <span class="math inline">L^\infty(S^1)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="von Neumann rank">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>von Neumann rank</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">The map <span class="math inline">t \mapsto z</span> gives a ring map <span class="math inline">R = \mathbb{C}[t,t^{-1}] \to L^\infty(S^1)</span>.</li>
+<li class="fragment">For <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span>, let <span class="math inline">p_A \in L^\infty(S^1)</span> be the projection of <span class="math inline">L^2(S^1)^m</span> onto <span class="math inline">\overline{A(z)L^2(S^1)^n}</span>. Then <span class="math inline">\operatorname{rk}_{S^1}(A(t)) = \operatorname{tr}(p_A)</span> is a Sylvester rank function on <span class="math inline">R</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--- Identify $\ell^2(\mathbb{Z})$ with $L^2(S^1)$ using the Fourier transform.
+- Turn the shift into multiplication by the coordinate function $z$.
+- Introduce $\mathcal{N}(\mathbb{Z})\cong L^\infty(S^1)$ and its trace.
+- Describe matrix rank as the integral of the pointwise ranks of $A(z)$.-->
 <!--
 The circle is the Fourier dual of Z. The action being transformed is the
 shift on l^2(Z). Use the closure of the image in defining operator rank.
@@ -354,14 +601,18 @@ Reference: Anantharaman–Popa, An Introduction to II_1 Factors, Example 1.3.8.
 https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 -->
 </section>
+<section id="von-neumann-rank-2" class="slide level3">
+<h3>The REAL Fourier transform, continued</h3>
+<ul>
+<li class="fragment">For a matrix <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> with projection <span class="math inline">p_A \in L^\infty(S^1)</span>, we have:</li>
+</ul>
+</section>
 <section id="three-ranks" class="slide level3">
 <h3>Three constructions, one limit</h3>
-<ul>
-<li class="fragment">Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.</li>
-<li class="fragment">State the equality of the two infinite constructions and the convergence of <span class="math inline">\rho_N</span>.</li>
-<li class="fragment">Give the proof by counting the finitely many exceptional evaluations.</li>
-<li class="fragment">Ask how much of this picture survives for more general groups.</li>
-</ul>
+<!--- Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.
+- State the equality of the two infinite constructions and the convergence of $\rho_N$.
+- Give the proof by counting the finitely many exceptional evaluations.
+- Ask how much of this picture survives for more general groups.-->
 <!-- GENERAL GROUPS AND APPROXIMATION — approximately 7 minutes. -->
 </section>
 <section id="group-rings" class="slide level3">
