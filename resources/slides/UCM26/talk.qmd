@@ -457,48 +457,96 @@ For an a-by-b matrix, log_p |coker(A mod p^k)| = k(a-rho_{p,k}(A)).
 The precision k must be large enough to recover all the desired torsion.
 -->
 
-### Two elementary arithmetic growth patterns {#arithmetic-optional visibility="hidden"}
+### Application: class numbers {#class-numbers}
 
-- Return to the cyclic shift with $N=p^n$, for an odd prime $p$.
-- Compare the determinants of $pI_N$ and $S_N-(1+p)I_N$.
-- Identify the valuation growth patterns $p^n$ and $n+1$.
-- Use these as elementary motivation for two terms in Iwasawa's formula.
+Let $F$ be a number field, that is, a finite extension of $\mathbb{Q}$. Denote by $\mathcal{O}_F$ its ring of integers.
 
-<!--
-OPTIONAL: approximately 3 minutes. These are toy matrices, not asserted
-presentations of class groups. Keep the precision parameter k separate from n.
--->
+:::: {.peek .fragment}
+::: {.callout-note title="Ideal class group"}
+- A fractional ideal $I$ is a finitely generated $\mathcal{O}_F$-submodule of $F$.
+- These form an abelian group $J_F$ under multiplication.
+- A principal fractional ideal is $x\mathcal{O}_F$ for non-zero $x \in F$.
+- Principal fractional ideals form a subgroup $P_F \leq J_F$.
+- The **ideal class group** of $F$ is the quotient $\mathrm{Cl}(F) = J_F/P_F$.
+- It is always **finite.** Its order $h(F) = |\mathrm{Cl}(F)|$ is the **class number**.
+:::
+::::
 
-### Class numbers in a tower {#class-numbers}
+:::: {.peek .fragment}
+::: {.callout-tip title="Growth of $h(F)$"}
+- $h(F) = 1$ if and only if $\mathcal{O}_F$ is a PID.
+- Only finitely many $F$ with $h(F) = 1$ are known.
+- Usually, $h(F)$ grows as $[F\colon \mathbb{Q}]$ grows.
+- Given a tower $F = F_0 \subset F_1 \subset F_2\subset\cdots$ of number fields, how does $h(F_i)$ grow as a function of $i$? (🤑)
+:::
+::::
 
-- Explain the ideal class group and its order, the class number.
+<!--- Explain the ideal class group and its order, the class number.
 - Introduce a $\mathbb{Z}_p$-extension through its finite layers $K_n$.
 - Focus on the $p$-part of the class number and its exponent $e_n$.
-- Ask how $e_n$ grows with the level of the tower.
+- Ask how $e_n$ grows with the level of the tower.-->
 
-### Iwasawa's class-number formula {#iwasawa-formula}
+### Iwasawa's class number formula {#iwasawa-formula}
 
-- State the eventual formula $e_n=\mu p^n+\lambda n+\nu$.
+:::: {.peek .fragment}
+::: {.callout-important title="Iwasawa's growth formula *(1959)*"}
+- Let $p$ be a prime number and $F = F_0 \subset F_1 \subset F_2 \subset \cdots$ be a tower of number fields such that $\operatorname{Gal}(F_n/F) \simeq \mathbb{Z}/p^n\mathbb{Z}$.
+- Let $p^{e_n}$ be the largest power of $p$ dividing $h(F_n)$. There are  integer constants $\mu$, $\lambda$ and $\nu$ such that $$e_n = \mu p^n + \lambda n + \nu\quad (n >\!>0)\,.$$
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-tip title="Examples"}
+- If $F = \mathbb{Q}$, there is only one such tower, and each $F_n$ lives inside the tower $\mathbb{Q}(\zeta_{p^n})$. It's Iwasawa constants are $\mu = \lambda = \nu = 0$.
+- If $F = \mathbb{Q}(\zeta_{37})$ and $p = 37$, composing with the previous tower gives one whose constants are $\mu = 0$ and $\lambda = \nu = 1$.
+- *(D. Hubbard, L.C. Washington, 2017)* There is a tower over $F = \mathbb{Q}(\zeta_3,\sqrt[3]{10})$ with $p =3$ and $\mu = 1$, $\lambda =0$ and $\nu = -1$.  
+:::
+::::
+
+<!-- State the eventual formula $e_n=\mu p^n+\lambda n+\nu$.
 - Explain the meaning of the parameters and the phrase "for all sufficiently large $n$".
 - Distinguish the exponential, linear, and constant contributions.
-- Explain why such a precise growth law is striking.
+- Explain why such a precise growth law is striking.-->
 
 <!--
 Classical statement: mu, lambda are nonnegative integers; nu is an integer.
 Reference: https://math.ucla.edu/~sharifi/notes/iwasawa-ch03.html
 -->
 
-### Rank functions and class-number growth {#iwasawa-ranks}
+### The Iwasawa algebra {#iwasawa-rank-triangle-1}
 
-- Insert the precise formulation from your paper on Iwasawa's class-number formula.
+- If $L = \bigcup F_i$, then $\operatorname{Gal}(L/F) \simeq \mathbb{Z}_p$.
+- $\Lambda = \mathbb{Z}_p[\![\operatorname{Gal}(L/F)]\!] = \varprojlim \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}] \simeq \mathbb{Z}_p[\![t]\!]$
+- If $\omega_n = (t+1)^{p^n}-1$, then $\Lambda/(\omega_n) \simeq \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}]$.
+- $\Lambda$-modules $\iff$ "compatible" families of $\operatorname{Gal}(F_n/F)$-modules of order a power of $p$.
+- $(p)$ is a prime ideal of $\Lambda$, the localization $\Lambda_{(p)}$ is a DVR with uniformizer $p$. Each quotient $\Lambda_{(p)}/p^k$ has length $k$.
+
+### Ranks on the Iwasawa algebra {#iwasawa-rank-triangle-2}
+
+:::: {.peek .fragment}
+::: {.callout-important title="Iwasawa rank triangle"}
+- $\operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)} \in \mathbb{P}(\Lambda)$.
+- For $A \in \operatorname{Mat}(\Lambda)$ and $k \geq 1$, $$\operatorname{rk}_{(p),k}(A) = \frac{\mathrm{len}_{\Lambda_{(p)}}(\operatorname{im}(A_{(p)}) \pmod{p^k})}{k}$$
+- For $A \in \operatorname{Mat}(\lambda)$, $n \geq 0$ and $k \geq 1$, $$\operatorname{rk}_{n,k}(A) = \frac{\log_p|\operatorname{im}(A) \pmod{(p^k,\omega_n)}|}{kp^n}$$
+:::
+::::
+
+- On $\mathbb{P}(\Lambda)$:
+  - $\operatorname{rk}_{(p),k} \to \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)}$ as $k \to \infty$
+  - $\operatorname{rk}_{n,k} \to \operatorname{rk}_{(p),k}$ as $n \to \infty$
+  - $\operatorname{rk}_{n,k} \to \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)}$ as $n\,, k \to \infty$.
+
+<!-- Insert the precise formulation from your paper on Iwasawa's class-number formula.
 - Identify the rings, ranks, and arithmetic quantities involved.
 - Explain the main mechanism, including what detects the lower-order terms.
-- Connect the argument to the finite-approximation picture developed earlier.
+- Connect the argument to the finite-approximation picture developed earlier.-->
 
-<!-- CLOSING — approximately 1 minute. -->
+### Rank functions and class number growth {#iwasawa-ranks}
 
-### What can a rank function tell us? {#closing}
+::: {.callout-important title="Pseudo-metrics and torsion-modules *(S., 2026)*"}
+Let $A \in \operatorname{Mat}_{r\times s}(\Lambda)$ and $M = \Lambda^r/A\Lambda^s$. Assume $M$ is torsion and $M/\omega_n M$ is finite for large $n$. There are integers $\mu$, $\lambda$, $\nu$ such that for large enough $n$ and large enough $k$ (depending on $n$) we have $$\underbrace{\frac{\log_p |M/\omega_n M|}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)})} = \underbrace{\frac{\mu}{k}}_{d_A(\operatorname{rk}_{(p),k}, \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)})} + \underbrace{\frac{\lambda n + \nu}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{(p),k})}\,.$$
+:::
 
-- Return to the question: how big is your matrix?
-- Recall the connections between finite linear algebra, analysis, and arithmetic.
-- End with one takeaway or an open question, then invite questions.
+- There is a matrix $A$ over $\Lambda$ such that $M/\omega_n M$ is isomorphic to the $p$-primary part of $\operatorname{Cl}(F_n)$. It recovers Iwasawa's formula.
+
+### Thanks!

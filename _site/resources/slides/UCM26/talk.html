@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.18">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <title>Iq Souza – How big is your matrix?</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -863,46 +863,182 @@ For an a-by-b matrix, log_p |coker(A mod p^k)| = k(a-rho_{p,k}(A)).
 The precision k must be large enough to recover all the desired torsion.
 -->
 </section>
-
 <section id="class-numbers" class="slide level3">
-<h3>Class numbers in a tower</h3>
+<h3>Application: class numbers</h3>
+<p>Let <span class="math inline">F</span> be a number field, that is, a finite extension of <span class="math inline">\mathbb{Q}</span>. Denote by <span class="math inline">\mathcal{O}_F</span> its ring of integers.</p>
+<div class="peek fragment">
+<div title="Ideal class group">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ideal class group</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Explain the ideal class group and its order, the class number.</li>
-<li class="fragment">Introduce a <span class="math inline">\mathbb{Z}_p</span>-extension through its finite layers <span class="math inline">K_n</span>.</li>
-<li class="fragment">Focus on the <span class="math inline">p</span>-part of the class number and its exponent <span class="math inline">e_n</span>.</li>
-<li class="fragment">Ask how <span class="math inline">e_n</span> grows with the level of the tower.</li>
+<li class="fragment">A fractional ideal <span class="math inline">I</span> is a finitely generated <span class="math inline">\mathcal{O}_F</span>-submodule of <span class="math inline">F</span>.</li>
+<li class="fragment">These form an abelian group <span class="math inline">J_F</span> under multiplication.</li>
+<li class="fragment">A principal fractional ideal is <span class="math inline">x\mathcal{O}_F</span> for non-zero <span class="math inline">x \in F</span>.</li>
+<li class="fragment">Principal fractional ideals form a subgroup <span class="math inline">P_F \leq J_F</span>.</li>
+<li class="fragment">The <strong>ideal class group</strong> of <span class="math inline">F</span> is the quotient <span class="math inline">\mathrm{Cl}(F) = J_F/P_F</span>.</li>
+<li class="fragment">It is always <strong>finite.</strong> Its order <span class="math inline">h(F) = |\mathrm{Cl}(F)|</span> is the <strong>class number</strong>.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Growth of $h(F)$">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Growth of <span class="math inline">h(F)</span></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment"><span class="math inline">h(F) = 1</span> if and only if <span class="math inline">\mathcal{O}_F</span> is a PID.</li>
+<li class="fragment">Only finitely many <span class="math inline">F</span> with <span class="math inline">h(F) = 1</span> are known.</li>
+<li class="fragment">Usually, <span class="math inline">h(F)</span> grows as <span class="math inline">[F\colon \mathbb{Q}]</span> grows.</li>
+<li class="fragment">Given a tower <span class="math inline">F = F_0 \subset F_1 \subset F_2\subset\cdots</span> of number fields, how does <span class="math inline">h(F_i)</span> grow as a function of <span class="math inline">i</span>? (🤑)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--- Explain the ideal class group and its order, the class number.
+- Introduce a $\mathbb{Z}_p$-extension through its finite layers $K_n$.
+- Focus on the $p$-part of the class number and its exponent $e_n$.
+- Ask how $e_n$ grows with the level of the tower.-->
 </section>
 <section id="iwasawa-formula" class="slide level3">
-<h3>Iwasawa’s class-number formula</h3>
+<h3>Iwasawa’s class number formula</h3>
+<div class="peek fragment">
+<div title="Iwasawa's growth formula *(1959)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Iwasawa’s growth formula <em>(1959)</em></strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">State the eventual formula <span class="math inline">e_n=\mu p^n+\lambda n+\nu</span>.</li>
-<li class="fragment">Explain the meaning of the parameters and the phrase “for all sufficiently large <span class="math inline">n</span>”.</li>
-<li class="fragment">Distinguish the exponential, linear, and constant contributions.</li>
-<li class="fragment">Explain why such a precise growth law is striking.</li>
+<li class="fragment">Let <span class="math inline">p</span> be a prime number and <span class="math inline">F = F_0 \subset F_1 \subset F_2 \subset \cdots</span> be a tower of number fields such that <span class="math inline">\operatorname{Gal}(F_n/F) \simeq \mathbb{Z}/p^n\mathbb{Z}</span>.</li>
+<li class="fragment">Let <span class="math inline">p^{e_n}</span> be the largest power of <span class="math inline">p</span> dividing <span class="math inline">h(F_n)</span>. There are integer constants <span class="math inline">\mu</span>, <span class="math inline">\lambda</span> and <span class="math inline">\nu</span> such that <span class="math display">e_n = \mu p^n + \lambda n + \nu\quad (n &gt;\!&gt;0)\,.</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Examples">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Examples</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">If <span class="math inline">F = \mathbb{Q}</span>, there is only one such tower, and each <span class="math inline">F_n</span> lives inside the tower <span class="math inline">\mathbb{Q}(\zeta_{p^n})</span>. It’s Iwasawa constants are <span class="math inline">\mu = \lambda = \nu = 0</span>.</li>
+<li class="fragment">If <span class="math inline">F = \mathbb{Q}(\zeta_{37})</span> and <span class="math inline">p = 37</span>, composing with the previous tower gives one whose constants are <span class="math inline">\mu = 0</span> and <span class="math inline">\lambda = \nu = 1</span>.</li>
+<li class="fragment"><em>(D. Hubbard, L.C. Washington, 2017)</em> There is a tower over <span class="math inline">F = \mathbb{Q}(\zeta_3,\sqrt[3]{10})</span> with <span class="math inline">p =3</span> and <span class="math inline">\mu = 1</span>, <span class="math inline">\lambda =0</span> and <span class="math inline">\nu = -1</span>.<br>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- State the eventual formula $e_n=\mu p^n+\lambda n+\nu$.
+- Explain the meaning of the parameters and the phrase "for all sufficiently large $n$".
+- Distinguish the exponential, linear, and constant contributions.
+- Explain why such a precise growth law is striking.-->
 <!--
 Classical statement: mu, lambda are nonnegative integers; nu is an integer.
 Reference: https://math.ucla.edu/~sharifi/notes/iwasawa-ch03.html
 -->
 </section>
-<section id="iwasawa-ranks" class="slide level3">
-<h3>Rank functions and class-number growth</h3>
+<section id="iwasawa-rank-triangle-1" class="slide level3">
+<h3>The Iwasawa algebra</h3>
 <ul>
-<li class="fragment">Insert the precise formulation from your paper on Iwasawa’s class-number formula.</li>
-<li class="fragment">Identify the rings, ranks, and arithmetic quantities involved.</li>
-<li class="fragment">Explain the main mechanism, including what detects the lower-order terms.</li>
-<li class="fragment">Connect the argument to the finite-approximation picture developed earlier.</li>
+<li class="fragment">If <span class="math inline">L = \bigcup F_i</span>, then <span class="math inline">\operatorname{Gal}(L/F) \simeq \mathbb{Z}_p</span>.</li>
+<li class="fragment"><span class="math inline">\Lambda = \mathbb{Z}_p[\![\operatorname{Gal}(L/F)]\!] = \varprojlim \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}] \simeq \mathbb{Z}_p[\![t]\!]</span></li>
+<li class="fragment">If <span class="math inline">\omega_n = (t+1)^{p^n}-1</span>, then <span class="math inline">\Lambda/(\omega_n) \simeq \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}]</span>.</li>
+<li class="fragment"><span class="math inline">\Lambda</span>-modules <span class="math inline">\iff</span> “compatible” families of <span class="math inline">\operatorname{Gal}(F_n/F)</span>-modules of order a power of <span class="math inline">p</span>.</li>
+<li class="fragment"><span class="math inline">(p)</span> is a prime ideal of <span class="math inline">\Lambda</span>, the localization <span class="math inline">\Lambda_{(p)}</span> is a DVR with uniformizer <span class="math inline">p</span>. Each quotient <span class="math inline">\Lambda_{(p)}/p^k</span> has length <span class="math inline">k</span>.</li>
 </ul>
-<!-- CLOSING — approximately 1 minute. -->
 </section>
-<section id="closing" class="slide level3">
-<h3>What can a rank function tell us?</h3>
+<section id="iwasawa-rank-triangle-2" class="slide level3">
+<h3>Ranks on the Iwasawa algebra</h3>
+<div class="peek fragment">
+<div title="Iwasawa rank triangle">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Iwasawa rank triangle</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Return to the question: how big is your matrix?</li>
-<li class="fragment">Recall the connections between finite linear algebra, analysis, and arithmetic.</li>
-<li class="fragment">End with one takeaway or an open question, then invite questions.</li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)} \in \mathbb{P}(\Lambda)</span>.</li>
+<li class="fragment">For <span class="math inline">A \in \operatorname{Mat}(\Lambda)</span> and <span class="math inline">k \geq 1</span>, <span class="math display">\operatorname{rk}_{(p),k}(A) = \frac{\mathrm{len}_{\Lambda_{(p)}}(\operatorname{im}(A_{(p)}) \pmod{p^k})}{k}</span></li>
+<li class="fragment">For <span class="math inline">A \in \operatorname{Mat}(\lambda)</span>, <span class="math inline">n \geq 0</span> and <span class="math inline">k \geq 1</span>, <span class="math display">\operatorname{rk}_{n,k}(A) = \frac{\log_p|\operatorname{im}(A) \pmod{(p^k,\omega_n)}|}{kp^n}</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">On <span class="math inline">\mathbb{P}(\Lambda)</span>:
+<ul>
+<li class="fragment"><span class="math inline">\operatorname{rk}_{(p),k} \to \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)}</span> as <span class="math inline">k \to \infty</span></li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_{n,k} \to \operatorname{rk}_{(p),k}</span> as <span class="math inline">n \to \infty</span></li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_{n,k} \to \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)}</span> as <span class="math inline">n\,, k \to \infty</span>.</li>
+</ul></li>
+</ul>
+<!-- Insert the precise formulation from your paper on Iwasawa's class-number formula.
+- Identify the rings, ranks, and arithmetic quantities involved.
+- Explain the main mechanism, including what detects the lower-order terms.
+- Connect the argument to the finite-approximation picture developed earlier.-->
+</section>
+<section id="iwasawa-ranks" class="slide level3">
+<h3>Rank functions and class number growth</h3>
+<div title="Pseudo-metrics and torsion-modules *(S., 2026)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pseudo-metrics and torsion-modules <em>(S., 2026)</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">A \in \operatorname{Mat}_{r\times s}(\Lambda)</span> and <span class="math inline">M = \Lambda^r/A\Lambda^s</span>. Assume <span class="math inline">M</span> is torsion and <span class="math inline">M/\omega_n M</span> is finite for large <span class="math inline">n</span>. There are integers <span class="math inline">\mu</span>, <span class="math inline">\lambda</span>, <span class="math inline">\nu</span> such that for large enough <span class="math inline">n</span> and large enough <span class="math inline">k</span> (depending on <span class="math inline">n</span>) we have <span class="math display">\underbrace{\frac{\log_p |M/\omega_n M|}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)})} = \underbrace{\frac{\mu}{k}}_{d_A(\operatorname{rk}_{(p),k}, \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)})} + \underbrace{\frac{\lambda n + \nu}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{(p),k})}\,.</span></p>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">There is a matrix <span class="math inline">A</span> over <span class="math inline">\Lambda</span> such that <span class="math inline">M/\omega_n M</span> is isomorphic to the <span class="math inline">p</span>-primary part of <span class="math inline">\operatorname{Cl}(F_n)</span>. It recovers Iwasawa’s formula.</li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
 
 
 </section>
