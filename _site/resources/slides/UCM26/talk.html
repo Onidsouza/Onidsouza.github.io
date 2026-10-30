@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.19">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>Iq Souza – How big is your matrix?</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -604,11 +604,58 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 <section id="von-neumann-rank-2" class="slide level3">
 <h3>The REAL Fourier transform, continued</h3>
 <ul>
-<li class="fragment">For a matrix <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> with projection <span class="math inline">p_A \in L^\infty(S^1)</span>, we have:</li>
+<li class="fragment">For a matrix <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> with projection <span class="math inline">p_A \in L^\infty(S^1)</span>, we have: <span class="math display">\operatorname{rk}_{S^1}(A(t)) = \operatorname{tr}(p_A) = \frac{1}{2\pi}\int_0^{2\pi} \operatorname{rk}_{\mathbb{C}}(A(e^{i\theta})) d\theta\,.</span></li>
+<li class="fragment">On <span class="math inline">S^1</span>, <span class="math inline">\operatorname{rk}_{\mathbb{C}}(A(z))</span> is an almost-everywhere constant function of <span class="math inline">z</span>, equal to <span class="math inline">\operatorname{rk}_{\mathbb{C}(t)}(A(t))</span>.</li>
+<li class="fragment">On <span class="math inline">\mathbb{C}[t,t^{-1}]</span>, we have <span class="math inline">\operatorname{rk}_{\mathbb{C}(t)} = \operatorname{rk}_{S^1}</span>!</li>
 </ul>
 </section>
 <section id="three-ranks" class="slide level3">
-<h3>Three constructions, one limit</h3>
+<h3>Summary so far</h3>
+<div class="peek fragment">
+<div title="Three ranks on $\mathbb{C}[t,t^{-1}]$">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Three ranks on <span class="math inline">\mathbb{C}[t,t^{-1}]</span></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment"><span class="math inline">\operatorname{rk}_N(A(t)) = \frac{1}{N}\sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}}(A(\zeta_N^k))</span></li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_{\mathbb{C}(t)}(A(t)) = \text{size of largest non-zero minor}</span></li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_{S^1}(A(t)) = \frac{1}{2\pi}\int_0^{2\pi} \operatorname{rk}_{\mathbb{C}} A(e^{i\theta}) d\theta</span></li>
+<li class="fragment"><span class="math inline">\lim_{N \to \infty} \operatorname{rk}_N = \operatorname{rk}_{S^1} = \operatorname{rk}_{\mathbb{C}(t)}</span> on <span class="math inline">\mathbb{P}(\mathbb{C}[t,t^{-1}])</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Another viewpoint">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Another viewpoint</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">We can see <span class="math inline">\mathbb{C}[t,t^{-1}]</span> as the group ring <span class="math inline">\mathbb{C}[\mathbb{Z}]</span> where <span class="math inline">\langle t \rangle \simeq \mathbb{Z}</span>.</li>
+<li class="fragment">The action on <span class="math inline">\mathbb{C}^N</span> is equivalent to the action on <span class="math inline">\mathbb{C}[\mathbb{Z}/N\mathbb{Z}]</span>.</li>
+<li class="fragment">The groups <span class="math inline">\mathbb{Z}/N\mathbb{Z}</span> “approximate” <span class="math inline">\mathbb{Z}</span> as <span class="math inline">N</span> grows.</li>
+<li class="fragment">The roots of unity <span class="math inline">\{1\,,\zeta_N\,,\ldots\,,\zeta_N^{N-1}\}</span> “approximate” <span class="math inline">S^1</span> as <span class="math inline">N</span> grows.</li>
+<li class="fragment">Is there an analogue for more general group rings?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!--- Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.
 - State the equality of the two infinite constructions and the convergence of $\rho_N$.
 - Give the proof by counting the finitely many exceptional evaluations.
@@ -616,22 +663,126 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 <!-- GENERAL GROUPS AND APPROXIMATION — approximately 7 minutes. -->
 </section>
 <section id="group-rings" class="slide level3">
-<h3>Groups and their finite quotients</h3>
+<h3>Residually finite groups</h3>
+<div class="peek fragment">
+<div title="Definition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Explain group-ring elements as finite linear combinations of translations.</li>
-<li class="fragment">Introduce residual finiteness and a nested separating chain of finite-index normal subgroups.</li>
-<li class="fragment">Compare matrices acting on finite quotients with their action on <span class="math inline">\ell^2(G)</span>.</li>
-<li class="fragment">Explain the normalization by the size of each finite quotient.</li>
+<li class="fragment">A group <span class="math inline">G</span> is <strong>residually finite</strong> if for every <span class="math inline">1 \neq g \in G</span> there exists a finite index normal subgroup <span class="math inline">N \unlhd G</span> not containing <span class="math inline">g</span>.</li>
+<li class="fragment">Equivalently, the intersection of all finite index normal subgroups of <span class="math inline">G</span> is <span class="math inline">\{1\}</span>.</li>
+<li class="fragment">Lots of residually finite groups: f.g. abelian, free, surface groups, f.g. subgroups of <span class="math inline">\mathbb{GL}_n(\mathbb{C})</span>…</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Ranks from finite quotients">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ranks from finite quotients</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">The group algebra <span class="math inline">\mathbb{C}[G] = \{\sum_{g \in G} a_gg\colon a_g \in \mathbb{C}\text{, almost all }0\}</span>.</li>
+<li class="fragment"><span class="math inline">\mathbb{C}[G]</span> is the algebra of finitely supported functions, with convolution.</li>
+<li class="fragment">For <span class="math inline">N \unlhd G</span> of finite index <span class="math inline">(G\colon N)</span>, <span class="math inline">\mathbb{C}[G/N]</span> is finite dimensional. Each matrix <span class="math inline">A \in \operatorname{Mat}_{n\times m}(\mathbb{C}[G])</span> gives a matrix <span class="math inline">A_N \in \operatorname{Mat}_{n(G\colon N)\times m(G\colon N)}(\mathbb{C})</span>.</li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_N(A) = \frac{1}{(G\colon N)} \operatorname{rk}_{\mathbb{C}}(A_N)</span> is a Sylvester rank function.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Chains">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Chains</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Choose a chain <span class="math inline">\cdots N_2 &lt; N_1 &lt; G</span> of normal subgroups of finite index with <span class="math inline">\bigcap N_i = \{1\}</span>.</li>
+<li class="fragment">What do the ranks <span class="math inline">\operatorname{rk}_{N_i} \in \mathbb{P}(\mathbb{C}[G])</span> approximate?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Explain group-ring elements as finite linear combinations of translations.
+- Introduce residual finiteness and a nested separating chain of finite-index normal subgroups.
+- Compare matrices acting on finite quotients with their action on $\ell^2(G)$.
+- Explain the normalization by the size of each finite quotient.-->
 </section>
 <section id="luck-approximation" class="slide level3">
-<h3>Lück approximation</h3>
+<h3>Residually finite groups, continued</h3>
+<div class="peek fragment">
+<div title="$\ell^2(G)$">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><span class="math inline">\ell^2(G)</span></strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">State the matrix-rank approximation theorem with its precise hypotheses.</li>
-<li class="fragment">Explain the von Neumann rank appearing in the limit.</li>
-<li class="fragment">Recover the cyclic-shift example when <span class="math inline">G=\mathbb{Z}</span>.</li>
-<li class="fragment">Explain what finite computations now tell us about an infinite group.</li>
+<li class="fragment"><span class="math inline">\ell^2(G) = \left\{\sum_{g \in G} a_gg\colon \sum_{g \in G} |a_g|^2 &lt; \infty\right\}</span></li>
+<li class="fragment"><span class="math inline">\mathbb{C}[G]</span> acts on the left as bounded operators in <span class="math inline">\ell^2(G)</span>.</li>
+<li class="fragment">There is a tracial <span class="math inline">*</span>-algebra <span class="math inline">\mathcal{N}(G)</span> with <span class="math inline">\mathbb{C}[G] \leq \mathcal{N}(G) \leq \mathcal{B}(\ell^2(G))</span>.</li>
+<li class="fragment">As over <span class="math inline">\mathbb{Z}</span>, the trace of a projection in <span class="math inline">\mathcal{N}(G)</span> gives a rank function <span class="math inline">\operatorname{rk}_{\ell^2} \in \mathbb{P}(\mathbb{C}[G])</span>.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Lück approximation theorem *(A. Jaikin-Zapirain, 2019)*">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lück approximation theorem <em>(A. Jaikin-Zapirain, 2019)</em></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Let <span class="math inline">G</span> be a residually finite group and <span class="math inline">\cdots &lt; N_2 &lt; N_1 &lt; G</span> be a chain of finite index normal subgroups with <span class="math inline">\bigcap N_i = \{1\}</span>. Then <span class="math display">\lim_{i \to \infty} \operatorname{rk}_{N_i} = \operatorname{rk}_{\ell^2}\,.</span></li>
+<li class="fragment">Proven by W. Lück <em>(1994)</em> for matrices over <span class="math inline">\mathbb{Q}[G]</span>.</li>
+<li class="fragment">Proven by G. Elek and E. Szabó <em>(2005)</em> for matrices over <span class="math inline">\overline{\mathbb{Q}}[G]</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--
+- State the matrix-rank approximation theorem with its precise hypotheses.
+- Explain the von Neumann rank appearing in the limit.
+- Recover the cyclic-shift example when $G=\mathbb{Z}$.
+- Explain what finite computations now tell us about an infinite group.
+-->
 <!--
 Coefficient choice: the classical theorem is over Q[G]. If you state the
 version over C[G], include the appropriate extension and attribution.
@@ -640,16 +791,72 @@ Sources:
 https://link.springer.com/article/10.1007/BF01896404
 https://andreijaikin.wordpress.com/2024/05/06/the-luck-approximation/
 -->
-</section>
+<!--
+### Hyperbolic 3-manifolds and representation ranks {#hyperbolic-optional visibility="hidden"}
 
+- Introduce the fundamental group of a finite-volume hyperbolic 3-manifold.
+- Describe the sequence of representations and its normalized rank functions.
+- Insert the precise rank-approximation statement from the work with Lander.
+- Compare approximation by these representations with approximation by finite quotients.
+
+<!--
+OPTIONAL: approximately 3–4 minutes. State the result in matrix-rank language.
+Source: Guerrero Sánchez–Souza, Asymptotics of rational representations for
+algebraic groups, https://arxiv.org/html/2405.17360v2
+-->
+<!-- ARITHMETIC AND IWASAWA THEORY — approximately 13 minutes. -->
+</section>
 <section id="arithmetic-rank" class="slide level3">
-<h3>Arithmetic size through rank</h3>
+<h3>Back to <span class="math inline">\mathbb{Z}</span></h3>
 <ul>
-<li class="fragment">Motivate measuring a finite <span class="math inline">p</span>-group by its logarithmic size.</li>
-<li class="fragment">Introduce rank from normalized length over <span class="math inline">\mathbb{Z}/p^k\mathbb{Z}</span>.</li>
-<li class="fragment">Use multiplication by <span class="math inline">p</span> as the first example.</li>
-<li class="fragment">Explain how a rank defect records the size of a cokernel.</li>
+<li class="fragment">On <span class="math inline">\mathbb{Z}</span>, we already saw <span class="math inline">\operatorname{rk}_{\mathbb{Q}}</span>, <span class="math inline">\operatorname{rk}_{\mathbb{F}_p}</span> and <span class="math inline">\operatorname{rk}_9</span>.</li>
 </ul>
+<div class="peek fragment">
+<div title="Ranks through $\log$ size">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ranks through <span class="math inline">\log</span> size</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Fix a prime <span class="math inline">p</span> and a positive integer <span class="math inline">k</span>. For <span class="math inline">A \in \operatorname{Mat}(\mathbb{Z})</span>, define <span class="math display">\operatorname{rk}_{p^k}(A) = \frac{\log_p |\operatorname{im}(A \pmod{p^k})|}{k}\,.</span></li>
+<li class="fragment">Each <span class="math inline">\operatorname{rk}_{p^k}(A)</span> is a Sylvester matrix rank function over <span class="math inline">\mathbb{Z}</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="peek fragment">
+<div title="Examples">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Examples</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">We have <span class="math inline">\operatorname{rk}_p = \operatorname{rk}_{\mathbb{F}_p}</span>.</li>
+<li class="fragment">Taking a <span class="math inline">1\times 1</span>-matrix <span class="math inline">n \in \mathbb{Z}</span>, <span class="math inline">\operatorname{rk}_{p^k} = \frac{\max\{0,k-v_p(n)\}}{k}</span>.</li>
+<li class="fragment">In general, for <span class="math inline">p</span> fixed, <span class="math inline">\operatorname{rk}_{p^k} \to \operatorname{rk}_{\mathbb{Q}}</span> as <span class="math inline">k \to \infty</span>.</li>
+<li class="fragment">The family <span class="math inline">\{\operatorname{rk}_{p^k}\colon p\text{ prime,} k\geq 1\}</span> sees prime factorizations!🔥</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Motivate measuring a finite $p$-group by its logarithmic size.
+- Introduce rank from normalized length over $\mathbb{Z}/p^k\mathbb{Z}$.
+- Use multiplication by $p$ as the first example.
+- Explain how a rank defect records the size of a cokernel.-->
 <!--
 Possible model: rho_{p,k}(A) = log_p |im(A mod p^k)| / k.
 For an a-by-b matrix, log_p |coker(A mod p^k)| = k(a-rho_{p,k}(A)).

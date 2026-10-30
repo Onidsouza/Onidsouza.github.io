@@ -312,9 +312,30 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 
 ### The REAL Fourier transform, continued {#von-neumann-rank-2}
 
-- For a matrix $A(t) \in \operatorname{Mat}_{n\times m}(R)$ with projection $p_A \in L^\infty(S^1)$, we have:
+- For a matrix $A(t) \in \operatorname{Mat}_{n\times m}(R)$ with projection $p_A \in L^\infty(S^1)$, we have: $$\operatorname{rk}_{S^1}(A(t)) = \operatorname{tr}(p_A) = \frac{1}{2\pi}\int_0^{2\pi} \operatorname{rk}_{\mathbb{C}}(A(e^{i\theta})) d\theta\,.$$
+- On $S^1$, $\operatorname{rk}_{\mathbb{C}}(A(z))$ is an almost-everywhere constant function of $z$, equal to $\operatorname{rk}_{\mathbb{C}(t)}(A(t))$.
+- On $\mathbb{C}[t,t^{-1}]$, we have $\operatorname{rk}_{\mathbb{C}(t)} = \operatorname{rk}_{S^1}$!
 
-### Three constructions, one limit {#three-ranks}
+### Summary so far {#three-ranks}
+
+:::: {.peek .fragment}
+::: {.callout-tip title="Three ranks on $\mathbb{C}[t,t^{-1}]$"}
+- $\operatorname{rk}_N(A(t)) = \frac{1}{N}\sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}}(A(\zeta_N^k))$
+- $\operatorname{rk}_{\mathbb{C}(t)}(A(t)) = \text{size of largest non-zero minor}$
+- $\operatorname{rk}_{S^1}(A(t)) = \frac{1}{2\pi}\int_0^{2\pi} \operatorname{rk}_{\mathbb{C}} A(e^{i\theta}) d\theta$
+- $\lim_{N \to \infty} \operatorname{rk}_N = \operatorname{rk}_{S^1} = \operatorname{rk}_{\mathbb{C}(t)}$ on $\mathbb{P}(\mathbb{C}[t,t^{-1}])$.
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-warning title="Another viewpoint"}
+- We can see $\mathbb{C}[t,t^{-1}]$ as the group ring $\mathbb{C}[\mathbb{Z}]$ where $\langle t \rangle \simeq \mathbb{Z}$.
+- The action on $\mathbb{C}^N$ is equivalent to the action on $\mathbb{C}[\mathbb{Z}/N\mathbb{Z}]$.
+- The groups $\mathbb{Z}/N\mathbb{Z}$ "approximate" $\mathbb{Z}$ as $N$ grows.
+- The roots of unity $\{1\,,\zeta_N\,,\ldots\,,\zeta_N^{N-1}\}$ "approximate" $S^1$ as $N$ grows.
+- Is there an analogue for more general group rings?
+:::
+::::
 
 <!--- Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.
 - State the equality of the two infinite constructions and the convergence of $\rho_N$.
@@ -323,20 +344,62 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 
 <!-- GENERAL GROUPS AND APPROXIMATION — approximately 7 minutes. -->
 
-### Groups and their finite quotients {#group-rings}
+### Residually finite groups {#group-rings}
 
-- Explain group-ring elements as finite linear combinations of translations.
+:::: {.peek .fragment}
+::: {.callout-note title="Definition"}
+- A group $G$ is **residually finite** if for every $1 \neq g \in G$ there exists a finite index normal subgroup $N \unlhd G$ not containing $g$.
+- Equivalently, the intersection of all finite index normal subgroups of $G$ is $\{1\}$.
+- Lots of residually finite groups: f.g. abelian, free, surface groups, f.g. subgroups of $\mathbb{GL}_n(\mathbb{C})$...
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-tip title="Ranks from finite quotients"}
+- The group algebra $\mathbb{C}[G] = \{\sum_{g \in G} a_gg\colon a_g \in \mathbb{C}\text{, almost all }0\}$.
+- $\mathbb{C}[G]$ is the algebra of finitely supported functions, with convolution.
+- For $N \unlhd G$ of finite index $(G\colon N)$, $\mathbb{C}[G/N]$ is finite dimensional. Each matrix $A \in \operatorname{Mat}_{n\times m}(\mathbb{C}[G])$ gives a matrix $A_N \in \operatorname{Mat}_{n(G\colon N)\times m(G\colon N)}(\mathbb{C})$.
+- $\operatorname{rk}_N(A) = \frac{1}{(G\colon N)} \operatorname{rk}_{\mathbb{C}}(A_N)$ is a Sylvester rank function.
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-important title="Chains"}
+- Choose a chain $\cdots N_2 < N_1 < G$ of normal subgroups of finite index with $\bigcap N_i = \{1\}$.
+- What do the ranks $\operatorname{rk}_{N_i} \in \mathbb{P}(\mathbb{C}[G])$ approximate?
+:::
+::::
+
+<!-- Explain group-ring elements as finite linear combinations of translations.
 - Introduce residual finiteness and a nested separating chain of finite-index normal subgroups.
 - Compare matrices acting on finite quotients with their action on $\ell^2(G)$.
-- Explain the normalization by the size of each finite quotient.
+- Explain the normalization by the size of each finite quotient.-->
 
-### Lück approximation {#luck-approximation}
+### Residually finite groups, continued {#luck-approximation}
 
+:::: {.peek .fragment}
+::: {.callout-note title="$\ell^2(G)$"}
+- $\ell^2(G) = \left\{\sum_{g \in G} a_gg\colon \sum_{g \in G} |a_g|^2 < \infty\right\}$
+- $\mathbb{C}[G]$ acts on the left as bounded operators in $\ell^2(G)$.
+- There is a tracial $*$-algebra $\mathcal{N}(G)$ with $\mathbb{C}[G] \leq \mathcal{N}(G) \leq \mathcal{B}(\ell^2(G))$.
+- As over $\mathbb{Z}$, the trace of a projection in $\mathcal{N}(G)$ gives a rank function $\operatorname{rk}_{\ell^2} \in \mathbb{P}(\mathbb{C}[G])$.
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-important title="Lück approximation theorem *(A. Jaikin-Zapirain, 2019)*"}
+- Let $G$ be a residually finite group and $\cdots < N_2 < N_1 < G$ be a chain of finite index normal subgroups with $\bigcap N_i = \{1\}$. Then $$\lim_{i \to \infty} \operatorname{rk}_{N_i} = \operatorname{rk}_{\ell^2}\,.$$
+- Proven by W. Lück *(1994)* for matrices over $\mathbb{Q}[G]$.
+- Proven by G. Elek and E. Szabó *(2005)* for matrices over $\overline{\mathbb{Q}}[G]$.
+:::
+::::
+
+<!--
 - State the matrix-rank approximation theorem with its precise hypotheses.
 - Explain the von Neumann rank appearing in the limit.
 - Recover the cyclic-shift example when $G=\mathbb{Z}$.
 - Explain what finite computations now tell us about an infinite group.
-
+-->
 <!--
 Coefficient choice: the classical theorem is over Q[G]. If you state the
 version over C[G], include the appropriate extension and attribution.
@@ -346,6 +409,7 @@ https://link.springer.com/article/10.1007/BF01896404
 https://andreijaikin.wordpress.com/2024/05/06/the-luck-approximation/
 -->
 
+<!--
 ### Hyperbolic 3-manifolds and representation ranks {#hyperbolic-optional visibility="hidden"}
 
 - Introduce the fundamental group of a finite-volume hyperbolic 3-manifold.
@@ -361,12 +425,31 @@ algebraic groups, https://arxiv.org/html/2405.17360v2
 
 <!-- ARITHMETIC AND IWASAWA THEORY — approximately 13 minutes. -->
 
-### Arithmetic size through rank {#arithmetic-rank}
+### Back to $\mathbb{Z}$ {#arithmetic-rank}
 
-- Motivate measuring a finite $p$-group by its logarithmic size.
+- On $\mathbb{Z}$, we already saw $\operatorname{rk}_{\mathbb{Q}}$, $\operatorname{rk}_{\mathbb{F}_p}$ and $\operatorname{rk}_9$.
+
+:::: {.peek .fragment}
+::: {.callout-note title="Ranks through $\log$ size"}
+- Fix a prime $p$ and a positive integer $k$. For $A \in \operatorname{Mat}(\mathbb{Z})$, define
+$$\operatorname{rk}_{p^k}(A) = \frac{\log_p |\operatorname{im}(A \pmod{p^k})|}{k}\,.$$
+- Each $\operatorname{rk}_{p^k}(A)$ is a Sylvester matrix rank function over $\mathbb{Z}$.
+:::
+::::
+
+:::: {.peek .fragment}
+::: {.callout-tip title="Examples"}
+- We have $\operatorname{rk}_p = \operatorname{rk}_{\mathbb{F}_p}$.
+- Taking a $1\times 1$-matrix $n \in \mathbb{Z}$, $\operatorname{rk}_{p^k} = \frac{\max\{0,k-v_p(n)\}}{k}$.
+- In general, for $p$ fixed, $\operatorname{rk}_{p^k} \to \operatorname{rk}_{\mathbb{Q}}$ as $k \to \infty$.
+- The family $\{\operatorname{rk}_{p^k}\colon p\text{ prime,} k\geq 1\}$ sees prime factorizations!🔥
+:::
+::::
+
+<!-- Motivate measuring a finite $p$-group by its logarithmic size.
 - Introduce rank from normalized length over $\mathbb{Z}/p^k\mathbb{Z}$.
 - Use multiplication by $p$ as the first example.
-- Explain how a rank defect records the size of a cokernel.
+- Explain how a rank defect records the size of a cokernel.-->
 
 <!--
 Possible model: rho_{p,k}(A) = log_p |im(A mod p^k)| / k.
