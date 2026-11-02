@@ -225,7 +225,7 @@ Then introduce only the topology you need:
 - Over a field $\mathbb{F}$, the usual rank $\operatorname{rk}_{\mathbb{F}}(A)$.
 - Over the ring $\operatorname{Mat}_{n\times n}(\mathbb{F})$, $\operatorname{rk}(A) = \frac{\operatorname{rk}_{\mathbb{F}}(A)}{n}$.
 - The previous examples come from $\mathbb{Z} \to \mathbb{Q}$ and $\mathbb{Z} \to \mathbb{F}_p$.
-- There is even a rank function on $\mathbb{Z}$ that would assign $A$ the value $3/2$. *(foreshadowing...🕵️)*
+- There is even a rank function on $\mathbb{Z}$ that would assign $\begin{pmatrix} 1 & 2 & 3\\ 4 &5 &6\\ 7 & 8 & 9\end{pmatrix}$ the value $3/2$. *(foreshadowing...🕵️)*
 - $\mathbb{P}(R)$: the set of **all** Sylvester matrix rank functions on $R$.
   - Pointwise convergence: $\operatorname{rk}_i \to \operatorname{rk}$ if $\operatorname{rk}_i(A) \to \operatorname{rk}(A)$ for any matrix $A$.
   - Compact 🥰
