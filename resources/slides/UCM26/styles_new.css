@@ -307,3 +307,160 @@
 .reveal.on-title-slide::after {
   opacity: 0;
 }
+
+/* Final Iwasawa slide -------------------------------------------------- */
+.iwasawa-final-setup {
+  font-size: 0.88em;
+  margin: -0.10em 0 0.25em 0;
+}
+
+.iwasawa-final-columns {
+  align-items: center;
+  gap: 0.9em;
+}
+
+.triangle-stack {
+  min-height: 12.2em;
+  align-items: center;
+  justify-items: center;
+}
+
+.triangle-stack .triangle-stage {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.triangle-stack .triangle-stage img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* Your deck globally keeps future fragments faintly visible.
+   For the stacked SVG stages we need them genuinely hidden until revealed. */
+.reveal .slides section .triangle-stack .triangle-stage.fragment:not(.visible) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.reveal .slides section .triangle-stack .triangle-stage.fragment.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Likewise, keep the payoff formulas completely hidden before their step. */
+.reveal .slides section .hard-fragment.fragment:not(.visible) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.reveal .slides section .hard-fragment.fragment.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#iwasawa-final .column:last-child {
+  font-size: 0.82em;
+}
+
+#iwasawa-final .column:last-child .katex-display {
+  margin: 0.45em 0;
+}
+
+/* =========================================================
+   TITLE SLIDE
+   ========================================================= */
+
+.reveal .slides section.title-manual {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding-top: 2.0em;
+  padding-bottom: 1.7em;
+}
+
+/* slide-level: 3 means the title is an h3 */
+.reveal .title-manual h3 {
+  font-size: 2.05em;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.reveal .title-manual .title-tagline {
+  margin-top: 0.55em;
+  font-size: 0.82em;
+  line-height: 1.3;
+  opacity: 0.55;
+  max-width: 24em;
+}
+
+/* pushes author/institution toward the lower part of the slide */
+.reveal .title-manual .title-meta-block {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  padding-bottom: 0.5em;
+}
+
+.reveal .title-manual .author-name {
+  font-size: 1.05em;
+  font-weight: 500;
+}
+
+.reveal .title-manual .meta {
+  font-size: 0.76em;
+  line-height: 1.45;
+  opacity: 0.58;
+}
+
+.reveal .title-manual p {
+  margin: 0.18em 0;
+}
+
+/* =========================================================
+   THANKS SLIDE
+   ========================================================= */
+
+.reveal .slides section.thanks-slide {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 2.2em;
+  padding-bottom: 2.0em;
+}
+
+.reveal .thanks-slide h3 {
+  font-size: 1.7em;
+  margin: 0;
+}
+
+.reveal .thanks-slide .thanks-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 1.2em;
+}
+
+.reveal .thanks-slide .thanks-question {
+  font-size: 1.35em;
+  font-weight: 500;
+  margin-bottom: 2.1em;
+}
+
+.reveal .thanks-slide .thanks-reprise {
+  font-size: 0.86em;
+  line-height: 1.45;
+  opacity: 0.55;
+}
+
+.reveal .thanks-slide .thanks-reprise em {
+  opacity: 1;
+  font-size: 1.08em;
+}

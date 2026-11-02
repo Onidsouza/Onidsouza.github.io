@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.19">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <title>Iq Souza – How big is your matrix?</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,13 +19,10 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -178,37 +175,56 @@
 
 <section id="title" class="slide level3 title-manual">
 <h3>How big is your matrix?</h3>
-<!--
-WORKING OUTLINE — replace the visible bullets with your slide content.
-
-Core: manual title + 19 content slides, approximately 53 minutes.
-  Opening and rank functions:       12 minutes
-  Laurent polynomials and shifts:   20 minutes
-  General groups and approximation:  7 minutes
-  Arithmetic and Iwasawa theory:    13 minutes
-  Closing:                          1 minute
-
-Two optional slides are placed at their natural insertion points.
-Remove visibility="hidden" from their headings to include them.
-At 50 minutes, compress the space of rank functions and the closing.
-At 60 minutes, include one optional example and allow time for questions.
-
-Keep this file and styles_new.css in the same directory.
-Preview: quarto preview how-big-is-your-matrix.qmd
-Render:  quarto render how-big-is-your-matrix.qmd
--->
+<div class="title-tagline">
+<p>Sylvester rank functions</p>
+</div>
+<div class="title-meta-block">
 <div class="author-name">
 <p>Iq Souza</p>
 </div>
 <div class="meta">
 <p>Seminario de Álgebra, Geometría y Topología</p>
 <p>Universidad Complutense de Madrid</p>
-<p>3 de noviembre, 2026.</p>
+<p>3 de noviembre, 2026</p>
 </div>
+</div>
+<aside class="notes">
+<p><strong>GOAL: finish by 0:45</strong></p>
+<p><strong>Highlight</strong> - “Rank is one of the first ways we learn to measure the size of a matrix.” - The question today: what can “rank” mean once the coefficients are not in a field? - Roadmap in one sentence: one concrete example, a general approximation theorem, then an arithmetic application.</p>
+<p><strong>Glance over</strong> - Do not describe the whole outline. - Do not explain Sylvester ranks yet.</p>
+<p><strong>Transition</strong> “Let me start with the situation where we all agree what rank means.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- OPENING AND RANK FUNCTIONS — approximately 12 minutes. -->
 </section>
 <section id="ordinary-rank" class="slide level3">
 <h3>What does rank measure?</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 2:00</strong></p>
+<p><strong>Highlight</strong> - Over a field, several apparently different notions of size coincide. - Point briefly to image dimension, row reduction, minors, factorization. - The equivalence is what makes ordinary rank feel canonical.</p>
+<p><strong>Glance over</strong> - Do NOT explain each characterization. - No proof of equivalence. - The factorization characterization can just be mentioned.</p>
+<p><strong>Key sentence</strong> “Over a field there is one number answering all these questions. Over a general ring, these notions begin to separate.”</p>
+<p><strong>Transition</strong> “So already over the integers, which notion should we choose?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!--
 - Recall the equivalent descriptions of rank over a field.
 - Work through one small matrix using two of these descriptions.
@@ -226,10 +242,10 @@ Render:  quarto render how-big-is-your-matrix.qmd
 <div class="callout-content">
 <p>For <span class="math inline">A \in \operatorname{Mat}_{n\times m}(\mathbb{F})</span>, the following are equal:</p>
 <ul>
-<li class="fragment"><span class="math inline">\dim_{\mathbb{F}} \operatorname{im}(A)</span> (<span class="math inline">\operatorname{im}(A) = A\mathbb{F}^m</span>).</li>
-<li class="fragment">Largest <span class="math inline">j</span> such that <span class="math inline">A \sim \begin{pmatrix}\operatorname{Id}_j &amp; 0 \\ 0 &amp; 0\end{pmatrix}</span>.</li>
-<li class="fragment">Largest <span class="math inline">j</span> such that <span class="math inline">\det B \neq 0</span> for a <span class="math inline">j\times j</span>-submatrix <span class="math inline">B</span> of <span class="math inline">A</span>.</li>
-<li class="fragment">Smallest <span class="math inline">j</span> such that <span class="math inline">A = BC</span> with <span class="math inline">B \in \operatorname{Mat}_{n\times j}(\mathbb{F})</span> and <span class="math inline">C \in \operatorname{Mat}_{j \times m}(\mathbb{F})</span>.</li>
+<li><span class="math inline">\dim_{\mathbb{F}} \operatorname{im}(A)</span> (<span class="math inline">\operatorname{im}(A) = A\mathbb{F}^m</span>).</li>
+<li>Largest <span class="math inline">j</span> such that <span class="math inline">A \sim \begin{pmatrix}\operatorname{Id}_j &amp; 0 \\ 0 &amp; 0\end{pmatrix}</span>.</li>
+<li>Largest <span class="math inline">j</span> such that <span class="math inline">\det B \neq 0</span> for a <span class="math inline">j\times j</span>-submatrix <span class="math inline">B</span> of <span class="math inline">A</span>.</li>
+<li>Smallest <span class="math inline">j</span> such that <span class="math inline">A = BC</span> with <span class="math inline">B \in \operatorname{Mat}_{n\times j}(\mathbb{F})</span> and <span class="math inline">C \in \operatorname{Mat}_{j \times m}(\mathbb{F})</span>.</li>
 </ul>
 </div>
 </div>
@@ -237,21 +253,54 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </div>
 <!--::::-->
 <ul>
-<li class="fragment">What about general rings <span class="math inline">R</span>? What should measure its size?</li>
+<li>What about general rings <span class="math inline">R</span>? What should measure its size?</li>
 </ul>
 </section>
 <section id="different-ranks" class="slide level3">
 <h3>An example over <span class="math inline">\mathbb{Z}</span></h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 3:00</strong></p>
+<p><strong>Highlight</strong> - Same integer matrix, different answers after changing coefficients. - Over Q: rank 2. - Mod 3: rank 1. - Mod every other prime: rank 2.</p>
+<p><strong>Glance over</strong> - Do not perform row reduction. - Do not prove the “all other primes” statement; the Smith normal form is diag(1,3,0) if asked.</p>
+<p><strong>Key question</strong> “Which of these is the rank of the integer matrix? There is no reason to privilege only one.”</p>
+<p><strong>Transition</strong> “The approach I want to take is not to choose one rank, but to axiomatize what a reasonable rank should do.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p>Consider the matrix <span class="math inline">A = \begin{pmatrix}1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 6\\ 7 &amp; 8 &amp; 9\end{pmatrix}</span> over <span class="math inline">\mathbb{Z}</span>.</p>
 <ul>
-<li class="fragment">Over <span class="math inline">\mathbb{Q}</span>, <span class="math inline">A \sim \begin{pmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp;0\end{pmatrix}</span> has rank <span class="math inline">2</span>.</li>
-<li class="fragment"><span class="math inline">A \equiv \begin{pmatrix} 1 &amp; 2 &amp; 0\\ 1 &amp; 2 &amp; 0\\ 1 &amp; 2 &amp; 0\end{pmatrix}</span> has rank <span class="math inline">1</span> over <span class="math inline">\mathbb{F}_3</span>.</li>
-<li class="fragment">For all other primes, <span class="math inline">A</span> has rank <span class="math inline">2</span> over <span class="math inline">\mathbb{F}_p</span>.</li>
-<li class="fragment"><span class="math inline">\mathbb{Z}^3/A\mathbb{Z}^3 \simeq \mathbb{Z} \oplus \mathbb{Z}/3\mathbb{Z}</span>, so rank <span class="math inline">1 + \frac{\text{some}}{\text{fraction}}</span>?</li>
+<li>Over <span class="math inline">\mathbb{Q}</span>, <span class="math inline">A \sim \begin{pmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp;0\end{pmatrix}</span> has rank <span class="math inline">2</span>.</li>
+<li><span class="math inline">A \equiv \begin{pmatrix} 1 &amp; 2 &amp; 0\\ 1 &amp; 2 &amp; 0\\ 1 &amp; 2 &amp; 0\end{pmatrix}</span> has rank <span class="math inline">1</span> over <span class="math inline">\mathbb{F}_3</span>.</li>
+<li>For all other primes, <span class="math inline">A</span> has rank <span class="math inline">2</span> over <span class="math inline">\mathbb{F}_p</span>.</li>
 </ul>
 </section>
 <section id="sylvester-ranks" class="slide level3">
 <h3>Sylvester matrix rank functions</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 4:45</strong></p>
+<p><strong>Highlight</strong> Interpret the four axioms rather than reading them mechanically: - SMat1: normalization. - SMat2: composition cannot increase rank. - SMat3: ranks add under direct sums. - SMat4: block-triangular matrices contain at least the information of their diagonal blocks.</p>
+<p>Emphasize: - Values are allowed to be arbitrary non-negative real numbers. - This is deliberately much more flexible than ordinary integer-valued rank.</p>
+<p><strong>Glance over</strong> - No checking that ordinary rank satisfies the axioms. - No consequences of the axioms. - No module-rank formulation.</p>
+<p><strong>Transition</strong> “Where do these things actually come from? The easiest source is ordinary linear algebra.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div title="Definition    ($R$ associative, unital ring)">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -262,12 +311,12 @@ Render:  quarto render how-big-is-your-matrix.qmd
 <p><strong>Definition (<span class="math inline">R</span> associative, unital ring)</strong></p>
 </div>
 <div class="callout-content">
-<p>A <strong>Sylvester matrix rank function</strong> on <span class="math inline">R</span> is a map <span class="math inline">\operatorname{rk}\colon \operatorname{Mat}(R) \to \mathbb{R}_{\geq 0}</span> that associates to each rectangular matrix <span class="math inline">A</span> over <span class="math inline">R</span> a non-negative real number <span class="math inline">\operatorname{rk}(R)</span> satisfying:</p>
+<p>A <strong>Sylvester matrix rank function</strong> on <span class="math inline">R</span> is a map <span class="math inline">\operatorname{rk}\colon \operatorname{Mat}(R) \to \mathbb{R}_{\geq 0}</span> that associates to each rectangular matrix <span class="math inline">A</span> over <span class="math inline">R</span> a non-negative real number <span class="math inline">\operatorname{rk}(A)</span> satisfying:</p>
 <ul>
-<li class="fragment"><em>(SMat1)</em> <span class="math inline">\operatorname{rk}(0) = 0</span>, <span class="math inline">\operatorname{rk}(1) = 1</span>.</li>
-<li class="fragment"><em>(SMat2)</em> <span class="math inline">\operatorname{rk}(AB) \leq \operatorname{rk}(A)\,,\operatorname{rk}(B)</span>.</li>
-<li class="fragment"><em>(SMat3)</em> <span class="math inline">\operatorname{rk}\begin{pmatrix}A &amp; 0\\ 0 &amp; B\end{pmatrix} = \operatorname{rk}(A) + \operatorname{rk}(B)</span>.</li>
-<li class="fragment"><em>(SMat4)</em> <span class="math inline">\operatorname{rk}\begin{pmatrix}A &amp; C\\ 0 &amp; B\end{pmatrix} \geq \operatorname{rk}(A) + \operatorname{rk}(C)</span>.</li>
+<li><em>(SMat1)</em> <span class="math inline">\operatorname{rk}(0) = 0</span>, <span class="math inline">\operatorname{rk}(1) = 1</span>.</li>
+<li><em>(SMat2)</em> <span class="math inline">\operatorname{rk}(AB) \leq \min\{\operatorname{rk}(A)\,,\operatorname{rk}(B)\}</span>.</li>
+<li><em>(SMat3)</em> <span class="math inline">\operatorname{rk}\begin{pmatrix}A &amp; 0\\ 0 &amp; B\end{pmatrix} = \operatorname{rk}(A) + \operatorname{rk}(B)</span>.</li>
+<li><em>(SMat4)</em> <span class="math inline">\operatorname{rk}\begin{pmatrix}A &amp; C\\ 0 &amp; B\end{pmatrix} \geq \operatorname{rk}(A) + \operatorname{rk}(B)</span>.</li>
 </ul>
 </div>
 </div>
@@ -277,90 +326,59 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </section>
 <section id="representation-ranks" class="slide level3">
 <h3>Examples</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 6:45</strong></p>
+<p><strong>Highlight</strong> - Ordinary rank over a field. - Matrix algebras force normalization by 1/n. - General principle: a representation R -&gt; Mat_n(F) gives a rank function by normalized ordinary rank. - This explains the Q- and F_p-ranks on Z. - Foreshadow: there is a perfectly legitimate rank assigning our matrix 3/2.</p>
+<p>Then introduce only the topology you need: - P(R) = all rank functions. - Convergence means pointwise convergence on every fixed matrix. - Mention compactness in ONE sentence.</p>
+<p><strong>Glance over</strong> - Do not discuss why P(R) is compact. - Do not discuss extreme points or convex geometry. - Do not expand the 3/2 example yet.</p>
+<p><strong>Key sentence</strong> “For the rest of the talk, the basic question is: when a sequence of rank functions comes from larger and larger representations, does it converge, and what is its limit?”</p>
+<p><strong>Transition</strong> “Let’s answer that question completely for one ring.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <ul>
 <li class="fragment">Over a field <span class="math inline">\mathbb{F}</span>, the usual rank <span class="math inline">\operatorname{rk}_{\mathbb{F}}(A)</span>.</li>
 <li class="fragment">Over the ring <span class="math inline">\operatorname{Mat}_{n\times n}(\mathbb{F})</span>, <span class="math inline">\operatorname{rk}(A) = \frac{\operatorname{rk}_{\mathbb{F}}(A)}{n}</span>.</li>
 <li class="fragment">The previous examples come from <span class="math inline">\mathbb{Z} \to \mathbb{Q}</span> and <span class="math inline">\mathbb{Z} \to \mathbb{F}_p</span>.</li>
-<li class="fragment">Given <span class="math inline">A</span> over <span class="math inline">\mathbb{Z}</span>, take <span class="math display">\operatorname{rk}_9(A) = \max_{\substack{B\text{ is a square}\\\text{submatrix of }A}}\left\{\operatorname{size}(B) - \frac{v_3(\det B)}{2}\right\}\,.</span></li>
-<li class="fragment">For <span class="math inline">A = \begin{pmatrix}1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 6\\ 7 &amp; 8 &amp; 9\end{pmatrix}</span>, it gives <span class="math inline">\operatorname{rk}_9(A) = 1.5</span>.</li>
+<li class="fragment">There is even a rank function on <span class="math inline">\mathbb{Z}</span> that would assign <span class="math inline">A</span> the value <span class="math inline">3/2</span>. <em>(foreshadowing…🕵️)</em></li>
+<li class="fragment"><span class="math inline">\mathbb{P}(R)</span>: the set of <strong>all</strong> Sylvester matrix rank functions on <span class="math inline">R</span>.
+<ul>
+<li class="fragment">Pointwise convergence: <span class="math inline">\operatorname{rk}_i \to \operatorname{rk}</span> if <span class="math inline">\operatorname{rk}_i(A) \to \operatorname{rk}(A)</span> for any matrix <span class="math inline">A</span>.</li>
+<li class="fragment">Compact 🥰</li>
+</ul></li>
 </ul>
 <!--
 - Introduce normalized rank on $M_d(k)$ and explain the factor $1/d$.
 - Pull rank back along a ring homomorphism $R\longrightarrow M_d(k)$.
 - Check that an $m\times m$ identity matrix has rank $m$.
 - Reinterpret the examples over $\mathbb{Z}$ in this language.-->
-</section>
-<section id="rank-properties" class="slide level3">
-<h3>Properties</h3>
-<div title="Follows from *(SMat1)-(SMat4)*:">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Follows from <em>(SMat1)-(SMat4)</em>:</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">If <span class="math inline">A \in \operatorname{Mat}_{n\times m}(R)</span>, then <span class="math inline">\operatorname{rk}(A) \leq n\,, m</span>.</li>
-<li class="fragment">If <span class="math inline">A \in \operatorname{GL}_n(R)</span>, then <span class="math inline">\operatorname{rk}(A) = n</span>.</li>
-<li class="fragment">If <span class="math inline">A \in \operatorname{Mat}_{n\times m}(R)</span>, <span class="math inline">U \in \operatorname{GL}_n(R)</span> and <span class="math inline">V \in \operatorname{GL}_m(R)</span>, then <span class="math display">\operatorname{rk}(UAV) = \operatorname{rk}(A)\,.</span></li>
-<li class="fragment"><span class="math inline">\operatorname{rk}(\operatorname{Id}_n) = n</span>.</li>
-<li class="fragment">If <span class="math inline">B</span> is a submatrix of <span class="math inline">A</span>, then <span class="math inline">\operatorname{rk}(B) \leq \operatorname{rk}(A)</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="rank-space" class="slide level3">
-<h3>The space of rank functions</h3>
-<div class="peek fragment">
-<div title="$\mathbb{P}(R)$: the set of **all** Sylvester matrix rank functions on $R$.">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="math inline">\mathbb{P}(R)</span>: the set of <strong>all</strong> Sylvester matrix rank functions on <span class="math inline">R</span>.</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">Contained in the <span class="math inline">\mathbb{R}</span>-vector space <span class="math inline">\mathbb{R}^{\operatorname{Mat}(R)}</span></li>
-<li class="fragment">Convex: <span class="math inline">\operatorname{rk}\,, \operatorname{rk}' \in \mathbb{P}(R) \implies t\operatorname{rk} + (1-t)\operatorname{rk}' \in \mathbb{P}(R)</span></li>
-<li class="fragment">Compact 🥰</li>
-<li class="fragment">Poinwise convergence: <span class="math inline">\operatorname{rk}_i \to \operatorname{rk}</span> if <span class="math inline">\operatorname{rk}_i(A) \to \operatorname{rk}(A)</span> for any matrix <span class="math inline">A</span>.</li>
-<li class="fragment">Each matrix <span class="math inline">A \in \operatorname{Mat}(R)</span> gives a pseudo-metric: <span class="math display">d_A(\operatorname{rk},\operatorname{rk}') = |\operatorname{rk}(A) - \operatorname{rk}'(A)|\,.</span></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="peek fragment">
-<div title="Examples">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Examples</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">Over a field <span class="math inline">\mathbb{F}</span>, <span class="math inline">\mathbb{P}(\mathbb{F}) = \{\operatorname{rk}_{\mathbb{F}}\}</span>, for <span class="math inline">R = \operatorname{Mat}_n(\mathbb{F})</span>, <span class="math inline">\mathbb{P}(R) = \{\frac{\operatorname{rk}_{\mathbb{F}}}{n}\}</span>.</li>
-<li class="fragment"><span class="math inline">\mathbb{P}(\mathbb{Z})</span> has infinitely many extreme points.</li>
-<li class="fragment">If <span class="math inline">p_1 &lt; p_2 &lt; p_3 &lt;...</span> are the primes, then <span class="math inline">\operatorname{rk}_{\mathbb{F}_{p_i}} \to \operatorname{rk}_{\mathbb{Q}}</span> on <span class="math inline">\mathbb{Z}</span>.</li>
-<li class="fragment"><em>(A. Jaikin-Zapirain, D. López-Álvarez, 2020)</em> For <span class="math inline">R</span> a Dedekind domain (for example, a PID), extreme points of <span class="math inline">\mathbb{P}(R)</span> are classified by valuations on <span class="math inline">R</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!--
+### Properties {#rank-properties}
+
+::: {.callout-note title="Follows from *(SMat1)-(SMat4)*:"}
+- If $A \in \operatorname{Mat}_{n\times m}(R)$, then $\operatorname{rk}(A) \leq n\,, m$.
+- If $A \in \operatorname{GL}_n(R)$, then $\operatorname{rk}(A) = n$.
+- If $A \in \operatorname{Mat}_{n\times m}(R)$, $U \in \operatorname{GL}_n(R)$ and $V \in \operatorname{GL}_m(R)$, then $$\operatorname{rk}(UAV) = \operatorname{rk}(A)\,.$$
+- $\operatorname{rk}(\operatorname{Id}_n) = n$.
+- If $B$ is a submatrix of $A$, then $\operatorname{rk}(B) \leq \operatorname{rk}(A)$.
+::: -->
+<!--
+:::: {.peek .fragment}
+::: {.callout-tip title="Examples"}
+- Over a field $\mathbb{F}$, $\mathbb{P}(\mathbb{F}) = \{\operatorname{rk}_{\mathbb{F}}\}$, for $R = \operatorname{Mat}_n(\mathbb{F})$, $\mathbb{P}(R) = \{\frac{\operatorname{rk}_{\mathbb{F}}}{n}\}$.
+- $\mathbb{P}(\mathbb{Z})$ has infinitely many extreme points.
+- If $p_1 < p_2 < p_3 <...$ are the primes, then $\operatorname{rk}_{\mathbb{F}_{p_i}} \to \operatorname{rk}_{\mathbb{Q}}$ on $\mathbb{Z}$.
+- *(A. Jaikin-Zapirain, D. López-Álvarez, 2020)* For $R$ a Dedekind domain (for example, a PID), extreme points of $\mathbb{P}(R)$ are classified.
+:::
+:::: -->
 <!--
 - Explain pointwise convergence: evaluate every rank on a fixed matrix.
 - Show how to form convex combinations of rank functions.
@@ -369,6 +387,23 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </section>
 <section id="finite-shifts" class="slide level3">
 <h3>Laurent polynomials acting on <span class="math inline">\mathbb{C}^N</span></h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 9:15</strong></p>
+<p><strong>Highlight</strong> - R = C[t,t^{-1}]. - Send t to the cyclic shift. - A matrix A(t) becomes one large block matrix A_N. - Normalize ordinary rank by N: rk_N(A) = rk_C(A_N)/N.</p>
+<p>Explain WHY divide by N: - the representation has dimension N; - this keeps rk_N(1) = 1.</p>
+<p><strong>Glance over</strong> - Do not read the cyclic permutation matrix entry-by-entry. - Do not explain Laurent polynomials generally. - One sentence is enough for how block substitution works.</p>
+<p><strong>Transition</strong> “Before asking about arbitrary matrices, let’s compute the simplest possible example.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="peek fragment">
 <div title="$R = \mathbb{C}[t,t^{-1}]$">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -381,7 +416,7 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">For each <span class="math inline">N \geq 1</span>, map <span class="math inline">R \to \operatorname{Mat}_N(\mathbb{C})</span> sending <span class="math inline">t</span> to a cyclic permutation: <span class="math display">t \mapsto \begin{pmatrix}0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1\\ 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 0\end{pmatrix}\,.</span></li>
+<li>For each <span class="math inline">N \geq 1</span>, map <span class="math inline">R \to \operatorname{Mat}_N(\mathbb{C})</span> sending <span class="math inline">t</span> to a cyclic permutation: <span class="math display">t \mapsto \begin{pmatrix}0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0\\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 \\1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\end{pmatrix}\,.</span></li>
 </ul>
 </div>
 </div>
@@ -400,9 +435,9 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment"><span class="math inline">t(z_1\,,z_2\,,\ldots\,,z_N) = (z_2\,,z_3\,,\ldots\,,z_1)</span>.</li>
-<li class="fragment">Each element of <span class="math inline">R</span> gives a <span class="math inline">\mathbb{C}</span>-linear map <span class="math inline">\mathbb{C}^N \to \mathbb{C}^N</span>. Each <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> gives a block matrix <span class="math inline">A_N \in \operatorname{Mat}_{nN\times mN}(\mathbb{C})</span>.</li>
-<li class="fragment">We have a Sylvester rank functon <span class="math inline">\operatorname{rk}_N</span> on <span class="math inline">R</span> by taking <span class="math display">\operatorname{rk}_N(A(t)) = \frac{\operatorname{rk}_{\mathbb{C}} A_N}{N}\,.</span></li>
+<li><span class="math inline">t(z_1\,,z_2\,,\ldots\,,z_N) = (z_2\,,z_3\,,\ldots\,,z_1)</span>.</li>
+<li>Each element of <span class="math inline">R</span> gives a <span class="math inline">\mathbb{C}</span>-linear map <span class="math inline">\mathbb{C}^N \to \mathbb{C}^N</span>. Each <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> gives a block matrix <span class="math inline">A_N \in \operatorname{Mat}_{nN\times mN}(\mathbb{C})</span>.</li>
+<li>We have a Sylvester rank functon <span class="math inline">\operatorname{rk}_N</span> on <span class="math inline">R</span> by taking <span class="math display">\operatorname{rk}_N(A(t)) = \frac{\operatorname{rk}_{\mathbb{C}} A_N}{N}\,.</span></li>
 </ul>
 </div>
 </div>
@@ -418,17 +453,29 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </section>
 <section id="shift-kernel" class="slide level3">
 <h3>An example computation</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 11:00</strong></p>
+<p><strong>Highlight</strong> - Take x = t - 1. - Kernel consists exactly of constant vectors. - Therefore ordinary rank is N - 1. - Normalized rank is 1 - 1/N -&gt; 1.</p>
+<p>Pause briefly at: “Does rk_N itself converge as a rank function?”</p>
+<p><strong>Glance over</strong> - No need to write a basis for the kernel. - Do not add extra examples such as t^d - 1.</p>
+<p><strong>Transition</strong> “To answer this for an arbitrary matrix, the right coordinates are Fourier coordinates.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p>Consider the <span class="math inline">1\times 1</span> matrix <span class="math inline">x = t-1</span> in <span class="math inline">\mathbb{C}[t,t^{-1}]</span>.</p>
 <ul>
-<li class="fragment"><span class="math inline">\ker x_N = \{(z_1\,,\ldots\,,z_N) \in \mathbb{C}^n\colon z_1 = z_2 = \cdots = z_N\}</span>.</li>
+<li class="fragment"><span class="math inline">\ker x_N = \{(z_1\,,\ldots\,,z_N) \in \mathbb{C}^N\colon z_1 = z_2 = \cdots = z_N\}</span>.</li>
 <li class="fragment">Since <span class="math inline">\ker x_N</span> is <span class="math inline">1</span>-dimensional, <span class="math inline">\operatorname{rk}_{\mathbb{C}} x_N = N-1</span>.</li>
 <li class="fragment"><span class="math inline">\operatorname{rk}_N(x) = \frac{N-1}{N}</span>.</li>
-<li class="fragment">In particular, <span class="math inline">\operatorname{rk}_N(x) \to 1</span> as <span class="math inline">N \to 1</span>. Does <span class="math inline">\operatorname{rk}_N</span> converge? 🤔</li>
-<li class="fragment">Another element: fix <span class="math inline">d \in \mathbb{Z}</span> and let <span class="math inline">y = t^d - 1</span>. Then:
-<ul>
-<li class="fragment"><span class="math inline">\dim \ker y = \gcd(d,N)</span> <em>(decompose <span class="math inline">(t_N)^d</span> into cycles)</em>.</li>
-<li class="fragment"><span class="math inline">\operatorname{rk}_N(y) = \frac{N - \gcd(d,N)}{N} \to 1</span> as <span class="math inline">N \to \infty</span>. 🤔🤔</li>
-</ul></li>
+<li class="fragment">In particular, <span class="math inline">\operatorname{rk}_N(x) \to 1</span> as <span class="math inline">N \to \infty</span>. Does <span class="math inline">\operatorname{rk}_N</span> converge? 🤔</li>
 </ul>
 <!--
 - Identify the kernel of $S_N-I$ as the constant vectors.
@@ -437,6 +484,31 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </section>
 <section id="finite-fourier" class="slide level3">
 <h3>The finite Fourier transform</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 14:00</strong></p>
+<p><strong>Highlight</strong> This is an important slide — explain it.</p>
+<ol type="1">
+<li>Identify C^N with periodic sequences.</li>
+<li>Fourier modes a_j^(k) form a basis.</li>
+<li>The cyclic shift acts diagonally: eigenvalue zeta_N^k on the k-th mode.</li>
+<li>Therefore a polynomial f(t_N) acts on that mode by f(zeta_N^k).</li>
+<li>For a matrix A(t), Fourier transform produces N small blocks A(zeta_N^k).</li>
+</ol>
+<p>Then emphasize the payoff: rk_N(A) = (1/N) sum_k rk_C A(zeta_N^k).</p>
+<p><strong>Key sentence</strong> “One huge nN-by-mN matrix has decomposed into N ordinary n-by-m matrices.”</p>
+<p><strong>Glance over</strong> - Do not discuss Fourier normalization conventions. - Do not explain the DFT as signal processing. - “Frequency” can be a one-word intuition, not a detour.</p>
+<p><strong>Transition</strong> “Now this average has an obvious candidate for its limit: generic rank.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p>Identify <span class="math inline">\mathbb{C}^N</span> with the vector space <span class="math inline">\mathcal{P}_N</span> all complex sequences <span class="math inline">\{a_j\}_{j\geq 0}</span> which are <span class="math inline">N</span>-periodic: <span class="math inline">a_j = a_{j+N}</span> for all <span class="math inline">j \geq 0</span>.</p>
 <div class="peek fragment">
 <div title="Fourier transform">
@@ -466,61 +538,58 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </section>
 <section id="generic-rank" class="slide level3">
 <h3>Rank over the field of fractions</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 18:00</strong></p>
+<p><strong>Highlight</strong> THIS IS ONE OF THE TWO PROOFS TO ACTUALLY EXPLAIN.</p>
+<p>Let j = rk_{C(t)} A.</p>
+<ul>
+<li>Some j-by-j minor B(t) has nonzero determinant.</li>
+<li>A nonzero Laurent polynomial has only finitely many zeros in C^*.</li>
+<li>Away from those finitely many bad points, B(z) has full rank j.</li>
+<li>Therefore almost all N-th roots contribute rank at least j.</li>
+<li>All (j+1)-minors vanish identically, so specialization never has rank &gt; j.</li>
+</ul>
+<p>Conclude: rk_N(A) -&gt; rk_{C(t)}(A).</p>
+<p><strong>Glance over</strong> - Do not linger on the displayed inequality algebraically. - The idea is “finitely many exceptional roots / N”. - No algebraic geometry language unless useful for the room.</p>
+<p><strong>Key sentence</strong> “We have proved our first approximation theorem completely.”</p>
+<p><strong>Transition</strong> “But there is a second, apparently very different, way of producing a rank on the same ring.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p><span class="math inline">R = \mathbb{C}[t,t^{-1}]</span> has a field of fractions <span class="math inline">\mathbb{C}(t)</span>, rational functions in <span class="math inline">t</span>.</p>
 <ul>
 <li class="fragment"><span class="math inline">\operatorname{rk}_{\mathbb{C}(t)}(A(t)) = j</span> if <span class="math inline">j</span> is the size of the largest square submatrix <span class="math inline">B(t)</span> of <span class="math inline">A(t)</span> such that <span class="math inline">\det B(t) \neq 0</span> identically.</li>
-<li class="fragment"><span class="math inline">\det B(t)</span> has only finitely many zeroes in <span class="math inline">\mathbb{C}</span>, say <span class="math inline">M</span> of them. <span class="math display">\operatorname{rk}_N(A(t)) \geq \operatorname{rk}_N(B(t)) = \frac{1}{N} \sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}} B(\zeta_N^k) \geq \frac{j(N-M)}{N}\,.</span></li>
-<li class="fragment"><em>(Homework)</em> <span class="math inline">\operatorname{rk}_N(A(t)) \leq j</span> for all <span class="math inline">N</span>.</li>
+<li class="fragment"><span class="math inline">\det B(t)</span> has only finitely many zeroes in <span class="math inline">\mathbb{C}^\times</span>, say <span class="math inline">M</span> of them. <span class="math display">\operatorname{rk}_N(A(t)) \geq \operatorname{rk}_N(B(t)) = \frac{1}{N} \sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}} B(\zeta_N^k) \geq \frac{j(N-M)}{N}\,.</span></li>
+<li class="fragment"><span class="math inline">\operatorname{rk}_N(A(t)) \leq j</span> for all <span class="math inline">N</span> since minors of size <span class="math inline">j+1</span> vanish identically.</li>
 <li class="fragment">We have <span class="math inline">\operatorname{rk}_N \to \operatorname{rk}_{\mathbb{C}(t)}</span> as <span class="math inline">N \to \infty</span>!</li>
 </ul>
 <!--- Introduce the usual rank of $A(t)$ over $\mathbb{C}(t)$.
 - Interpret this as the generic rank of the evaluations $A(z)$.
 - Use a nonzero maximal minor to isolate finitely many exceptional points.-->
-</section>
-<section id="infinite-shift" class="slide level3">
-<h3>The infinite shift</h3>
-<div class="peek fragment">
-<div title="$\ell^2(\mathbb{Z})$ and the shift operator $T$">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="math inline">\ell^2(\mathbb{Z})</span> and the shift operator <span class="math inline">T</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">Consider now the Hilbert space <span class="math display">\ell^2(\mathbb{Z}) = \left\{(a_i)_{i \in \mathbb{Z}} \colon a_i \in \mathbb{C}\,, \sum_{i \in \mathbb{Z}} |a_i|^2 &lt; \infty\right\}\,.</span></li>
-<li class="fragment">Let <span class="math inline">\mathcal{B}(\ell^2(\mathbb{Z}))</span> be its ring of bounded <span class="math inline">\mathbb{C}</span>-linear operators.</li>
-<li class="fragment">Let <span class="math inline">T(a_i) = (b_i)_{i \in \mathbb{Z}}</span>, where <span class="math inline">b_i = a_{i+1}</span>. Then <span class="math inline">T \in \mathcal{B}(\ell^2(\mathbb{Z}))</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="peek fragment">
-<div title="Hilbert space operators">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Hilbert space operators</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">We have a map <span class="math inline">R \to \mathcal{B}(\ell^2(\mathbb{Z}))</span> given by <span class="math inline">t \mapsto T</span>.</li>
-<li class="fragment">Any matrix <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> gives a bounded map <span class="math inline">A(T)\colon \ell^2(\mathbb{Z})^m \to \ell^2(\mathbb{Z})^n</span> between Hilbert spaces.</li>
-<li class="fragment">The closure <span class="math inline">\overline{A(T)\ell^2(\mathbb{Z})^m}</span> of its image is a Hilbert subspace of <span class="math inline">\ell^2(\mathbb{Z})^n</span>. Can we assign it a finite “dimension”?</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!--
+### The infinite shift {#infinite-shift}
+
+::: {.callout-tip title="$\ell^2(\mathbb{Z})$ and the shift operator $T$"}
+- Consider now the Hilbert space $$\ell^2(\mathbb{Z}) = \left\{(a_i)_{i \in \mathbb{Z}} \colon a_i \in \mathbb{C}\,, \sum_{i \in \mathbb{Z}} |a_i|^2 < \infty\right\}\,.$$ 
+- Let $\mathcal{B}(\ell^2(\mathbb{Z}))$ be its ring of bounded $\mathbb{C}$-linear operators.
+- Let $T(a_i) = (b_i)_{i \in \mathbb{Z}}$, where $b_i = a_{i+1}$. Then $T \in \mathcal{B}(\ell^2(\mathbb{Z}))$.
+:::-->
+<!--
+:::: {.peek .fragment}
+::: {.callout-important title="Hilbert space operators"}
+- We have a map $R \to \mathcal{B}(\ell^2(\mathbb{Z}))$ given by $t \mapsto T$.
+- Any matrix $A(t) \in \operatorname{Mat}_{n\times m}(R)$ gives a bounded map $A(T)\colon \ell^2(\mathbb{Z})^m \to \ell^2(\mathbb{Z})^n$ between Hilbert spaces.
+- The closure $\overline{A(T)\ell^2(\mathbb{Z})^m}$ of its image is a Hilbert subspace of $\ell^2(\mathbb{Z})^n$. Can we assign it a finite "dimension"?
+:::
+::::-->
 <!--- Replace the finite cycle by the integer line.
 - Let $t$ act by the bilateral shift on $\ell^2(\mathbb{Z})$.
 - Explain how a Laurent polynomial matrix gives an operator between Hilbert spaces.
@@ -528,6 +597,26 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </section>
 <section id="von-neumann-rank" class="slide level3">
 <h3>The REAL Fourier transform</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 23:00</strong></p>
+<p><strong>Highlight</strong> - Replace the finite cycle by the infinite line Z. - Fourier transform identifies l^2(Z) with L<sup>2(S</sup>1). - Under this transform, the shift becomes multiplication by z. - Thus A(t) acts pointwise as A(z).</p>
+<p>Introduce the analytic rank: rk_{S^1}(A) = integral over S^1 of the ordinary pointwise rank.</p>
+<p>Explain in one sentence why this is a von Neumann rank: - pointwise project onto im A(z); - trace = integral of the finite-dimensional trace = integral of pointwise rank.</p>
+<p>Then: - pointwise rank equals generic rank except at finitely many z; - finite sets have Haar measure zero; - hence rk_{S^1} = rk_{C(t)}.</p>
+<p><strong>Glance over</strong> - Do not develop von Neumann algebras. - Do not prove measurability of the image projection. - Do not discuss closure of image unless someone asks. - Do not prove that integration satisfies all Sylvester axioms.</p>
+<p><strong>Key contrast</strong> “Finite Fourier transform gave averages over roots of unity; infinite Fourier transform gives an integral over the whole circle.”</p>
+<p><strong>Transition</strong> “Let me summarize what just happened before generalizing it.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="peek fragment">
 <div title="$L^2$-integrable functions on the circle">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -540,35 +629,23 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">Let <span class="math inline">f(z)</span> be an <span class="math inline">L^2</span>-integrable function on the unit circle <span class="math inline">S^1 \subseteq \mathbb{C}</span>. The Fourier transform <span class="math inline">\mathcal{F}</span> gives <span class="math display">\mathcal{F}(f)(\xi) = \frac{1}{2\pi}\int_0^{2\pi} f(\theta)e^{-i\xi\theta}d\theta = \sum_{j\in \mathbb{Z}} a_j e^{ij\theta}</span> with <span class="math inline">(a_j) \in \ell^2(\mathbb{Z})</span>.</li>
-<li class="fragment">If <span class="math inline">T</span> is the shift in <span class="math inline">\ell^2(\mathbb{Z})</span>, then <span class="math display">T\mathcal{F}(f)(\xi) = \mathcal{F}(z\cdot f)(\xi)</span> corresponds to multiplication by <span class="math inline">z</span> in <span class="math inline">L^2(S^1)</span>.</li>
+<li><span class="math inline">\ell^2(\mathbb{Z}) = \left\{(a_j)_{j \in \mathbb{Z}} \colon a_j \in \mathbb{C}\,, \sum_{j \in \mathbb{Z}} |a_j|^2 &lt; \infty\right\}\,.</span></li>
+<li>The <em>(inverse)</em> Fourier transform <span class="math inline">\mathcal{F}\colon \ell^2(\mathbb{Z}) \to L^2(S^1)</span> is given by <span class="math display">\mathcal{F}((a_j)_{j \in \mathbb{Z}}) = \sum_{j \in \mathbb{Z}} a_jz^{-j}\,.</span></li>
+<li>If <span class="math inline">T</span> is the shift <span class="math inline">(a_j) \mapsto (a_{j+1})</span> in <span class="math inline">\ell^2(\mathbb{Z})</span>, then <span class="math display">\mathcal{F}(T(a_j)_{j \in \mathbb{Z}}) = z\mathcal{F}((a_j)_{j \in \mathbb{Z}})</span> corresponds to multiplication by <span class="math inline">z</span> in <span class="math inline">L^2(S^1)</span>.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="peek fragment">
-<div title="The von Neumann algebra">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>The von Neumann algebra</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment"><span class="math inline">L^\infty(S^1)</span> is the ring of bounded functions on <span class="math inline">S^1</span>. It acts on <span class="math inline">L^2(S^1)</span> as bounded operators.</li>
-<li class="fragment"><span class="math inline">L^\infty(S^1)</span> has a trace: <span class="math display">\operatorname{tr}(g) = \frac{1}{2\pi}\int_0^{2\pi}g(e^{i\theta})d\theta\,.</span></li>
-<li class="fragment">Every <span class="math inline">L^\infty(S^1)</span>-stable closed subspace <span class="math inline">V</span> of <span class="math inline">L^2(S^1)^n</span> has a projection <span class="math inline">p_V\colon L^2(S^1)^n \to V</span> in <span class="math inline">L^\infty(S^1)</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!--
+:::: {.peek .fragment}
+::: {.callout-tip title="The von Neumann algebra"}
+- $L^\infty(S^1)$ is the ring of bounded functions on $S^1$. It acts on $L^2(S^1)$ as bounded operators.
+- $L^\infty(S^1)$ has a trace: $$\operatorname{tr}(g) = \frac{1}{2\pi}\int_0^{2\pi}g(e^{i\theta})d\theta\,.$$
+- Every $L^\infty(S^1)$-stable closed subspace $V$ of $L^2(S^1)^n$ has a projection $p_V\colon L^2(S^1)^n \to V$ in $\operatorname{Mat}_{n\times n}(L^\infty(S^1))$.
+:::
+:::: -->
 <div class="peek fragment">
 <div title="von Neumann rank">
 <div class="callout callout-important callout-titled callout-style-default">
@@ -581,8 +658,10 @@ Render:  quarto render how-big-is-your-matrix.qmd
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">The map <span class="math inline">t \mapsto z</span> gives a ring map <span class="math inline">R = \mathbb{C}[t,t^{-1}] \to L^\infty(S^1)</span>.</li>
-<li class="fragment">For <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span>, let <span class="math inline">p_A \in L^\infty(S^1)</span> be the projection of <span class="math inline">L^2(S^1)^m</span> onto <span class="math inline">\overline{A(z)L^2(S^1)^n}</span>. Then <span class="math inline">\operatorname{rk}_{S^1}(A(t)) = \operatorname{tr}(p_A)</span> is a Sylvester rank function on <span class="math inline">R</span>.</li>
+<li>The map <span class="math inline">t \mapsto z</span> gives a ring map <span class="math inline">R = \mathbb{C}[t,t^{-1}] \to L^\infty(S^1)</span>.</li>
+<li>A matrix <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> acts pointwise as matrix multiplication by <span class="math inline">A(z)</span> on <span class="math inline">L^2(S^1)^m</span>.</li>
+<li>Integration is a rank function: <span class="math display">\operatorname{rk}_{S^1}(A(t)) = \frac{1}{2\pi} \int_0^{2\pi} \operatorname{rk}_{\mathbb{C}}(A(e^{i\theta}))d\theta\,.</span></li>
+<li><span class="math inline">\operatorname{rk}_{\mathbb{C}(t)} = \operatorname{rk}_{S^1}</span>!</li>
 </ul>
 </div>
 </div>
@@ -600,62 +679,48 @@ Do not identify C(t) with a subring of L^infinity(S^1).
 Reference: Anantharaman–Popa, An Introduction to II_1 Factors, Example 1.3.8.
 https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 -->
-</section>
-<section id="von-neumann-rank-2" class="slide level3">
-<h3>The REAL Fourier transform, continued</h3>
-<ul>
-<li class="fragment">For a matrix <span class="math inline">A(t) \in \operatorname{Mat}_{n\times m}(R)</span> with projection <span class="math inline">p_A \in L^\infty(S^1)</span>, we have: <span class="math display">\operatorname{rk}_{S^1}(A(t)) = \operatorname{tr}(p_A) = \frac{1}{2\pi}\int_0^{2\pi} \operatorname{rk}_{\mathbb{C}}(A(e^{i\theta})) d\theta\,.</span></li>
-<li class="fragment">On <span class="math inline">S^1</span>, <span class="math inline">\operatorname{rk}_{\mathbb{C}}(A(z))</span> is an almost-everywhere constant function of <span class="math inline">z</span>, equal to <span class="math inline">\operatorname{rk}_{\mathbb{C}(t)}(A(t))</span>.</li>
-<li class="fragment">On <span class="math inline">\mathbb{C}[t,t^{-1}]</span>, we have <span class="math inline">\operatorname{rk}_{\mathbb{C}(t)} = \operatorname{rk}_{S^1}</span>!</li>
-</ul>
+<!--
+### The REAL Fourier transform, continued {#von-neumann-rank-2}
+
+- For a matrix $A(t) \in \operatorname{Mat}_{n\times m}(R)$ with projection $p_A \in \operatorname{Mat}_{n\times n}(L^\infty(S^1))$, we have: $$\operatorname{rk}_{S^1}(A(t)) = \operatorname{tr}_n(p_A) = \frac{1}{2\pi}\int_0^{2\pi} \operatorname{rk}_{\mathbb{C}}(A(e^{i\theta})) d\theta\,.$$
+- On $S^1$, $\operatorname{rk}_{\mathbb{C}}(A(z))$ is an almost-everywhere constant function of $z$, equal to $\operatorname{rk}_{\mathbb{C}(t)}(A(t))$.
+- On $\mathbb{C}[t,t^{-1}]$, we have $\operatorname{rk}_{\mathbb{C}(t)} = \operatorname{rk}_{S^1}$!-->
 </section>
 <section id="three-ranks" class="slide level3">
 <h3>Summary so far</h3>
-<div class="peek fragment">
-<div title="Three ranks on $\mathbb{C}[t,t^{-1}]$">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Three ranks on <span class="math inline">\mathbb{C}[t,t^{-1}]</span></strong></p>
-</div>
-<div class="callout-content">
+<aside class="notes">
+<p><strong>GOAL: finish by 24:30</strong></p>
+<p><strong>Highlight</strong> Point first to: lim rk_N = rk_{S^1} = rk_{C(t)}.</p>
+<p>Then reveal/reinterpret: C[t,t^{-1}] = C[Z], C^N = C[Z/NZ].</p>
+<p><strong>Main sentence</strong> “So what looked like an exercise about Laurent polynomials was really an approximation theorem for the group algebra of Z.”</p>
+<p><strong>Glance over</strong> - Do not re-explain any of the three rank constructions. - Do not repeat the proof.</p>
+<p><strong>Transition</strong> “Now replace Z by an arbitrary residually finite group.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <ul>
-<li class="fragment"><span class="math inline">\operatorname{rk}_N(A(t)) = \frac{1}{N}\sum_{k=0}^{N-1} \operatorname{rk}_{\mathbb{C}}(A(\zeta_N^k))</span></li>
-<li class="fragment"><span class="math inline">\operatorname{rk}_{\mathbb{C}(t)}(A(t)) = \text{size of largest non-zero minor}</span></li>
-<li class="fragment"><span class="math inline">\operatorname{rk}_{S^1}(A(t)) = \frac{1}{2\pi}\int_0^{2\pi} \operatorname{rk}_{\mathbb{C}} A(e^{i\theta}) d\theta</span></li>
-<li class="fragment"><span class="math inline">\lim_{N \to \infty} \operatorname{rk}_N = \operatorname{rk}_{S^1} = \operatorname{rk}_{\mathbb{C}(t)}</span> on <span class="math inline">\mathbb{P}(\mathbb{C}[t,t^{-1}])</span>.</li>
+<li><span class="math display">\lim_{N \to \infty} \operatorname{rk}_N = \operatorname{rk}_{S^1} = \operatorname{rk}_{\mathbb{C}(t)}</span></li>
+<li><span class="math display">\mathbb{C}[t,t^{-1}] \simeq \mathbb{C}[\mathbb{Z}]\,,\quad \mathbb{C}^N \simeq \mathbb{C}[\mathbb{Z}/N\mathbb{Z}]\,.</span></li>
+<li>So what we have really proved is an approximation statement for the group algebra of <span class="math inline">\mathbb{Z}</span>. What about other group algebras?</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="peek fragment">
-<div title="Another viewpoint">
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Another viewpoint</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">We can see <span class="math inline">\mathbb{C}[t,t^{-1}]</span> as the group ring <span class="math inline">\mathbb{C}[\mathbb{Z}]</span> where <span class="math inline">\langle t \rangle \simeq \mathbb{Z}</span>.</li>
-<li class="fragment">The action on <span class="math inline">\mathbb{C}^N</span> is equivalent to the action on <span class="math inline">\mathbb{C}[\mathbb{Z}/N\mathbb{Z}]</span>.</li>
-<li class="fragment">The groups <span class="math inline">\mathbb{Z}/N\mathbb{Z}</span> “approximate” <span class="math inline">\mathbb{Z}</span> as <span class="math inline">N</span> grows.</li>
-<li class="fragment">The roots of unity <span class="math inline">\{1\,,\zeta_N\,,\ldots\,,\zeta_N^{N-1}\}</span> “approximate” <span class="math inline">S^1</span> as <span class="math inline">N</span> grows.</li>
-<li class="fragment">Is there an analogue for more general group rings?</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!--
+:::: {.peek .fragment .incremental}
+::: {.callout-warning title="Another viewpoint"}
+- We can see $\mathbb{C}[t,t^{-1}]$ as the group ring $\mathbb{C}[\mathbb{Z}]$ where $\langle t \rangle \simeq \mathbb{Z}$.
+- The action on $\mathbb{C}^N$ is equivalent to the action on $\mathbb{C}[\mathbb{Z}/N\mathbb{Z}]$.
+- The groups $\mathbb{Z}/N\mathbb{Z}$ "approximate" $\mathbb{Z}$ as $N$ grows.
+- The uniform measures in the sets $\{1\,,\zeta_N\,,\ldots\,,\zeta_N^{N-1}\}$ approximate the Haar measure in $S^1$ as $N$ grows.
+- Is there an analogue for more general group rings?
+:::
+:::: -->
 <!--- Put the finite cyclic ranks, fraction-field rank, and von Neumann rank side by side.
 - State the equality of the two infinite constructions and the convergence of $\rho_N$.
 - Give the proof by counting the finitely many exceptional evaluations.
@@ -664,6 +729,23 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 </section>
 <section id="group-rings" class="slide level3">
 <h3>Residually finite groups</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 27:00</strong></p>
+<p><strong>Highlight</strong> - Residually finite = finite quotients eventually detect every nontrivial element. - We choose finite-index normal subgroups shrinking to 1. - A matrix over C[G] acts on C[G/N]. - Normalize ordinary rank by [G:N].</p>
+<p>Make the analogy explicit: Z/NZ has simply been replaced by G/N.</p>
+<p><strong>Glance over</strong> - Do not explain convolution. - Do not list many examples of residually finite groups. - Do not prove the equivalent definition.</p>
+<p><strong>Transition</strong> “The finite side is now clear. What should replace the circle on the infinite side?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="peek fragment">
 <div title="Definition">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -676,9 +758,8 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">A group <span class="math inline">G</span> is <strong>residually finite</strong> if for every <span class="math inline">1 \neq g \in G</span> there exists a finite index normal subgroup <span class="math inline">N \unlhd G</span> not containing <span class="math inline">g</span>.</li>
-<li class="fragment">Equivalently, the intersection of all finite index normal subgroups of <span class="math inline">G</span> is <span class="math inline">\{1\}</span>.</li>
-<li class="fragment">Lots of residually finite groups: f.g. abelian, free, surface groups, f.g. subgroups of <span class="math inline">\mathbb{GL}_n(\mathbb{C})</span>…</li>
+<li>A group <span class="math inline">G</span> is <strong>residually finite</strong> if for every <span class="math inline">1 \neq g \in G</span> there exists a finite index normal subgroup <span class="math inline">N \unlhd G</span> not containing <span class="math inline">g</span>.</li>
+<li>Equivalently, the intersection of all finite index normal subgroups of <span class="math inline">G</span> is <span class="math inline">\{1\}</span>.</li>
 </ul>
 </div>
 </div>
@@ -697,30 +778,9 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">The group algebra <span class="math inline">\mathbb{C}[G] = \{\sum_{g \in G} a_gg\colon a_g \in \mathbb{C}\text{, almost all }0\}</span>.</li>
-<li class="fragment"><span class="math inline">\mathbb{C}[G]</span> is the algebra of finitely supported functions, with convolution.</li>
-<li class="fragment">For <span class="math inline">N \unlhd G</span> of finite index <span class="math inline">(G\colon N)</span>, <span class="math inline">\mathbb{C}[G/N]</span> is finite dimensional. Each matrix <span class="math inline">A \in \operatorname{Mat}_{n\times m}(\mathbb{C}[G])</span> gives a matrix <span class="math inline">A_N \in \operatorname{Mat}_{n(G\colon N)\times m(G\colon N)}(\mathbb{C})</span>.</li>
-<li class="fragment"><span class="math inline">\operatorname{rk}_N(A) = \frac{1}{(G\colon N)} \operatorname{rk}_{\mathbb{C}}(A_N)</span> is a Sylvester rank function.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="peek fragment">
-<div title="Chains">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Chains</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">Choose a chain <span class="math inline">\cdots N_2 &lt; N_1 &lt; G</span> of normal subgroups of finite index with <span class="math inline">\bigcap N_i = \{1\}</span>.</li>
-<li class="fragment">What do the ranks <span class="math inline">\operatorname{rk}_{N_i} \in \mathbb{P}(\mathbb{C}[G])</span> approximate?</li>
+<li>The group algebra <span class="math inline">\mathbb{C}[G] = \{\sum_{g \in G} a_gg\colon a_g \in \mathbb{C}\text{, almost all }0\}</span>.</li>
+<li>For <span class="math inline">N \unlhd G</span> of finite index <span class="math inline">(G\colon N)</span>, <span class="math inline">\mathbb{C}[G/N]</span> is finite dimensional. Each matrix <span class="math inline">A \in \operatorname{Mat}_{n\times m}(\mathbb{C}[G])</span> gives a matrix <span class="math inline">A_N \in \operatorname{Mat}_{n(G\colon N)\times m(G\colon N)}(\mathbb{C})</span>.</li>
+<li><span class="math inline">\operatorname{rk}_N(A) = \frac{1}{(G\colon N)} \operatorname{rk}_{\mathbb{C}}(A_N)</span> is a Sylvester rank function.</li>
 </ul>
 </div>
 </div>
@@ -734,6 +794,25 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 </section>
 <section id="luck-approximation" class="slide level3">
 <h3>Residually finite groups, continued</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 31:00</strong></p>
+<p><strong>Highlight</strong> - C[G] acts on l^2(G). - There is a canonical trace, so projections have a von Neumann dimension/rank. - This is exactly the analogue of L<sup>(S</sup>1) for G = Z.</p>
+<p>Then state Lück approximation clearly: rk_{N_i}(A) -&gt; rk_{l^2}(A).</p>
+<p>Pause after the formula.</p>
+<p><strong>Interpretation</strong> “For Z we proved this with Fourier transform and zeros of polynomials. For a general group there is no diagonalization, but the same convergence survives.”</p>
+<p><strong>Glance over</strong> - Do not define N(G) carefully. - Do not read all three historical attribution bullets. - Say: “Lück proved the rational case; later work extends this to the complex coefficients used here.”</p>
+<p><strong>Transition</strong> “So rank functions can turn finite approximations into information about an infinite object. Now I want to change direction and show that they can also remember arithmetic torsion.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="peek fragment">
 <div title="$\ell^2(G)$">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -746,10 +825,10 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment"><span class="math inline">\ell^2(G) = \left\{\sum_{g \in G} a_gg\colon \sum_{g \in G} |a_g|^2 &lt; \infty\right\}</span></li>
-<li class="fragment"><span class="math inline">\mathbb{C}[G]</span> acts on the left as bounded operators in <span class="math inline">\ell^2(G)</span>.</li>
-<li class="fragment">There is a tracial <span class="math inline">*</span>-algebra <span class="math inline">\mathcal{N}(G)</span> with <span class="math inline">\mathbb{C}[G] \leq \mathcal{N}(G) \leq \mathcal{B}(\ell^2(G))</span>.</li>
-<li class="fragment">As over <span class="math inline">\mathbb{Z}</span>, the trace of a projection in <span class="math inline">\mathcal{N}(G)</span> gives a rank function <span class="math inline">\operatorname{rk}_{\ell^2} \in \mathbb{P}(\mathbb{C}[G])</span>.</li>
+<li><span class="math inline">\ell^2(G) = \left\{\sum_{g \in G} a_gg\colon \sum_{g \in G} |a_g|^2 &lt; \infty\right\}</span></li>
+<li><span class="math inline">\mathbb{C}[G]</span> acts on the left as bounded operators in <span class="math inline">\ell^2(G)</span>.</li>
+<li>There is a tracial <span class="math inline">*</span>-algebra <span class="math inline">\mathcal{N}(G)</span> with <span class="math inline">\mathbb{C}[G] \leq \mathcal{N}(G) \leq \mathcal{B}(\ell^2(G))</span>.</li>
+<li>As over <span class="math inline">\mathbb{Z}</span>, the trace of a projection in <span class="math inline">\mathcal{N}(G)</span> gives a rank function <span class="math inline">\operatorname{rk}_{\ell^2} \in \mathbb{P}(\mathbb{C}[G])</span>.</li>
 </ul>
 </div>
 </div>
@@ -757,20 +836,21 @@ https://www.math.ucla.edu/~popa/Books/IIunV15.pdf
 </div>
 </div>
 <div class="peek fragment">
-<div title="Lück approximation theorem *(A. Jaikin-Zapirain, 2019)*">
+<div title="Lück approximation">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Lück approximation theorem <em>(A. Jaikin-Zapirain, 2019)</em></strong></p>
+<p><strong>Lück approximation</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">Let <span class="math inline">G</span> be a residually finite group and <span class="math inline">\cdots &lt; N_2 &lt; N_1 &lt; G</span> be a chain of finite index normal subgroups with <span class="math inline">\bigcap N_i = \{1\}</span>. Then <span class="math display">\lim_{i \to \infty} \operatorname{rk}_{N_i} = \operatorname{rk}_{\ell^2}\,.</span></li>
-<li class="fragment">Proven by W. Lück <em>(1994)</em> for matrices over <span class="math inline">\mathbb{Q}[G]</span>.</li>
-<li class="fragment">Proven by G. Elek and E. Szabó <em>(2005)</em> for matrices over <span class="math inline">\overline{\mathbb{Q}}[G]</span>.</li>
+<li>Let <span class="math inline">G</span> be a residually finite group and <span class="math inline">\cdots &lt; N_2 &lt; N_1 &lt; G</span> be a chain of finite index normal subgroups with <span class="math inline">\bigcap N_i = \{1\}</span>. Then <span class="math display">\lim_{i \to \infty} \operatorname{rk}_{N_i} = \operatorname{rk}_{\ell^2}\,.</span></li>
+<li>W. Lück <em>(1994)</em> for matrices over <span class="math inline">\mathbb{Q}[G]</span>.</li>
+<li>Dodziuk–Linnell–Mathai–Schick–Yates <em>(2003)</em> for <span class="math inline">\overline{\mathbb{Q}}[G]</span>.</li>
+<li>A. Jaikin-Zapirain <em>(2019)</em> for <span class="math inline">\mathbb{C}[G]</span>.</li>
 </ul>
 </div>
 </div>
@@ -808,9 +888,25 @@ algebraic groups, https://arxiv.org/html/2405.17360v2
 </section>
 <section id="arithmetic-rank" class="slide level3">
 <h3>Back to <span class="math inline">\mathbb{Z}</span></h3>
-<ul>
-<li class="fragment">On <span class="math inline">\mathbb{Z}</span>, we already saw <span class="math inline">\operatorname{rk}_{\mathbb{Q}}</span>, <span class="math inline">\operatorname{rk}_{\mathbb{F}_p}</span> and <span class="math inline">\operatorname{rk}_9</span>.</li>
-</ul>
+<aside class="notes">
+<p><strong>GOAL: finish by 34:00</strong></p>
+<p><strong>Highlight</strong> - Return deliberately to the ring Z. - Define rk_{p^k} using logarithmic size of the image modulo p^k. - Explain why log is natural: direct sums multiply cardinalities, logarithms make them additive.</p>
+<p>Then examples: - k = 1 gives ordinary F_p-rank. - For a scalar n, rank depends on v_p(n). - CALLBACK: opening matrix has rk_9 = 3/2.</p>
+<p>Say explicitly: “This is the 3/2 I promised at the beginning.”</p>
+<p>Main conceptual point: finite k retains p-adic torsion information; k -&gt; infinity forgets it and returns rational rank.</p>
+<p><strong>Glance over</strong> - Do not prove the Sylvester axioms. - Do not compute the 3/2 from minors unless asked. - The “sees prime factorizations” line can just be a closing remark.</p>
+<p><strong>Transition</strong> “So these rank defects can measure the size of finite p-groups. Number theory has a very natural finite group whose size we would like to understand.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="peek fragment">
 <div title="Ranks through $\log$ size">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -823,8 +919,9 @@ algebraic groups, https://arxiv.org/html/2405.17360v2
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">Fix a prime <span class="math inline">p</span> and a positive integer <span class="math inline">k</span>. For <span class="math inline">A \in \operatorname{Mat}(\mathbb{Z})</span>, define <span class="math display">\operatorname{rk}_{p^k}(A) = \frac{\log_p |\operatorname{im}(A \pmod{p^k})|}{k}\,.</span></li>
-<li class="fragment">Each <span class="math inline">\operatorname{rk}_{p^k}(A)</span> is a Sylvester matrix rank function over <span class="math inline">\mathbb{Z}</span>.</li>
+<li>On <span class="math inline">\mathbb{Z}</span>, we already saw <span class="math inline">\operatorname{rk}_{\mathbb{Q}}</span> and <span class="math inline">\operatorname{rk}_{\mathbb{F}_p}</span>.</li>
+<li>Fix a prime <span class="math inline">p</span> and a positive integer <span class="math inline">k</span>. For <span class="math inline">A \in \operatorname{Mat}(\mathbb{Z})</span>, define <span class="math display">\operatorname{rk}_{p^k}(A) = \frac{\log_p |\operatorname{im}(A \pmod{p^k})|}{k}\,.</span></li>
+<li>Each <span class="math inline">\operatorname{rk}_{p^k}(A)</span> is a Sylvester matrix rank function over <span class="math inline">\mathbb{Z}</span>.</li>
 </ul>
 </div>
 </div>
@@ -843,10 +940,11 @@ algebraic groups, https://arxiv.org/html/2405.17360v2
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">We have <span class="math inline">\operatorname{rk}_p = \operatorname{rk}_{\mathbb{F}_p}</span>.</li>
-<li class="fragment">Taking a <span class="math inline">1\times 1</span>-matrix <span class="math inline">n \in \mathbb{Z}</span>, <span class="math inline">\operatorname{rk}_{p^k} = \frac{\max\{0,k-v_p(n)\}}{k}</span>.</li>
-<li class="fragment">In general, for <span class="math inline">p</span> fixed, <span class="math inline">\operatorname{rk}_{p^k} \to \operatorname{rk}_{\mathbb{Q}}</span> as <span class="math inline">k \to \infty</span>.</li>
-<li class="fragment">The family <span class="math inline">\{\operatorname{rk}_{p^k}\colon p\text{ prime,} k\geq 1\}</span> sees prime factorizations!🔥</li>
+<li>We have <span class="math inline">\operatorname{rk}_p = \operatorname{rk}_{\mathbb{F}_p}</span>.</li>
+<li><span class="math inline">\operatorname{rk}_9\begin{pmatrix} 1 &amp; 2 &amp; 3\\ 4 &amp; 5 &amp; 6\\ 7 &amp; 8 &amp; 9\end{pmatrix} = 3/2</span>.</li>
+<li>Taking a <span class="math inline">1\times 1</span>-matrix <span class="math inline">n \in \mathbb{Z}</span>, <span class="math inline">\operatorname{rk}_{p^k}(n) = \frac{\max\{0,k-v_p(n)\}}{k}</span>.</li>
+<li>In general, for <span class="math inline">p</span> fixed, <span class="math inline">\operatorname{rk}_{p^k} \to \operatorname{rk}_{\mathbb{Q}}</span> as <span class="math inline">k \to \infty</span>.</li>
+<li>The family <span class="math inline">\{\operatorname{rk}_{p^k}\colon p\text{ prime,} k\geq 1\}</span> sees prime factorizations!🔥</li>
 </ul>
 </div>
 </div>
@@ -865,6 +963,24 @@ The precision k must be large enough to recover all the desired torsion.
 </section>
 <section id="class-numbers" class="slide level3">
 <h3>Application: class numbers</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 36:00</strong></p>
+<p><strong>Highlight</strong> - Class group = fractional ideals / principal ideals. - It is finite. - Its order h(F) is the class number. - h(F)=1 means all ideals are principal / O_F is a PID.</p>
+<p>Do NOT teach algebraic number theory here.</p>
+<p>Question: “Put the fields in a structured infinite tower. How does the p-part of h(F_n) grow?”</p>
+<p><strong>Glance over</strong> - Fractional ideal definition in one sentence at most. - No Minkowski theorem. - No ideal factorization background.</p>
+<p><strong>Transition</strong> “Iwasawa’s theorem says that this growth is astonishingly rigid.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p>Let <span class="math inline">F</span> be a number field, that is, a finite extension of <span class="math inline">\mathbb{Q}</span>. Denote by <span class="math inline">\mathcal{O}_F</span> its ring of integers.</p>
 <div class="peek fragment">
 <div title="Ideal class group">
@@ -878,12 +994,10 @@ The precision k must be large enough to recover all the desired torsion.
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">A fractional ideal <span class="math inline">I</span> is a finitely generated <span class="math inline">\mathcal{O}_F</span>-submodule of <span class="math inline">F</span>.</li>
-<li class="fragment">These form an abelian group <span class="math inline">J_F</span> under multiplication.</li>
-<li class="fragment">A principal fractional ideal is <span class="math inline">x\mathcal{O}_F</span> for non-zero <span class="math inline">x \in F</span>.</li>
-<li class="fragment">Principal fractional ideals form a subgroup <span class="math inline">P_F \leq J_F</span>.</li>
-<li class="fragment">The <strong>ideal class group</strong> of <span class="math inline">F</span> is the quotient <span class="math inline">\mathrm{Cl}(F) = J_F/P_F</span>.</li>
-<li class="fragment">It is always <strong>finite.</strong> Its order <span class="math inline">h(F) = |\mathrm{Cl}(F)|</span> is the <strong>class number</strong>.</li>
+<li>A fractional ideal <span class="math inline">I</span> is a finitely generated <span class="math inline">\mathcal{O}_F</span>-submodule of <span class="math inline">F</span>.</li>
+<li>A principal fractional ideal is <span class="math inline">x\mathcal{O}_F</span> for non-zero <span class="math inline">x \in F</span>.</li>
+<li>The <strong>ideal class group</strong> of <span class="math inline">F</span> is the quotient <span class="math display">\mathrm{Cl}(F) = \frac{\text{nonzero fractional ideals}}{\text{principal fractional ideals}}\,.</span></li>
+<li>It is always <strong>finite.</strong> Its order <span class="math inline">h(F) = |\mathrm{Cl}(F)|</span> is the <strong>class number</strong>.</li>
 </ul>
 </div>
 </div>
@@ -902,10 +1016,8 @@ The precision k must be large enough to recover all the desired torsion.
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment"><span class="math inline">h(F) = 1</span> if and only if <span class="math inline">\mathcal{O}_F</span> is a PID.</li>
-<li class="fragment">Only finitely many <span class="math inline">F</span> with <span class="math inline">h(F) = 1</span> are known.</li>
-<li class="fragment">Usually, <span class="math inline">h(F)</span> grows as <span class="math inline">[F\colon \mathbb{Q}]</span> grows.</li>
-<li class="fragment">Given a tower <span class="math inline">F = F_0 \subset F_1 \subset F_2\subset\cdots</span> of number fields, how does <span class="math inline">h(F_i)</span> grow as a function of <span class="math inline">i</span>? (🤑)</li>
+<li><span class="math inline">h(F) = 1</span> if and only if <span class="math inline">\mathcal{O}_F</span> is a PID.</li>
+<li>Given a tower <span class="math inline">F = F_0 \subset F_1 \subset F_2\subset\cdots</span> of number fields, how does <span class="math inline">h(F_i)</span> grow as a function of <span class="math inline">i</span>? (🤑)</li>
 </ul>
 </div>
 </div>
@@ -919,6 +1031,24 @@ The precision k must be large enough to recover all the desired torsion.
 </section>
 <section id="iwasawa-formula" class="slide level3">
 <h3>Iwasawa’s class number formula</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 40:00</strong></p>
+<p><strong>Highlight</strong> - Tower with Gal(F_n/F) = Z/p^n Z. - e_n = v_p(h(F_n)). - Eventually: e_n = mu p^n + lambda n + nu. - mu, lambda &gt;= 0; nu integer.</p>
+<p>Pause to emphasize: “An a priori complicated sequence of class groups eventually has only three growth scales.”</p>
+<p>Examples: - Q: e_n = 0. - 37 example: e_n = n+1 -&gt; lambda term. - Hubbard-Washington: e_n = 3^n - 1 -&gt; mu term.</p>
+<p><strong>Glance over</strong> - Do not explain why 37 is irregular. - Do not construct the Hubbard-Washington tower. - Do not discuss the cyclotomic mu=0 conjecture.</p>
+<p><strong>Transition</strong> “Why should a formula of exactly this shape appear? The answer lives in another group algebra.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="peek fragment">
 <div title="Iwasawa's growth formula *(1959)*">
 <div class="callout callout-important callout-titled callout-style-default">
@@ -931,8 +1061,8 @@ The precision k must be large enough to recover all the desired torsion.
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">Let <span class="math inline">p</span> be a prime number and <span class="math inline">F = F_0 \subset F_1 \subset F_2 \subset \cdots</span> be a tower of number fields such that <span class="math inline">\operatorname{Gal}(F_n/F) \simeq \mathbb{Z}/p^n\mathbb{Z}</span>.</li>
-<li class="fragment">Let <span class="math inline">p^{e_n}</span> be the largest power of <span class="math inline">p</span> dividing <span class="math inline">h(F_n)</span>. There are integer constants <span class="math inline">\mu</span>, <span class="math inline">\lambda</span> and <span class="math inline">\nu</span> such that <span class="math display">e_n = \mu p^n + \lambda n + \nu\quad (n &gt;\!&gt;0)\,.</span></li>
+<li>Let <span class="math inline">p</span> be a prime number and <span class="math inline">F = F_0 \subset F_1 \subset F_2 \subset \cdots</span> be a tower of number fields such that <span class="math inline">\operatorname{Gal}(F_n/F) \simeq \mathbb{Z}/p^n\mathbb{Z}</span>.</li>
+<li>Let <span class="math inline">p^{e_n}</span> be the largest power of <span class="math inline">p</span> dividing <span class="math inline">h(F_n)</span>. There are integer constants <span class="math inline">\mu</span>, <span class="math inline">\lambda</span> and <span class="math inline">\nu</span> such that <span class="math display">e_n = \mu p^n + \lambda n + \nu\quad (n &gt;\!&gt;0)\,.</span></li>
 </ul>
 </div>
 </div>
@@ -951,10 +1081,9 @@ The precision k must be large enough to recover all the desired torsion.
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment">If <span class="math inline">F = \mathbb{Q}</span>, there is only one such tower, and each <span class="math inline">F_n</span> lives inside the tower <span class="math inline">\mathbb{Q}(\zeta_{p^n})</span>. It’s Iwasawa constants are <span class="math inline">\mu = \lambda = \nu = 0</span>.</li>
-<li class="fragment">If <span class="math inline">F = \mathbb{Q}(\zeta_{37})</span> and <span class="math inline">p = 37</span>, composing with the previous tower gives one whose constants are <span class="math inline">\mu = 0</span> and <span class="math inline">\lambda = \nu = 1</span>.</li>
-<li class="fragment"><em>(D. Hubbard, L.C. Washington, 2017)</em> There is a tower over <span class="math inline">F = \mathbb{Q}(\zeta_3,\sqrt[3]{10})</span> with <span class="math inline">p =3</span> and <span class="math inline">\mu = 1</span>, <span class="math inline">\lambda =0</span> and <span class="math inline">\nu = -1</span>.<br>
-</li>
+<li>Over <span class="math inline">\mathbb{Q}</span>, <span class="math inline">e_n = 0</span>.</li>
+<li><span class="math inline">\exists</span> tower over <span class="math inline">\mathbb{Q}(\zeta_{37})</span> with <span class="math inline">p = 37</span>, <span class="math inline">e_n = n+1</span> for <span class="math inline">n &gt;\!&gt; 0</span>.</li>
+<li><em>(D. Hubbard, L.C. Washington, 2017)</em> <span class="math inline">\exists</span> tower over <span class="math inline">\mathbb{Q}(\zeta_3,\sqrt[3]{10})</span> with <span class="math inline">p=3</span>, <span class="math inline">e_n = 3^n-1</span> for <span class="math inline">n &gt;\!&gt; 0</span>.</li>
 </ul>
 </div>
 </div>
@@ -972,16 +1101,59 @@ Reference: https://math.ucla.edu/~sharifi/notes/iwasawa-ch03.html
 </section>
 <section id="iwasawa-rank-triangle-1" class="slide level3">
 <h3>The Iwasawa algebra</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 43:00</strong></p>
+<p><strong>Highlight</strong> - L/F has Galois group Z_p. - Iwasawa algebra: Lambda = Z_p[[Z_p]] ~= Z_p[[t]]. - Finite layer: Lambda/(omega_n) ~= Z_p[Z/p^n Z]. - X = inverse limit of p-primary class groups is naturally a Lambda-module.</p>
+<p>Make the structural analogy explicit:</p>
+<p>Earlier: C[Z/NZ] approximated C[Z].</p>
+<p>Now: Z_p[Z/p^n Z] are the finite quotients of the completed group algebra Lambda.</p>
+<p><strong>Glance over</strong> - Do not explain completed group rings in detail. - Do not prove the isomorphism with Z_p[[t]]. - Do not discuss norm maps beyond saying they define the inverse limit.</p>
+<p><strong>Transition</strong> “And just as before, these different realizations of the same ring give different rank functions.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <ul>
-<li class="fragment">If <span class="math inline">L = \bigcup F_i</span>, then <span class="math inline">\operatorname{Gal}(L/F) \simeq \mathbb{Z}_p</span>.</li>
-<li class="fragment"><span class="math inline">\Lambda = \mathbb{Z}_p[\![\operatorname{Gal}(L/F)]\!] = \varprojlim \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}] \simeq \mathbb{Z}_p[\![t]\!]</span></li>
-<li class="fragment">If <span class="math inline">\omega_n = (t+1)^{p^n}-1</span>, then <span class="math inline">\Lambda/(\omega_n) \simeq \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}]</span>.</li>
-<li class="fragment"><span class="math inline">\Lambda</span>-modules <span class="math inline">\iff</span> “compatible” families of <span class="math inline">\operatorname{Gal}(F_n/F)</span>-modules of order a power of <span class="math inline">p</span>.</li>
-<li class="fragment"><span class="math inline">(p)</span> is a prime ideal of <span class="math inline">\Lambda</span>, the localization <span class="math inline">\Lambda_{(p)}</span> is a DVR with uniformizer <span class="math inline">p</span>. Each quotient <span class="math inline">\Lambda_{(p)}/p^k</span> has length <span class="math inline">k</span>.</li>
+<li>If <span class="math inline">L = \bigcup F_i</span>, then <span class="math inline">\operatorname{Gal}(L/F) \simeq \mathbb{Z}_p</span>.</li>
+<li><span class="math inline">\Lambda = \mathbb{Z}_p[\![\operatorname{Gal}(L/F)]\!] = \varprojlim \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}] \simeq \mathbb{Z}_p[\![t]\!]</span></li>
+<li>If <span class="math inline">\omega_n = (t+1)^{p^n}-1</span>, then <span class="math inline">\Lambda/(\omega_n) \simeq \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}]</span>.</li>
+<li>The inverse limit <span class="math inline">X = \varprojlim \mathrm{Cl}(F_n)(p)</span> is naturally a <span class="math inline">\Lambda</span>-module.</li>
 </ul>
 </section>
 <section id="iwasawa-rank-triangle-2" class="slide level3">
 <h3>Ranks on the Iwasawa algebra</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 47:30</strong></p>
+<p><strong>Highlight</strong> Give each rank a JOB before discussing formulas:</p>
+<ol type="1">
+<li><p>rk_{n,k}: finite level n + finite p-adic precision k.</p></li>
+<li><p>rk_{(p),k}: infinite/tower level + finite p-adic precision k.</p></li>
+<li><p>rk_{Q_p((t))}: generic rank.</p></li>
+</ol>
+<p>Point at the formulas, but do not read every symbol.</p>
+<p>Then emphasize convergence: - n -&gt; infinity: finite-layer rank -&gt; localized rank. - k -&gt; infinity: localized rank -&gt; generic rank. - both -&gt; infinity: finite rank -&gt; generic rank.</p>
+<p>If useful, say: “This is the arithmetic analogue of the rank_N -&gt; generic rank picture we saw for Laurent polynomials.”</p>
+<p><strong>Glance over</strong> - Do not teach localization. - “Lambda_(p) is a DVR” is enough. - Do not derive the normalized length formula.</p>
+<p><strong>Important</strong> The displayed rk_{(p),k} is IMAGE length / k, not cokernel length.</p>
+<p><strong>Transition</strong> “The convergence itself is nice, but the real information is in how far apart these three ranks are.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="peek fragment">
 <div title="Iwasawa rank triangle">
 <div class="callout callout-important callout-titled callout-style-default">
@@ -994,51 +1166,160 @@ Reference: https://math.ucla.edu/~sharifi/notes/iwasawa-ch03.html
 </div>
 <div class="callout-content">
 <ul>
-<li class="fragment"><span class="math inline">\operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)} \in \mathbb{P}(\Lambda)</span>.</li>
-<li class="fragment">For <span class="math inline">A \in \operatorname{Mat}(\Lambda)</span> and <span class="math inline">k \geq 1</span>, <span class="math display">\operatorname{rk}_{(p),k}(A) = \frac{\mathrm{len}_{\Lambda_{(p)}}(\operatorname{im}(A_{(p)}) \pmod{p^k})}{k}</span></li>
-<li class="fragment">For <span class="math inline">A \in \operatorname{Mat}(\lambda)</span>, <span class="math inline">n \geq 0</span> and <span class="math inline">k \geq 1</span>, <span class="math display">\operatorname{rk}_{n,k}(A) = \frac{\log_p|\operatorname{im}(A) \pmod{(p^k,\omega_n)}|}{kp^n}</span></li>
+<li><span class="math inline">\operatorname{rk}_{\mathbb{Q}_p(\!(t)\!)} \in \mathbb{P}(\Lambda)</span> where <span class="math inline">\mathbb{Q}_p(\!(t)\!) = \operatorname{Frac}(\Lambda)</span>.</li>
+<li>For <span class="math inline">A \in \operatorname{Mat}(\Lambda)</span>, <span class="math inline">n \geq 0</span> and <span class="math inline">k \geq 1</span>, <span class="math display">\operatorname{rk}_{n,k}(A) = \frac{\log_p|\operatorname{im}(A) \pmod{(p^k,\omega_n)}|}{kp^n}\,.</span></li>
+<li><span class="math inline">\Lambda_{(p)}</span> is a DVR. For <span class="math inline">A \in \operatorname{Mat}_{r\times s}(\Lambda)</span> and <span class="math inline">k \geq 1</span>, <span class="math display">\operatorname{rk}_{(p),k}(A) = \frac{\mathrm{len}_{\Lambda_{(p)}}(A(\Lambda_{(p)}/(p^k))^s)}{k}\,.</span></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<ul>
-<li class="fragment">On <span class="math inline">\mathbb{P}(\Lambda)</span>:
-<ul>
-<li class="fragment"><span class="math inline">\operatorname{rk}_{(p),k} \to \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)}</span> as <span class="math inline">k \to \infty</span></li>
-<li class="fragment"><span class="math inline">\operatorname{rk}_{n,k} \to \operatorname{rk}_{(p),k}</span> as <span class="math inline">n \to \infty</span></li>
-<li class="fragment"><span class="math inline">\operatorname{rk}_{n,k} \to \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)}</span> as <span class="math inline">n\,, k \to \infty</span>.</li>
-</ul></li>
-</ul>
-<!-- Insert the precise formulation from your paper on Iwasawa's class-number formula.
-- Identify the rings, ranks, and arithmetic quantities involved.
-- Explain the main mechanism, including what detects the lower-order terms.
-- Connect the argument to the finite-approximation picture developed earlier.-->
-</section>
-<section id="iwasawa-ranks" class="slide level3">
-<h3>Rank functions and class number growth</h3>
-<div title="Pseudo-metrics and torsion-modules *(S., 2026)*">
-<div class="callout callout-important callout-titled callout-style-default">
+<div class="peek fragment">
+<div title="Convergence inside $\mathbb{P}(\Lambda)$">
+<div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Pseudo-metrics and torsion-modules <em>(S., 2026)</em></strong></p>
+<p><strong>Convergence inside <span class="math inline">\mathbb{P}(\Lambda)</span></strong></p>
 </div>
 <div class="callout-content">
-<p>Let <span class="math inline">A \in \operatorname{Mat}_{r\times s}(\Lambda)</span> and <span class="math inline">M = \Lambda^r/A\Lambda^s</span>. Assume <span class="math inline">M</span> is torsion and <span class="math inline">M/\omega_n M</span> is finite for large <span class="math inline">n</span>. There are integers <span class="math inline">\mu</span>, <span class="math inline">\lambda</span>, <span class="math inline">\nu</span> such that for large enough <span class="math inline">n</span> and large enough <span class="math inline">k</span> (depending on <span class="math inline">n</span>) we have <span class="math display">\underbrace{\frac{\log_p |M/\omega_n M|}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)})} = \underbrace{\frac{\mu}{k}}_{d_A(\operatorname{rk}_{(p),k}, \operatorname{rk}_{\mathbb{Z}_p(\!(t)\!)})} + \underbrace{\frac{\lambda n + \nu}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{(p),k})}\,.</span></p>
-</div>
-</div>
-</div>
-</div>
 <ul>
-<li class="fragment">There is a matrix <span class="math inline">A</span> over <span class="math inline">\Lambda</span> such that <span class="math inline">M/\omega_n M</span> is isomorphic to the <span class="math inline">p</span>-primary part of <span class="math inline">\operatorname{Cl}(F_n)</span>. It recovers Iwasawa’s formula.</li>
+<li>On <span class="math inline">\mathbb{P}(\Lambda)</span>:
+<ul>
+<li><span class="math inline">\operatorname{rk}_{(p),k} \to \operatorname{rk}_{\mathbb{Q}_p(\!(t)\!)}</span> as <span class="math inline">k \to \infty</span></li>
+<li><span class="math inline">\operatorname{rk}_{n,k} \to \operatorname{rk}_{(p),k}</span> as <span class="math inline">n \to \infty</span></li>
+<li><span class="math inline">\operatorname{rk}_{n,k} \to \operatorname{rk}_{\mathbb{Q}_p(\!(t)\!)}</span> as <span class="math inline">n\,, k \to \infty</span>.</li>
+</ul></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Insert the precise formulation from your paper on Iwasawa's class-number formula.
+- Identify the rings, ranks, and arithmetic quantities involved.
+- Explain the main mechanism, including what detects the lower-order terms.
+- Connect the argument to the finite-approximation picture developed earlier.-->
 </section>
-<section id="thanks" class="slide level3">
-<h3>Thanks!</h3>
+<section id="iwasawa-final" class="slide level3">
+<h3>The Iwasawa rank triangle</h3>
+<aside class="notes">
+<p><strong>GOAL: finish by 53:30</strong></p>
+<p>THIS IS THE PAYOFF — DO NOT RUSH.</p>
+<p><strong>Setup</strong> - Fix A and M = coker(A). - M torsion; M/omega_n M finite for n &gt;&gt; 0. - For a fixed matrix A, define mentally: d_A(rho,sigma) = |rho(A)-sigma(A)|. No need to put this on the slide unless helpful.</p>
+<p><strong>Reveal 1: first side</strong> log_p |M/omega_n M| / (k p^n).</p>
+<p>Say: “This is the finite-level quantity we ultimately care about.”</p>
+<p><strong>Reveal 2: second side</strong> mu/k.</p>
+<p>Say: “The distance from the localized rank to generic rank is exactly the mu contribution.”</p>
+<p><strong>Reveal 3: third side</strong> (lambda n + nu)/(k p^n).</p>
+<p>Say: “The remaining side contains precisely the lower-order lambda and nu terms.”</p>
+<p><strong>Reveal 4: triangle equality</strong> Pause.</p>
+<p>Main sentence: “The three ranks form a degenerate triangle, and its triangle equality is exactly the growth formula.”</p>
+<p><strong>Reveal 5</strong> Multiply by k p^n: log_p |M/omega_n M| = mu p^n + lambda n + nu.</p>
+<p>Then arithmetic payoff: In the clean Iwasawa-module situation where X/omega_n X identifies with Cl(F_n)(p), this becomes v_p(h(F_n)) = mu p^n + lambda n + nu.</p>
+<p>If you want complete accuracy, say orally: “In general there is a small additional comparison between coinvariants of X and the finite-level class groups; the same rank-function argument survives.”</p>
+<p><strong>Final conceptual sentence</strong> “We started by asking how big a matrix is. The point is that there need not be one answer: the distances between different answers can themselves encode arithmetic information.”</p>
+<p>STOP. Let the formula sit.</p>
+<p><strong>Glance over</strong> - Do not prove the structure theorem for Lambda-modules. - Do not explain the general ramification correction. - Do not rederive the three ranks.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="iwasawa-final-setup">
+<p>Let <span class="math inline">A\in\operatorname{Mat}_{r\times s}(\Lambda)</span> and <span class="math inline">M=\operatorname{coker}(A)=\Lambda^r/A\Lambda^s</span>. Assume <span class="math inline">M</span> is torsion and <span class="math inline">M/\omega_nM</span> is finite for <span class="math inline">n\gg0</span>.</p>
+</div>
+<div class="columns iwasawa-final-columns">
+<div class="column" style="width:53%;">
+<div class="r-stack triangle-stack">
+<div class="triangle-stage">
+<p><img data-src="iwasawa_triangle_0.svg" style="width:100.0%"></p>
+</div>
+<div class="triangle-stage fragment" data-fragment-index="1">
+<p><img data-src="iwasawa_triangle_1.svg" style="width:100.0%"></p>
+</div>
+<div class="triangle-stage fragment" data-fragment-index="2">
+<p><img data-src="iwasawa_triangle_2.svg" style="width:100.0%"></p>
+</div>
+<div class="triangle-stage fragment" data-fragment-index="3">
+<p><img data-src="iwasawa_triangle_3.svg" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:47%;">
+<div class="hard-fragment fragment" data-fragment-index="4">
+<p><em>(S., 2026)</em> The triangle equality is</p>
+<p><span class="math display">
+\boxed{
+\frac{\log_p|M/\omega_nM|}{kp^n}
+=
+\frac{\mu}{k}
++
+\frac{\lambda n+\nu}{kp^n}
+}
+</span></p>
+</div>
+<div class="hard-fragment fragment" data-fragment-index="5">
+<p>Equivalently,</p>
+<p><span class="math display">
+\boxed{
+\log_p|M/\omega_nM|
+=
+\mu p^n+\lambda n+\nu
+}
+</span></p>
+<p>For the Iwasawa module of the tower this becomes <em>(🤨)</em></p>
+<p><span class="math display">
+\boxed{
+v_p\!\left(h(F_n)\right)
+=\mu p^n+\lambda n+\nu.
+}
+</span></p>
+</div>
+</div></div>
+<!--
+### Rank functions and class number growth {#iwasawa-ranks}
+
+::: {.callout-important title="Pseudo-metrics and torsion-modules *(S., 2026)*"}
+Let $A \in \operatorname{Mat}_{r\times s}(\Lambda)$ and $M = \Lambda^r/A\Lambda^s$. Assume $M$ is torsion and $M/\omega_n M$ is finite for large $n$. There are integers $\mu$, $\lambda$, $\nu$ such that for large enough $n$ and large enough $k$ (depending on $n$) we have $$\underbrace{\frac{\log_p |M/\omega_n M|}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{\mathbb{Q}_p(\!(t)\!)})} = \underbrace{\frac{\mu}{k}}_{d_A(\operatorname{rk}_{(p),k}, \operatorname{rk}_{\mathbb{Q}_p(\!(t)\!)})} + \underbrace{\frac{\lambda n + \nu}{kp^n}}_{d_A(\operatorname{rk}_{n,k},\operatorname{rk}_{(p),k})}\,.$$:::
+
+- There is a matrix $A$ over $\Lambda$ such that $M/\omega_n M$ is isomorphic to the $p$-primary part of $\operatorname{Cl}(F_n)$. It recovers Iwasawa's formula.-->
+</section>
+<section id="thanks" class="slide level3 thanks-slide">
+<h3>Thank you</h3>
+<div class="thanks-body">
+<div class="thanks-question">
+<p>Questions?</p>
+</div>
+<div class="thanks-reprise">
+<p><em>How big is your matrix?</em></p>
+<p>Depends who you ask…</p>
+</div>
+</div>
+<aside class="notes">
+<p><strong>GOAL: finish by 54:00</strong></p>
+<p>Say only: “Thank you.”</p>
+<p>If useful, leave the previous triangle/result visible while taking questions rather than lingering on the Thanks slide.</p>
+<p><strong>HARD STOP</strong> You have ~6 minutes of cushion in a one-hour slot.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 
 </section>
