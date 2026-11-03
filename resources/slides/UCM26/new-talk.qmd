@@ -277,7 +277,7 @@ Goal: 41:30
 :::
 
 :::: {.peek .fragment}
-::: {.callout-note title="Ideal class group"}
+::: {.callout-note title="Ideal class group ($F$ number field, $\mathcal{O}_F$ its ring of integers)"}
 - A fractional ideal $I$ is a finitely generated $\mathcal{O}_F$-submodule of $F$.
 - A principal fractional ideal is $x\mathcal{O}_F$ for non-zero $x \in F$.
 - The **ideal class group** of $F$ is the quotient $$\mathrm{Cl}(F) = \frac{\text{nonzero fractional ideals}}{\text{principal fractional ideals}}\,.$$
