@@ -945,7 +945,7 @@ The displayed rk_{(p),k} is IMAGE length / k, not cokernel length.
 
 :::: {.peek .fragment}
 ::: {.callout-important title="Iwasawa rank triangle"}
-- $\operatorname{rk}_{\mathbb{Q}_p(\!(t)\!)} \in \mathbb{P}(\Lambda)$ where $\mathbb{Q}_p(\!(t)\!) = \operatorname{Frac}(\Lambda)$.
+- $\operatorname{rk}_{\mathbb{Q}_p(\!(t)\!)} \in \mathbb{P}(\Lambda)$ since $\mathbb{Z}_p[\![t]\!] \subset \mathbb{Q}_p(\!(t)\!)$.
 - For $A \in \operatorname{Mat}(\Lambda)$, $n \geq 0$ and $k \geq 1$, $$\operatorname{rk}_{n,k}(A) = \frac{\log_p|\operatorname{im}(A) \pmod{(p^k,\omega_n)}|}{kp^n}\,.$$
 - $\Lambda_{(p)}$ is a DVR. For $A \in \operatorname{Mat}_{r\times s}(\Lambda)$ and $k \geq 1$, $$\operatorname{rk}_{(p),k}(A) = \frac{\mathrm{len}_{\Lambda_{(p)}}(A(\Lambda_{(p)}/(p^k))^s)}{k}\,.$$
 :::
