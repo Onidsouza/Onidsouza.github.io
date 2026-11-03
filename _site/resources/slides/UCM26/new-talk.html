@@ -738,12 +738,14 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<div class="iwasawa-spaced">
 <ul>
 <li class="fragment">If <span class="math inline">L = \bigcup F_i</span>, then <span class="math inline">\operatorname{Gal}(L/F) \simeq \mathbb{Z}_p</span>.</li>
 <li class="fragment"><span class="math inline">\Lambda = \mathbb{Z}_p[\![\operatorname{Gal}(L/F)]\!] = \varprojlim \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}] \simeq \mathbb{Z}_p[\![t]\!]</span></li>
 <li class="fragment">If <span class="math inline">\omega_n = (t+1)^{p^n}-1</span>, then <span class="math inline">\Lambda/(\omega_n) \simeq \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}]</span>.</li>
 <li class="fragment">The inverse limit <span class="math inline">X = \varprojlim \mathrm{Cl}(F_n)(p)</span> is naturally a <span class="math inline">\Lambda</span>-module.</li>
 </ul>
+</div>
 </section>
 <section id="iwasawa-rank-triangle-2" class="slide level3">
 <h3>Ranks on the Iwasawa algebra</h3>
@@ -1154,7 +1156,7 @@ v_p\!\left(h(F_n)\right)
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/iq\.mat\.br");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

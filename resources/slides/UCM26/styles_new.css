@@ -464,3 +464,18 @@
   opacity: 1;
   font-size: 1.08em;
 }
+
+/* Vertically distribute the Iwasawa algebra bullets */
+.reveal .slides section .iwasawa-spaced > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 14em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.reveal .slides section .iwasawa-spaced > ul > li {
+  margin-top: 0;
+  margin-bottom: 0;
+}

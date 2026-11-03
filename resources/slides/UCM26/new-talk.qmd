@@ -304,7 +304,7 @@ Goal: 41:30
 Goal: 45:00
 :::
 
-::: {.incremental}
+::: {.incremental .iwasawa-spaced}
 - If $L = \bigcup F_i$, then $\operatorname{Gal}(L/F) \simeq \mathbb{Z}_p$.
 - $\Lambda = \mathbb{Z}_p[\![\operatorname{Gal}(L/F)]\!] = \varprojlim \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}] \simeq \mathbb{Z}_p[\![t]\!]$
 - If $\omega_n = (t+1)^{p^n}-1$, then $\Lambda/(\omega_n) \simeq \mathbb{Z}_p[\mathbb{Z}/p^n\mathbb{Z}]$.
